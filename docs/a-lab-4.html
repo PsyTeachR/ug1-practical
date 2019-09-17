@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 1A: Lab 4 | Level 1 Data Skills</title>
+  <meta name="description" content="ug1-practical-materials" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 1A: Lab 4 | Level 1 Data Skills" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="ug1-practical-materials" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 1A: Lab 4 | Level 1 Data Skills" />
+  
+  <meta name="twitter:description" content="ug1-practical-materials" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="a-lab-3.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="include\psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include\style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Level 1 Data Skills</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Course Information</a></li>
+<li class="chapter" data-level="1" data-path="a-lab-1.html"><a href="a-lab-1.html"><i class="fa fa-check"></i><b>1</b> 1A: Lab 1</a><ul>
+<li class="chapter" data-level="1.1" data-path="a-lab-1.html"><a href="a-lab-1.html#pre-class-activities"><i class="fa fa-check"></i><b>1.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-1-make-sure-you-know-your-university-username-and-password-and-have-your-student-id-card."><i class="fa fa-check"></i><b>1.1.1</b> Activity 1: Make sure you know your University username and password and have your student ID card.</a></li>
+<li class="chapter" data-level="1.1.2" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-2-set-up-your-university-e-mail-on-your-phone"><i class="fa fa-check"></i><b>1.1.2</b> Activity 2: Set-up your university e-mail on your phone</a></li>
+<li class="chapter" data-level="1.1.3" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-3-be-social"><i class="fa fa-check"></i><b>1.1.3</b> Activity 3: Be social</a></li>
+<li class="chapter" data-level="1.1.4" data-path="a-lab-1.html"><a href="a-lab-1.html#the-replication-crisis"><i class="fa fa-check"></i><b>1.1.4</b> The replication crisis</a></li>
+<li class="chapter" data-level="1.1.5" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-4-open-science-video"><i class="fa fa-check"></i><b>1.1.5</b> Activity 4: Open science video</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="a-lab-1.html"><a href="a-lab-1.html#in-class-activities"><i class="fa fa-check"></i><b>1.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-5-getting-to-know-the-data"><i class="fa fa-check"></i><b>1.2.1</b> Activity 5: Getting to know the data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="a-lab-1.html"><a href="a-lab-1.html#homework"><i class="fa fa-check"></i><b>1.3</b> Homework</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="a-lab-1.html"><a href="a-lab-1.html#why-are-you-teaching-me-programming-i-signed-up-for-psychology-not-computer-science"><i class="fa fa-check"></i><b>1.3.1</b> Why are you teaching me programming?? I signed up for psychology not computer science!!</a></li>
+<li class="chapter" data-level="1.3.2" data-path="a-lab-1.html"><a href="a-lab-1.html#r-and-r-studio"><i class="fa fa-check"></i><b>1.3.2</b> R and R Studio</a></li>
+<li class="chapter" data-level="1.3.3" data-path="a-lab-1.html"><a href="a-lab-1.html#getting-to-know-r-studio"><i class="fa fa-check"></i><b>1.3.3</b> Getting to know R Studio</a></li>
+<li class="chapter" data-level="1.3.4" data-path="a-lab-1.html"><a href="a-lab-1.html#functions-and-arguments"><i class="fa fa-check"></i><b>1.3.4</b> Functions and arguments</a></li>
+<li class="chapter" data-level="1.3.5" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-1-open-up-r-studio-and-in-the-console-type-the-following-code"><i class="fa fa-check"></i><b>1.3.5</b> Activity 1: Open up R Studio and in the console, type the following code:</a></li>
+<li class="chapter" data-level="1.3.6" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-2-copy-and-paste-the-following-code-into-the-console."><i class="fa fa-check"></i><b>1.3.6</b> Activity 2: Copy and paste the following code into the console.</a></li>
+<li class="chapter" data-level="1.3.7" data-path="a-lab-1.html"><a href="a-lab-1.html#argument-names"><i class="fa fa-check"></i><b>1.3.7</b> Argument names</a></li>
+<li class="chapter" data-level="1.3.8" data-path="a-lab-1.html"><a href="a-lab-1.html#tab-auto-complete"><i class="fa fa-check"></i><b>1.3.8</b> Tab auto-complete</a></li>
+<li class="chapter" data-level="1.3.9" data-path="a-lab-1.html"><a href="a-lab-1.html#packages"><i class="fa fa-check"></i><b>1.3.9</b> Base R and packages</a></li>
+<li class="chapter" data-level="1.3.10" data-path="a-lab-1.html"><a href="a-lab-1.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>1.3.10</b> Installing and loading packages</a></li>
+<li class="chapter" data-level="1.3.11" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-3-install-the-tidyverse"><i class="fa fa-check"></i><b>1.3.11</b> Activity 3: Install the tidyverse</a></li>
+<li class="chapter" data-level="1.3.12" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-4-load-the-tidyverse"><i class="fa fa-check"></i><b>1.3.12</b> Activity 4: Load the tidyverse</a></li>
+<li class="chapter" data-level="1.3.13" data-path="a-lab-1.html"><a href="a-lab-1.html#package-updates"><i class="fa fa-check"></i><b>1.3.13</b> Package updates</a></li>
+<li class="chapter" data-level="1.3.14" data-path="a-lab-1.html"><a href="a-lab-1.html#conflicts"><i class="fa fa-check"></i><b>1.3.14</b> Package conflicts</a></li>
+<li class="chapter" data-level="1.3.15" data-path="a-lab-1.html"><a href="a-lab-1.html#objects"><i class="fa fa-check"></i><b>1.3.15</b> Objects</a></li>
+<li class="chapter" data-level="1.3.16" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-5-create-some-objects"><i class="fa fa-check"></i><b>1.3.16</b> Activity 5: Create some objects</a></li>
+<li class="chapter" data-level="1.3.17" data-path="a-lab-1.html"><a href="a-lab-1.html#looking-after-the-environment"><i class="fa fa-check"></i><b>1.3.17</b> Looking after the environment</a></li>
+<li class="chapter" data-level="1.3.18" data-path="a-lab-1.html"><a href="a-lab-1.html#setting-the-working-directory"><i class="fa fa-check"></i><b>1.3.18</b> Setting the working directory</a></li>
+<li class="chapter" data-level="1.3.19" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-6-set-the-working-directory"><i class="fa fa-check"></i><b>1.3.19</b> Activity 6: Set the working directory</a></li>
+<li class="chapter" data-level="1.3.20" data-path="a-lab-1.html"><a href="a-lab-1.html#r-sessions"><i class="fa fa-check"></i><b>1.3.20</b> R sessions</a></li>
+<li class="chapter" data-level="1.3.21" data-path="a-lab-1.html"><a href="a-lab-1.html#help-and-additional-resources"><i class="fa fa-check"></i><b>1.3.21</b> Help and additional resources</a></li>
+<li class="chapter" data-level="1.3.22" data-path="a-lab-1.html"><a href="a-lab-1.html#debugging-tips"><i class="fa fa-check"></i><b>1.3.22</b> Debugging tips</a></li>
+<li class="chapter" data-level="1.3.23" data-path="a-lab-1.html"><a href="a-lab-1.html#activity-7-test-yourself"><i class="fa fa-check"></i><b>1.3.23</b> Activity 7: Test yourself</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="a-lab-2.html"><a href="a-lab-2.html"><i class="fa fa-check"></i><b>2</b> 1A: Lab 2</a><ul>
+<li class="chapter" data-level="2.1" data-path="a-lab-2.html"><a href="a-lab-2.html#ref1"><i class="fa fa-check"></i><b>2.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-1-create-the-working-directory"><i class="fa fa-check"></i><b>2.1.1</b> Activity 1: Create the working directory</a></li>
+<li class="chapter" data-level="2.1.2" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-2-set-the-working-directory"><i class="fa fa-check"></i><b>2.1.2</b> Activity 2: Set the working directory</a></li>
+<li class="chapter" data-level="2.1.3" data-path="a-lab-2.html"><a href="a-lab-2.html#r-markdown-for-lab-work-and-homework-assignments"><i class="fa fa-check"></i><b>2.1.3</b> R Markdown for lab work and homework assignments</a></li>
+<li class="chapter" data-level="2.1.4" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-3-open-and-save-a-new-r-markdown-document"><i class="fa fa-check"></i><b>2.1.4</b> Activity 3: Open and save a new R Markdown document</a></li>
+<li class="chapter" data-level="2.1.5" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-4-create-a-new-code-chunk"><i class="fa fa-check"></i><b>2.1.5</b> Activity 4: Create a new code chunk</a></li>
+<li class="chapter" data-level="2.1.6" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-5-write-some-code"><i class="fa fa-check"></i><b>2.1.6</b> Activity 5: Write some code</a></li>
+<li class="chapter" data-level="2.1.7" data-path="a-lab-2.html"><a href="a-lab-2.html#running-code"><i class="fa fa-check"></i><b>2.1.7</b> Running code</a></li>
+<li class="chapter" data-level="2.1.8" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-6-run-your-code"><i class="fa fa-check"></i><b>2.1.8</b> Activity 6: Run your code</a></li>
+<li class="chapter" data-level="2.1.9" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-7-inline-code"><i class="fa fa-check"></i><b>2.1.9</b> Activity 7: Inline code</a></li>
+<li class="chapter" data-level="2.1.10" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-8-knitting-your-file"><i class="fa fa-check"></i><b>2.1.10</b> Activity 8: Knitting your file</a></li>
+<li class="chapter" data-level="2.1.11" data-path="a-lab-2.html"><a href="a-lab-2.html#finished"><i class="fa fa-check"></i><b>2.1.11</b> Finished</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="a-lab-2.html"><a href="a-lab-2.html#in-class-activities-1"><i class="fa fa-check"></i><b>2.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-1-apa-referencing"><i class="fa fa-check"></i><b>2.2.1</b> Activity 1: APA referencing</a></li>
+<li class="chapter" data-level="2.2.2" data-path="a-lab-2.html"><a href="a-lab-2.html#data-skills"><i class="fa fa-check"></i><b>2.2.2</b> Data skills</a></li>
+<li class="chapter" data-level="2.2.3" data-path="a-lab-2.html"><a href="a-lab-2.html#getting-data-ready-to-work-with"><i class="fa fa-check"></i><b>2.2.3</b> Getting data ready to work with</a></li>
+<li class="chapter" data-level="2.2.4" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-2-set-up"><i class="fa fa-check"></i><b>2.2.4</b> Activity 2: Set-up</a></li>
+<li class="chapter" data-level="2.2.5" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-3-load-in-the-package"><i class="fa fa-check"></i><b>2.2.5</b> Activity 3: Load in the package</a></li>
+<li class="chapter" data-level="2.2.6" data-path="a-lab-2.html"><a href="a-lab-2.html#open-data"><i class="fa fa-check"></i><b>2.2.6</b> Open data</a></li>
+<li class="chapter" data-level="2.2.7" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-4-read-in-data"><i class="fa fa-check"></i><b>2.2.7</b> Activity 4: Read in data</a></li>
+<li class="chapter" data-level="2.2.8" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-5-check-your-data"><i class="fa fa-check"></i><b>2.2.8</b> Activity 5: Check your data</a></li>
+<li class="chapter" data-level="2.2.9" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-6-join-the-files-together"><i class="fa fa-check"></i><b>2.2.9</b> Activity 6: Join the files together</a></li>
+<li class="chapter" data-level="2.2.10" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-7-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>2.2.10</b> Activity 7: Pull out variables of interest</a></li>
+<li class="chapter" data-level="2.2.11" data-path="a-lab-2.html"><a href="a-lab-2.html#activity-8-visualise-the-data"><i class="fa fa-check"></i><b>2.2.11</b> Activity 8: Visualise the data</a></li>
+<li class="chapter" data-level="2.2.12" data-path="a-lab-2.html"><a href="a-lab-2.html#debugging-tips-1"><i class="fa fa-check"></i><b>2.2.12</b> Debugging tips</a></li>
+<li class="chapter" data-level="2.2.13" data-path="a-lab-2.html"><a href="a-lab-2.html#test-yourself"><i class="fa fa-check"></i><b>2.2.13</b> Test yourself</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="a-lab-2.html"><a href="a-lab-2.html#homework-instructions"><i class="fa fa-check"></i><b>2.3</b> Homework instructions</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="a-lab-2.html"><a href="a-lab-2.html#homework-files"><i class="fa fa-check"></i><b>2.3.1</b> Homework files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="a-lab-3.html"><a href="a-lab-3.html"><i class="fa fa-check"></i><b>3</b> 1A: Lab 3</a><ul>
+<li class="chapter" data-level="3.1" data-path="a-lab-3.html"><a href="a-lab-3.html#pre-class-activities-1"><i class="fa fa-check"></i><b>3.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="a-lab-3.html"><a href="a-lab-3.html#tidyverse"><i class="fa fa-check"></i><b>3.1.1</b> Tidyverse</a></li>
+<li class="chapter" data-level="3.1.2" data-path="a-lab-3.html"><a href="a-lab-3.html#the-babynames-database"><i class="fa fa-check"></i><b>3.1.2</b> The <code>babynames</code> database</a></li>
+<li class="chapter" data-level="3.1.3" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-1-set-up"><i class="fa fa-check"></i><b>3.1.3</b> Activity 1: Set-up</a></li>
+<li class="chapter" data-level="3.1.4" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-2-look-at-the-data"><i class="fa fa-check"></i><b>3.1.4</b> Activity 2: Look at the data</a></li>
+<li class="chapter" data-level="3.1.5" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-3-data-visualisation"><i class="fa fa-check"></i><b>3.1.5</b> Activity 3: Data visualisation</a></li>
+<li class="chapter" data-level="3.1.6" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-4-selecting-variables-of-interest"><i class="fa fa-check"></i><b>3.1.6</b> Activity 4: Selecting variables of interest</a></li>
+<li class="chapter" data-level="3.1.7" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-5-arranging-the-data"><i class="fa fa-check"></i><b>3.1.7</b> Activity 5: Arranging the data</a></li>
+<li class="chapter" data-level="3.1.8" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-6-using-filter-to-select-observations"><i class="fa fa-check"></i><b>3.1.8</b> Activity 6: Using filter to select observations</a></li>
+<li class="chapter" data-level="3.1.9" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-7-creating-new-variables"><i class="fa fa-check"></i><b>3.1.9</b> Activity 7: Creating new variables</a></li>
+<li class="chapter" data-level="3.1.10" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-8-grouping-and-summarising"><i class="fa fa-check"></i><b>3.1.10</b> Activity 8: Grouping and summarising</a></li>
+<li class="chapter" data-level="3.1.11" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-9-pipes"><i class="fa fa-check"></i><b>3.1.11</b> Activity 9: Pipes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="a-lab-3.html"><a href="a-lab-3.html#in-class-activities-2"><i class="fa fa-check"></i><b>3.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-1-set-up-1"><i class="fa fa-check"></i><b>3.2.1</b> Activity 1: Set-up</a></li>
+<li class="chapter" data-level="3.2.2" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-2-select"><i class="fa fa-check"></i><b>3.2.2</b> Activity 2: Select</a></li>
+<li class="chapter" data-level="3.2.3" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-3-arrange"><i class="fa fa-check"></i><b>3.2.3</b> Activity 3: Arrange</a></li>
+<li class="chapter" data-level="3.2.4" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-4-filter"><i class="fa fa-check"></i><b>3.2.4</b> Activity 4: Filter</a></li>
+<li class="chapter" data-level="3.2.5" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-5-summarise"><i class="fa fa-check"></i><b>3.2.5</b> Activity 5: Summarise</a></li>
+<li class="chapter" data-level="3.2.6" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-6-group_by"><i class="fa fa-check"></i><b>3.2.6</b> Activity 6: Group_by</a></li>
+<li class="chapter" data-level="3.2.7" data-path="a-lab-3.html"><a href="a-lab-3.html#activity-7-data-visualisation"><i class="fa fa-check"></i><b>3.2.7</b> Activity 7: Data visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="a-lab-3.html"><a href="a-lab-3.html#homework-1"><i class="fa fa-check"></i><b>3.3</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="a-lab-4.html"><a href="a-lab-4.html"><i class="fa fa-check"></i><b>4</b> 1A: Lab 4</a><ul>
+<li class="chapter" data-level="4.1" data-path="a-lab-4.html"><a href="a-lab-4.html#pre-class-activities-2"><i class="fa fa-check"></i><b>4.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-1-dplyr-recap"><i class="fa fa-check"></i><b>4.1.1</b> Activity 1: dplyr recap</a></li>
+<li class="chapter" data-level="4.1.2" data-path="a-lab-4.html"><a href="a-lab-4.html#data-visualisation"><i class="fa fa-check"></i><b>4.1.2</b> Data visualisation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-2-set-up-1"><i class="fa fa-check"></i><b>4.1.3</b> Activity 2: Set-up</a></li>
+<li class="chapter" data-level="4.1.4" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-3-factors"><i class="fa fa-check"></i><b>4.1.4</b> Activity 3: Factors</a></li>
+<li class="chapter" data-level="4.1.5" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-4-bar-plot"><i class="fa fa-check"></i><b>4.1.5</b> Activity 4: Bar plot</a></li>
+<li class="chapter" data-level="4.1.6" data-path="a-lab-4.html"><a href="a-lab-4.html#layers"><i class="fa fa-check"></i><b>4.1.6</b> Layers</a></li>
+<li class="chapter" data-level="4.1.7" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-5-violin-boxplot"><i class="fa fa-check"></i><b>4.1.7</b> Activity 5: Violin-boxplot</a></li>
+<li class="chapter" data-level="4.1.8" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-6-layers-part-2"><i class="fa fa-check"></i><b>4.1.8</b> Activity 6: Layers part 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="a-lab-4.html"><a href="a-lab-4.html#in-class-activities-3"><i class="fa fa-check"></i><b>4.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="a-lab-4.html"><a href="a-lab-4.html#getting-the-data-ready-to-work-with"><i class="fa fa-check"></i><b>4.2.1</b> Getting the data ready to work with</a></li>
+<li class="chapter" data-level="4.2.2" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-1-set-up-2"><i class="fa fa-check"></i><b>4.2.2</b> Activity 1: Set-up</a></li>
+<li class="chapter" data-level="4.2.3" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-2-select-1"><i class="fa fa-check"></i><b>4.2.3</b> Activity 2: Select</a></li>
+<li class="chapter" data-level="4.2.4" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-3-arrange-1"><i class="fa fa-check"></i><b>4.2.4</b> Activity 3: Arrange</a></li>
+<li class="chapter" data-level="4.2.5" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-4filter"><i class="fa fa-check"></i><b>4.2.5</b> Activity 4:Filter</a></li>
+<li class="chapter" data-level="4.2.6" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-5-group-and-summarise"><i class="fa fa-check"></i><b>4.2.6</b> Activity 5: Group and summarise</a></li>
+<li class="chapter" data-level="4.2.7" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-6-mutate"><i class="fa fa-check"></i><b>4.2.7</b> Activity 6: Mutate</a></li>
+<li class="chapter" data-level="4.2.8" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-7-scatterplots"><i class="fa fa-check"></i><b>4.2.8</b> Activity 7: Scatterplots</a></li>
+<li class="chapter" data-level="4.2.9" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-solutions"><i class="fa fa-check"></i><b>4.2.9</b> Activity solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="a-lab-4.html"><a href="a-lab-4.html#homework-2"><i class="fa fa-check"></i><b>4.3</b> Homework</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+<li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Level 1 Data Skills</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="a-lab-4" class="section level1">
+<h1><span class="header-section-number">4</span> 1A: Lab 4</h1>
+<div id="pre-class-activities-2" class="section level2">
+<h2><span class="header-section-number">4.1</span> Pre-class activities</h2>
+<div id="activity-1-dplyr-recap" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Activity 1: dplyr recap</h3>
+<p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
+<ul>
+<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>select()</option> <option>mutate()</option> <option>summarise()</option> <option>group_by()</option> <option>arrange()</option> <option>filter()</option></select> function.</p></li>
+<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>select()</option> <option>group_by()</option> <option>filter()</option> <option>summarise()</option> <option>mutate()</option> <option>arrange()</option></select> function.</p></li>
+<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>select()</option> <option>group_by()</option> <option>mutate()</option> <option>summarise()</option> <option>arrange()</option> <option>filter()</option></select> function.</p></li>
+<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>filter() and select()</option> <option>group_by() and summarise()</option> <option>group_by() and arrange()</option> <option>arrange() and mutate()</option></select> functions.</p></li>
+<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["arrange() and select()","mutate() and filter()"]'> <option></option> <option>group_by() and mutate()</option> <option>select() and summarise()</option> <option>arrange() and select()</option> <option>mutate() and filter()</option></select> functions.</p></li>
+</ul>
+</div>
+<div id="data-visualisation" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Data visualisation</h3>
+<p>As Grolemund and Wickham tell us:</p>
+<blockquote>
+<p>Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.
+```
+(<a href="http://r4ds.had.co.nz/introduction.html" class="uri">http://r4ds.had.co.nz/introduction.html</a>)</p>
+</blockquote>
+<p>Being able to visualise our variables, and relationships between our variables, is a very useful skill. Before we do any statistical analyses or present any summary statistics, we should visualising our data as it is:</p>
+<ol style="list-style-type: decimal">
+<li><p>A quick and easy way to check our data make sense, and to identify any unusual trends.</p></li>
+<li><p>A way to honestly present the features of our data to anyone who reads our research.</p></li>
+</ol>
+<p><code>ggplot()</code> builds plots by combining layers (see Figure <a href="a-lab-4.html#fig:img-layers">4.1</a>)). If you’re used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures (<a href="https://www.data-to-viz.com/">this website</a> gives you a good sense of what’s possible).</p>
+<div class="figure" style="text-align: center"><span id="fig:img-layers"></span>
+<img src="images/layers.png" alt="ggplot2 layers from Field et al. (2012)" width="100%" />
+<p class="caption">
+Figure 4.1: ggplot2 layers from Field et al. (2012)
+</p>
+</div>
+</div>
+<div id="activity-2-set-up-1" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Activity 2: Set-up</h3>
+<p>We’re going to use the data from the Labs to explain how <code>ggplot2</code> works so let’s do the set-up as usual.</p>
+<ul>
+<li>Open R Studio and ensure the environment is clear.<br />
+</li>
+<li>Download the <a href="fileslab4.zip" download><code>lab 4 files</code></a>, extract the files and then move them in to your Lab 3 folder.</li>
+<li>Open the <code>stub-4.1.Rmd</code> file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
+</li>
+<li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Actvity 1 code chunk.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) 
+
+dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
+pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="st">&#39;id&#39;</span>, <span class="st">&#39;intervention&#39;</span>)
+summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, 
+                      ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) </code></pre>
+</div>
+<div id="activity-3-factors" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Activity 3: Factors</h3>
+<p>Before we go any further we need to perform an additional step of data processing that we have glossed over to this point. First, run the below code to look at the structure of the dataset:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(summarydata)</code></pre>
+<pre><code>## Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 992 obs. of  8 variables:
+##  $ ahiTotal    : num  32 34 34 35 36 37 38 38 38 38 ...
+##  $ cesdTotal   : num  50 49 47 41 36 35 50 55 47 39 ...
+##  $ sex         : num  1 1 1 1 1 1 2 1 2 2 ...
+##  $ age         : num  46 37 37 19 40 49 42 57 41 41 ...
+##  $ educ        : num  4 3 3 2 5 4 4 4 4 4 ...
+##  $ income      : num  3 2 2 1 2 1 1 2 1 1 ...
+##  $ occasion    : num  5 2 3 0 5 0 2 2 2 4 ...
+##  $ elapsed.days: num  182 14.2 33 0 202.1 ...</code></pre>
+<p>R assumes that all of the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
+<p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
+<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),
+         <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),
+         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</code></pre>
+<p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
+</div>
+<div id="activity-4-bar-plot" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> Activity 4: Bar plot</h3>
+<p>For our first example we will recreate the bar plot showing the number of males and females from Lab 2 by showing you how the layers of code build up.</p>
+<ul>
+<li>The first line (or layer) sets up the base of the graph: the data to use and the aesthetics (what will go on the x and y axis, how the plot will be grouped).<br />
+</li>
+<li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:layer1"></span>
+<img src="04-lab04_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
+<p class="caption">
+Figure 4.2: First ggplot layer sets the axes
+</p>
+</div>
+<ul>
+<li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
+<p class="caption">
+Figure 4.3: Basic barplot
+</p>
+</div>
+<ul>
+<li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
+<p class="caption">
+Figure 4.4: Barplot with colour
+</p>
+</div>
+<ul>
+<li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
+<p class="caption">
+Figure 4.5: Barplot without legend
+</p>
+</div>
+<p>We might want to tidy up our plot to make it look a bit nicer. First we can edit the axis labels to be more informative. The most common functions you will use are:</p>
+<ul>
+<li><code>scale_x_continuous()</code> for adjusting the x-axis for a continuous variable</li>
+<li><code>scale_y_continuous()</code> for adjusting the y-axis for a continuous variable</li>
+<li><code>scale_x_discrete()</code> for adjusting the x-axis for a discrete/categorical variable</li>
+<li><code>scale_y_discrete()</code> for adjusting the y-axis for a discrete/categorical variable</li>
+</ul>
+<p>And in those functions the two most common arguments you will use are:</p>
+<ul>
+<li><code>name</code> which controls the name of each axis</li>
+<li><code>labels</code> which controls the names of the break points on the axis</li>
+</ul>
+<p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
+                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
+<p class="caption">
+Figure 4.6: Barplot with axis labels
+</p>
+</div>
+<p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
+                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
+<p class="caption">
+Figure 4.7: Barplot with minimal theme
+</p>
+</div>
+<p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
+                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
+<p class="caption">
+Figure 4.8: Barplot with colour-blind friendly colour scheme
+</p>
+</div>
+<p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
+                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
+<p class="caption">
+Figure 1.5: Barplot with adjusted alpha
+</p>
+</div>
+</div>
+<div id="layers" class="section level3">
+<h3><span class="header-section-number">4.1.6</span> Layers</h3>
+<p>The key thing to note in the above examples is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer</p>
+<p>Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset.</p>
+<div class="warning">
+<p>
+In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn’t included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.
+</p>
+</div>
+</div>
+<div id="activity-5-violin-boxplot" class="section level3">
+<h3><span class="header-section-number">4.1.7</span> Activity 5: Violin-boxplot</h3>
+<p>As our final activity we will also explain the code used to create the violin-boxplot from Lab 2, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:</p>
+<ol style="list-style-type: decimal">
+<li>We have added a <code>y</code> argument to the first layer because we wanted to represent two variables, not just a count.</li>
+<li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
+<li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,
+                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
+<p class="caption">
+Figure 4.9: Violin-boxplot
+</p>
+</div>
+</div>
+<div id="activity-6-layers-part-2" class="section level3">
+<h3><span class="header-section-number">4.1.8</span> Activity 6: Layers part 2</h3>
+<p>The final thing to note about the use of layers in <code>ggplot2</code> is that although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>()
+
+<span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_violin</span>()</code></pre>
+<div id="finished-4" class="section level4">
+<h4><span class="header-section-number">4.1.8.1</span> Finished!</h4>
+<p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
+</div>
+</div>
+</div>
+<div id="in-class-activities-3" class="section level2">
+<h2><span class="header-section-number">4.2</span> In-class activities</h2>
+<div id="getting-the-data-ready-to-work-with" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Getting the data ready to work with</h3>
+<p>Today in the lab we will be working with our data to generate a plot of two variables from the Woodworth et al. dataset. Before we get to generate our plot, we still need to work through the steps to get the data in the shape we need it to be in for our particular question. In particular we need to generate the object <code>summarydata</code> that just has the variable we need.You have done these steps before so go back to the relevant Lab and use that to guide you through.</p>
+</div>
+<div id="activity-1-set-up-2" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Activity 1: Set-up</h3>
+<ul>
+<li>Download <a href="stubs\stub-4.2.Rmd" download><code>stub-4.2.Rmd</code></a> in to your Lab 4 folder. <strong>Make sure that you save the file THEN open it. If you just open the file without saving things will go wrong.</strong></li>
+<li>Open R Studio and ensure the environment is clear.<br />
+</li>
+<li>Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.<br />
+</li>
+<li>Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates two objects called <code>all_dat</code> and <code>summarydata</code>.</li>
+</ul>
+</div>
+<div id="activity-2-select-1" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Activity 2: Select</h3>
+<p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and creat variable <code>summarydata</code>.</p>
+</div>
+<div id="activity-3-arrange-1" class="section level3">
+<h3><span class="header-section-number">4.2.4</span> Activity 3: Arrange</h3>
+<p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first.</p>
+</div>
+<div id="activity-4filter" class="section level3">
+<h3><span class="header-section-number">4.2.5</span> Activity 4:Filter</h3>
+<p>Filter the data <code>ahi_asc</code> by taking out those who are over 65 years of age.</p>
+</div>
+<div id="activity-5-group-and-summarise" class="section level3">
+<h3><span class="header-section-number">4.2.6</span> Activity 5: Group and summarise</h3>
+<p>Group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.
+Then, use summarise to create a new variable <code>data_median</code>, which calculates the median ahiTotal score in this grouped data and assign it a table head called <code>median_score</code>.</p>
+<p><em>(Hint: if you’re stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
+</div>
+<div id="activity-6-mutate" class="section level3">
+<h3><span class="header-section-number">4.2.7</span> Activity 6: Mutate</h3>
+<p>Use <code>mutate()</code> to create a new column called Happiness which categorises participants based on whether they score above or below the median ahiTotal score.</p>
+</div>
+<div id="activity-7-scatterplots" class="section level3">
+<h3><span class="header-section-number">4.2.8</span> Activity 7: Scatterplots</h3>
+<p>In order to visualise two continuous variables, we can use a <strong>scatterplot</strong>. Using the <code>ggplot</code> code you learned about in the pre-class activities, try and recreate the below plot.</p>
+<p>A few hints:</p>
+<ul>
+<li>Use the <code>age_65max</code> data.</li>
+<li>Put <code>ahiTotal</code> on the x-axis and <code>cesdTotal</code> on the y-axis.</li>
+<li>Rather than using <code>geom_bar()</code>, <code>geom_violin()</code>, or <code>geom_boxplot()</code>, for a scatteplot you need to use <code>geom_point()</code>.</li>
+<li>Rather than using <code>scale_fill_viridis_d()</code> to change the colour, add the argument <code>colour = "red"</code> to <code>geom_point</code> (except replace “red” with whatever colour you’d prefer).</li>
+<li>Remember to edit the axis names.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:createplot"></span>
+<img src="04-lab04_files/figure-html/createplot-1.png" alt="Scatterplot of happiness and depression scores" width="100%" />
+<p class="caption">
+Figure 4.10: Scatterplot of happiness and depression scores
+</p>
+</div>
+<p><br></p>
+<p>How would you describe the relationship between the two variables? <select class='solveme' data-answer='["As happiness score increase, depression scores decrease"]'> <option></option> <option>As happiness scores increase, depression scores increase</option> <option>As happiness score increase, depression scores decrease</option> <option>As happiness scores decrease, depression scores decrease</option></select></p>
+<div id="finished-5" class="section level4">
+<h4><span class="header-section-number">4.2.8.1</span> Finished!</h4>
+<p>Great job! You have now worked with the essential basics of good practice in data wrangling! In Psych 1B we will continue using these wrangling skills on new data and also data that you collect yourself.</p>
+</div>
+</div>
+<div id="activity-solutions" class="section level3">
+<h3><span class="header-section-number">4.2.9</span> Activity solutions</h3>
+<div id="activity-1" class="section level4">
+<h4><span class="header-section-number">4.2.9.1</span> Activity 1</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;files/ahi-cesd.csv&#39;</span>)
+pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;files/participant-info.csv&#39;</span>)
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="st">&#39;id&#39;</span>, <span class="st">&#39;intervention&#39;</span>)
+summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre>
+</div>
+</div>
+<div id="activity-2" class="section level4">
+<h4><span class="header-section-number">4.2.9.2</span> Activity 2</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre>
+</div>
+</div>
+<div id="activity-3" class="section level4">
+<h4><span class="header-section-number">4.2.9.3</span> Activity 3</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r">ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</code></pre>
+</div>
+</div>
+<div id="activity-4" class="section level4">
+<h4><span class="header-section-number">4.2.9.4</span> Activity 4</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
+</div>
+</div>
+<div id="activity-5" class="section level4">
+<h4><span class="header-section-number">4.2.9.5</span> Activity 5</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r">data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)
+data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</code></pre>
+</div>
+</div>
+<div id="activity-6" class="section level4">
+<h4><span class="header-section-number">4.2.9.6</span> Activity 6</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r">happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</code></pre>
+</div>
+</div>
+<div id="activity-7" class="section level4">
+<h4><span class="header-section-number">4.2.9.7</span> Activity 7</h4>
+<div class="solution">
+<button>
+Solution
+</button>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="homework-2" class="section level2">
+<h2><span class="header-section-number">4.3</span> Homework</h2>
+<p>You can download all the R homework files and Assessment Information you need from the Lab Homework section of the <a href="https://moodle.gla.ac.uk/course/view.php?id=16358">Psych 1A Moodle</a>.</p>
+
+</div>
+</div>
+
+
+
+</div>
+<div class="psyteachr_footer">
+  
+</div>
+<script>
+
+/* update total correct if #total_correct exists */
+update_total_correct = function() {
+  if (t = document.getElementById("total_correct")) {
+    t.innerHTML =
+      document.getElementsByClassName("correct").length + " of " +
+      document.getElementsByClassName("solveme").length + " correct";
+  }
+}
+
+/* solution button toggling function */
+b_func = function() {
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "");
+  }
+  
+  if (my_answer !== "" & real_answers.includes(my_answer)) {
+    cl.add("correct");
+  } else {
+    cl.remove("correct");
+  }
+  update_total_correct();
+}
+
+window.onload = function() {
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+  
+  /* set up solveme inputs */
+  var solveme = document.getElementsByClassName("solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off"); 
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+    
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+    
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="a-lab-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
