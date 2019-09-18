@@ -286,7 +286,7 @@ In lab 3, we’ll be moving on to becoming familiar with the Wickham Six and the
 <div id="pre-class-activities-1" class="section level2">
 <h2><span class="header-section-number">3.1</span> Pre-class activities</h2>
 <p>Data comes in lots of different formats. One of the most common formats is that of a two-dimensional table (the two dimensions being rows and columns). Usually, each row stands for a separate observation (e.g. a subject), and each column stands for a different variable (e.g. a response, category, or group). A key benefit of tabular data is that it allows you to store different types of data-numerical measurements, alphanumeric labels, categorical descriptors-all in one place.</p>
-<p>It may surprise you to learn that scientists actually spend far more of time cleaning and preparing their data than they spend actually analysing it. This means completing tasks such as cleaning up bad values, changing the structure of tables, merging information stored in separate tables, reducing the data down to a subset of observations, and producing data summaries. Some have estimated that up to 80% of time spent on data analysis involves such data preparation tasks (Dasu &amp; Johnson, 2003)!</p>
+<p>It may surprise you to learn that scientists actually spend far more time cleaning and preparing their data than they spend actually analysing it. This means completing tasks such as cleaning up bad values, changing the structure of tables, merging information stored in separate tables, reducing the data down to a subset of observations, and producing data summaries. Some have estimated that up to 80% of time spent on data analysis involves such data preparation tasks (Dasu &amp; Johnson, 2003)!</p>
 <p>Many people seem to operate under the assumption that the only option for data cleaning is the painstaking and time-consuming cutting and pasting of data within a spreadsheet program like Excel. We have witnessed students and colleagues waste days, weeks, and even months manually transforming their data in Excel, cutting, copying, and pasting data. Fixing up your data by hand is not only a terrible use of your time, but it is error-prone and not reproducible. Additionally, in this age where we can easily collect massive datasets online, you will not be able to organise, clean, and prepare these by hand.</p>
 <p>In short, you will not thrive as a psychologist if you do not learn some key data wrangling skills. Although every dataset presents unique challenges, there are some systematic principles you should follow that will make your analyses easier, less error-prone, more efficient, and more reproducible.</p>
 <p>In this lesson you will see how data science skills will allow you to efficiently get answers to nearly any question you might want to ask about your data. By learning how to properly make your computer do the hard and boring work for you, you can focus on the bigger issues.</p>
@@ -314,7 +314,7 @@ In lab 3, we’ll be moving on to becoming familiar with the Wickham Six and the
 <h3><span class="header-section-number">3.1.3</span> Activity 1: Set-up</h3>
 <p>Do the following. If you need help, consult the Lab 2 materials.</p>
 <ul>
-<li>Download the <a href="fileslab3.zip" download><code>lab 3 files</code></a>, extract the files and then move them in to your Lab 3 folder.</li>
+<li>Download the <a href="files/lab3.zip" download><code>lab 3 files</code></a>, extract the files and then move them in to your Lab 3 folder.</li>
 <li>Open R Studio and ensure the environment is clear.<br />
 </li>
 <li>Open the <code>stub-3.1.Rmd</code> file and ensure that the working directory is set to your Lab 3 folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
@@ -718,7 +718,7 @@ When learning to code it can be a useful practice to read your code ‘out loud�
 <ul>
 <li>Open R Studio and set the working directory to your Lab 3 folder. Ensure the environment is clear.<br />
 </li>
-<li>Open the <code>stub-3.2.Rmd</code> file that you downloadd in the pre-class activities and ensure that the working directory is set to your Lab 3 folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
+<li>Open the <code>stub-3.2.Rmd</code> file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 3 folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files.</li>
 </ul>
@@ -726,7 +726,7 @@ When learning to code it can be a useful practice to read your code ‘out loud�
 
 dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
 pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="st">&#39;id&#39;</span>, <span class="st">&#39;intervention&#39;</span>)</code></pre>
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</code></pre>
 <p>Now let’s start working with our <code>tidyverse</code> verb functions…</p>
 </div>
 <div id="activity-2-select" class="section level3">
@@ -782,7 +782,7 @@ Solution
 <hr />
 <ul>
 <li><p>What is the median score? <input class='solveme nospaces' size='2' data-answer='["74"]'/></p></li>
-<li><p>Change the above code to give you the <strong>mean score</strong>. What is the mean score to 2 decimal places? <input class='solveme nospaces' size='5' data-answer='["72.78"]'/></p></li>
+<li><p>Change the above code to give you the <strong>mean score</strong>. What is the mean score to 2 decimal places? <input class='solveme nospaces' size='72.5' data-answer='["72.50"]'/></p></li>
 </ul>
 <div class="solution">
 <button>

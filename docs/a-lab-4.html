@@ -281,11 +281,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.1.1</span> Activity 1: dplyr recap</h3>
 <p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>select()</option> <option>mutate()</option> <option>summarise()</option> <option>group_by()</option> <option>arrange()</option> <option>filter()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>select()</option> <option>group_by()</option> <option>filter()</option> <option>summarise()</option> <option>mutate()</option> <option>arrange()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>select()</option> <option>group_by()</option> <option>mutate()</option> <option>summarise()</option> <option>arrange()</option> <option>filter()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>filter() and select()</option> <option>group_by() and summarise()</option> <option>group_by() and arrange()</option> <option>arrange() and mutate()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["arrange() and select()","mutate() and filter()"]'> <option></option> <option>group_by() and mutate()</option> <option>select() and summarise()</option> <option>arrange() and select()</option> <option>mutate() and filter()</option></select> functions.</p></li>
+<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>mutate()</option> <option>arrange()</option> <option>filter()</option> <option>group_by()</option> <option>summarise()</option> <option>select()</option></select> function.</p></li>
+<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>arrange()</option> <option>select()</option> <option>group_by()</option> <option>mutate()</option> <option>summarise()</option> <option>filter()</option></select> function.</p></li>
+<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>filter()</option> <option>select()</option> <option>arrange()</option> <option>mutate()</option> <option>summarise()</option> <option>group_by()</option></select> function.</p></li>
+<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>filter() and select()</option> <option>group_by() and summarise()</option> <option>arrange() and mutate()</option> <option>group_by() and arrange()</option></select> functions.</p></li>
+<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["arrange() and select()","mutate() and filter()"]'> <option></option> <option>select() and summarise()</option> <option>arrange() and select()</option> <option>mutate() and filter()</option> <option>group_by() and mutate()</option></select> functions.</p></li>
 </ul>
 </div>
 <div id="data-visualisation" class="section level3">
@@ -324,7 +324,7 @@ Figure 4.1: ggplot2 layers from Field et al. (2012)
 
 dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
 pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="st">&#39;id&#39;</span>, <span class="st">&#39;intervention&#39;</span>)
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)
 summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, 
                       ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) </code></pre>
 </div>
@@ -526,30 +526,31 @@ Figure 4.9: Violin-boxplot
 </li>
 <li>Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.<br />
 </li>
-<li>Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates two objects called <code>all_dat</code> and <code>summarydata</code>.</li>
+<li>Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates an object called <code>all_dat</code> that joins the two objects <code>dat</code> and <code>pinfo</code>.</li>
 </ul>
 </div>
 <div id="activity-2-select-1" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> Activity 2: Select</h3>
-<p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and creat variable <code>summarydata</code>.</p>
+<p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create an object named variable <code>summarydata</code>.</p>
 </div>
 <div id="activity-3-arrange-1" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Activity 3: Arrange</h3>
-<p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first.</p>
+<p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first and save it in an object named <code>ahi_asc</code>.</p>
 </div>
 <div id="activity-4filter" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Activity 4:Filter</h3>
-<p>Filter the data <code>ahi_asc</code> by taking out those who are over 65 years of age.</p>
+<p>Filter the data <code>ahi_asc</code> by only keeping those who are 65 years old or younger and save it in an object named <code>age_65max</code>.</p>
 </div>
 <div id="activity-5-group-and-summarise" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Activity 5: Group and summarise</h3>
-<p>Group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.
-Then, use summarise to create a new variable <code>data_median</code>, which calculates the median ahiTotal score in this grouped data and assign it a table head called <code>median_score</code>.</p>
+<p>First, calculate the overall median ahiTotal score for all participants (hint: use <code>summarise()</code>) and save it in an object called <code>median_score</code>.
+Then, group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.
+Then, use summarise to create a new variable <code>sex_median</code>, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called <code>median_score</code>.</p>
 <p><em>(Hint: if you’re stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
 </div>
 <div id="activity-6-mutate" class="section level3">
 <h3><span class="header-section-number">4.2.7</span> Activity 6: Mutate</h3>
-<p>Use <code>mutate()</code> to create a new column called Happiness which categorises participants based on whether they score above or below the median ahiTotal score.</p>
+<p>Use <code>mutate()</code> to create a new column in <code>data_sex</code> called Happiness which categorises participants based on whether they score above or below the overall median ahiTotal score (i.e., the median score for all participants, not grouped by sex).</p>
 </div>
 <div id="activity-7-scatterplots" class="section level3">
 <h3><span class="header-section-number">4.2.8</span> Activity 7: Scatterplots</h3>
@@ -584,10 +585,9 @@ Figure 4.10: Scatterplot of happiness and depression scores
 Solution
 </button>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;files/ahi-cesd.csv&#39;</span>)
-pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;files/participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="st">&#39;id&#39;</span>, <span class="st">&#39;intervention&#39;</span>)
-summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre>
+dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)
+pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</code></pre>
 </div>
 </div>
 <div id="activity-2" class="section level4">
@@ -614,7 +614,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
 </div>
 </div>
 <div id="activity-5" class="section level4">
@@ -623,7 +623,8 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)
+<pre class="sourceCode r"><code class="sourceCode r">median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))
+data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)
 data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</code></pre>
 </div>
 </div>

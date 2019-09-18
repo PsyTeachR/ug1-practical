@@ -363,7 +363,7 @@ Figure 2.6: Slow method of running code
 </div>
 <p>Alternatively, you can press the green “play” button at the top-right of the code chunk and this will run <strong>all</strong> lines of code in that chunk.</p>
 <div class="figure" style="text-align: center"><span id="fig:img-run2"></span>
-<img src="images/run2.png" alt="Slightly better method of running code" width="100%" />
+<img src="images/run2.gif" alt="Slightly better method of running code" width="100%" />
 <p class="caption">
 Figure 2.7: Slightly better method of running code
 </p>
@@ -384,7 +384,7 @@ Figure 2.7: Slightly better method of running code
 <h3><span class="header-section-number">2.1.10</span> Activity 8: Knitting your file</h3>
 <p>Nearly finished! As our final step we are going to “knit” our file. This simply means that we’re going to compile our code into a document that is more presentable. To do this click <code>Knit</code> -&gt; <code>Knit to HMTL</code>. R Markdown will create a new HTML document and it will automatically save this file in your working directory.</p>
 <p>As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
-<p><strong>My name is Emily and I am 34 years old. It is 313 days until my birthday.</strong></p>
+<p><strong>My name is Emily and I am 34 years old. It is 297 days until my birthday.</strong></p>
 <p>We’re not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers! R Markdown is an incredibly powerful and flexible format - this book was written using it! If you want to push yourself with R, additional functions and features of R Markdown would be a good place to start.</p>
 <p>Before we finish, there are a few final things to note about knitting that will be useful for the homework:</p>
 <ul>
@@ -435,7 +435,7 @@ Figure 2.7: Slightly better method of running code
 <h3><span class="header-section-number">2.2.4</span> Activity 2: Set-up</h3>
 <p>Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter <a href="a-lab-2.html#ref1">2.1</a>:</p>
 <ul>
-<li>Download the <a href="fileslab2.zip" download><code>lab 2 files</code></a>, extract the files and then move them in to your Lab 2 folder.</li>
+<li>Download the <a href="files/lab2.zip" download><code>lab 2 files</code></a>, extract the files and then move them in to your Lab 2 folder.</li>
 <li>Open R and ensure the environment is clear.</li>
 <li>Set the working directory to your Lab 2 folder.<br />
 </li>
@@ -490,7 +490,7 @@ There is also a function called <code>read.csv()</code>. Be very careful NOT to 
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(<span class="dt">x =</span> dat, <span class="co"># the first table you want to join</span>
                       <span class="dt">y =</span> pinfo, <span class="co"># the second table you want to join</span>
-                      <span class="dt">by =</span> <span class="st">&#39;id&#39;</span>, <span class="st">&#39;intervention&#39;</span>) <span class="co"># columns the two tables have in common</span></code></pre>
+                      <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)) <span class="co"># columns the two tables have in common</span></code></pre>
 </div>
 <div id="activity-7-pull-out-variables-of-interest" class="section level3">
 <h3><span class="header-section-number">2.2.10</span> Activity 7: Pull out variables of interest</h3>
