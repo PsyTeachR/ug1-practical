@@ -53,7 +53,7 @@ library(tidyverse)
 
 dat <- read_csv('ahi-cesd.csv')
 pinfo <- read_csv('participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by='id', 'intervention')
+all_dat <- inner_join(dat, pinfo, by= c("id", "intervention")
 summarydata <- select(.data = all_dat, 
                       ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) 
 
@@ -244,19 +244,18 @@ Today in the lab we will be working with our data to generate a plot of two vari
 * Download <a href="stubs\stub-4.2.Rmd" download>`stub-4.2.Rmd`</a> in to your Lab 4 folder. **Make sure that you save the file THEN open it. If you just open the file without saving things will go wrong.**
 * Open R Studio and ensure the environment is clear.  
 * Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.  
-* Look through your previous work to find the code that loads the `tidyverse`, reads in the data files and creates two objects called `all_dat` and `summarydata`.
+* Look through your previous work to find the code that loads the `tidyverse`, reads in the data files and creates an object called `all_dat` that joins the two objects `dat` and `pinfo`.
 
 ```{r T1 getting started, message=FALSE, echo=FALSE}
 library(tidyverse)
 dat <- read_csv ('files/ahi-cesd.csv')
 pinfo <- read_csv('files/participant-info.csv')
 all_dat <- inner_join(dat, pinfo, by='id', 'intervention')
-summarydata <- select(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)
 ```
 
 ### Activity 2: Select
 
-Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and creat variable ```summarydata```. 
+Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create an object named variable ```summarydata```. 
 
 
 ```{r, T2, echo = FALSE}
@@ -266,7 +265,7 @@ summarydata <- select(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occa
 
 ### Activity 3: Arrange
 
-Arrange the data in the variable created above (```summarydata```) by ahiTotal with lowest score first.
+Arrange the data in the variable created above (```summarydata```) by ahiTotal with lowest score first and save it in an object named `ahi_asc`.
 
 ```{r, T3s, echo=FALSE}
 ahi_asc <- arrange(summarydata, by = ahiTotal)
@@ -274,27 +273,29 @@ ahi_asc <- arrange(summarydata, by = ahiTotal)
 
 ### Activity 4:Filter
 
-Filter the data ```ahi_asc``` by taking out those who are over 65 years of age.
+Filter the data ```ahi_asc``` by only keeping those who are 65 years old or younger and save it in an object named `age_65max`.
 
 ```{r, T4, echo = FALSE}
-age_65max <- filter(ahi_asc, age < 65)
+age_65max <- filter(ahi_asc, age <= 65)
 ```
 
 ### Activity 5: Group and summarise
 
-Group the data stored in the variable ```age_65max``` by sex, and store it in ```data_sex```. 
-Then, use summarise to create a new variable ```data_median```, which calculates the median ahiTotal score in this grouped data and assign it a table head called ```median_score```.
+First, calculate the overall median ahiTotal score for all participants (hint: use `summarise()`) and save it in an object called `median_score`.
+Then, group the data stored in the variable ```age_65max``` by sex, and store it in ```data_sex```. 
+Then, use summarise to create a new variable ```sex_median```, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called ```median_score```.
 
 *(Hint: if you're stuck, see [this dplyr documentation](https://dplyr.tidyverse.org/reference/group_by.html)).*
 
 ```{r T5, echo = FALSE}
+median_score <- summarise(age_65max, median = median(ahiTotal))
 data_sex <- group_by(age_65max, sex)
-data_median <- summarise(data_sex, median_score = median(ahiTotal))
+sex_median <- summarise(data_sex, median_score = median(ahiTotal))
 ```
 
 ### Activity 6: Mutate
 
-Use `mutate()` to create a new column called Happiness which categorises participants based on whether they score above or below the median ahiTotal score.
+Use `mutate()` to create a new column in `data_sex` called Happiness which categorises participants based on whether they score above or below the overall median ahiTotal score (i.e., the median score for all participants, not grouped by sex).
 
 ```{r T6, echo = FALSE}
 happy <- mutate(data_sex, Happiness = (ahiTotal > 73))
@@ -333,12 +334,11 @@ Great job! You have now worked with the essential basics of good practice in dat
 #### Activity 1
 
 `r webex::hide()`
-```{r T1s getting started, message=FALSE}
+```{r T1s, eval = FALSE, message=FALSE}
 library(tidyverse)
-dat <- read_csv ('files/ahi-cesd.csv')
-pinfo <- read_csv('files/participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by='id', 'intervention')
-summarydata <- select(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)
+dat <- read_csv ('ahi-cesd.csv')
+pinfo <- read_csv('participant-info.csv')
+all_dat <- inner_join(dat, pinfo, by=c("id", "intervention")
 ```
 `r webex::unhide()`
 
@@ -368,7 +368,7 @@ ahi_asc <- arrange(summarydata, by = ahiTotal)
 `r webex::hide()`
 
 ```{r, T4s}
-age_65max <- filter(ahi_asc, age < 65)
+age_65max <- filter(ahi_asc, age <= 65)
 ```
 
 `r webex::unhide()`
@@ -378,6 +378,7 @@ age_65max <- filter(ahi_asc, age < 65)
 `r webex::hide()`
 
 ```{r T5s}
+median_score <- summarise(age_65max, median = median(ahiTotal))
 data_sex <- group_by(age_65max, sex)
 data_median <- summarise(data_sex, median_score = median(ahiTotal))
 ```

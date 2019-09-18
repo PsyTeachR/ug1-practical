@@ -90,11 +90,11 @@ Take some time now to read through the study and familiarise yourself with the d
 
 * What does the AHI measure? 
 
-`r fitb(c("Happiness", ignore_case = TRUE))` 
+`r fitb(c("Happiness", "happiness", ignore_case = TRUE))` 
 
 * What does the CES-D measure? 
 
-`r fitb(c("Depression", ignore_case = TRUE))`
+`r fitb(c("Depression", "depression", ignore_case = TRUE))`
 
 ******
 
