@@ -337,22 +337,39 @@ In this lab you will be introduced to the skills you will develop over the next 
 <h3><span class="header-section-number">1.2.1</span> Activity 5: Getting to know the data</h3>
 <p>This semester we will use the same dataset each week to develop our skills and knowledge. The dataset is from Woodworth et al. (2018). You can <a href="files/1a_data.zip" download>download all the files here</a> and you can find an explanation of the data here <a href="https://openpsychologydata.metajnl.com/articles/10.5334/jopd.35/">Web-based Positive Psychology Interventions: A Reexamination of Effectiveness</a>.</p>
 <p>Take some time now to read through the study and familiarise yourself with the data you will be using over the coming weeks.</p>
+<div id="how-to-use-zip-files" class="section level4">
+<h4><span class="header-section-number">1.2.1.1</span> How to use zip files</h4>
+<p>In this course we will often ask you to download a folder with multiple files and this will be stored on the server as a zip file. A zip file is a folder that contains files that have been compressed to make the file size smaller and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extra them.</p>
+<ol style="list-style-type: decimal">
+<li>Click on the link to download the folder and select to save the zip file in your lab 1 folder.</li>
+<li>Navgiate to the zip file and open it. You will see all the files it contains but don’t use these - click “Extract all” on the top ribbon.</li>
+<li>You will be asked to select a location to save the unzipped files. Normally the default location it suggests will be the same folder and so you can just click “Extract”.</li>
+<li>You can now delete the zip file and use the unzipped files. This is a really important step - if you use the compressed files your code may not work properly.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/zipping.gif" alt="Unzipping a folder" width="75%" height="75%" />
+<p class="caption">
+Figure 1.1: Unzipping a folder
+</p>
+</div>
 <hr />
 <p><strong>Pause and test your knowledge!</strong></p>
+<p>When you get the correct answer, the answer box will turn green. Sometimes this doesn’t work on Internet Explorer or Edge so be sure to use Chrome or Firefox.</p>
 <ul>
 <li>How many questionnaire variables are in the dataset?</li>
 </ul>
 <p><select class='solveme' data-answer='["2"]'> <option></option> <option>2</option> <option>4</option> <option>3</option></select></p>
 <ul>
-<li>What does the AHI measure?</li>
+<li>What does the AHI measure? (Hint, use a single word)</li>
 </ul>
 <p><input class='solveme nospaces' size='9' data-answer='["Happiness","happiness","TRUE"]'/></p>
 <ul>
-<li>What does the CES-D measure?</li>
+<li>What does the CES-D measure? (hint, use a single word)</li>
 </ul>
 <p><input class='solveme nospaces' size='10' data-answer='["Depression","depression","TRUE"]'/></p>
 <hr />
 <p><strong>In groups, have a think about what a possible research question might look like. How would you use this data? Would you be interested in studying any other variables alongside the data that you have?</strong></p>
+</div>
 </div>
 </div>
 <div id="homework" class="section level2">
@@ -374,11 +391,11 @@ In this lab you will be introduced to the skills you will develop over the next 
 </div>
 <div id="getting-to-know-r-studio" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Getting to know R Studio</h3>
-<p>R Studio has a console that you can try out code in (appearing as the bottom left window in Figure <a href="a-lab-1.html#fig:img-rstudio">1.1</a>), there is a script editor (top left), a window showing functions and objects you have created in the “Environment” tab (top right window in the figure), and a window that shows plots, files packages, and help documentation (bottom right).</p>
+<p>R Studio has a console that you can try out code in (appearing as the bottom left window in Figure <a href="a-lab-1.html#fig:img-rstudio">1.2</a>), there is a script editor (top left), a window showing functions and objects you have created in the “Environment” tab (top right window in the figure), and a window that shows plots, files packages, and help documentation (bottom right).</p>
 <div class="figure" style="text-align: center"><span id="fig:img-rstudio"></span>
 <img src="images/RStudio.png" alt="RStudio interface" width="100%" />
 <p class="caption">
-Figure 1.1: RStudio interface
+Figure 1.2: RStudio interface
 </p>
 </div>
 <p>You will learn more about how to use the features included in R Studio throughout this course, however, we highly recommend watching <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/">RStudio Essentials 1</a> from the R Studio team. The video lasts ~30 minutes and gives a tour of the main parts of R Studio.</p>
@@ -424,11 +441,11 @@ If you’re looking up examples of code online, you may often see code that star
 </div>
 <div id="tab-auto-complete" class="section level3">
 <h3><span class="header-section-number">1.3.8</span> Tab auto-complete</h3>
-<p>One very useful feature of R Studio is the tab auto-complete for functions (see Figure <a href="a-lab-1.html#fig:img-autocomplete">1.2</a>). If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
+<p>One very useful feature of R Studio is the tab auto-complete for functions (see Figure <a href="a-lab-1.html#fig:img-autocomplete">1.3</a>). If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
 <div class="figure" style="text-align: center"><span id="fig:img-autocomplete"></span>
 <img src="images/autocomplete.png" alt="Tab auto-complete" width="100%" />
 <p class="caption">
-Figure 1.2: Tab auto-complete
+Figure 1.3: Tab auto-complete
 </p>
 </div>
 </div>
@@ -499,7 +516,7 @@ data &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt
 <div class="figure" style="text-align: center"><span id="fig:img-objects-enviro"></span>
 <img src="images/objects-enviro.png" alt="Objects in the environment" width="100%" />
 <p class="caption">
-Figure 1.3: Objects in the environment
+Figure 1.4: Objects in the environment
 </p>
 </div>
 <p>Note that in these examples, <code>name</code>,<code>age</code>, and <code>new_year</code> would always contain the values <code>emily</code>, <code>33</code>, and the date of New Year’s Day 2020, however, <code>today</code> will draw the date from the operating system and <code>data</code> will be a randomly generated set of data so the values of these objects will not be static.</p>
@@ -509,7 +526,7 @@ Figure 1.3: Objects in the environment
 new_year <span class="op">-</span><span class="st"> </span>today
 <span class="kw">mean</span>(data)</code></pre>
 <pre><code>## [1] 43
-## Time difference of 105 days
+## Time difference of 96 days
 ## [1] 17.66644</code></pre>
 <p>Finally, you can store the result of these operations in a new object:</p>
 <pre class="sourceCode r"><code class="sourceCode r">decade &lt;-<span class="st"> </span>age <span class="op">+</span><span class="st"> </span><span class="dv">10</span></code></pre>
@@ -536,7 +553,7 @@ You may also see objects referred to as ‘variables’. There is a difference b
 <div class="figure" style="text-align: center"><span id="fig:img-broom"></span>
 <img src="images/broom.png" alt="Clearing the workspace" width="100%" />
 <p class="caption">
-Figure 1.4: Clearing the workspace
+Figure 1.5: Clearing the workspace
 </p>
 </div>
 </div>
@@ -544,10 +561,10 @@ Figure 1.4: Clearing the workspace
 <h3><span class="header-section-number">1.3.18</span> Setting the working directory</h3>
 <p>What this means is that we need to tell R where the files we need are located. Think of it just like when you have different subjects, and you have seperate folders for each topic e.g. biology, history and so on. When working on R, it’s useful to have all the data sets and files you need in one folder.</p>
 <p>To set the working directory press session -&gt; set working directory -&gt; choose directory and then select the folder where the data sets we are working on are saved, and save this file in the same folder as well. In other words- make sure your data sets and scripts are all in the same folder. In the labs, we recommend that you create a folder for Psychology labs with sub-folders within for each lab in your M: drive. This is your personal area on the University network that is safe and secure so is much better than flashdrives or desktops. You can access your M drive by logging into any computer on the University network.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="images/setwd.gif" alt="Setting your working directory" width="75%" height="75%" />
 <p class="caption">
-Figure 1.5: Setting your working directory
+Figure 1.6: Setting your working directory
 </p>
 </div>
 </div>
@@ -562,7 +579,7 @@ Figure 1.5: Setting your working directory
 <div class="figure" style="text-align: center"><span id="fig:img-session"></span>
 <img src="images/new_session.png" alt="The truth about programming" width="100%" />
 <p class="caption">
-Figure 1.6: The truth about programming
+Figure 1.7: The truth about programming
 </p>
 </div>
 </div>
@@ -571,7 +588,7 @@ Figure 1.6: The truth about programming
 <div class="figure" style="text-align: center"><span id="fig:img-kitteh"></span>
 <img src="images/kitteh.PNG" alt="The truth about programming" width="100%" />
 <p class="caption">
-Figure 1.7: The truth about programming
+Figure 1.8: The truth about programming
 </p>
 </div>
 <p>Getting good at programming really means getting good trying stuff out, searching for help online, and finding examples of code to copy. If you are having difficulty with any of the exercises contained in this book then you can ask for help on Slack or Moodle, however, learning to problem-solve effectively is a key skill that you need to develop throughout this course.</p>

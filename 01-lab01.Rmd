@@ -80,19 +80,35 @@ This semester we will use the same dataset each week to develop our skills and k
 
 Take some time now to read through the study and familiarise yourself with the data you will be using over the coming weeks.  
 
+#### How to use zip files
+
+In this course we will often ask you to download a folder with multiple files and this will be stored on the server as a zip file. A zip file is a folder that contains files that have been compressed to make the file size smaller and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extra them.
+
+1. Click on the link to download the folder and select to save the zip file in your lab 1 folder.
+2. Navgiate to the zip file and open it. You will see all the files it contains but don't use these - click "Extract all" on the top ribbon.
+3. You will be asked to select a location to save the unzipped files. Normally the default location it suggests will be the same folder and so you can just click "Extract".
+4. You can now delete the zip file and use the unzipped files. This is a really important step - if you use the compressed files your code may not work properly.
+
+
+```{r, echo=FALSE, fig.cap="Unzipping a folder", out.width="75%", out.height="75%"}
+knitr::include_graphics(path="./images/zipping.gif")
+```
+
 ******
 
 **Pause and test your knowledge!**
+
+When you get the correct answer, the answer box will turn green. Sometimes this doesn't work on Internet Explorer or Edge so be sure to use Chrome or Firefox.
 
 * How many questionnaire variables are in the dataset? 
 
 `r mcq(c(answer = "2", "4", "3"))`
 
-* What does the AHI measure? 
+* What does the AHI measure? (Hint, use a single word)
 
 `r fitb(c("Happiness", "happiness", ignore_case = TRUE))` 
 
-* What does the CES-D measure? 
+* What does the CES-D measure? (hint, use a single word)
 
 `r fitb(c("Depression", "depression", ignore_case = TRUE))`
 
