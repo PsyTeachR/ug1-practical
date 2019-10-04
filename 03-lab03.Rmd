@@ -347,7 +347,7 @@ library(tidyverse)
 
 dat <- read_csv('ahi-cesd.csv')
 pinfo <- read_csv('participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by= c("id", "intervention")
+all_dat <- inner_join(dat, pinfo, by= c("id", "intervention"))
 
 ```
 
@@ -358,7 +358,7 @@ library(tidyverse)
 
 dat <- read_csv('files/ahi-cesd.csv')
 pinfo <- read_csv('files/participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by='id', 'intervention')
+all_dat <- inner_join(dat, pinfo, by = c("id","intervention"))
 
 ```
 

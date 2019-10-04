@@ -241,7 +241,7 @@ Today in the lab we will be working with our data to generate a plot of two vari
 
 ### Activity 1: Set-up
 
-* Download <a href="stubs\stub-4.2.Rmd" download>`stub-4.2.Rmd`</a> in to your Lab 4 folder. **Make sure that you save the file THEN open it. If you just open the file without saving things will go wrong.**
+Open the `stub-4.2.Rmd` file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane). 
 * Open R Studio and ensure the environment is clear.  
 * Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.  
 * Look through your previous work to find the code that loads the `tidyverse`, reads in the data files and creates an object called `all_dat` that joins the two objects `dat` and `pinfo`.
@@ -281,7 +281,7 @@ age_65max <- filter(ahi_asc, age <= 65)
 
 ### Activity 5: Group and summarise
 
-First, calculate the overall median ahiTotal score for all participants (hint: use `summarise()`) and save it in an object called `median_score`.
+First, calculate the overall median `ahiTotal` score for all participants (hint: use `summarise()`) and save it in an object called `median_score`.
 Then, group the data stored in the variable ```age_65max``` by sex, and store it in ```data_sex```. 
 Then, use summarise to create a new variable ```sex_median```, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called ```median_score```.
 

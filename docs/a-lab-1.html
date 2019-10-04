@@ -228,12 +228,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="a-lab-4.html"><a href="a-lab-4.html#pre-class-activities-2"><i class="fa fa-check"></i><b>4.1</b> Pre-class activities</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-1-dplyr-recap"><i class="fa fa-check"></i><b>4.1.1</b> Activity 1: dplyr recap</a></li>
 <li class="chapter" data-level="4.1.2" data-path="a-lab-4.html"><a href="a-lab-4.html#data-visualisation"><i class="fa fa-check"></i><b>4.1.2</b> Data visualisation</a></li>
-<li class="chapter" data-level="4.1.3" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-2-set-up-1"><i class="fa fa-check"></i><b>4.1.3</b> Activity 2: Set-up</a></li>
-<li class="chapter" data-level="4.1.4" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-3-factors"><i class="fa fa-check"></i><b>4.1.4</b> Activity 3: Factors</a></li>
-<li class="chapter" data-level="4.1.5" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-4-bar-plot"><i class="fa fa-check"></i><b>4.1.5</b> Activity 4: Bar plot</a></li>
-<li class="chapter" data-level="4.1.6" data-path="a-lab-4.html"><a href="a-lab-4.html#layers"><i class="fa fa-check"></i><b>4.1.6</b> Layers</a></li>
-<li class="chapter" data-level="4.1.7" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-5-violin-boxplot"><i class="fa fa-check"></i><b>4.1.7</b> Activity 5: Violin-boxplot</a></li>
-<li class="chapter" data-level="4.1.8" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-6-layers-part-2"><i class="fa fa-check"></i><b>4.1.8</b> Activity 6: Layers part 2</a></li>
+<li class="chapter" data-level="4.1.3" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-3-factors"><i class="fa fa-check"></i><b>4.1.3</b> Activity 3: Factors</a></li>
+<li class="chapter" data-level="4.1.4" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-4-bar-plot"><i class="fa fa-check"></i><b>4.1.4</b> Activity 4: Bar plot</a></li>
+<li class="chapter" data-level="4.1.5" data-path="a-lab-4.html"><a href="a-lab-4.html#layers"><i class="fa fa-check"></i><b>4.1.5</b> Layers</a></li>
+<li class="chapter" data-level="4.1.6" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-5-violin-boxplot"><i class="fa fa-check"></i><b>4.1.6</b> Activity 5: Violin-boxplot</a></li>
+<li class="chapter" data-level="4.1.7" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-6-layers-part-2"><i class="fa fa-check"></i><b>4.1.7</b> Activity 6: Layers part 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="a-lab-4.html"><a href="a-lab-4.html#in-class-activities-3"><i class="fa fa-check"></i><b>4.2</b> In-class activities</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="a-lab-4.html"><a href="a-lab-4.html#getting-the-data-ready-to-work-with"><i class="fa fa-check"></i><b>4.2.1</b> Getting the data ready to work with</a></li>
@@ -490,7 +489,6 @@ To avoid accidentally overwriting a package with a later version, you should <st
 <p>There are thousands of different R packages with even more functions. Unfortunately, sometimes different packages have the same function names. For example, the packages <code>dplyr</code> and <code>MASS</code> both have a function named <code>select()</code>. If you load both of these packages, R will produce a warning telling you that there is a conflict.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(MASS)</code></pre>
-<pre><code>## Warning: package &#39;MASS&#39; was built under R version 3.6.1</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;MASS&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:dplyr&#39;:
@@ -526,7 +524,7 @@ Figure 1.4: Objects in the environment
 new_year <span class="op">-</span><span class="st"> </span>today
 <span class="kw">mean</span>(data)</code></pre>
 <pre><code>## [1] 43
-## Time difference of 96 days
+## Time difference of 89 days
 ## [1] 17.66644</code></pre>
 <p>Finally, you can store the result of these operations in a new object:</p>
 <pre class="sourceCode r"><code class="sourceCode r">decade &lt;-<span class="st"> </span>age <span class="op">+</span><span class="st"> </span><span class="dv">10</span></code></pre>
