@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 1A: Lab 4 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 1A: Lab 4 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="a-lab-3.html"/>
+<link rel="prev" href="a-lab-3.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,7 +228,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     target="blank"><img alt="Creative Commons License" 
     style="border-width:0" 
     src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
-<li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
+<li><a href="https://psyteachr.github.io/books" target="blank">PsyTeachR Books</a></li>
 
 </ul>
 
@@ -255,11 +255,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.1.1</span> Activity 1: dplyr recap</h3>
 <p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>arrange()</option> <option>select()</option> <option>filter()</option> <option>mutate()</option> <option>summarise()</option> <option>group_by()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>arrange()</option> <option>summarise()</option> <option>mutate()</option> <option>group_by()</option> <option>filter()</option> <option>select()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>mutate()</option> <option>arrange()</option> <option>summarise()</option> <option>group_by()</option> <option>select()</option> <option>filter()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>filter() and select()</option> <option>arrange() and mutate()</option> <option>group_by() and arrange()</option> <option>group_by() and summarise()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>group_by() and mutate()</option> <option>mutate() and filter()</option> <option>select() and summarise()</option> <option>arrange() and select()</option></select> functions.</p></li>
+<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>select()</option> <option>filter()</option> <option>group_by()</option> <option>arrange()</option> <option>mutate()</option> <option>summarise()</option></select> function.</p></li>
+<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>arrange()</option> <option>summarise()</option> <option>select()</option> <option>group_by()</option> <option>mutate()</option> <option>filter()</option></select> function.</p></li>
+<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>arrange()</option> <option>summarise()</option> <option>mutate()</option> <option>group_by()</option> <option>select()</option> <option>filter()</option></select> function.</p></li>
+<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>arrange() and mutate()</option> <option>group_by() and summarise()</option> <option>group_by() and arrange()</option> <option>filter() and select()</option></select> functions.</p></li>
+<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>select() and summarise()</option> <option>group_by() and mutate()</option> <option>mutate() and filter()</option> <option>arrange() and select()</option></select> functions.</p></li>
 </ul>
 </div>
 <div id="data-visualisation" class="section level3">
@@ -297,9 +297,10 @@ Figure 4.1: ggplot2 layers from Field et al. (2012)
 
 dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
 pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))
 summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, 
-                      ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) </code></pre></div>
+                      ahiTotal, cesdTotal, sex, age, 
+                      educ, income, occasion, elapsed.days) </code></pre></div>
 </div>
 <div id="activity-3-factors" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Activity 3: Factors</h3>
@@ -342,10 +343,10 @@ Figure 4.2: First ggplot layer sets the axes
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Basic barplot" width="100%" />
 <p class="caption">
-Figure 1.1: Basic barplot
+Figure 4.3: Basic barplot
 </p>
 </div>
 <ul>
@@ -353,10 +354,10 @@ Figure 1.1: Basic barplot
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot with colour" width="100%" />
 <p class="caption">
-Figure 4.3: Barplot with colour
+Figure 4.4: Barplot with colour
 </p>
 </div>
 <ul>
@@ -364,10 +365,10 @@ Figure 4.3: Barplot with colour
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot without legend" width="100%" />
 <p class="caption">
-Figure 4.4: Barplot without legend
+Figure 4.5: Barplot without legend
 </p>
 </div>
 <p>We might want to tidy up our plot to make it look a bit nicer. First we can edit the axis labels to be more informative. The most common functions you will use are:</p>
@@ -388,10 +389,10 @@ Figure 4.4: Barplot without legend
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with axis labels" width="100%" />
 <p class="caption">
-Figure 4.5: Barplot with axis labels
+Figure 4.6: Barplot with axis labels
 </p>
 </div>
 <p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we'll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
@@ -401,10 +402,10 @@ Figure 4.5: Barplot with axis labels
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with minimal theme" width="100%" />
 <p class="caption">
-Figure 4.6: Barplot with minimal theme
+Figure 4.7: Barplot with minimal theme
 </p>
 </div>
 <p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
@@ -415,10 +416,10 @@ Figure 4.6: Barplot with minimal theme
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
 <p class="caption">
-Figure 4.7: Barplot with colour-blind friendly colour scheme
+Figure 4.8: Barplot with colour-blind friendly colour scheme
 </p>
 </div>
 <p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
@@ -429,10 +430,10 @@ Figure 4.7: Barplot with colour-blind friendly colour scheme
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-10-1.png" alt="Barplot with adjusted alpha" width="100%" />
 <p class="caption">
-Figure 4.8: Barplot with adjusted alpha
+Figure 4.9: Barplot with adjusted alpha
 </p>
 </div>
 </div>
@@ -462,10 +463,10 @@ In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use o
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-12-1.png" alt="Violin-boxplot" width="100%" />
 <p class="caption">
-Figure 4.9: Violin-boxplot
+Figure 4.10: Violin-boxplot
 </p>
 </div>
 </div>
@@ -532,7 +533,7 @@ Figure 4.9: Violin-boxplot
 <div class="figure" style="text-align: center"><span id="fig:createplot"></span>
 <img src="04-lab04_files/figure-html/createplot-1.png" alt="Scatterplot of happiness and depression scores" width="100%" />
 <p class="caption">
-Figure 4.10: Scatterplot of happiness and depression scores
+Figure 4.11: Scatterplot of happiness and depression scores
 </p>
 </div>
 <p><br></p>
