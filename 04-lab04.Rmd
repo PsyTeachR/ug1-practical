@@ -53,9 +53,10 @@ library(tidyverse)
 
 dat <- read_csv('ahi-cesd.csv')
 pinfo <- read_csv('participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by= c("id", "intervention")
+all_dat <- inner_join(dat, pinfo, by= c("id", "intervention"))
 summarydata <- select(.data = all_dat, 
-                      ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) 
+                      ahiTotal, cesdTotal, sex, age, 
+                      educ, income, occasion, elapsed.days) 
 
 ```
 
