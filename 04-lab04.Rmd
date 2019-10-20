@@ -21,7 +21,7 @@ In [Lab 3](lab-3.html) we were introduced to the tidyverse package, `dplyr`, and
 As Grolemund and Wickham tell us:
 
 > Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.
-```
+
 (http://r4ds.had.co.nz/introduction.html)
 
 Being able to visualise our variables, and relationships between our variables, is a very useful skill. Before we do any statistical analyses or present any summary statistics, we should visualising our data as it is:
@@ -43,7 +43,7 @@ knitr::include_graphics("images/layers.png")
 We're going to use the data from the Labs to explain how `ggplot2` works so let's do the set-up as usual. 
 
 * Open R Studio and ensure the environment is clear.  
-* Download the <a href="fileslab4.zip" download>`lab 4 files`</a>, extract the files and then move them in to your Lab 3 folder.
+* Download the <a href="files/lab4.zip" download>`lab 4 files`</a>, extract the files and then move them in to your Lab 3 folder.
 * Open the `stub-4.1.Rmd` file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).  
 * Type and run the below code to load the `tidyverse` package and to load in the data files in to the Actvity 1 code chunk. 
 
@@ -53,9 +53,10 @@ library(tidyverse)
 
 dat <- read_csv('ahi-cesd.csv')
 pinfo <- read_csv('participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by= c("id", "intervention")
+all_dat <- inner_join(dat, pinfo, by= c("id", "intervention"))
 summarydata <- select(.data = all_dat, 
-                      ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) 
+                      ahiTotal, cesdTotal, sex, age, 
+                      educ, income, occasion, elapsed.days) 
 
 ```
 
@@ -183,7 +184,7 @@ ggplot(summarydata, aes(x = sex, fill = sex)) +
 
 ### Layers
 
-The key thing to note in the above examples is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer. Try removing each of the above layers in turn and see how the output changes.
+The key thing to note in the above examples is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer. Try running the above code but removing each layer and seeing how it affects the output.
 
 ```{block, type="warning"}
 
