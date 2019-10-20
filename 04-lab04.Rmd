@@ -183,9 +183,7 @@ ggplot(summarydata, aes(x = sex, fill = sex)) +
 
 ### Layers
 
-The key thing to note in the above examples is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer
-
-Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset. 
+The key thing to note in the above examples is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer. Try removing each of the above layers in turn and see how the output changes.
 
 ```{block, type="warning"}
 
