@@ -182,11 +182,6 @@ ggplot(summarydata, aes(x = sex, fill = sex)) +
   scale_fill_viridis_d(option = "E")
 ```
 
-### Layers
-
-The key thing to note in the above examples is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer
-
-Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset. 
 
 ```{block, type="warning"}
 
@@ -216,7 +211,7 @@ ggplot(summarydata, aes(x = income, y = ahiTotal, fill = income)) +
 
 ### Activity 6: Layers part 2
 
-The final thing to note about the use of layers in `ggplot2` is that although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.
+The key thing to note about `ggplot` is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.
 
 ```{r, eval = FALSE}
 ggplot(summarydata, aes(x = income, y = ahiTotal)) +

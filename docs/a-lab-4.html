@@ -48,45 +48,71 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
-<link rel="stylesheet" href="include/style.css" type="text/css" />
+<link rel="stylesheet" href="include\psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include\style.css" type="text/css" />
 </head>
 
 <body>
@@ -205,9 +231,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.1.3" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-2-set-up-1"><i class="fa fa-check"></i><b>4.1.3</b> Activity 2: Set-up</a></li>
 <li class="chapter" data-level="4.1.4" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-3-factors"><i class="fa fa-check"></i><b>4.1.4</b> Activity 3: Factors</a></li>
 <li class="chapter" data-level="4.1.5" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-4-bar-plot"><i class="fa fa-check"></i><b>4.1.5</b> Activity 4: Bar plot</a></li>
-<li class="chapter" data-level="4.1.6" data-path="a-lab-4.html"><a href="a-lab-4.html#layers"><i class="fa fa-check"></i><b>4.1.6</b> Layers</a></li>
-<li class="chapter" data-level="4.1.7" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-5-violin-boxplot"><i class="fa fa-check"></i><b>4.1.7</b> Activity 5: Violin-boxplot</a></li>
-<li class="chapter" data-level="4.1.8" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-6-layers-part-2"><i class="fa fa-check"></i><b>4.1.8</b> Activity 6: Layers part 2</a></li>
+<li class="chapter" data-level="4.1.6" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-5-violin-boxplot"><i class="fa fa-check"></i><b>4.1.6</b> Activity 5: Violin-boxplot</a></li>
+<li class="chapter" data-level="4.1.7" data-path="a-lab-4.html"><a href="a-lab-4.html#activity-6-layers-part-2"><i class="fa fa-check"></i><b>4.1.7</b> Activity 6: Layers part 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="a-lab-4.html"><a href="a-lab-4.html#in-class-activities-3"><i class="fa fa-check"></i><b>4.2</b> In-class activities</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="a-lab-4.html"><a href="a-lab-4.html#getting-the-data-ready-to-work-with"><i class="fa fa-check"></i><b>4.2.1</b> Getting the data ready to work with</a></li>
@@ -255,11 +280,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">4.1.1</span> Activity 1: dplyr recap</h3>
 <p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>select()</option> <option>filter()</option> <option>group_by()</option> <option>arrange()</option> <option>mutate()</option> <option>summarise()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>arrange()</option> <option>summarise()</option> <option>select()</option> <option>group_by()</option> <option>mutate()</option> <option>filter()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>arrange()</option> <option>summarise()</option> <option>mutate()</option> <option>group_by()</option> <option>select()</option> <option>filter()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>arrange() and mutate()</option> <option>group_by() and summarise()</option> <option>group_by() and arrange()</option> <option>filter() and select()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>select() and summarise()</option> <option>group_by() and mutate()</option> <option>mutate() and filter()</option> <option>arrange() and select()</option></select> functions.</p></li>
+<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>group_by()</option> <option>filter()</option> <option>select()</option> <option>summarise()</option> <option>arrange()</option> <option>mutate()</option></select> function.</p></li>
+<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>group_by()</option> <option>mutate()</option> <option>summarise()</option> <option>arrange()</option> <option>filter()</option> <option>select()</option></select> function.</p></li>
+<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>summarise()</option> <option>mutate()</option> <option>group_by()</option> <option>select()</option> <option>filter()</option> <option>arrange()</option></select> function.</p></li>
+<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>filter() and select()</option> <option>group_by() and arrange()</option> <option>group_by() and summarise()</option> <option>arrange() and mutate()</option></select> functions.</p></li>
+<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["arrange() and select()","mutate() and filter()"]'> <option></option> <option>arrange() and select()</option> <option>mutate() and filter()</option> <option>select() and summarise()</option> <option>group_by() and mutate()</option></select> functions.</p></li>
 </ul>
 </div>
 <div id="data-visualisation" class="section level3">
@@ -274,17 +299,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>A quick and easy way to check our data make sense, and to identify any unusual trends.</p></li>
 <li><p>A way to honestly present the features of our data to anyone who reads our research.</p></li>
 </ol>
-<p><code>ggplot()</code> builds plots by combining layers (see Figure <a href="a-lab-4.html#fig:img-layers">4.1</a>)). If you're used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures (<a href="https://www.data-to-viz.com/">this website</a> gives you a good sense of what's possible).</p>
+<p><code>ggplot()</code> builds plots by combining layers (see Figure <a href="a-lab-4.html#fig:img-layers">4.1</a>)). If you’re used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures (<a href="https://www.data-to-viz.com/">this website</a> gives you a good sense of what’s possible).</p>
 <div class="figure" style="text-align: center"><span id="fig:img-layers"></span>
 <img src="images/layers.png" alt="ggplot2 layers from Field et al. (2012)" width="100%" />
 <p class="caption">
-Figure 4.1: ggplot2 layers from Field et al. (2012)
+Figure 4.1: ggplot2 layers from Field et al. (2012)
 </p>
 </div>
 </div>
 <div id="activity-2-set-up-1" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Activity 2: Set-up</h3>
-<p>We're going to use the data from the Labs to explain how <code>ggplot2</code> works so let's do the set-up as usual.</p>
+<p>We’re going to use the data from the Labs to explain how <code>ggplot2</code> works so let’s do the set-up as usual.</p>
 <ul>
 <li>Open R Studio and ensure the environment is clear.<br />
 </li>
@@ -293,19 +318,19 @@ Figure 4.1: ggplot2 layers from Field et al. (2012)
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Actvity 1 code chunk.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) 
 
 dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
 pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
 all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))
 summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, 
                       ahiTotal, cesdTotal, sex, age, 
-                      educ, income, occasion, elapsed.days) </code></pre></div>
+                      educ, income, occasion, elapsed.days) </code></pre>
 </div>
 <div id="activity-3-factors" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Activity 3: Factors</h3>
 <p>Before we go any further we need to perform an additional step of data processing that we have glossed over to this point. First, run the below code to look at the structure of the dataset:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(summarydata)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(summarydata)</code></pre>
 <pre><code>## Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 992 obs. of  8 variables:
 ##  $ ahiTotal    : num  32 34 34 35 36 37 38 38 38 38 ...
 ##  $ cesdTotal   : num  50 49 47 41 36 35 50 55 47 39 ...
@@ -315,13 +340,13 @@ summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span c
 ##  $ income      : num  3 2 2 1 2 1 1 2 1 1 ...
 ##  $ occasion    : num  5 2 3 0 5 0 2 2 2 4 ...
 ##  $ elapsed.days: num  182 14.2 33 0 202.1 ...</code></pre>
-<p>R assumes that all of the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren't actually numbers, they're categories, or <strong>factors</strong>.</p>
+<p>R assumes that all of the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
 <p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span>
+<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),
          <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),
-         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</code></pre></div>
-<p><strong>Remember this. It's a really important step and if your graphs are looking weird this might be the reason.</strong></p>
+         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</code></pre>
+<p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
 </div>
 <div id="activity-4-bar-plot" class="section level3">
 <h3><span class="header-section-number">4.1.5</span> Activity 4: Bar plot</h3>
@@ -329,9 +354,9 @@ summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span c
 <ul>
 <li>The first line (or layer) sets up the base of the graph: the data to use and the aesthetics (what will go on the x and y axis, how the plot will be grouped).<br />
 </li>
-<li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don't need to specify this.</li>
+<li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:layer1"></span>
 <img src="04-lab04_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
 <p class="caption">
@@ -341,34 +366,34 @@ Figure 4.2: First ggplot layer sets the axes
 <ul>
 <li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Basic barplot" width="100%" />
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
 <p class="caption">
-Figure 4.3: Basic barplot
+Figure 1.1: Basic barplot
 </p>
 </div>
 <ul>
 <li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot with colour" width="100%" />
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
 <p class="caption">
-Figure 4.4: Barplot with colour
+Figure 4.3: Barplot with colour
 </p>
 </div>
 <ul>
-<li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn't tell us anything that the axis labels don't already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
+<li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot without legend" width="100%" />
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
 <p class="caption">
-Figure 4.5: Barplot without legend
+Figure 4.4: Barplot without legend
 </p>
 </div>
 <p>We might want to tidy up our plot to make it look a bit nicer. First we can edit the axis labels to be more informative. The most common functions you will use are:</p>
@@ -383,106 +408,101 @@ Figure 4.5: Barplot without legend
 <li><code>name</code> which controls the name of each axis</li>
 <li><code>labels</code> which controls the names of the break points on the axis</li>
 </ul>
-<p>There are lots more ways you can customise your axes but we'll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with axis labels" width="100%" />
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
 <p class="caption">
-Figure 4.6: Barplot with axis labels
+Figure 4.5: Barplot with axis labels
 </p>
 </div>
-<p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we'll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with minimal theme" width="100%" />
+<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
 <p class="caption">
-Figure 4.7: Barplot with minimal theme
+Figure 4.6: Barplot with minimal theme
 </p>
 </div>
 <p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
+<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
 <p class="caption">
-Figure 4.8: Barplot with colour-blind friendly colour scheme
+Figure 4.7: Barplot with colour-blind friendly colour scheme
 </p>
 </div>
 <p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-10-1.png" alt="Barplot with adjusted alpha" width="100%" />
+<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
 <p class="caption">
-Figure 4.9: Barplot with adjusted alpha
+Figure 4.8: Barplot with adjusted alpha
 </p>
 </div>
-</div>
-<div id="layers" class="section level3">
-<h3><span class="header-section-number">4.1.6</span> Layers</h3>
-<p>The key thing to note in the above examples is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer</p>
-<p>Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset.</p>
 <div class="warning">
 <p>
-In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn't included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.
+In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn’t included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.
 </p>
 </div>
 </div>
 <div id="activity-5-violin-boxplot" class="section level3">
-<h3><span class="header-section-number">4.1.7</span> Activity 5: Violin-boxplot</h3>
+<h3><span class="header-section-number">4.1.6</span> Activity 5: Violin-boxplot</h3>
 <p>As our final activity we will also explain the code used to create the violin-boxplot from Lab 2, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:</p>
 <ol style="list-style-type: decimal">
 <li>We have added a <code>y</code> argument to the first layer because we wanted to represent two variables, not just a count.</li>
 <li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
 <li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,
                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-12-1.png" alt="Violin-boxplot" width="100%" />
+<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="04-lab04_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
 <p class="caption">
-Figure 4.10: Violin-boxplot
+Figure 4.9: Violin-boxplot
 </p>
 </div>
 </div>
 <div id="activity-6-layers-part-2" class="section level3">
-<h3><span class="header-section-number">4.1.8</span> Activity 6: Layers part 2</h3>
-<p>The final thing to note about the use of layers in <code>ggplot2</code> is that although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
+<h3><span class="header-section-number">4.1.7</span> Activity 6: Layers part 2</h3>
+<p>The key thing to note about <code>ggplot</code> is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>()
 
 <span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_violin</span>()</code></pre></div>
+<span class="st">  </span><span class="kw">geom_violin</span>()</code></pre>
 <div id="finished-4" class="section level4">
-<h4><span class="header-section-number">4.1.8.1</span> Finished!</h4>
-<p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you've been used to making graphs a different way. But once it clicks, you'll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
+<h4><span class="header-section-number">4.1.7.1</span> Finished!</h4>
+<p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
 </div>
 </div>
 </div>
@@ -490,11 +510,12 @@ Figure 4.10: Violin-boxplot
 <h2><span class="header-section-number">4.2</span> In-class activities</h2>
 <div id="getting-the-data-ready-to-work-with" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Getting the data ready to work with</h3>
-<p>Today in the lab we will be working with our data to generate a plot of two variables from the Woodworth et al. dataset. Before we get to generate our plot, we still need to work through the steps to get the data in the shape we need it to be in for our particular question. In particular we need to generate the object <code>summarydata</code> that just has the variable we need.You have done these steps before so go back to the relevant Lab and use that to guide you through.</p>
+<p>Today in the lab we will be working with our data to generate a plot of two variables from the Woodworth et al. dataset. Before we get to generate our plot, we still need to work through the steps to get the data in the shape we need it to be in for our particular question. In particular we need to generate the object <code>summarydata</code> that just has the variable we need.You have done these steps before so go back to the relevant Lab and use that to guide you through.</p>
 </div>
 <div id="activity-1-set-up-2" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Activity 1: Set-up</h3>
-<p>Open the <code>stub-4.2.Rmd</code> file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane). * Open R Studio and ensure the environment is clear.<br />
+<p>Open the <code>stub-4.2.Rmd</code> file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).
+* Open R Studio and ensure the environment is clear.<br />
 * Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.<br />
 * Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates an object called <code>all_dat</code> that joins the two objects <code>dat</code> and <code>pinfo</code>.</p>
 </div>
@@ -512,8 +533,10 @@ Figure 4.10: Violin-boxplot
 </div>
 <div id="activity-5-group-and-summarise" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Activity 5: Group and summarise</h3>
-<p>First, calculate the overall median <code>ahiTotal</code> score for all participants (hint: use <code>summarise()</code>) and save it in an object called <code>median_score</code>. Then, group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>. Then, use summarise to create a new variable <code>sex_median</code>, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called <code>median_score</code>.</p>
-<p><em>(Hint: if you're stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
+<p>First, calculate the overall median <code>ahiTotal</code> score for all participants (hint: use <code>summarise()</code>) and save it in an object called <code>median_score</code>.
+Then, group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.
+Then, use summarise to create a new variable <code>sex_median</code>, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called <code>median_score</code>.</p>
+<p><em>(Hint: if you’re stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
 </div>
 <div id="activity-6-mutate" class="section level3">
 <h3><span class="header-section-number">4.2.7</span> Activity 6: Mutate</h3>
@@ -527,13 +550,13 @@ Figure 4.10: Violin-boxplot
 <li>Use the <code>age_65max</code> data.</li>
 <li>Put <code>ahiTotal</code> on the x-axis and <code>cesdTotal</code> on the y-axis.</li>
 <li>Rather than using <code>geom_bar()</code>, <code>geom_violin()</code>, or <code>geom_boxplot()</code>, for a scatteplot you need to use <code>geom_point()</code>.</li>
-<li>Rather than using <code>scale_fill_viridis_d()</code> to change the colour, add the argument <code>colour = &quot;red&quot;</code> to <code>geom_point</code> (except replace &quot;red&quot; with whatever colour you'd prefer).</li>
+<li>Rather than using <code>scale_fill_viridis_d()</code> to change the colour, add the argument <code>colour = "red"</code> to <code>geom_point</code> (except replace “red” with whatever colour you’d prefer).</li>
 <li>Remember to edit the axis names.</li>
 </ul>
 <div class="figure" style="text-align: center"><span id="fig:createplot"></span>
 <img src="04-lab04_files/figure-html/createplot-1.png" alt="Scatterplot of happiness and depression scores" width="100%" />
 <p class="caption">
-Figure 4.11: Scatterplot of happiness and depression scores
+Figure 4.10: Scatterplot of happiness and depression scores
 </p>
 </div>
 <p><br></p>
@@ -551,10 +574,10 @@ Figure 4.11: Scatterplot of happiness and depression scores
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
 dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)
 pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</code></pre></div>
+all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</code></pre>
 </div>
 </div>
 <div id="activity-2" class="section level4">
@@ -563,7 +586,7 @@ all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pi
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre>
 </div>
 </div>
 <div id="activity-3" class="section level4">
@@ -572,7 +595,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</code></pre>
 </div>
 </div>
 <div id="activity-4" class="section level4">
@@ -581,7 +604,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
 </div>
 </div>
 <div id="activity-5" class="section level4">
@@ -590,9 +613,9 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))
+<pre class="sourceCode r"><code class="sourceCode r">median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))
 data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)
-data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</code></pre></div>
+data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</code></pre>
 </div>
 </div>
 <div id="activity-6" class="section level4">
@@ -601,7 +624,7 @@ data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</code></pre>
 </div>
 </div>
 <div id="activity-7" class="section level4">
@@ -610,11 +633,11 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre></div>
+<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
 </div>
 </div>
 </div>
