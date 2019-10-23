@@ -762,7 +762,7 @@ Solution
 </div>
 <div id="activity-4-filter" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Activity 4: Filter</h3>
-<p>Filter the data <code>ahi_desc</code> by taking out those who are over 65 years of age.</p>
+<p>Filter the data <code>ahi_asc</code> by taking out those who are over 65 years of age.</p>
 <pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
 <hr />
 <ul>
@@ -781,7 +781,7 @@ Solution
 <hr />
 <ul>
 <li><p>What is the median score? <input class='solveme nospaces' size='2' data-answer='["74"]'/></p></li>
-<li><p>Change the above code to give you the <strong>mean score</strong>. What is the mean score to 2 decimal places? <input class='solveme nospaces' size='72.5' data-answer='["72.50"]'/></p></li>
+<li><p>Change the above code to give you the <strong>mean score</strong>. What is the mean score to 2 decimal places? <input class='solveme nospaces' size='5' data-answer='["72.48"]'/></p></li>
 </ul>
 <div class="solution">
 <button>
@@ -793,9 +793,13 @@ Solution
 </div>
 <div id="activity-6-group_by" class="section level3">
 <h3><span class="header-section-number">3.2.6</span> Activity 6: Group_by</h3>
-<p>Group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code> then use mutate to create a new column called Happiness which categorises participants based on whether they score above the median ahiTotal score for females.</p>
-<pre class="sourceCode r"><code class="sourceCode r">data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)
-happy_female &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness_Female =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">74</span>))</code></pre>
+<p>Use mutate to create a new column called <code>Happiness_Female</code> in <code>age_65max</code> which categorises participants based on whether they score above the median <code>ahiTotal</code> score for females.</p>
+<p>Then, group the data stored in <code>age_65max</code> by <code>Happiness_Female</code>, and store it in an object named <code>happy_female</code>.</p>
+<p>Finally, use summarise to calculate the median <code>cesdTotal</code> score for participants who scored above and below the median <code>ahiTotal</code> score for females and save it in a new object named <code>data_median_group</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">mutate</span>(age_65max, <span class="dt">Happiness_Female =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">74</span>))
+happy_female &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, Happiness_Female)
+
+data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span>(happy_female, <span class="dt">median_score =</span> <span class="kw">median</span>(cesdTotal))</code></pre>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>
@@ -803,7 +807,7 @@ happy_female &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_s
 </ul>
 <p><select class='solveme' data-answer='["groups data frames based on a specific column so that all later operations are carried out on a group basis"]'> <option></option> <option>provides summary statistics of an existing dataframe</option> <option>organises information in ascending or descending order</option> <option>transforms existing columns</option> <option>groups data frames based on a specific column so that all later operations are carried out on a group basis</option></select></p>
 <ul>
-<li>How would you change the code to group by education rathee than sex?</li>
+<li>How would you change the code to group by education rather than <code>Happiness_Female</code>?</li>
 </ul>
 <div class="solution">
 <button>
