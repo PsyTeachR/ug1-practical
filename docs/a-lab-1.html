@@ -489,6 +489,7 @@ To avoid accidentally overwriting a package with a later version, you should <st
 <p>There are thousands of different R packages with even more functions. Unfortunately, sometimes different packages have the same function names. For example, the packages <code>dplyr</code> and <code>MASS</code> both have a function named <code>select()</code>. If you load both of these packages, R will produce a warning telling you that there is a conflict.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(MASS)</code></pre>
+<pre><code>## Warning: package &#39;MASS&#39; was built under R version 3.6.1</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;MASS&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:dplyr&#39;:

@@ -454,7 +454,7 @@ Finally, use summarise to calculate the median `cesdTotal` score for participant
 age_65max <- mutate(age_65max, Happiness_Category = (ahiTotal > 74))
 happy_dat <- group_by(age_65max, Happiness_Category)
 
-data_median_group <- summarise(Happiness_Category, median_score = median(cesdTotal))
+data_median_group <- summarise(happy_dat, median_score = median(cesdTotal))
 
 ```
 
@@ -466,7 +466,7 @@ data_median_group <- summarise(Happiness_Category, median_score = median(cesdTot
 
 `r mcq(c("provides summary statistics of an existing dataframe","organises information in ascending or descending order", "transforms existing columns", answer = "groups data frames based on a specific column so that all later operations are carried out on a group basis"))`
 
-* How would you change the code to group by education rather than `Happiness_Female`?
+* How would you change the code to group by education rather than `Happiness_Category`?
 
 `r hide("Solution")`
 ```{r, eval = FALSE}
