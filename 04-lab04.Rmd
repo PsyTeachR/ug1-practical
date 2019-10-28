@@ -43,7 +43,7 @@ knitr::include_graphics("images/layers.png")
 We're going to use the data from the Labs to explain how `ggplot2` works so let's do the set-up as usual. 
 
 * Open R Studio and ensure the environment is clear.  
-* Download the <a href="files/lab4.zip" download>`lab 4 files`</a>, extract the files and then move them in to your Lab 3 folder.
+* Download the <a href="files/lab4.zip" download>`lab 4 files`</a>, extract the files and then move them in to your Lab 4 folder.
 * Open the `stub-4.1.Rmd` file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).  
 * Type and run the below code to load the `tidyverse` package and to load in the data files in to the Actvity 1 code chunk. 
 
