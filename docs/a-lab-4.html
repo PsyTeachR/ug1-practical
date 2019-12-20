@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 1A: Lab 4 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 1A: Lab 4 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="a-lab-3.html">
-
+<link rel="prev" href="a-lab-3.html"/>
+<link rel="next" href="b-lab-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -38,6 +38,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -48,26 +51,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -76,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -247,6 +251,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="a-lab-4.html"><a href="a-lab-4.html#homework-2"><i class="fa fa-check"></i><b>4.3</b> Homework</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="b-lab-1.html"><a href="b-lab-1.html"><i class="fa fa-check"></i><b>5</b> 1B: Lab 1</a><ul>
+<li class="chapter" data-level="5.1" data-path="b-lab-1.html"><a href="b-lab-1.html#pre-class-activities-3"><i class="fa fa-check"></i><b>5.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="b-lab-1.html"><a href="b-lab-1.html#welcome-back"><i class="fa fa-check"></i><b>5.1.1</b> Welcome back!</a></li>
+<li class="chapter" data-level="5.1.2" data-path="b-lab-1.html"><a href="b-lab-1.html#autism-quotient-data"><i class="fa fa-check"></i><b>5.1.2</b> Autism-quotient data</a></li>
+<li class="chapter" data-level="5.1.3" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-1-download-the-data"><i class="fa fa-check"></i><b>5.1.3</b> Activity 1: Download the data</a></li>
+<li class="chapter" data-level="5.1.4" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-2-open-a-new-markdown-document"><i class="fa fa-check"></i><b>5.1.4</b> Activity 2: Open a new Markdown document</a></li>
+<li class="chapter" data-level="5.1.5" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-3-create-a-new-code-chunk"><i class="fa fa-check"></i><b>5.1.5</b> Activity 3: Create a new code chunk</a></li>
+<li class="chapter" data-level="5.1.6" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-4-load-in-the-data"><i class="fa fa-check"></i><b>5.1.6</b> Activity 4: Load in the data</a></li>
+<li class="chapter" data-level="5.1.7" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-5-look-at-the-data"><i class="fa fa-check"></i><b>5.1.7</b> Activity 5: Look at the data</a></li>
+<li class="chapter" data-level="5.1.8" data-path="b-lab-1.html"><a href="b-lab-1.html#thinking-through-the-problem"><i class="fa fa-check"></i><b>5.1.8</b> Thinking through the problem</a></li>
+<li class="chapter" data-level="5.1.9" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-5-recap"><i class="fa fa-check"></i><b>5.1.9</b> Activity 5: Recap</a></li>
+<li class="chapter" data-level="5.1.10" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-6-reading"><i class="fa fa-check"></i><b>5.1.10</b> Activity 6: Reading</a></li>
+<li class="chapter" data-level="5.1.11" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-solutions-1"><i class="fa fa-check"></i><b>5.1.11</b> Activity solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="b-lab-1.html"><a href="b-lab-1.html#in-class-activities-4"><i class="fa fa-check"></i><b>5.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-1-load-in-the-data"><i class="fa fa-check"></i><b>5.2.1</b> Activity 1: Load in the data</a></li>
+<li class="chapter" data-level="5.2.2" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-2-pivot_longer"><i class="fa fa-check"></i><b>5.2.2</b> Activity 2: <code>pivot_longer()</code></a></li>
+<li class="chapter" data-level="5.2.3" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-3-filter"><i class="fa fa-check"></i><b>5.2.3</b> Activity 3: <code>filter()</code></a></li>
+<li class="chapter" data-level="5.2.4" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-4-inner_join"><i class="fa fa-check"></i><b>5.2.4</b> Activity 4: <code>inner_join()</code></a></li>
+<li class="chapter" data-level="5.2.5" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-5-another-inner_join"><i class="fa fa-check"></i><b>5.2.5</b> Activity 5: Another <code>inner_join()</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-6-calculating-the-aq-score"><i class="fa fa-check"></i><b>5.2.6</b> Activity 6: Calculating the AQ score</a></li>
+<li class="chapter" data-level="5.2.7" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-7-calculating-all-scores"><i class="fa fa-check"></i><b>5.2.7</b> Activity 7: Calculating all scores</a></li>
+<li class="chapter" data-level="5.2.8" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-8-visualisation"><i class="fa fa-check"></i><b>5.2.8</b> Activity 8: Visualisation</a></li>
+<li class="chapter" data-level="5.2.9" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-solutions-2"><i class="fa fa-check"></i><b>5.2.9</b> Activity solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="b-lab-1.html"><a href="b-lab-1.html#homework-3"><i class="fa fa-check"></i><b>5.3</b> Homework</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
@@ -280,11 +311,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.1.1</span> Activity 1: dplyr recap</h3>
 <p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>filter()</option> <option>mutate()</option> <option>arrange()</option> <option>group_by()</option> <option>summarise()</option> <option>select()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>group_by()</option> <option>mutate()</option> <option>select()</option> <option>arrange()</option> <option>summarise()</option> <option>filter()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>summarise()</option> <option>group_by()</option> <option>arrange()</option> <option>filter()</option> <option>select()</option> <option>mutate()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and arrange()</option> <option>filter() and select()</option> <option>group_by() and summarise()</option> <option>arrange() and mutate()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>group_by() and mutate()</option> <option>mutate() and filter()</option> <option>select() and summarise()</option> <option>arrange() and select()</option></select> functions.</p></li>
+<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>mutate()</option> <option>filter()</option> <option>arrange()</option> <option>summarise()</option> <option>select()</option> <option>group_by()</option></select> function.</p></li>
+<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>mutate()</option> <option>summarise()</option> <option>select()</option> <option>filter()</option> <option>group_by()</option> <option>arrange()</option></select> function.</p></li>
+<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>group_by()</option> <option>filter()</option> <option>select()</option> <option>arrange()</option> <option>summarise()</option> <option>mutate()</option></select> function.</p></li>
+<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and summarise()</option> <option>filter() and select()</option> <option>arrange() and mutate()</option> <option>group_by() and arrange()</option></select> functions.</p></li>
+<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>select() and summarise()</option> <option>mutate() and filter()</option> <option>group_by() and mutate()</option> <option>arrange() and select()</option></select> functions.</p></li>
 </ul>
 </div>
 <div id="data-visualisation" class="section level3">
@@ -318,19 +349,19 @@ Figure 4.1: ggplot2 layers from Field et al. (2012)
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Actvity 1 code chunk.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) 
-
-dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
-pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))
-summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, 
-                      ahiTotal, cesdTotal, sex, age, 
-                      educ, income, occasion, elapsed.days) </code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="a-lab-4.html#cb79-1"></a><span class="kw">library</span>(tidyverse) </span>
+<span id="cb79-2"><a href="a-lab-4.html#cb79-2"></a></span>
+<span id="cb79-3"><a href="a-lab-4.html#cb79-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb79-4"><a href="a-lab-4.html#cb79-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb79-5"><a href="a-lab-4.html#cb79-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span>
+<span id="cb79-6"><a href="a-lab-4.html#cb79-6"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, </span>
+<span id="cb79-7"><a href="a-lab-4.html#cb79-7"></a>                      ahiTotal, cesdTotal, sex, age, </span>
+<span id="cb79-8"><a href="a-lab-4.html#cb79-8"></a>                      educ, income, occasion, elapsed.days) </span></code></pre></div>
 </div>
 <div id="activity-3-factors" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> Activity 3: Factors</h3>
 <p>Before we go any further we need to perform an additional step of data processing that we have glossed over to this point. First, run the below code to look at the structure of the dataset:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(summarydata)</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="a-lab-4.html#cb80-1"></a><span class="kw">str</span>(summarydata)</span></code></pre></div>
 <pre><code>## Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 992 obs. of  8 variables:
 ##  $ ahiTotal    : num  32 34 34 35 36 37 38 38 38 38 ...
 ##  $ cesdTotal   : num  50 49 47 41 36 35 50 55 47 39 ...
@@ -342,10 +373,10 @@ summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span c
 ##  $ elapsed.days: num  182 14.2 33 0 202.1 ...</code></pre>
 <p>R assumes that all of the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
 <p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
-<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),
-         <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),
-         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="a-lab-4.html#cb82-1"></a>summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span></span>
+<span id="cb82-2"><a href="a-lab-4.html#cb82-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),</span>
+<span id="cb82-3"><a href="a-lab-4.html#cb82-3"></a>         <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),</span>
+<span id="cb82-4"><a href="a-lab-4.html#cb82-4"></a>         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</span></code></pre></div>
 <p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
 </div>
 <div id="activity-4-bar-plot" class="section level3">
@@ -356,7 +387,7 @@ summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span c
 </li>
 <li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="a-lab-4.html#cb83-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:layer1"></span>
 <img src="04-lab04_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
 <p class="caption">
@@ -366,8 +397,8 @@ Figure 4.2: First ggplot layer sets the axes
 <ul>
 <li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="a-lab-4.html#cb84-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span></span>
+<span id="cb84-2"><a href="a-lab-4.html#cb84-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
 <p class="caption">
@@ -377,8 +408,8 @@ Figure 1.1: Basic barplot
 <ul>
 <li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="a-lab-4.html#cb85-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb85-2"><a href="a-lab-4.html#cb85-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
 <p class="caption">
@@ -388,8 +419,8 @@ Figure 4.3: Barplot with colour
 <ul>
 <li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="a-lab-4.html#cb86-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb86-2"><a href="a-lab-4.html#cb86-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
 <p class="caption">
@@ -409,11 +440,11 @@ Figure 4.4: Barplot without legend
 <li><code>labels</code> which controls the names of the break points on the axis</li>
 </ul>
 <p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
-                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="a-lab-4.html#cb87-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb87-2"><a href="a-lab-4.html#cb87-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb87-3"><a href="a-lab-4.html#cb87-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb87-4"><a href="a-lab-4.html#cb87-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
+<span id="cb87-5"><a href="a-lab-4.html#cb87-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
 <p class="caption">
@@ -421,12 +452,12 @@ Figure 4.5: Barplot with axis labels
 </p>
 </div>
 <p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
-                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="a-lab-4.html#cb88-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb88-2"><a href="a-lab-4.html#cb88-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb88-3"><a href="a-lab-4.html#cb88-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb88-4"><a href="a-lab-4.html#cb88-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
+<span id="cb88-5"><a href="a-lab-4.html#cb88-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
+<span id="cb88-6"><a href="a-lab-4.html#cb88-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
 <p class="caption">
@@ -434,13 +465,13 @@ Figure 4.6: Barplot with minimal theme
 </p>
 </div>
 <p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
-                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="a-lab-4.html#cb89-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb89-2"><a href="a-lab-4.html#cb89-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb89-3"><a href="a-lab-4.html#cb89-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb89-4"><a href="a-lab-4.html#cb89-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
+<span id="cb89-5"><a href="a-lab-4.html#cb89-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
+<span id="cb89-6"><a href="a-lab-4.html#cb89-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb89-7"><a href="a-lab-4.html#cb89-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
 <p class="caption">
@@ -448,13 +479,13 @@ Figure 4.7: Barplot with colour-blind friendly colour scheme
 </p>
 </div>
 <p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, 
-                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="a-lab-4.html#cb90-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb90-2"><a href="a-lab-4.html#cb90-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></span>
+<span id="cb90-3"><a href="a-lab-4.html#cb90-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb90-4"><a href="a-lab-4.html#cb90-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
+<span id="cb90-5"><a href="a-lab-4.html#cb90-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
+<span id="cb90-6"><a href="a-lab-4.html#cb90-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb90-7"><a href="a-lab-4.html#cb90-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
 <p class="caption">
@@ -475,14 +506,14 @@ In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use o
 <li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
 <li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
 </ol>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,
-                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="a-lab-4.html#cb91-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span></span>
+<span id="cb91-2"><a href="a-lab-4.html#cb91-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb91-3"><a href="a-lab-4.html#cb91-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span></span>
+<span id="cb91-4"><a href="a-lab-4.html#cb91-4"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,</span>
+<span id="cb91-5"><a href="a-lab-4.html#cb91-5"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
+<span id="cb91-6"><a href="a-lab-4.html#cb91-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span></span>
+<span id="cb91-7"><a href="a-lab-4.html#cb91-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb91-8"><a href="a-lab-4.html#cb91-8"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="04-lab04_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
 <p class="caption">
@@ -493,13 +524,13 @@ Figure 4.9: Violin-boxplot
 <div id="activity-6-layers-part-2" class="section level3">
 <h3><span class="header-section-number">4.1.7</span> Activity 6: Layers part 2</h3>
 <p>The key thing to note about <code>ggplot</code> is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>()
-
-<span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_violin</span>()</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="a-lab-4.html#cb92-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
+<span id="cb92-2"><a href="a-lab-4.html#cb92-2"></a><span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span></span>
+<span id="cb92-3"><a href="a-lab-4.html#cb92-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span>
+<span id="cb92-4"><a href="a-lab-4.html#cb92-4"></a></span>
+<span id="cb92-5"><a href="a-lab-4.html#cb92-5"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
+<span id="cb92-6"><a href="a-lab-4.html#cb92-6"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb92-7"><a href="a-lab-4.html#cb92-7"></a><span class="st">  </span><span class="kw">geom_violin</span>()</span></code></pre></div>
 <div id="finished-4" class="section level4">
 <h4><span class="header-section-number">4.1.7.1</span> Finished!</h4>
 <p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
@@ -574,10 +605,10 @@ Figure 4.10: Scatterplot of happiness and depression scores
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)
-pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="a-lab-4.html#cb93-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb93-2"><a href="a-lab-4.html#cb93-2"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb93-3"><a href="a-lab-4.html#cb93-3"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb93-4"><a href="a-lab-4.html#cb93-4"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-2" class="section level4">
@@ -586,7 +617,7 @@ all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pi
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="a-lab-4.html#cb94-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-3" class="section level4">
@@ -595,7 +626,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="a-lab-4.html#cb95-1"></a>ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-4" class="section level4">
@@ -604,7 +635,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="a-lab-4.html#cb96-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-5" class="section level4">
@@ -613,9 +644,9 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))
-data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)
-data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="a-lab-4.html#cb97-1"></a>median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))</span>
+<span id="cb97-2"><a href="a-lab-4.html#cb97-2"></a>data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)</span>
+<span id="cb97-3"><a href="a-lab-4.html#cb97-3"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-6" class="section level4">
@@ -624,7 +655,7 @@ data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="a-lab-4.html#cb98-1"></a>happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-7" class="section level4">
@@ -633,11 +664,11 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="a-lab-4.html#cb99-1"></a><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb99-2"><a href="a-lab-4.html#cb99-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb99-3"><a href="a-lab-4.html#cb99-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="op">+</span></span>
+<span id="cb99-4"><a href="a-lab-4.html#cb99-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="op">+</span></span>
+<span id="cb99-5"><a href="a-lab-4.html#cb99-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -647,10 +678,6 @@ Solution
 <p>You can download all the R homework files and Assessment Information you need from the Lab Homework section of the <a href="https://moodle.gla.ac.uk/course/view.php?id=16358">Psych 1A Moodle</a>.</p>
 
 </div>
-</div>
-
-
-
 </div>
 <div class="psyteachr_footer">
   
@@ -742,17 +769,19 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="a-lab-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="a-lab-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="b-lab-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -760,12 +789,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -777,6 +806,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
