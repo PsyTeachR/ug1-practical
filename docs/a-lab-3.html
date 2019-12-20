@@ -48,9 +48,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -60,14 +60,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -76,9 +78,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -322,8 +324,8 @@ In lab 3, we’ll be moving on to becoming familiar with the Wickham Six and the
 </li>
 <li>Type and run the code that loads the packages <code>tidyverse</code> and <code>babynames</code> using <code>library()</code> in the Activity 1 code chunk.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-<span class="kw">library</span>(babynames)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="a-lab-3.html#cb32-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb32-2"><a href="a-lab-3.html#cb32-2"></a><span class="kw">library</span>(babynames)</span></code></pre></div>
 </div>
 <div id="activity-2-look-at-the-data" class="section level3">
 <h3><span class="header-section-number">3.1.4</span> Activity 2: Look at the data</h3>
@@ -331,7 +333,7 @@ In lab 3, we’ll be moving on to becoming familiar with the Wickham Six and the
 <ul>
 <li>View a preview of this dataset by typing <code>babynames</code> in to the console. You should see the following output:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">babynames</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="a-lab-3.html#cb33-1"></a>babynames</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 5
 ##     year sex   name          n   prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
@@ -392,11 +394,11 @@ In lab 3, we’ll be moving on to becoming familiar with the Wickham Six and the
 <li>Type the code below into a new code chunk and run it.</li>
 </ul>
 <p>We’re going to cover how to write visualisation code in Lab so still don’t worry about not understanding the plot code yet. The point is show you how much you can accomplish with very little code. The code creates a graph showing the popularity of four girl baby names - Alexandra, Beverly, Emily, and Kathleen - from 1880 to 2014. You should see Figure <a href="a-lab-3.html#fig:babynames-plot">3.1</a> appear, which shows the proportion of each name across different years - you can plug in different names if you like and see how the plot changes.</p>
-<pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span>babynames <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>)
-
-<span class="kw">ggplot</span>(<span class="dt">data =</span> dat,<span class="kw">aes</span>(<span class="dt">x =</span> year,<span class="dt">y =</span> prop, <span class="dt">colour=</span>name))<span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_line</span>()  </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="a-lab-3.html#cb35-1"></a>dat &lt;-<span class="st"> </span>babynames <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb35-2"><a href="a-lab-3.html#cb35-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>)</span>
+<span id="cb35-3"><a href="a-lab-3.html#cb35-3"></a></span>
+<span id="cb35-4"><a href="a-lab-3.html#cb35-4"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> dat,<span class="kw">aes</span>(<span class="dt">x =</span> year,<span class="dt">y =</span> prop, <span class="dt">colour=</span>name))<span class="op">+</span></span>
+<span id="cb35-5"><a href="a-lab-3.html#cb35-5"></a><span class="st">  </span><span class="kw">geom_line</span>()  </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:babynames-plot"></span>
 <img src="03-lab03_files/figure-html/babynames-plot-1.png" alt="Proportion of four baby names from 1880 to 2014" width="100%" />
 <p class="caption">
@@ -408,8 +410,8 @@ Figure 3.1: Proportion of four baby names from 1880 to 2014
 <h3><span class="header-section-number">3.1.6</span> Activity 4: Selecting variables of interest</h3>
 <p>There are two numeric measurements of name popularity, <code>prop</code> (the proportion of all babies with each name) is probably more useful than <code>n</code> (total number of babies with that name), because it takes into account that different numbers of babies are born in different years.</p>
 <p>Just like in Lab 2, if we wanted to create a dataset that only includes certain variables, we can use the <code>select()</code> function from the <code>dplyr</code> package. Run the below code to only select the columns <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="co"># the object you want to select variables from</span>
-       year, sex, name, prop) <span class="co"># the variables you want to select</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="a-lab-3.html#cb36-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="co"># the object you want to select variables from</span></span>
+<span id="cb36-2"><a href="a-lab-3.html#cb36-2"></a>       year, sex, name, prop) <span class="co"># the variables you want to select</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 4
 ##     year sex   name        prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -425,7 +427,7 @@ Figure 3.1: Proportion of four baby names from 1880 to 2014
 ## 10  1880 F     Sarah     0.0132
 ## # ... with 1,924,655 more rows</code></pre>
 <p>Alternatively, you can also tell R which variables you don’t want, in this case, rather than telling R to select <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>, we can simply tell it to drop the column <code>n</code> using the minus sign <code>-</code> before the variable name.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="a-lab-3.html#cb38-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 4
 ##     year sex   name        prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -441,13 +443,13 @@ Figure 3.1: Proportion of four baby names from 1880 to 2014
 ## 10  1880 F     Sarah     0.0132
 ## # ... with 1,924,655 more rows</code></pre>
 <p>Note that <code>select()</code> does not change the original tibble, but makes a new tibble with the specified columns. If you don’t save this new tibble to an object, it won’t be saved. If you want to keep this new dataset, create a new object. When you run this code, you will see your new tibble appear in the environment pane.</p>
-<pre class="sourceCode r"><code class="sourceCode r">new_dat &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="a-lab-3.html#cb40-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
 </div>
 <div id="activity-5-arranging-the-data" class="section level3">
 <h3><span class="header-section-number">3.1.7</span> Activity 5: Arranging the data</h3>
 <p>The function <code>arrange()</code> will sort the rows in the table according to the columns you supply. Try running the following code:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(<span class="dt">.data =</span> babynames, <span class="co"># the data you want to sort</span>
-        name) <span class="co"># the variable you want to sort by</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="a-lab-3.html#cb41-1"></a><span class="kw">arrange</span>(<span class="dt">.data =</span> babynames, <span class="co"># the data you want to sort</span></span>
+<span id="cb41-2"><a href="a-lab-3.html#cb41-2"></a>        name) <span class="co"># the variable you want to sort by</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 5
 ##     year sex   name      n       prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;
@@ -463,7 +465,7 @@ Figure 3.1: Proportion of four baby names from 1880 to 2014
 ## 10  2017 M     Aaban    11 0.0000056 
 ## # ... with 1,924,655 more rows</code></pre>
 <p>The data are now sorted in ascending alphabetical order by name. The default is to sort in ascending order. If you want it descending, wrap the name of the variable in the <code>desc()</code> function. For instance, to sort by year in descending order, run the following code:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(babynames,<span class="kw">desc</span>(year)) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="a-lab-3.html#cb43-1"></a><span class="kw">arrange</span>(babynames,<span class="kw">desc</span>(year)) </span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 5
 ##     year sex   name          n    prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
@@ -479,17 +481,17 @@ Figure 3.1: Proportion of four baby names from 1880 to 2014
 ## 10  2017 F     Abigail   10551 0.00563
 ## # ... with 1,924,655 more rows</code></pre>
 <p>You can also sort by more than one column. What do you think the following code will do?</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(babynames, <span class="kw">desc</span>(year), <span class="kw">desc</span>(sex), <span class="kw">desc</span>(prop)) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="a-lab-3.html#cb45-1"></a><span class="kw">arrange</span>(babynames, <span class="kw">desc</span>(year), <span class="kw">desc</span>(sex), <span class="kw">desc</span>(prop)) </span></code></pre></div>
 </div>
 <div id="activity-6-using-filter-to-select-observations" class="section level3">
 <h3><span class="header-section-number">3.1.8</span> Activity 6: Using filter to select observations</h3>
 <p>We have previously used <code>select()</code> to select certain variables or columns, however, frequently you will also want to select only certain observations or rows, for example, only babies born after 1999, or only babies named “Mary”. You do this using the verb <code>filter()</code>. The <code>filter()</code> function is a bit more involved than the other verbs, and requires more detailed explanation, but this is because it is also extremely powerful.</p>
 <p>Here is an example of filter, can you guess what it will do?</p>
-<pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">filter</span>(<span class="dt">.data =</span> babynames, year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="a-lab-3.html#cb46-1"></a> <span class="kw">filter</span>(<span class="dt">.data =</span> babynames, year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>)</span></code></pre></div>
 <p>The first part of the code tells the function to use the object <code>babynames</code>. The second argument, <code>year &gt; 2000</code>, is what is known as a <strong>Boolean expression</strong>: an expression whose evaluation results in a value of TRUE or FALSE. What <code>filter()</code> does is include any observations (rows) for which the expression evaluates to TRUE, and exclude any for which it evaluates to FALSE. So in effect, behind the scenes, <code>filter()</code> goes through the entire set of 1.8 million observations, row by row, checking the value of year for each row, keeping it if the value is greater than 2000, and rejecting it if it is less than 2000. To see how a boolean expression works, consider the code below:</p>
-<pre class="sourceCode r"><code class="sourceCode r">years &lt;-<span class="st"> </span><span class="dv">1996</span><span class="op">:</span><span class="dv">2005</span>
-years
-years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="a-lab-3.html#cb47-1"></a>years &lt;-<span class="st"> </span><span class="dv">1996</span><span class="op">:</span><span class="dv">2005</span></span>
+<span id="cb47-2"><a href="a-lab-3.html#cb47-2"></a>years</span>
+<span id="cb47-3"><a href="a-lab-3.html#cb47-3"></a>years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span></span></code></pre></div>
 <pre><code>##  [1] 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005
 ##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
 <p>You can see that the expression <code>years &gt; 2000</code> returns a <strong>logical vector</strong> (a vector of TRUE and FALSE values), where each element represents whether the expression is true or false for that element. For the first five elements (1996 to 2000) it is false, and for the last five elements (2001 to 2005) it is true.</p>
@@ -541,7 +543,7 @@ years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000
 </tbody>
 </table>
 <p>If you want only those observations for a specific name (e.g., Mary), you use the equivalence operator <code>==</code>. Note that you use double equal signs, not a single equal sign.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(babynames, name <span class="op">==</span><span class="st"> &quot;Mary&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="a-lab-3.html#cb49-1"></a><span class="kw">filter</span>(babynames, name <span class="op">==</span><span class="st"> &quot;Mary&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 268 x 5
 ##     year sex   name      n     prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt;
@@ -557,7 +559,7 @@ years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000
 ## 10  1884 M     Mary     36 0.000293
 ## # ... with 258 more rows</code></pre>
 <p>If you wanted all the names except Mary, you use the ‘not equals’ operator:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(babynames, name<span class="op">!=</span><span class="st">&quot;Mary&quot;</span>) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="a-lab-3.html#cb51-1"></a><span class="kw">filter</span>(babynames, name<span class="op">!=</span><span class="st">&quot;Mary&quot;</span>) </span></code></pre></div>
 <pre><code>## # A tibble: 1,924,397 x 5
 ##     year sex   name          n   prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
@@ -573,7 +575,7 @@ years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000
 ## 10  1880 F     Annie      1258 0.0129
 ## # ... with 1,924,387 more rows</code></pre>
 <p>And if you wanted names from a defined set - e.g., names of British queens - you can use <code>%in%</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(babynames, name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="a-lab-3.html#cb53-1"></a><span class="kw">filter</span>(babynames, name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 772 x 5
 ##     year sex   name          n      prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;     &lt;dbl&gt;
@@ -589,7 +591,7 @@ years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000
 ## 10  1882 F     Mary       8148 0.0704   
 ## # ... with 762 more rows</code></pre>
 <p>This gives you data for the names in the vector on the right hand side of <code>%in%</code>. You can always invert an expression to get its opposite. So, for instance, if you instead wanted to get rid of all Marys, Elizabeths, and Victorias you would use the following:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(babynames, <span class="op">!</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>)))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="a-lab-3.html#cb55-1"></a><span class="kw">filter</span>(babynames, <span class="op">!</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>)))</span></code></pre></div>
 <pre><code>## # A tibble: 1,923,893 x 5
 ##     year sex   name         n   prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;  &lt;dbl&gt;
@@ -610,9 +612,9 @@ years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000
 <div id="activity-7-creating-new-variables" class="section level3">
 <h3><span class="header-section-number">3.1.9</span> Activity 7: Creating new variables</h3>
 <p>Sometimes we need to create a new variable that doesn’t exist in our dataset. For instance, we might want to figure out what decade a particular year belongs to. To create new variables, we use the function <code>mutate()</code>. Note that if you want to save this new column, you need to save it to an object. Here, you are mutating a new column and attaching it to the <code>new_dat</code> object you created in Activity 4.</p>
-<pre class="sourceCode r"><code class="sourceCode r">new_dat &lt;-<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">.data =</span> babynames, <span class="co"># the tibble you want to add a colum to</span>
-                  <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="co"># new column name = what you want it to contain</span>
-new_dat</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="a-lab-3.html#cb57-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">.data =</span> babynames, <span class="co"># the tibble you want to add a colum to</span></span>
+<span id="cb57-2"><a href="a-lab-3.html#cb57-2"></a>                  <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="co"># new column name = what you want it to contain</span></span>
+<span id="cb57-3"><a href="a-lab-3.html#cb57-3"></a>new_dat</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 6
 ##     year sex   name          n   prop decade
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -634,19 +636,19 @@ new_dat</code></pre>
 <p>Most quantitative analyses will require you to summarise your data somehow, for example, by calculating the mean, median or a sum total of your data. You can perform all of these operations using the function <code>summarise()</code>.</p>
 <p>First, let’s use the object <code>dat</code> that just has the data for the four girls names, Alexandra, Beverly, Emily, and Kathleen. To start off, we’re simply going to calculate the total number of babies across all years that were given one of these four names.</p>
 <p>It’s useful to get in the habit of translating your code into full sentences to make it easier to figure out what’s happening. You can read the below code as “run the function summarise using the data in the object <code>dat</code> to create a new variable named <code>total</code> that is the result of adding up all the numbers in the column <code>n</code>”.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to use</span>
-          <span class="dt">total =</span> <span class="kw">sum</span>(n)) <span class="co"># result = operation</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="a-lab-3.html#cb59-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to use</span></span>
+<span id="cb59-2"><a href="a-lab-3.html#cb59-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) <span class="co"># result = operation</span></span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##     total
 ##     &lt;int&gt;
 ## 1 2161374</code></pre>
 <p><code>summarise()</code> becomes even more powerful when combined with the final <code>dplyr</code> function, <code>group_by()</code>. Quite often, you will want to produce your summary statistics broken down by groups, for examples, the scores of participants in different conditions, or the reading time for native and non-native speakers.</p>
 <p>There are two ways you can use <code>group_by()</code>. First, you can create a new, grouped object.</p>
-<pre class="sourceCode r"><code class="sourceCode r">group_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to group</span>
-                      name) <span class="co"># the variable you want to group by</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="a-lab-3.html#cb61-1"></a>group_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to group</span></span>
+<span id="cb61-2"><a href="a-lab-3.html#cb61-2"></a>                      name) <span class="co"># the variable you want to group by</span></span></code></pre></div>
 <p>If you look at this object in the viewer, it won’t look any different to the original <code>dat</code>, however, the underlying structure has changed. Let’s run the above summarise code again, but now using the grouped data.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(<span class="dt">.data =</span> group_dat, 
-          <span class="dt">total =</span> <span class="kw">sum</span>(n)) </code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="a-lab-3.html#cb62-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> group_dat, </span>
+<span id="cb62-2"><a href="a-lab-3.html#cb62-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) </span></code></pre></div>
 <pre><code>## # A tibble: 4 x 2
 ##   name       total
 ##   &lt;chr&gt;      &lt;int&gt;
@@ -656,9 +658,9 @@ new_dat</code></pre>
 ## 4 Kathleen  711605</code></pre>
 <p><code>summarise()</code> has performed exactly the same operation as before - adding up the total number in the column <code>n</code> - but this time it has done is separately for each group, which in this case was the variable <code>name</code>.</p>
 <p>You can request multiple summary calculations to be performed in the same function. For example, the following code calculates the mean and median number of babies given each name every year.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(group_dat,
-          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),
-          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="a-lab-3.html#cb64-1"></a><span class="kw">summarise</span>(group_dat,</span>
+<span id="cb64-2"><a href="a-lab-3.html#cb64-2"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
+<span id="cb64-3"><a href="a-lab-3.html#cb64-3"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   name      mean_year median_year
 ##   &lt;chr&gt;         &lt;dbl&gt;       &lt;dbl&gt;
@@ -667,10 +669,10 @@ new_dat</code></pre>
 ## 3 Emily         6098.       1392.
 ## 4 Kathleen      5157.       3098</code></pre>
 <p>You can also add multiple grouping variables. For example, the following code groups <code>new_dat</code> by <code>sex</code> and <code>decade</code> and then calculates the summary statistics to give us the mean and median number of male and female babies in each decade.</p>
-<pre class="sourceCode r"><code class="sourceCode r">group_new_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(new_dat, sex, decade)
-<span class="kw">summarise</span>(group_new_dat,
-          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),
-          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="a-lab-3.html#cb66-1"></a>group_new_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(new_dat, sex, decade)</span>
+<span id="cb66-2"><a href="a-lab-3.html#cb66-2"></a><span class="kw">summarise</span>(group_new_dat,</span>
+<span id="cb66-3"><a href="a-lab-3.html#cb66-3"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
+<span id="cb66-4"><a href="a-lab-3.html#cb66-4"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 28 x 4
 ## # Groups:   sex [2]
 ##    sex   decade mean_year median_year
@@ -692,10 +694,10 @@ new_dat</code></pre>
 <p>The final activity for this chapter essentially repeats what we’ve already covered but in a slightly different way. In the previous activities, you created new objects with new variables or groupings and then you called <code>summarise()</code> on those new objects in separate lines of code. As a result, you had multiple objects in your environment pane and you need to make sure that you keep track of the different names.</p>
 <p>Instead, you can use <strong>pipes</strong>. Pipes are written as <code>%&gt;%</code>and they should be read as “and then”. Pipes allow you to string together ‘sentences’ of code into ‘paragraphs’ so that you don’t need to create intermediary objects. Again, it is easier to show than tell.</p>
 <p>The below code does <strong>exactly</strong> the same as all the code we wrote above but it only creates one object.</p>
-<pre class="sourceCode r"><code class="sourceCode r">pipe_summary &lt;-<span class="st"> </span><span class="kw">mutate</span>(babynames, <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(name, decade) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_decade =</span> <span class="kw">mean</span>(n))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="a-lab-3.html#cb68-1"></a>pipe_summary &lt;-<span class="st"> </span><span class="kw">mutate</span>(babynames, <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
+<span id="cb68-2"><a href="a-lab-3.html#cb68-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb68-3"><a href="a-lab-3.html#cb68-3"></a><span class="st">  </span><span class="kw">group_by</span>(name, decade) <span class="op">%&gt;%</span></span>
+<span id="cb68-4"><a href="a-lab-3.html#cb68-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_decade =</span> <span class="kw">mean</span>(n))</span></code></pre></div>
 <p>The reason that this function is called a pipe is because it ‘pipes’ the data through to the next function. When you wrote the code previously, the first argument of each function was the dataset you wanted to work on. When you use pipes it will automatically take the data from the previous line of code so you don’t need to specify it again.</p>
 <div class="try">
 <p>
@@ -721,17 +723,17 @@ When learning to code it can be a useful practice to read your code ‘out loud�
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse) 
-
-dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)
-pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)
-all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="a-lab-3.html#cb69-1"></a><span class="kw">library</span>(tidyverse) </span>
+<span id="cb69-2"><a href="a-lab-3.html#cb69-2"></a></span>
+<span id="cb69-3"><a href="a-lab-3.html#cb69-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb69-4"><a href="a-lab-3.html#cb69-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb69-5"><a href="a-lab-3.html#cb69-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span></code></pre></div>
 <p>Now let’s start working with our <code>tidyverse</code> verb functions…</p>
 </div>
 <div id="activity-2-select" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Activity 2: Select</h3>
 <p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create a variable called <code>summarydata</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="a-lab-3.html#cb70-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>
@@ -743,7 +745,7 @@ all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pi
 <div id="activity-3-arrange" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Activity 3: Arrange</h3>
 <p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first.</p>
-<pre class="sourceCode r"><code class="sourceCode r">ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="a-lab-3.html#cb71-1"></a>ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</span></code></pre></div>
 <hr />
 <ul>
 <li>How could you arrange this data in <strong>descending</strong> order (highest score first)?</li>
@@ -752,7 +754,7 @@ all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pi
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> <span class="kw">desc</span>(ahiTotal))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="a-lab-3.html#cb72-1"></a><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> <span class="kw">desc</span>(ahiTotal))</span></code></pre></div>
 </div>
 <ul>
 <li><p>What is the smallest ahiTotal score? <input class='solveme nospaces' size='2' data-answer='["32"]'/></p></li>
@@ -763,7 +765,7 @@ Solution
 <div id="activity-4-filter" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Activity 4: Filter</h3>
 <p>Filter the data <code>ahi_asc</code> by taking out those who are over 65 years of age.</p>
-<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="a-lab-3.html#cb73-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</span></code></pre></div>
 <hr />
 <ul>
 <li>What does <code>filter()</code> do?</li>
@@ -777,7 +779,7 @@ Solution
 <div id="activity-5-summarise" class="section level3">
 <h3><span class="header-section-number">3.2.5</span> Activity 5: Summarise</h3>
 <p>Then, use summarise to create a new variable <code>data_median</code>, which calculates the median ahiTotal score in this grouped data and assign it a table head called <code>median_score</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="a-lab-3.html#cb74-1"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
 <hr />
 <ul>
 <li><p>What is the median score? <input class='solveme nospaces' size='2' data-answer='["74"]'/></p></li>
@@ -787,7 +789,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(age_65max, <span class="dt">mean_score =</span> <span class="kw">mean</span>(ahiTotal))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="a-lab-3.html#cb75-1"></a><span class="kw">summarise</span>(age_65max, <span class="dt">mean_score =</span> <span class="kw">mean</span>(ahiTotal))</span></code></pre></div>
 </div>
 <hr />
 </div>
@@ -796,10 +798,10 @@ Solution
 <p>Use mutate to create a new column called <code>Happiness_Category</code> in <code>age_65max</code> which categorises participants based on whether they score above the median <code>ahiTotal</code> score for all participants.</p>
 <p>Then, group the data stored in <code>age_65max</code> by <code>Happiness_Category</code>, and store it in an object named <code>happy_dat</code>.</p>
 <p>Finally, use summarise to calculate the median <code>cesdTotal</code> score for participants who scored above and below the median <code>ahiTotal</code> score and save it in a new object named <code>data_median_group</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">age_65max &lt;-<span class="st"> </span><span class="kw">mutate</span>(age_65max, <span class="dt">Happiness_Category =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">74</span>))
-happy_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, Happiness_Category)
-
-data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span>(happy_dat, <span class="dt">median_score =</span> <span class="kw">median</span>(cesdTotal))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="a-lab-3.html#cb76-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">mutate</span>(age_65max, <span class="dt">Happiness_Category =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">74</span>))</span>
+<span id="cb76-2"><a href="a-lab-3.html#cb76-2"></a>happy_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, Happiness_Category)</span>
+<span id="cb76-3"><a href="a-lab-3.html#cb76-3"></a></span>
+<span id="cb76-4"><a href="a-lab-3.html#cb76-4"></a>data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span>(happy_dat, <span class="dt">median_score =</span> <span class="kw">median</span>(cesdTotal))</span></code></pre></div>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>
@@ -813,19 +815,19 @@ data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">group_by</span>(age_65max, educ)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="a-lab-3.html#cb77-1"></a><span class="kw">group_by</span>(age_65max, educ)</span></code></pre></div>
 </div>
 <hr />
 </div>
 <div id="activity-7-data-visualisation" class="section level3">
 <h3><span class="header-section-number">3.2.7</span> Activity 7: Data visualisation</h3>
 <p>Copy, paste and run the below code into a new code chunk to create a plot of depression scores grouped by income level using the <code>age_65max</code> data.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.factor</span>(income), <span class="dt">y =</span> cesdTotal, <span class="dt">fill =</span> <span class="kw">as.factor</span>(income))) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;D&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income Level&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="a-lab-3.html#cb78-1"></a><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.factor</span>(income), <span class="dt">y =</span> cesdTotal, <span class="dt">fill =</span> <span class="kw">as.factor</span>(income))) <span class="op">+</span></span>
+<span id="cb78-2"><a href="a-lab-3.html#cb78-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span></span>
+<span id="cb78-3"><a href="a-lab-3.html#cb78-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb78-4"><a href="a-lab-3.html#cb78-4"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;D&quot;</span>) <span class="op">+</span></span>
+<span id="cb78-5"><a href="a-lab-3.html#cb78-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income Level&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
+<span id="cb78-6"><a href="a-lab-3.html#cb78-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>)</span></code></pre></div>
 <ul>
 <li><p>Which income group has the highest median depression scores? <select class='solveme' data-answer='["Below Average"]'> <option></option> <option>Below Average</option> <option>Average</option> <option>Above Average</option></select></p></li>
 <li><p>Which group has the highest density of scores at any one point? <select class='solveme' data-answer='["Above Average"]'> <option></option> <option>Below Average</option> <option>Average</option> <option>Above Average</option></select></p></li>
