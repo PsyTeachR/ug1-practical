@@ -262,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1.7" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-5-look-at-the-data"><i class="fa fa-check"></i><b>5.1.7</b> Activity 5: Look at the data</a></li>
 <li class="chapter" data-level="5.1.8" data-path="b-lab-1.html"><a href="b-lab-1.html#thinking-through-the-problem"><i class="fa fa-check"></i><b>5.1.8</b> Thinking through the problem</a></li>
 <li class="chapter" data-level="5.1.9" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-5-recap"><i class="fa fa-check"></i><b>5.1.9</b> Activity 5: Recap</a></li>
-<li class="chapter" data-level="5.1.10" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-6-reading"><i class="fa fa-check"></i><b>5.1.10</b> Activity 6: Reading</a></li>
+<li class="chapter" data-level="5.1.10" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-6-reading-and-revision"><i class="fa fa-check"></i><b>5.1.10</b> Activity 6: Reading and revision</a></li>
 <li class="chapter" data-level="5.1.11" data-path="b-lab-1.html"><a href="b-lab-1.html#activity-solutions-1"><i class="fa fa-check"></i><b>5.1.11</b> Activity solutions</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="b-lab-1.html"><a href="b-lab-1.html#in-class-activities-4"><i class="fa fa-check"></i><b>5.2</b> In-class activities</a><ul>
@@ -403,11 +403,14 @@ Figure 5.1: Opening a new R Markdown document
 </div>
 <div id="activity-3-create-a-new-code-chunk" class="section level3">
 <h3><span class="header-section-number">5.1.5</span> Activity 3: Create a new code chunk</h3>
-<p>When you first open a new R Markdown document you will see a bunch of default welcome text that looks like this:</p>
-<p>Do the following steps:<br />
-* Delete <strong>everything</strong> below line 7<br />
-* On line 8 type “Activity 3”<br />
-* Click <code>Insert</code> -&gt; <code>R</code></p>
+<p>When you first open a new R Markdown document you will see a bunch of default welcome text. Do the following steps:</p>
+<ul>
+<li>Delete <strong>everything</strong> below line 7<br />
+</li>
+<li>On line 8 type “Activity 3”<br />
+</li>
+<li>Click <code>Insert</code> -&gt; <code>R</code></li>
+</ul>
 <div class="figure" style="text-align: center"><span id="fig:img-new-chunkb"></span>
 <img src="images/markdown-code_chunks.gif" alt="New R chunk" width="100%" />
 <p class="caption">
@@ -431,12 +434,14 @@ The solutions are at the bottom if you need them. However, remember what you lea
 <div id="activity-5-look-at-the-data" class="section level3">
 <h3><span class="header-section-number">5.1.7</span> Activity 5: Look at the data</h3>
 <ul>
-<li>View each of the three datasets by clicking on their name in the environment.</li>
-<li>Check each object by using <code>summary()</code>, e.g., <code>summary(qformats)</code>.</li>
+<li><p>View each of the three datasets by clicking on their name in the environment.</p></li>
+<li><p>Check each object by using <code>summary()</code>, e.g., <code>summary(qformats)</code>.</p></li>
+<li><p><strong>responses</strong> contains the actual data from the survey. There is a participant Id column and then the rest of the columns contain the responses associated with that participant for each of the 10 questions (Q1, Q2, Q3, …, Q10).<br />
+</p></li>
+<li><p><strong>scoring</strong> contains the scoring information that we described above, that is, whether a question should be given a score of 1 or 0 for forward and reverse coded items for each possible response.<br />
+</p></li>
+<li><p><strong>qformats</strong> contains a list of whether each question is forward or reverse coded.</p></li>
 </ul>
-<p><strong>responses</strong> contains the actual data from the survey. There is a participant Id column and then the rest of the columns contain the responses associated with that participant for each of the 10 questions (Q1, Q2, Q3, …, Q10).
-<strong>scoring</strong> contains the scoring information that we described above, that is, whether a question should be given a score of 1 or 0 for forward and reverse coded items for each possible response.
-<strong>qformats</strong> contains a list of whether each question is forward or reverse coded.</p>
 </div>
 <div id="thinking-through-the-problem" class="section level3">
 <h3><span class="header-section-number">5.1.8</span> Thinking through the problem</h3>
@@ -752,15 +757,19 @@ The solutions are at the bottom if you need them. However, remember what you lea
 <li>What function would you use to join together <code>qformats</code> and <code>scoring</code>? <select class='solveme' data-answer='["inner_join"]'> <option></option> <option>inner_join</option> <option>join</option> <option>join_inner</option> <option>object_join</option></select></li>
 </ul>
 </div>
-<div id="activity-6-reading" class="section level3">
-<h3><span class="header-section-number">5.1.10</span> Activity 6: Reading</h3>
-<p>The final part of the pre-class is to read the <a href="https://moodle.gla.ac.uk/pluginfile.php/2512946/mod_label/intro/MSLQ%20Overview.pdf">MSLQ overview</a> and the <a href="https://www.sciencedirect.com/science/article/pii/B0080430767024657">self-regulated learning overview</a> in preparation for the project and these can be found on Moodlenwhen it opens in January.</p>
-<p>If you struggled with R last semester, please make sure that you revise the material from 1A - Lab 1 in particular explains a lot of the basics of R and it may help you to revisit this material. There will be an R catch-up session held by our of our GTAs Rebecca Lai on Wednesday 15th January Boyd Orr 603, 12:00 - 15:00.</p>
+<div id="activity-6-reading-and-revision" class="section level3">
+<h3><span class="header-section-number">5.1.10</span> Activity 6: Reading and revision</h3>
+<p>The final part of the pre-class is to read the <a href="https://moodle.gla.ac.uk/pluginfile.php/2512946/mod_label/intro/MSLQ%20Overview.pdf">MSLQ overview</a> and the <a href="https://www.sciencedirect.com/science/article/pii/B0080430767024657">self-regulated learning overview</a> in preparation for the project and these can be found on Moodlen when it opens in January.</p>
+<p>If you struggled with R last semester, please make sure that you revise the material from [1A - Lab 1])<a href="https://psyteachr.github.io/ug1-practical/a-lab-1.html#homework" class="uri">https://psyteachr.github.io/ug1-practical/a-lab-1.html#homework</a> in particular as it explains a lot of the basics of R and it may help you to revisit this material. There will be an R catch-up session held by our of our GTAs Rebecca Lai on Wednesday 15th January Boyd Orr 603, 12:00 - 15:00.</p>
 </div>
 <div id="activity-solutions-1" class="section level3">
 <h3><span class="header-section-number">5.1.11</span> Activity solutions</h3>
 <div id="activity-4-1" class="section level4">
 <h4><span class="header-section-number">5.1.11.1</span> Activity 4</h4>
+<div class="solution">
+<button>
+Solution
+</button>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="b-lab-1.html#cb100-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb100-2"><a href="b-lab-1.html#cb100-2"></a>scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
 <span id="cb100-3"><a href="b-lab-1.html#cb100-3"></a>responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
@@ -768,9 +777,10 @@ The solutions are at the bottom if you need them. However, remember what you lea
 </div>
 </div>
 </div>
+</div>
 <div id="in-class-activities-4" class="section level2">
 <h2><span class="header-section-number">5.2</span> In-class activities</h2>
-<p>Let’s continue what we started in the prep by hand but now we will use R to calculate a score for each participant.</p>
+<p>Let’s continue what we started in the pre-class activities by hand but now using R to calculate a score for each participant.</p>
 <div id="activity-1-load-in-the-data" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Activity 1: Load in the data</h3>
 <ul>
