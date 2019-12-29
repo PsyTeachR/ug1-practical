@@ -157,7 +157,7 @@ ggplot(question_scores, aes(x = Question, y = item_scores)) +
   theme_minimal()
 ```
 
-## Activity 6: Reading
+### Activity 6: Reading
 
 You should also read the ethics document which is available in the Lab 2 section of the [1B Practical Moodle](https://moodle.gla.ac.uk/course/view.php?id=17342).
 
