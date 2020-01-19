@@ -225,9 +225,13 @@ We can use the same function as in the previous example, however, there's an ext
 pbinom(q = 7, size = 10, prob = .5) 
 ```
 
-This tells us that the probability is .95 or 95% - that doesn't seem right does it? The default behaviour for `pbinom()` is to calculate cumulative probability for the lower tail of the curve, i.e., if you specify `q = 2` it calculates the probability of all outcomes below 2. We specified `q = 7` which means that it's calculate the probability of getting an outcome of 0, 1, 2, 3, 4, 5, 6, and 7 - which is obviously very high.
+This tells us that the probability is .95 or 95% - that doesn't seem right does it? The default behaviour for `pbinom()` is to calculate cumulative probability for the lower tail of the curve, i.e., if you specify `q = 2` it calculates the probability of all outcomes below 2. We specified `q = 7` which means that it's calculated the probability of getting an outcome of 0, 1, 2, 3, 4, 5, 6, and 7, the pink area in the below figure - which is obviously very high.
 
-To get the right answer, we have to add `lower.tail = FALSE` as we are interested in the upper tail of the distribution. Because we want the cumulative probability to include 7, we set `q = 6`. This will now calculate the cumulative probability of getting 7, 8, 9, or 10 heads out of 10 coin flips.
+```{r fig.cap="Lower and upper tails"}
+knitr::include_graphics(path="./images/binom.png")
+```
+
+To get the right answer, the probability of the green area, we have to add `lower.tail = FALSE` as we are interested in the upper tail of the distribution. Because we want the cumulative probability to include 7, we set `q = 6`. This will now calculate the cumulative probability of getting 7, 8, 9, or 10 heads out of 10 coin flips.
 
 Copy, paste and run the below code in a new code chunk:
 
@@ -244,7 +248,7 @@ pbinom(q = 6, size = 10, prob = .5, lower.tail = FALSE)
 
 Have a go at playing around with different numbers of coin flips and probabilities in our `dbinom()` and `pbinom()` app!
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.cap="Binomial distribution app"}
 
 knitr::include_url("https://shannon-mcnee19.shinyapps.io/binomial_shiny/",
                    height = "800px")
@@ -297,7 +301,7 @@ Replace the NULLs in the above code to calculate the probability of meeting a 16
 
 Fiona is a very tall Scottish woman (181.12\nbsp{}cm) in the 16-24 y.o. range who will only date men who are taller than her.  
 
-* What is the proportion of Scottish men would Fiona be willing to date to 2 decimal places? `r fitb(c("0.23", ".23"))`  
+* Using `prnorm()` again, what is the proportion of Scottish men Fiona would be willing to date to 2 decimal places? `r fitb(c("0.23", ".23"))`  
 * What is this probabilty expressed in percent? `r mcq(c("0.23%", "2.3%", answer = "23%"))`
 
 ### Activity 7: `pnorm` 3
@@ -317,19 +321,15 @@ In the previous examples we calculated the probability of a particular outcome. 
 qnorm(p = NULL, mean = NULL, sd = NULL, lower.tail = NULL)
 ```
 
-Replace the NULLs in the above code to calculate how tall a 16-24 y.o. Scottish man would have to be in order to be in the top 5% of the height distribution for Scottish men in his age group.
+Replace the NULLs in the above code to calculate how tall a 16-24 y.o. Scottish man would have to be in order to be in the top 5% (i.e., p = .05) of the height distribution for Scottish men in his age group.
 
 **Visualise it!**
 
-Have a go at playing around with different numbers of coin flips and probabilities in our `dnorm()` and `pnorm()` app!
-
-```{r, echo = FALSE}
-
-knitr::include_url("http://shiny.psy.gla.ac.uk/ShinyPsyTeachR/ug1/normal-distributions/",height = "800px")
-
-```
+Have a go at playing around with different distributions in our `dnorm()` and `pnorm()` app - [access it here](http://shiny.psy.gla.ac.uk/ShinyPsyTeachR/ug1/normal-distributions/)
 
 ******
+
+And that's it! The key concepts to take away from this lab are that different types of data tend to follow known distributions, and that we can use these distributions to calculate the probability of particular outcomes. This is the foundation of many of the statistical tests that you will learn about in level 2. For example, if you want to compare whether the scores from two groups are different, that is, whether they come from different distributions, you can calculate the probability that the scores from group 2 would be in the same distribution as group 1. If this probability is less than 5% (p = .05), you might conclude that the scores were significantly different. That's an oversimplification obviously, but if you can develop a good understanding of probability distributions it will stand you in good stead for level 2. 
 
 ### Activity solutions
 
