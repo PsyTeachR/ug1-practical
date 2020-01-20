@@ -176,7 +176,7 @@ So let's try these functions out to answer two questions:
 1. What is the probability of getting exactly 5 heads on 10 flips?
 2. What is the probability of getting at most 2 heads on 10 flips?
 
-### Activity 2: dbinom
+### Activity 2: `dbinom()`
 
 Let's start with question 1, what is the probability of getting exactly 5 heads on 10 flips? 
 
@@ -199,7 +199,7 @@ dbinom(x = 5, size = 10, prob = 0.5)
 * What is the probability of getting 5 heads out of 10 coin flips to 2 decimal places? `r fitb(c("0.25", ".25"))`  
 * What is this probability expressed in percent? `r mcq(c("0.25%", "2.5%", answer = "25%"))`
 
-### Activity 3: pbinom
+### Activity 3: `pbinom()`
 
 OK, question  number 2. What is the probability of getting at most 2 heads on 10 flips? 
 
@@ -217,7 +217,7 @@ pbinom(q = 2, size = 10, prob = 0.5)
 * What is the probability of getting a maximum of 2 heads on 10 coin flips to 2 decimal places? `r fitb(c("0.06", ".06"))`  
 * What is this probability expressed in percent? `r mcq(c("0.06%", "0.6%", answer = "6%"))`
 
-### Activity 4: pbinom 2
+### Activity 4: `pbinom()` 2
 
 Let's try one more scenario with a cut-off point to make sure you have understood this. What is the probability of getting 7 or more heads on 10 flips?
 
