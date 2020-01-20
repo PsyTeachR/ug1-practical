@@ -363,7 +363,7 @@ Replace the NULLs in the above code to calculate the probability of meeting a 16
 
 Fiona is a very tall Scottish woman (181.12\nbsp{}cm) in the 16-24 y.o. range who will only date men who are taller than her.  
 
-* Using `prnorm()` again, what is the proportion of Scottish men Fiona would be willing to date to 2 decimal places? `r fitb(c("0.23", ".23"))`  
+* Using `pnorm()` again, what is the proportion of Scottish men Fiona would be willing to date to 2 decimal places? `r fitb(c("0.23", ".23"))`  
 * What is this probability expressed in percent? `r mcq(c("0.23%", "2.3%", answer = "23%"))`
 
 ### Activity 7: `pnorm` 3
