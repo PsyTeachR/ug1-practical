@@ -316,13 +316,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-2-dbinom"><i class="fa fa-check"></i><b>7.2.2</b> Activity 2: dbinom</a></li>
 <li class="chapter" data-level="7.2.3" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-3-pbinom"><i class="fa fa-check"></i><b>7.2.3</b> Activity 3: pbinom</a></li>
 <li class="chapter" data-level="7.2.4" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-4-pbinom-2"><i class="fa fa-check"></i><b>7.2.4</b> Activity 4: pbinom 2</a></li>
-<li class="chapter" data-level="7.2.5" data-path="b-lab-3.html"><a href="b-lab-3.html#normal-distribution"><i class="fa fa-check"></i><b>7.2.5</b> Normal distribution</a></li>
-<li class="chapter" data-level="7.2.6" data-path="b-lab-3.html"><a href="b-lab-3.html#probability-of-heights"><i class="fa fa-check"></i><b>7.2.6</b> Probability of heights</a></li>
-<li class="chapter" data-level="7.2.7" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-5pnorm"><i class="fa fa-check"></i><b>7.2.7</b> Activity 5:<code>pnorm()</code></a></li>
-<li class="chapter" data-level="7.2.8" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-6-pnorm-2"><i class="fa fa-check"></i><b>7.2.8</b> Activity 6: <code>pnorm</code> 2</a></li>
-<li class="chapter" data-level="7.2.9" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-7-pnorm-3"><i class="fa fa-check"></i><b>7.2.9</b> Activity 7: <code>pnorm</code> 3</a></li>
-<li class="chapter" data-level="7.2.10" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-8-qnorm"><i class="fa fa-check"></i><b>7.2.10</b> Activity 8: <code>qnorm()</code></a></li>
-<li class="chapter" data-level="7.2.11" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.11</b> Activity solutions</a></li>
+<li class="chapter" data-level="7.2.5" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-5-qbinom"><i class="fa fa-check"></i><b>7.2.5</b> Activity 5: <code>qbinom()</code></a></li>
+<li class="chapter" data-level="7.2.6" data-path="b-lab-3.html"><a href="b-lab-3.html#normal-distribution"><i class="fa fa-check"></i><b>7.2.6</b> Normal distribution</a></li>
+<li class="chapter" data-level="7.2.7" data-path="b-lab-3.html"><a href="b-lab-3.html#probability-of-heights"><i class="fa fa-check"></i><b>7.2.7</b> Probability of heights</a></li>
+<li class="chapter" data-level="7.2.8" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-5pnorm"><i class="fa fa-check"></i><b>7.2.8</b> Activity 5:<code>pnorm()</code></a></li>
+<li class="chapter" data-level="7.2.9" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-6-pnorm-2"><i class="fa fa-check"></i><b>7.2.9</b> Activity 6: <code>pnorm</code> 2</a></li>
+<li class="chapter" data-level="7.2.10" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-7-pnorm-3"><i class="fa fa-check"></i><b>7.2.10</b> Activity 7: <code>pnorm</code> 3</a></li>
+<li class="chapter" data-level="7.2.11" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-8-qnorm"><i class="fa fa-check"></i><b>7.2.11</b> Activity 8: <code>qnorm()</code></a></li>
+<li class="chapter" data-level="7.2.12" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.12</b> Activity solutions</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -887,7 +888,7 @@ Every year, the biggest problem with these exercises is typos caused by not payi
 <h3><span class="header-section-number">5.2.5</span> Activity 5: Another <code>inner_join()</code></h3>
 <p>Now that we have matched up each question with its corresponding format, we can now “look up” the corresponding scores in the scoring table based on the format and the response. This means we have to use <code>inner_join()</code> once again to join <code>rlong_16_join</code> with <code>scoring</code>**</p>
 <ul>
-<li>Create a new object named <code>rscores</code> than joins together <code>rlong_16_join</code> with <code>scoring</code>.</li>
+<li>Create a new object named <code>scores_16</code> than joins together <code>rlong_16_join</code> with <code>scoring</code>.</li>
 <li>Be careful to tell R <strong>all</strong> of the columns the two objects have in common. Remember that when you need to specify multiple variables you will need to use the syntax <code>by = c("var1", "var2)</code>.</li>
 </ul>
 </div>
@@ -895,7 +896,7 @@ Every year, the biggest problem with these exercises is typos caused by not payi
 <h3><span class="header-section-number">5.2.6</span> Activity 6: Calculating the AQ score</h3>
 <p>Now you need to calculate the total AQ score for participant 16.</p>
 <ul>
-<li>Create a new object called <code>AQ_16</code>. Use <code>summarise()</code> and <code>sum()</code>to add up the numbers in the column <code>Score</code> from <code>rscores</code> and call the result of this calculation <code>AQ_score</code>.</li>
+<li>Create a new object called <code>AQ_16</code>. Use <code>summarise()</code> and <code>sum()</code>to add up the numbers in the column <code>Score</code> from <code>scores_16</code> and call the result of this calculation <code>AQ_score</code>.</li>
 <li>This is quite a difficult task to do from memory but try it anyway - if you get anywhere near the right solution you’re doing extremely well!</li>
 </ul>
 </div>
