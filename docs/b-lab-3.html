@@ -316,13 +316,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-2-dbinom"><i class="fa fa-check"></i><b>7.2.2</b> Activity 2: dbinom</a></li>
 <li class="chapter" data-level="7.2.3" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-3-pbinom"><i class="fa fa-check"></i><b>7.2.3</b> Activity 3: pbinom</a></li>
 <li class="chapter" data-level="7.2.4" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-4-pbinom-2"><i class="fa fa-check"></i><b>7.2.4</b> Activity 4: pbinom 2</a></li>
-<li class="chapter" data-level="7.2.5" data-path="b-lab-3.html"><a href="b-lab-3.html#normal-distribution"><i class="fa fa-check"></i><b>7.2.5</b> Normal distribution</a></li>
-<li class="chapter" data-level="7.2.6" data-path="b-lab-3.html"><a href="b-lab-3.html#probability-of-heights"><i class="fa fa-check"></i><b>7.2.6</b> Probability of heights</a></li>
-<li class="chapter" data-level="7.2.7" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-5pnorm"><i class="fa fa-check"></i><b>7.2.7</b> Activity 5:<code>pnorm()</code></a></li>
-<li class="chapter" data-level="7.2.8" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-6-pnorm-2"><i class="fa fa-check"></i><b>7.2.8</b> Activity 6: <code>pnorm</code> 2</a></li>
-<li class="chapter" data-level="7.2.9" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-7-pnorm-3"><i class="fa fa-check"></i><b>7.2.9</b> Activity 7: <code>pnorm</code> 3</a></li>
-<li class="chapter" data-level="7.2.10" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-8-qnorm"><i class="fa fa-check"></i><b>7.2.10</b> Activity 8: <code>qnorm()</code></a></li>
-<li class="chapter" data-level="7.2.11" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.11</b> Activity solutions</a></li>
+<li class="chapter" data-level="7.2.5" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-5-qbinom"><i class="fa fa-check"></i><b>7.2.5</b> Activity 5: <code>qbinom()</code></a></li>
+<li class="chapter" data-level="7.2.6" data-path="b-lab-3.html"><a href="b-lab-3.html#normal-distribution"><i class="fa fa-check"></i><b>7.2.6</b> Normal distribution</a></li>
+<li class="chapter" data-level="7.2.7" data-path="b-lab-3.html"><a href="b-lab-3.html#probability-of-heights"><i class="fa fa-check"></i><b>7.2.7</b> Probability of heights</a></li>
+<li class="chapter" data-level="7.2.8" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-5pnorm"><i class="fa fa-check"></i><b>7.2.8</b> Activity 5:<code>pnorm()</code></a></li>
+<li class="chapter" data-level="7.2.9" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-6-pnorm-2"><i class="fa fa-check"></i><b>7.2.9</b> Activity 6: <code>pnorm</code> 2</a></li>
+<li class="chapter" data-level="7.2.10" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-7-pnorm-3"><i class="fa fa-check"></i><b>7.2.10</b> Activity 7: <code>pnorm</code> 3</a></li>
+<li class="chapter" data-level="7.2.11" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-8-qnorm"><i class="fa fa-check"></i><b>7.2.11</b> Activity 8: <code>qnorm()</code></a></li>
+<li class="chapter" data-level="7.2.12" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.12</b> Activity solutions</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -367,7 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="what-is-probability" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> What is probability?</h3>
-<p>Probability (<em>p</em>) is the extent to which an event is likely to occur and is represented by a number between 0 and 1. For example, the probability of flipping a coin and it landing on ‘heads’ would be estimated at <em>p = .5</em>, i.e., there is a 50% chance of getting a head when you flip a coin. Calculating the probability of any discrete event occuring can be formulated as:</p>
+<p>Probability (<em>p</em>) is the extent to which an event is likely to occur and is represented by a number between 0 and 1. For example, the probability of flipping a coin and it landing on ‘heads’ would be estimated at <em>p = .5</em>, i.e., there is a 50% chance of getting a head when you flip a coin. Calculating the probability of any discrete event occurring can be formulated as:</p>
 <p><span class="math display">\[p = \frac{number \  of  \ ways \ the \ event \ could \  arise}{number \ of \ possible \ outcomes}\]</span>
 For example, what is the probability of randomly drawing your name out of a hat of 12 names where one name is definitely yours?</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="b-lab-3.html#cb130-1"></a><span class="dv">1</span><span class="op">/</span><span class="dv">12</span></span></code></pre></div>
@@ -379,7 +380,7 @@ For example, what is the probability of randomly drawing your name out of a hat 
 <p>How you tackle probability depends on the type of data/variables you are working with (i.e. discrete or continuous). This is also referred to as <code>Level of Measurements</code>.</p>
 <p><strong>Discrete</strong> data can only take integer values (whole numbers). For example, the number of participants in an experiment would be discrete - we can’t have half a participant! Discrete variables can also be further broken down into <strong>nominal</strong> and <strong>ordinal</strong> variables.</p>
 <p><strong>Ordinal</strong> data is a set of ordered categories; you know which is the top/best and which is the worst/lowest, but not the difference between categories. For example, you could ask participants to rate the attractiveness of different faces based on a 5-item Likert scale (very unattractive, unattractive, neutral, attractive, very attractive). You know that very attractive is better than attractive but we can’t say for certain that the difference between neutral and attractive is the same size as the distance between very unattractive and unattractive.</p>
-<p><strong>Nominal</strong> data is also based on a set of categories but the ordering doesn’t matter (e.g. left or right handed). Nominal is sometimes simply refered to as <code>categorical</code> data.</p>
+<p><strong>Nominal</strong> data is also based on a set of categories but the ordering doesn’t matter (e.g. left or right handed). Nominal is sometimes simply referred to as <code>categorical</code> data.</p>
 <p><strong>Continuous</strong> data on the other hand can take any value. For example, we can measure age on a continuous scale (e.g. we can have an age of 26.55 years), other examples include reaction time or the distance you travel to university every day. Continuous data can be broken down into <strong>interval</strong> or <strong>ratio</strong> data.</p>
 <p><strong>Interval</strong> data is data which comes in the form of a numerical value where the difference between points is standardised and meaningful. For example temperature, the difference in temperature between 10-20 degrees is the same as the difference in temperature between 20-30 degrees.</p>
 <p><strong>Ratio</strong> data is very like interval but has a true zero point. With our interval temperature example above, we have been experiencing negative temperatures (-1,-2 degrees) in Glasgow but with ratio data you don’t see negative values such as these i.e. you can’t be -10 cm tall.</p>
@@ -388,10 +389,10 @@ For example, what is the probability of randomly drawing your name out of a hat 
 <h3><span class="header-section-number">7.1.4</span> Activity 2: Types of data</h3>
 <p>What types of data are the below measurements?</p>
 <ul>
-<li>Time taken to run a marathon (in seconds): <select class='solveme' data-answer='["ratio"]'> <option></option> <option>categorical</option> <option>ratio</option> <option>interval</option> <option>ordinal</option></select></li>
-<li>Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>categorical</option> <option>interval</option> <option>ratio</option> <option>ordinal</option></select></li>
-<li>Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>categorical</option> <option>interval</option> <option>ordinal</option> <option>ratio</option></select></li>
-<li>Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>ordinal</option> <option>interval</option> <option>ratio</option> <option>categorical</option></select></li>
+<li>Time taken to run a marathon (in seconds): <select class='solveme' data-answer='["ratio"]'> <option></option> <option>ordinal</option> <option>interval</option> <option>ratio</option> <option>categorical</option></select></li>
+<li>Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>ratio</option> <option>categorical</option> <option>ordinal</option> <option>interval</option></select></li>
+<li>Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>interval</option> <option>categorical</option> <option>ordinal</option> <option>ratio</option></select></li>
+<li>Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>ratio</option> <option>categorical</option> <option>interval</option> <option>ordinal</option></select></li>
 </ul>
 </div>
 <div id="probability-distributions" class="section level3">
@@ -401,7 +402,7 @@ For example, what is the probability of randomly drawing your name out of a hat 
 </div>
 <div id="the-uniform-distribution" class="section level3">
 <h3><span class="header-section-number">7.1.6</span> The uniform distribution</h3>
-<p>The uniform distribution is when each possible outcome has an equal chance of occuring. Let’s take the example from above, pulling your name out of a hat of 12 names. Each name has an equal chance of being drawn (p = .08). If we visualised this distribution, it would look like this - each outcome has the same chance of occurring:</p>
+<p>The uniform distribution is when each possible outcome has an equal chance of occurring. Let’s take the example from above, pulling your name out of a hat of 12 names. Each name has an equal chance of being drawn (p = .08). If we visualised this distribution, it would look like this - each outcome has the same chance of occurring:</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="07-lab07_files/figure-html/unnamed-chunk-2-1.png" alt="Uniform distribution" width="100%" />
 <p class="caption">
@@ -449,7 +450,7 @@ Figure 4.4: Normal Distribution of height. <span class="math inline">\(\mu\)</sp
 </p>
 </div>
 <p>Normal distributions are symmetrical, meaning there is an equal probability of observations occurring above and below the mean. This means that, if the mean in figure 1 is 170, we could expect the number of people who have a height of 160 to equal the number of people who have a height of 180. This also means that the mean, median, and mode are all expected to be equal in a normal distribution.</p>
-<p>In the same way that we could with the coin flips, we can then use what we know about our data and the normal distribution to estimate the probablity of certain outcomes (e.g., what’s the probability that someone would be taller than 190cm?) and we’ll do this in the lab.</p>
+<p>In the same way that we could with the coin flips, we can then use what we know about our data and the normal distribution to estimate the probability of certain outcomes (e.g., what’s the probability that someone would be taller than 190cm?) and we’ll do this in the lab.</p>
 <p>As with any probabilities, real-world data will come close to the normal distribution, but will (almost certainly) never match it exactly. As we collect more observations from normally-distributed data, our data will get increasingly closer to a normal distribution. As an example, here’s a simulation of an experiment in which we collect heights from 5000 participants. As you can see, as we add more observations, our data starts to look more and more like the normal distribution in the previous figure.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="images/normal_dist.gif" alt="A simulation of an experiment collecting height data from 2000 participants" width="75%" height="75%" />
@@ -462,7 +463,7 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <h3><span class="header-section-number">7.1.9</span> Activity 3: Normal distribution</h3>
 <p>Complete the sentences so that they are correct.</p>
 <ul>
-<li>In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>are always different</option> <option>sum to zero</option> <option>are all equal</option></select>.</li>
+<li>In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>sum to zero</option> <option>are all equal</option> <option>are always different</option></select>.</li>
 <li>In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the higher its probability of occuring</option> <option>the lower its probability of occuring</option></select>.</li>
 <li>Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='solveme' data-answer='["is a continuous variable"]'> <option></option> <option>is a categorical variable</option> <option>has three possible values</option> <option>is a continuous variable</option></select>.</li>
 </ul>
@@ -486,9 +487,10 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <ul>
 <li>Open a new R Markdown document, call it “Lab 3 in-class” and save it in your Psych 1B folder.</li>
 </ul>
-<p>We’re going to use two Base R functions to work with the binomial distribution:</p>
+<p>We’re going to use three Base R functions to work with the binomial distribution:</p>
 <p><code>dbinom()</code> - the density function: gives you the probability of x successes given the number of trials and the probability of success on a single trial (e.g., what’s the probability of flipping 8/10 heads with a fair coin?).</p>
-<p><code>pbinom()</code> - the distribution function: gives you the cumulative probability of getting a number of successes below a certain cut-off point (e.g. probability of getting 0 to 5 heads out of 10 flips), given the size and the probability. This is known as the cumulative probability distribution function or the cumulative density function.</p>
+<p><code>pbinom()</code> - the probability distribution function: gives you the cumulative probability of getting a number of successes below a certain cut-off point (e.g. probability of getting 0 to 5 heads out of 10 flips), given the size and the probability. This is known as the cumulative probability distribution function or the cumulative density function.</p>
+<p><code>qbinom()</code> - the quantile function: is the opposite of <code>pbinom()</code> in that it gives you the x axis value for a given probability p, plus given the size and prob, that is if the probability of flipping a head is .5, how many heads would you expect to get with 10 flips?</p>
 <p>So let’s try these functions out to answer two questions:</p>
 <ol style="list-style-type: decimal">
 <li>What is the probability of getting exactly 5 heads on 10 flips?</li>
@@ -510,7 +512,7 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <ul>
 <li>What is the probability of getting 5 heads out of 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.25",".25"]'/><br />
 </li>
-<li>What is this probabilty expressed in percent? <select class='solveme' data-answer='["25%"]'> <option></option> <option>0.25%</option> <option>2.5%</option> <option>25%</option></select></li>
+<li>What is this probability expressed in percent? <select class='solveme' data-answer='["25%"]'> <option></option> <option>0.25%</option> <option>2.5%</option> <option>25%</option></select></li>
 </ul>
 </div>
 <div id="activity-3-pbinom" class="section level3">
@@ -523,7 +525,7 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <ul>
 <li>What is the probability of getting a maximum of 2 heads on 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.06",".06"]'/><br />
 </li>
-<li>What is this probabilty expressed in percent? <select class='solveme' data-answer='["6%"]'> <option></option> <option>0.06%</option> <option>0.6%</option> <option>6%</option></select></li>
+<li>What is this probability expressed in percent? <select class='solveme' data-answer='["6%"]'> <option></option> <option>0.06%</option> <option>0.6%</option> <option>6%</option></select></li>
 </ul>
 </div>
 <div id="activity-4-pbinom-2" class="section level3">
@@ -545,8 +547,25 @@ Figure 4.6: Lower and upper tails
 <ul>
 <li>What is the probability of getting between 7 and 10 heads from 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.17",".17"]'/><br />
 </li>
-<li>What is this probabilty expressed in percent? <select class='solveme' data-answer='["17%"]'> <option></option> <option>0.017%</option> <option>0.17</option> <option>17%</option></select></li>
+<li>What is this probability expressed in percent? <select class='solveme' data-answer='["17%"]'> <option></option> <option>0.017%</option> <option>0.17</option> <option>17%</option></select></li>
 </ul>
+</div>
+<div id="activity-5-qbinom" class="section level3">
+<h3><span class="header-section-number">7.2.5</span> Activity 5: <code>qbinom()</code></h3>
+<p>OK, now let’s consider a scenario in which you’d use the quantile function <code>qbinom</code>. Imagine that you’ve been accosted by a street magician and they want to bet you that they can predict whether the coin will land on heads or tails. You suspect that they’ve done something to the coin so that it’s not fair and that the probability of the coin landing on a head is no longer .5 or 50/50, it’s now more likely to land on tails. Your null hypothesis is that the coin is not dodgy and that the probability should be even (P(heads)=.5).You are going to run a single experiment to test your hypothesis, with 10 trials. What is the minimum number of heads that is acceptable if p really does equal .5?</p>
+<p>You have used the argument <code>prob</code> in the previous two functions, <code>dbinom</code> and <code>pbinom</code>, and it represents the probability of success on a single trial (here it is the probability of ‘heads’ in one coin flip, .5). For <code>qbinom</code>, <code>prob</code> still represents the probability of success in one trial, whereas <code>p</code> represents the overall probability of success across all trials. When you run <code>pbinom</code>, it calculates the number of heads that would give that probability.</p>
+<p>In other words, you ask it for the minimum number of successes (e.g. heads) to maintain an overall probability of .5, in 10 flips, when the probability of a success on any one flip is .5.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="b-lab-3.html#cb138-1"></a><span class="kw">qbinom</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>And it tells you the answer is 2. <code>qbinom</code> also uses the lower.tail argument and it works in a similar fashion to pbinom.
+So if you got fewer than two heads, you would reject the null hypothesis that the coin was unbiased against heads.</p>
+<p>Ten trials is probably far too few if you want to accuse the magician of being a bit dodge. Run the below code and then answer the following questions:</p>
+<ul>
+<li>What would your cut-off be if you ran 100 trials? <input class='solveme nospaces' size='2' data-answer='["42"]'/></li>
+<li>What would your cut-off be if you ran 1000 trials? <input class='solveme nospaces' size='3' data-answer='["474"]'/></li>
+<li>What would your cut-off be if you ran 10,000 trials? <input class='solveme nospaces' size='4' data-answer='["4918"]'/></li>
+</ul>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="b-lab-3.html#cb140-1"></a><span class="kw">qbinom</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">size =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="dt">prob =</span> <span class="fl">.5</span>)</span></code></pre></div>
 <hr />
 <p><strong>Visualise it!</strong></p>
 <p>Have a go at playing around with different numbers of coin flips and probabilities in our <code>dbinom()</code> and <code>pbinom()</code> app!</p>
@@ -560,7 +579,7 @@ Figure 4.7: Binomial distribution app
 <hr />
 </div>
 <div id="normal-distribution" class="section level3">
-<h3><span class="header-section-number">7.2.5</span> Normal distribution</h3>
+<h3><span class="header-section-number">7.2.6</span> Normal distribution</h3>
 <p>A similar set of functions exist to help us work with other distributions, including the normal distribution and we’re going to use three of these:</p>
 <p><code>dnorm()</code>-the density function, for calculating the probability of a specific value</p>
 <p><code>pnorm()</code>-the probability or distribution function, for calculating the probability of getting at least or at most a specific value</p>
@@ -568,7 +587,7 @@ Figure 4.7: Binomial distribution app
 <p>As you can probably see, these functions are very similar to the functions we’ve already come across, that are used to work with the binomial distribution.</p>
 </div>
 <div id="probability-of-heights" class="section level3">
-<h3><span class="header-section-number">7.2.6</span> Probability of heights</h3>
+<h3><span class="header-section-number">7.2.7</span> Probability of heights</h3>
 <p>Data from the <a href="http://www.scotland.gov.uk/Resource/Doc/286063/0087158.pdf">Scottish Health Survey (2008)</a> shows that:</p>
 <ul>
 <li>The average height of a 16-24 year old Scottish man is 176.2 centimetres, with a standard deviation of 6.748.</li>
@@ -580,6 +599,16 @@ Figure 4.7: Binomial distribution app
 <button>
 Solution
 </button>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="b-lab-3.html#cb141-1"></a>men &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100000</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>)</span>
+<span id="cb141-2"><a href="b-lab-3.html#cb141-2"></a>women &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100000</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>)</span>
+<span id="cb141-3"><a href="b-lab-3.html#cb141-3"></a></span>
+<span id="cb141-4"><a href="b-lab-3.html#cb141-4"></a>heights &lt;-<span class="st"> </span><span class="kw">tibble</span>(men, women) <span class="op">%&gt;%</span></span>
+<span id="cb141-5"><a href="b-lab-3.html#cb141-5"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;height&quot;</span>, men<span class="op">:</span>women)</span>
+<span id="cb141-6"><a href="b-lab-3.html#cb141-6"></a></span>
+<span id="cb141-7"><a href="b-lab-3.html#cb141-7"></a><span class="kw">ggplot</span>(heights, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb141-8"><a href="b-lab-3.html#cb141-8"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span></span>
+<span id="cb141-9"><a href="b-lab-3.html#cb141-9"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
+<span id="cb141-10"><a href="b-lab-3.html#cb141-10"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="07-lab07_files/figure-html/unnamed-chunk-10-1.png" alt="Simulation of Scottish height data" width="100%" />
@@ -590,7 +619,7 @@ Figure 1.6: Simulation of Scottish height data
 <p>In this lab we will use this information to calculate the probability of observing at least or at most a specific height with <code>pnorm()</code>, and the heights that are associated with specific probabilities with <code>qnorm()</code>.</p>
 </div>
 <div id="activity-5pnorm" class="section level3">
-<h3><span class="header-section-number">7.2.7</span> Activity 5:<code>pnorm()</code></h3>
+<h3><span class="header-section-number">7.2.8</span> Activity 5:<code>pnorm()</code></h3>
 <p><code>pnorm()</code> requires three arguments:</p>
 <ul>
 <li><code>q</code> is the value that you want to calculate the probability of</li>
@@ -598,37 +627,37 @@ Figure 1.6: Simulation of Scottish height data
 <li><code>sd</code> is the standard deviation of the data</li>
 <li><code>lower.tail</code> works as above and depends on whether you are interested in the upper or lower tail</li>
 </ul>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="b-lab-3.html#cb138-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="b-lab-3.html#cb142-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</span></code></pre></div>
 <p>Replace the NULLs in the above code to calculate the probability of meeting a 16-24 y.o. Scottish woman who is taller than the average 16-24 y.o. Scottish man.</p>
 <ul>
 <li>What is the probability of meeting a 16-24 y.o. Scottish woman who is taller than the average 16-24 y.o. Scottish man? <input class='solveme nospaces' size='4' data-answer='["0.04",".04"]'/><br />
 </li>
-<li>What is this probabilty expressed in percent? <select class='solveme' data-answer='["4%"]'> <option></option> <option>0.04%</option> <option>0.4%</option> <option>4%</option></select></li>
+<li>What is this probability expressed in percent? <select class='solveme' data-answer='["4%"]'> <option></option> <option>0.04%</option> <option>0.4%</option> <option>4%</option></select></li>
 </ul>
 </div>
 <div id="activity-6-pnorm-2" class="section level3">
-<h3><span class="header-section-number">7.2.8</span> Activity 6: <code>pnorm</code> 2</h3>
+<h3><span class="header-section-number">7.2.9</span> Activity 6: <code>pnorm</code> 2</h3>
 <p>Fiona is a very tall Scottish woman (181.12cm) in the 16-24 y.o. range who will only date men who are taller than her.</p>
 <ul>
 <li>Using <code>prnorm()</code> again, what is the proportion of Scottish men Fiona would be willing to date to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.23",".23"]'/><br />
 </li>
-<li>What is this probabilty expressed in percent? <select class='solveme' data-answer='["23%"]'> <option></option> <option>0.23%</option> <option>2.3%</option> <option>23%</option></select></li>
+<li>What is this probability expressed in percent? <select class='solveme' data-answer='["23%"]'> <option></option> <option>0.23%</option> <option>2.3%</option> <option>23%</option></select></li>
 </ul>
 </div>
 <div id="activity-7-pnorm-3" class="section level3">
-<h3><span class="header-section-number">7.2.9</span> Activity 7: <code>pnorm</code> 3</h3>
+<h3><span class="header-section-number">7.2.10</span> Activity 7: <code>pnorm</code> 3</h3>
 <p>On the other hand, Fiona will only date women who are shorter than her.</p>
 <ul>
 <li>What is the proportion of Scottish women would Fiona be willing to date to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.99",".99"]'/><br />
 </li>
-<li>What is this probabilty expressed in percent? <select class='solveme' data-answer='["99%"]'> <option></option> <option>0.99%</option> <option>9.9%</option> <option>99%</option></select></li>
+<li>What is this probability expressed in percent? <select class='solveme' data-answer='["99%"]'> <option></option> <option>0.99%</option> <option>9.9%</option> <option>99%</option></select></li>
 </ul>
 </div>
 <div id="activity-8-qnorm" class="section level3">
-<h3><span class="header-section-number">7.2.10</span> Activity 8: <code>qnorm()</code></h3>
-<p>In the previous examples we calculated the probability of a particular outcome. Now we want to calculate what outcome would be associated with a particular probablity and we can use <code>qnorm()</code> to do this.</p>
+<h3><span class="header-section-number">7.2.11</span> Activity 8: <code>qnorm()</code></h3>
+<p>In the previous examples we calculated the probability of a particular outcome. Now we want to calculate what outcome would be associated with a particular probability and we can use <code>qnorm()</code> to do this.</p>
 <p><code>qnorm()</code> is very similar to <code>pnorm()</code> with one exception, rather than specifying <code>q</code> our known observation or quantile, instead we have to specify <code>p</code>, our known probability.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="b-lab-3.html#cb139-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="b-lab-3.html#cb143-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</span></code></pre></div>
 <p>Replace the NULLs in the above code to calculate how tall a 16-24 y.o. Scottish man would have to be in order to be in the top 5% (i.e., p = .05) of the height distribution for Scottish men in his age group.</p>
 <p><strong>Visualise it!</strong></p>
 <p>Have a go at playing around with different distributions in our <code>dnorm()</code> and <code>pnorm()</code> app - <a href="http://shiny.psy.gla.ac.uk/ShinyPsyTeachR/ug1/normal-distributions/">access it here</a></p>
@@ -636,68 +665,68 @@ Figure 1.6: Simulation of Scottish height data
 <p>And that’s it! The key concepts to take away from this lab are that different types of data tend to follow known distributions, and that we can use these distributions to calculate the probability of particular outcomes. This is the foundation of many of the statistical tests that you will learn about in level 2. For example, if you want to compare whether the scores from two groups are different, that is, whether they come from different distributions, you can calculate the probability that the scores from group 2 would be in the same distribution as group 1. If this probability is less than 5% (p = .05), you might conclude that the scores were significantly different. That’s an oversimplification obviously, but if you can develop a good understanding of probability distributions it will stand you in good stead for level 2.</p>
 </div>
 <div id="activity-solutions-5" class="section level3">
-<h3><span class="header-section-number">7.2.11</span> Activity solutions</h3>
+<h3><span class="header-section-number">7.2.12</span> Activity solutions</h3>
 <div id="activity-2-2" class="section level4">
-<h4><span class="header-section-number">7.2.11.1</span> Activity 2</h4>
+<h4><span class="header-section-number">7.2.12.1</span> Activity 2</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="b-lab-3.html#cb140-1"></a><span class="fl">.25</span></span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="b-lab-3.html#cb144-1"></a><span class="fl">.25</span></span></code></pre></div>
 </div>
 </div>
 <div id="activity-3-3" class="section level4">
-<h4><span class="header-section-number">7.2.11.2</span> Activity 3</h4>
+<h4><span class="header-section-number">7.2.12.2</span> Activity 3</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="b-lab-3.html#cb141-1"></a><span class="fl">.06</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="b-lab-3.html#cb145-1"></a><span class="fl">.06</span></span></code></pre></div>
 </div>
 </div>
 <div id="activity-4-5" class="section level4">
-<h4><span class="header-section-number">7.2.11.3</span> Activity 4</h4>
+<h4><span class="header-section-number">7.2.12.3</span> Activity 4</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="b-lab-3.html#cb142-1"></a><span class="fl">.17</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="b-lab-3.html#cb146-1"></a><span class="fl">.17</span></span></code></pre></div>
 </div>
 </div>
 <div id="activity-5-3" class="section level4">
-<h4><span class="header-section-number">7.2.11.4</span> Activity 5</h4>
+<h4><span class="header-section-number">7.2.12.4</span> Activity 5</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="b-lab-3.html#cb143-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">176.2</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="b-lab-3.html#cb147-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">176.2</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-6-2" class="section level4">
-<h4><span class="header-section-number">7.2.11.5</span> Activity 6</h4>
+<h4><span class="header-section-number">7.2.12.5</span> Activity 6</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="b-lab-3.html#cb144-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="b-lab-3.html#cb148-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-7-1" class="section level4">
-<h4><span class="header-section-number">7.2.11.6</span> Activity 7</h4>
+<h4><span class="header-section-number">7.2.12.6</span> Activity 7</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="b-lab-3.html#cb145-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="b-lab-3.html#cb149-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-8-1" class="section level4">
-<h4><span class="header-section-number">7.2.11.7</span> Activity 8</h4>
+<h4><span class="header-section-number">7.2.12.7</span> Activity 8</h4>
 <div class="solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="b-lab-3.html#cb146-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="b-lab-3.html#cb150-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 
 </div>
