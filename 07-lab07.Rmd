@@ -307,7 +307,7 @@ Data from the [Scottish Health Survey (2008)](http://www.scotland.gov.uk/Resourc
 
 * The average height of a 16-24 year old Scottish man is 176.2 centimetres, with a standard deviation of 6.748.
 * The average height of a 16-24 year old Scottish woman is 163.8 cm, with a standard deviation of 6.931.
-* There is currently no data on Scottish trans and non-binary people.
+* There are currently no data on Scottish trans and non-binary people.
 
 The below figure is a simulation of this data - you can see the code used to run this simulation by clicking the solution button.
 
@@ -341,7 +341,7 @@ ggplot(heights, aes(x = height, fill = sex)) +
 
 In this lab we will use this information to calculate the probability of observing at least or at most a specific height with `pnorm()`, and the heights that are associated with specific probabilities with `qnorm()`.
 
-### Activity 5:`pnorm()`
+### Activity 6:`pnorm()`
 
 `pnorm()` requires three arguments:
 
@@ -359,21 +359,21 @@ Replace the NULLs in the above code to calculate the probability of meeting a 16
 * What is the probability of meeting a 16-24 y.o. Scottish woman who is taller than the average 16-24 y.o. Scottish man? `r fitb(c("0.04", ".04"))`  
 * What is this probability expressed in percent? `r mcq(c("0.04%", "0.4%", answer = "4%"))`
 
-### Activity 6: `pnorm` 2
+### Activity 7: `pnorm` 2
 
 Fiona is a very tall Scottish woman (181.12\nbsp{}cm) in the 16-24 y.o. range who will only date men who are taller than her.  
 
 * Using `pnorm()` again, what is the proportion of Scottish men Fiona would be willing to date to 2 decimal places? `r fitb(c("0.23", ".23"))`  
 * What is this probability expressed in percent? `r mcq(c("0.23%", "2.3%", answer = "23%"))`
 
-### Activity 7: `pnorm` 3
+### Activity 8: `pnorm` 3
 
 On the other hand, Fiona will only date women who are shorter than her. 
 
 * What is the proportion of Scottish women would Fiona be willing to date to 2 decimal places? `r fitb(c("0.99", ".99"))`  
 * What is this probability expressed in percent? `r mcq(c("0.99%", "9.9%", answer = "99%"))`
 
-### Activity 8: `qnorm()`
+### Activity 9: `qnorm()`
 
 In the previous examples we calculated the probability of a particular outcome. Now we want to calculate what outcome would be associated with a particular probability and we can use `qnorm()` to do this.
 
@@ -387,7 +387,7 @@ Replace the NULLs in the above code to calculate how tall a 16-24 y.o. Scottish 
 
 **Visualise it!**
 
-Have a go at playing around with different distributions in our `dnorm()` and `pnorm()` app - [access it here](http://shiny.psy.gla.ac.uk/ShinyPsyTeachR/ug1/normal-distributions/)
+Have a go at playing around with different distributions in our `dnorm()` and `pnorm()` app - [access it here](http://shiny.psy.gla.ac.uk/jackt/ShinyPsyTeachR/ug1/normal-distributions/)
 
 ******
 
