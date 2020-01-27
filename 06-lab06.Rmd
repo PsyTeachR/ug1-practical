@@ -274,7 +274,7 @@ Look at the graph and answer the following questions:
 * Which group has an outlier? `r mcq(c("female", answer = "male", "nonbinary"))`
 * Which of the following do you think would be an accurate conclusion to draw from the plot? `r mcq(c("Women had higher AQ scores than men or nonbinary people", "Men had higher AQ scores than nonbinary people who had higher scores than women", answer = "Men and nonbinary people's scores did not differ much and both had higher AQ scores than women"))`
 
-### Activity 5: `Bad bar plots
+### Activity 5: Bad bar plots
 
 In the research methods lectures for Psych 1A, we talked about the importance of data visualisation and how different graphs might lead you to make very different conclusions about your data. For this reason, we've taught you how to make violin-boxplots because these show the true distribution of the data, however, it's useful to know how to make bad bar plots so that you can see the difference they make to your own data (but never use them as your only method of visualisation!).
 
@@ -364,6 +364,18 @@ ggsave("AQ_histogram.png", plot = AQ_histogram)
 
 ### Activity solutions
 
+
+#### Activity 1
+
+`r webex::hide()`
+```{r eval = FALSE}
+library(tidyverse)
+scoring <- read_csv ("scoring.csv")
+responses <- read_csv("responses.csv")
+qformats <- read_csv("qformats.csv")
+```
+`r webex::unhide()`
+
 #### Activity 2
 
 `r webex::hide()`
@@ -376,6 +388,20 @@ AQ_all <- pivot_longer(data = responses,
   inner_join(scoring, by = c("QFormat", "Response")) %>%
   group_by(Id, gender) %>% 
   summarise(total_score = sum(Score))
+```
+`r webex::unhide()`
+
+#### Activity 3
+
+`r webex::hide()`
+```{r eval = FALSE}
+AQ_all %>%
+  filter(gender == "female") %>%
+  ggplot(aes(x = total_score)) +
+  geom_histogram(binwidth = 1, colour = "black", fill = "grey") +
+  theme_minimal()+
+  scale_x_continuous(name = "Total AQ Score (female participants)", breaks = c(0,1,2,3,4,5,6,7,8,9,10)) +
+  scale_y_continuous(name = "Count")
 ```
 `r webex::unhide()`
 
