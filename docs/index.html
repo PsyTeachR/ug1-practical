@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Level 1 Data Skills" />
   <meta property="og:type" content="book" />
@@ -30,7 +30,7 @@
   
   
 
-<link rel="next" href="a-lab-1.html">
+<link rel="next" href="a-lab-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -38,6 +38,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -48,26 +51,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -76,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -322,6 +326,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.12" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.12</b> Activity solutions</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="b-lab-4.html"><a href="b-lab-4.html"><i class="fa fa-check"></i><b>8</b> 1B: Lab 4</a><ul>
+<li class="chapter" data-level="8.1" data-path="b-lab-4.html"><a href="b-lab-4.html#pre-class-activities-6"><i class="fa fa-check"></i><b>8.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="b-lab-4.html"><a href="b-lab-4.html#simulation"><i class="fa fa-check"></i><b>8.1.1</b> Simulation</a></li>
+<li class="chapter" data-level="8.1.2" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-1-sample"><i class="fa fa-check"></i><b>8.1.2</b> Activity 1: <code>sample()</code></a></li>
+<li class="chapter" data-level="8.1.3" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-2-sum"><i class="fa fa-check"></i><b>8.1.3</b> Activity 2: <code>sum()</code></a></li>
+<li class="chapter" data-level="8.1.4" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-3-replicate-1"><i class="fa fa-check"></i><b>8.1.4</b> Activity 3: <code>replicate()</code> 1</a></li>
+<li class="chapter" data-level="8.1.5" data-path="b-lab-4.html"><a href="b-lab-4.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>8.1.5</b> Monte Carlo simulation</a></li>
+<li class="chapter" data-level="8.1.6" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-4-replicate-2"><i class="fa fa-check"></i><b>8.1.6</b> Activity 4: <code>replicate()</code> 2</a></li>
+<li class="chapter" data-level="8.1.7" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-5-probability"><i class="fa fa-check"></i><b>8.1.7</b> Activity 5: probability</a></li>
+<li class="chapter" data-level="8.1.8" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-6-visualisation"><i class="fa fa-check"></i><b>8.1.8</b> Activity 6: visualisation</a></li>
+<li class="chapter" data-level="8.1.9" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-7-big-data"><i class="fa fa-check"></i><b>8.1.9</b> Activity 7: big data</a></li>
+<li class="chapter" data-level="8.1.10" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-8-rnorm"><i class="fa fa-check"></i><b>8.1.10</b> Activity 8: <code>rnorm()</code></a></li>
+<li class="chapter" data-level="8.1.11" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-9-simulate-a-dataset"><i class="fa fa-check"></i><b>8.1.11</b> Activity 9: Simulate a dataset</a></li>
+<li class="chapter" data-level="8.1.12" data-path="b-lab-4.html"><a href="b-lab-4.html#finished-6"><i class="fa fa-check"></i><b>8.1.12</b> Finished!</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="b-lab-4.html"><a href="b-lab-4.html#in-class-activities-7"><i class="fa fa-check"></i><b>8.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="b-lab-4.html"><a href="b-lab-4.html#step-1-load-in-packages-and-data"><i class="fa fa-check"></i><b>8.2.1</b> Step 1: Load in packages and data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="b-lab-4.html"><a href="b-lab-4.html#step-2-clean-up-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Step 2: Clean up the data</a></li>
+<li class="chapter" data-level="8.2.3" data-path="b-lab-4.html"><a href="b-lab-4.html#step-3-join"><i class="fa fa-check"></i><b>8.2.3</b> Step 3: Join</a></li>
+<li class="chapter" data-level="8.2.4" data-path="b-lab-4.html"><a href="b-lab-4.html#step-4.-select-your-variables"><i class="fa fa-check"></i><b>8.2.4</b> Step 4. Select your variables</a></li>
+<li class="chapter" data-level="8.2.5" data-path="b-lab-4.html"><a href="b-lab-4.html#step-5-recode"><i class="fa fa-check"></i><b>8.2.5</b> Step 5: Recode</a></li>
+<li class="chapter" data-level="8.2.6" data-path="b-lab-4.html"><a href="b-lab-4.html#step-6-filter"><i class="fa fa-check"></i><b>8.2.6</b> Step 6: Filter</a></li>
+<li class="chapter" data-level="8.2.7" data-path="b-lab-4.html"><a href="b-lab-4.html#step-7-sub-scale-scores"><i class="fa fa-check"></i><b>8.2.7</b> Step 7: Sub-scale scores</a></li>
+<li class="chapter" data-level="8.2.8" data-path="b-lab-4.html"><a href="b-lab-4.html#step-8-split-the-dataset"><i class="fa fa-check"></i><b>8.2.8</b> Step 8: Split the dataset</a></li>
+<li class="chapter" data-level="8.2.9" data-path="b-lab-4.html"><a href="b-lab-4.html#step-9-descriptives"><i class="fa fa-check"></i><b>8.2.9</b> Step 9: Descriptives</a></li>
+<li class="chapter" data-level="8.2.10" data-path="b-lab-4.html"><a href="b-lab-4.html#step-10-visualisation"><i class="fa fa-check"></i><b>8.2.10</b> Step 10: visualisation</a></li>
+</ul></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
@@ -454,11 +486,13 @@ window.onload = function() {
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -466,12 +500,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -483,6 +517,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -502,8 +540,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

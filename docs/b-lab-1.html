@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 1B: Lab 1 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 1B: Lab 1 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="a-lab-4.html">
-<link rel="next" href="b-lab-2.html">
+<link rel="prev" href="a-lab-4.html"/>
+<link rel="next" href="b-lab-2.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -38,6 +38,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -48,26 +51,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -76,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -320,6 +324,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.10" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-8-pnorm-3"><i class="fa fa-check"></i><b>7.2.10</b> Activity 8: <code>pnorm</code> 3</a></li>
 <li class="chapter" data-level="7.2.11" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-9-qnorm"><i class="fa fa-check"></i><b>7.2.11</b> Activity 9: <code>qnorm()</code></a></li>
 <li class="chapter" data-level="7.2.12" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.12</b> Activity solutions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="b-lab-4.html"><a href="b-lab-4.html"><i class="fa fa-check"></i><b>8</b> 1B: Lab 4</a><ul>
+<li class="chapter" data-level="8.1" data-path="b-lab-4.html"><a href="b-lab-4.html#pre-class-activities-6"><i class="fa fa-check"></i><b>8.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="b-lab-4.html"><a href="b-lab-4.html#simulation"><i class="fa fa-check"></i><b>8.1.1</b> Simulation</a></li>
+<li class="chapter" data-level="8.1.2" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-1-sample"><i class="fa fa-check"></i><b>8.1.2</b> Activity 1: <code>sample()</code></a></li>
+<li class="chapter" data-level="8.1.3" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-2-sum"><i class="fa fa-check"></i><b>8.1.3</b> Activity 2: <code>sum()</code></a></li>
+<li class="chapter" data-level="8.1.4" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-3-replicate-1"><i class="fa fa-check"></i><b>8.1.4</b> Activity 3: <code>replicate()</code> 1</a></li>
+<li class="chapter" data-level="8.1.5" data-path="b-lab-4.html"><a href="b-lab-4.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>8.1.5</b> Monte Carlo simulation</a></li>
+<li class="chapter" data-level="8.1.6" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-4-replicate-2"><i class="fa fa-check"></i><b>8.1.6</b> Activity 4: <code>replicate()</code> 2</a></li>
+<li class="chapter" data-level="8.1.7" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-5-probability"><i class="fa fa-check"></i><b>8.1.7</b> Activity 5: probability</a></li>
+<li class="chapter" data-level="8.1.8" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-6-visualisation"><i class="fa fa-check"></i><b>8.1.8</b> Activity 6: visualisation</a></li>
+<li class="chapter" data-level="8.1.9" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-7-big-data"><i class="fa fa-check"></i><b>8.1.9</b> Activity 7: big data</a></li>
+<li class="chapter" data-level="8.1.10" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-8-rnorm"><i class="fa fa-check"></i><b>8.1.10</b> Activity 8: <code>rnorm()</code></a></li>
+<li class="chapter" data-level="8.1.11" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-9-simulate-a-dataset"><i class="fa fa-check"></i><b>8.1.11</b> Activity 9: Simulate a dataset</a></li>
+<li class="chapter" data-level="8.1.12" data-path="b-lab-4.html"><a href="b-lab-4.html#finished-6"><i class="fa fa-check"></i><b>8.1.12</b> Finished!</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="b-lab-4.html"><a href="b-lab-4.html#in-class-activities-7"><i class="fa fa-check"></i><b>8.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="b-lab-4.html"><a href="b-lab-4.html#step-1-load-in-packages-and-data"><i class="fa fa-check"></i><b>8.2.1</b> Step 1: Load in packages and data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="b-lab-4.html"><a href="b-lab-4.html#step-2-clean-up-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Step 2: Clean up the data</a></li>
+<li class="chapter" data-level="8.2.3" data-path="b-lab-4.html"><a href="b-lab-4.html#step-3-join"><i class="fa fa-check"></i><b>8.2.3</b> Step 3: Join</a></li>
+<li class="chapter" data-level="8.2.4" data-path="b-lab-4.html"><a href="b-lab-4.html#step-4.-select-your-variables"><i class="fa fa-check"></i><b>8.2.4</b> Step 4. Select your variables</a></li>
+<li class="chapter" data-level="8.2.5" data-path="b-lab-4.html"><a href="b-lab-4.html#step-5-recode"><i class="fa fa-check"></i><b>8.2.5</b> Step 5: Recode</a></li>
+<li class="chapter" data-level="8.2.6" data-path="b-lab-4.html"><a href="b-lab-4.html#step-6-filter"><i class="fa fa-check"></i><b>8.2.6</b> Step 6: Filter</a></li>
+<li class="chapter" data-level="8.2.7" data-path="b-lab-4.html"><a href="b-lab-4.html#step-7-sub-scale-scores"><i class="fa fa-check"></i><b>8.2.7</b> Step 7: Sub-scale scores</a></li>
+<li class="chapter" data-level="8.2.8" data-path="b-lab-4.html"><a href="b-lab-4.html#step-8-split-the-dataset"><i class="fa fa-check"></i><b>8.2.8</b> Step 8: Split the dataset</a></li>
+<li class="chapter" data-level="8.2.9" data-path="b-lab-4.html"><a href="b-lab-4.html#step-9-descriptives"><i class="fa fa-check"></i><b>8.2.9</b> Step 9: Descriptives</a></li>
+<li class="chapter" data-level="8.2.10" data-path="b-lab-4.html"><a href="b-lab-4.html#step-10-visualisation"><i class="fa fa-check"></i><b>8.2.10</b> Step 10: visualisation</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -814,10 +846,10 @@ The solutions are at the bottom if you need them. However, remember what you lea
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)
-responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)
-qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="b-lab-1.html#cb100-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb100-2"><a href="b-lab-1.html#cb100-2"></a>scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
+<span id="cb100-3"><a href="b-lab-1.html#cb100-3"></a>responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
+<span id="cb100-4"><a href="b-lab-1.html#cb100-4"></a>qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -844,10 +876,10 @@ qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cl
 <li><code>cols</code> are the original columns you want to collapse.</li>
 </ul>
 <p>These functions can seem a bit abstract and it is better to show than tell. Run the below code in a new code chunk and then compare how <code>rlong</code> looks compared to <code>responses</code> and see if you can figure out what effect each argument had.</p>
-<pre class="sourceCode r"><code class="sourceCode r">rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, 
-                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  
-                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,
-                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="b-lab-1.html#cb101-1"></a>rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, </span>
+<span id="cb101-2"><a href="b-lab-1.html#cb101-2"></a>                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb101-3"><a href="b-lab-1.html#cb101-3"></a>                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb101-4"><a href="b-lab-1.html#cb101-4"></a>                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)</span></code></pre></div>
 <p>You have now created a tibble with 660 observations and 3 variables; 10 observations per 66 participants and 3 variables. Let’s recreate the example from the pre-class only use <strong>one participant</strong>. We can do that by using <code>filter()</code> which you used last semester and creating a new tibble called rlong_16.</p>
 </div>
 <div id="activity-3-filter" class="section level3">
@@ -902,11 +934,11 @@ Every year, the biggest problem with these exercises is typos caused by not payi
 <ul>
 <li>Run the below code in a new code chunk.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="st">&quot;Question&quot;</span>)
-scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="b-lab-1.html#cb102-1"></a>rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="st">&quot;Question&quot;</span>)</span>
+<span id="cb102-2"><a href="b-lab-1.html#cb102-2"></a>scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span></code></pre></div>
 <p>The final part of calculating the scores requires an extra step because now we don’t just want to calculate one score, we want to calculate a score <strong>for each participant</strong> which means that we need to use <code>group_by()</code> to group by <code>Id</code>. We’re not going to use it in this lab but we also want our object to show us the participant’s gender so we will also add <code>gender</code> to the grouping. If you want to refresh your memory about how <code>group_by()</code> works, revise <a href="https://psyteachr.github.io/ug1-practical/a-lab-3.html#activity-8-grouping-and-summarising">Psych 1A Lab 3 Activity 8</a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">scores_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Id, gender)
-AQ_all &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_grouped, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</code></pre>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="b-lab-1.html#cb103-1"></a>scores_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Id, gender)</span>
+<span id="cb103-2"><a href="b-lab-1.html#cb103-2"></a>AQ_all &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_grouped, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
 </div>
 <div id="activity-8-visualisation" class="section level3">
 <h3><span class="header-section-number">5.2.8</span> Activity 8: Visualisation</h3>
@@ -930,10 +962,10 @@ Figure 5.3: Histogram of total AQ scores
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)
-responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)
-qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="b-lab-1.html#cb104-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb104-2"><a href="b-lab-1.html#cb104-2"></a>scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
+<span id="cb104-3"><a href="b-lab-1.html#cb104-3"></a>responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
+<span id="cb104-4"><a href="b-lab-1.html#cb104-4"></a>qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-3-1" class="section level4">
@@ -942,7 +974,7 @@ qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cl
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">rlong_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">filter</span>(rlong, Id <span class="op">==</span><span class="st"> </span><span class="dv">16</span>)</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="b-lab-1.html#cb105-1"></a>rlong_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">filter</span>(rlong, Id <span class="op">==</span><span class="st"> </span><span class="dv">16</span>)</span></code></pre></div>
 </div>
 <div id="activity-4-2" class="section level4">
 <h4><span class="header-section-number">5.2.9.3</span> Activity 4</h4>
@@ -950,7 +982,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">rlong_<span class="dv">16</span>_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_<span class="dv">16</span>, qformats, <span class="st">&quot;Question&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="b-lab-1.html#cb106-1"></a>rlong_<span class="dv">16</span>_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_<span class="dv">16</span>, qformats, <span class="st">&quot;Question&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-5-1" class="section level4">
@@ -959,7 +991,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">scores_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_<span class="dv">16</span>_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="b-lab-1.html#cb107-1"></a>scores_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_<span class="dv">16</span>_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-6-1" class="section level4">
@@ -968,7 +1000,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">AQ_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_<span class="dv">16</span>, <span class="dt">AQ_score =</span> <span class="kw">sum</span>(Score))</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="b-lab-1.html#cb108-1"></a>AQ_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_<span class="dv">16</span>, <span class="dt">AQ_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
 </div>
 <div id="activity-8" class="section level4">
 <h4><span class="header-section-number">5.2.9.6</span> Activity 8</h4>
@@ -976,11 +1008,11 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="b-lab-1.html#cb109-1"></a><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span></span>
+<span id="cb109-2"><a href="b-lab-1.html#cb109-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span></span>
+<span id="cb109-3"><a href="b-lab-1.html#cb109-3"></a><span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span></span>
+<span id="cb109-4"><a href="b-lab-1.html#cb109-4"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb109-5"><a href="b-lab-1.html#cb109-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
 </div>
 
 </div>
@@ -1083,11 +1115,13 @@ window.onload = function() {
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1095,12 +1129,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -1112,6 +1146,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1131,8 +1169,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

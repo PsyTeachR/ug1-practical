@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 1A: Lab 4 | Level 1 Data Skills</title>
+  <title>8 1B: Lab 4 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 1A: Lab 4 | Level 1 Data Skills" />
+  <meta property="og:title" content="8 1B: Lab 4 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 1A: Lab 4 | Level 1 Data Skills" />
+  <meta name="twitter:title" content="8 1B: Lab 4 | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="a-lab-3.html"/>
-<link rel="next" href="b-lab-1.html"/>
+<link rel="prev" href="b-lab-3.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -379,381 +379,329 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-lab-4" class="section level1">
-<h1><span class="header-section-number">4</span> 1A: Lab 4</h1>
-<div id="pre-class-activities-2" class="section level2">
-<h2><span class="header-section-number">4.1</span> Pre-class activities</h2>
-<div id="activity-1-dplyr-recap" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> Activity 1: dplyr recap</h3>
-<p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
-<ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>arrange()</option> <option>mutate()</option> <option>group_by()</option> <option>summarise()</option> <option>filter()</option> <option>select()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>mutate()</option> <option>summarise()</option> <option>select()</option> <option>arrange()</option> <option>filter()</option> <option>group_by()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>arrange()</option> <option>group_by()</option> <option>summarise()</option> <option>filter()</option> <option>select()</option> <option>mutate()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and arrange()</option> <option>filter() and select()</option> <option>arrange() and mutate()</option> <option>group_by() and summarise()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["arrange() and select()","mutate() and filter()"]'> <option></option> <option>arrange() and select()</option> <option>mutate() and filter()</option> <option>select() and summarise()</option> <option>group_by() and mutate()</option></select> functions.</p></li>
-</ul>
+<div id="b-lab-4" class="section level1">
+<h1><span class="header-section-number">8</span> 1B: Lab 4</h1>
+<div id="pre-class-activities-6" class="section level2">
+<h2><span class="header-section-number">8.1</span> Pre-class activities</h2>
+<p>For your final Level 1 pre-class activity (hurrah!), we’re going to introduce a few new functions to show you some other things that R can do and that will also reinforce your understanding of probability.</p>
+<div id="simulation" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Simulation</h3>
+<p>One of the most powerful features of R is that you can use it for data simulation. Data simulation is the act of generating random numbers that follow a certain distribution or have known properties. This might not sound particularly impressive, but simulating data means that you can do things such as plan your statistical analyses, understand and demonstrate how probability works, or estimate how many participants you need to test in your experiment based upon what you think the data will look like. Data simulation uses the different types of distributions that we covered in Lab 3 to generate data, so make sure that you’re happy with the probability chapter before you move on.</p>
 </div>
-<div id="data-visualisation" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Data visualisation</h3>
-<p>As Grolemund and Wickham tell us:</p>
-<blockquote>
-<p>Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.</p>
-</blockquote>
-<p>(<a href="http://r4ds.had.co.nz/introduction.html" class="uri">http://r4ds.had.co.nz/introduction.html</a>)</p>
-<p>Being able to visualise our variables, and relationships between our variables, is a very useful skill. Before we do any statistical analyses or present any summary statistics, we should visualising our data as it is:</p>
-<ol style="list-style-type: decimal">
-<li><p>A quick and easy way to check our data make sense, and to identify any unusual trends.</p></li>
-<li><p>A way to honestly present the features of our data to anyone who reads our research.</p></li>
-</ol>
-<p><code>ggplot()</code> builds plots by combining layers (see Figure <a href="a-lab-4.html#fig:img-layers">4.1</a>)). If you’re used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures (<a href="https://www.data-to-viz.com/">this website</a> gives you a good sense of what’s possible).</p>
-<div class="figure" style="text-align: center"><span id="fig:img-layers"></span>
-<img src="images/layers.png" alt="ggplot2 layers from Field et al. (2012)" width="100%" />
+<div id="activity-1-sample" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Activity 1: <code>sample()</code></h3>
+<p>Just like Lab 3, all the functions we need for simulation are contained in Base R, however, we’ll also load the <code>tidyverse</code> so that we can wrangle our simulated data.</p>
+<p>Let’s start by introducing the <code>sample()</code> function, which samples elements (data points) from a vector (a collection of things that are of the same type, like numbers or words). We can use <code>sample()</code> to simulate flipping a coin and build some of the graphs you saw in the probability chapter. <code>sample()</code> is used when we want to simulate discrete data, i.e., <a href="https://psyteachr.github.io/ug1-practical/b-lab-3.html#types-of-data">nominal or ordinal data</a>.</p>
+<p><code>sample()</code> requires you to define three arguments:</p>
+<ul>
+<li><p><code>x</code> = a vector of elements, i.e., all of the possible outcomes. For our current example, this would be HEADS and TAILS.<br />
+</p></li>
+<li><p><code>size</code> = how many samples do you want to take, i.e., how many times do you want R to flip the coin?<br />
+</p></li>
+<li><p><code>replace</code> = specifies whether we should sample with replacement or not. In the last lab we used the example of pulling names out of a hat. If you put the name back in the hat each time you pulled one out this would be with replacement, if you don’t put the name back in this would be sampling without replacement. Basically, do you want to be able to get the same outcome on different samples? For a coin flip, it should be possible to get the same outcome more than once, so we specify <code>TRUE</code>. If we specified <code>FALSE</code> you could only draw as many samples as there were unique values, so in our case we could only flip the coin twice: once it would land on heads, once on tails, and then we would run out of outcomes.</p></li>
+<li><p>Open a new R Markdown document, name it “Pre-class 4” and save it in your Psych 1B folder.</p></li>
+<li><p>Copy, paste, and run the below code in a new code chunk to simulate flipping a coin 4 times (and load the <code>tidyverse</code>).</p></li>
+</ul>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="b-lab-4.html#cb153-1"></a><span class="co"># Notice that because our event labels are strings (text), </span></span>
+<span id="cb153-2"><a href="b-lab-4.html#cb153-2"></a><span class="co"># we need to enter them into the function in &quot;quotes&quot; </span></span>
+<span id="cb153-3"><a href="b-lab-4.html#cb153-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb153-4"><a href="b-lab-4.html#cb153-4"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;HEADS&quot;</span>, <span class="st">&quot;TAILS&quot;</span>), <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;TAILS&quot; &quot;TAILS&quot; &quot;TAILS&quot; &quot;HEADS&quot;</code></pre>
+<p>How many heads did you get? Don’t worry if it’s different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times?</p>
+<p>When you perform data simulation, you’re unlikely to get the same outcome each time you take a sample, just like if you flipped a coin 4 times on 5 separate occasions you would be unlikely to get the same number of heads each time. What’s so useful about data simulation is that we can use the outcomes from lots of different sampling attempts to calculate the probability of a particular outcome, e.g., getting 4 heads from 4 flips of a coin.</p>
+<p>So that we can add up the number of heads and tails more easily, let’s simulate those coin flips again, but using numerical codes, 1 = HEADS, 0 = TAILS.</p>
+<ul>
+<li>Now that the outcomes are numeric, we don’t need the combine function <code>c</code><br />
+</li>
+<li>0:1 means all numbers from 0 to 1 in steps of 1. So basically, 0 and 1. If you wanted to simulate rolling a die, you would write <code>1:6</code> which would give you all the whole numbers from 1 to 6.</li>
+</ul>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="b-lab-4.html#cb155-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 0 1 1 0</code></pre>
+</div>
+<div id="activity-2-sum" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Activity 2: <code>sum()</code></h3>
+<p>Now that we’re using ones and zeroes we can count the number of heads by summing the values of the outcomes. The below code will sample our coin flips as above, and then count up the outcomes. Because we’ve coded heads = 1 and tails = 0, we can interpret the sum of all the outcomes as the number of heads.</p>
+<ul>
+<li>Copy, paste and run the code below in a new code chunk.</li>
+</ul>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="b-lab-4.html#cb157-1"></a><span class="co"># This code pipes the output of sample() into sum() which counts up the number of heads/1s.</span></span>
+<span id="cb157-2"><a href="b-lab-4.html#cb157-2"></a></span>
+<span id="cb157-3"><a href="b-lab-4.html#cb157-3"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Run this function multiple times (you can use the green markdown play arrow at the top right of the code chunk to make this easy). In our simulation of five sets of four flips we got 1, 3, 2, 2, and 3 heads. So in only one out of the five simulations did we get exactly one heads, i.e., a proportion of .2 or 20% of the time.</p>
+</div>
+<div id="activity-3-replicate-1" class="section level3">
+<h3><span class="header-section-number">8.1.4</span> Activity 3: <code>replicate()</code> 1</h3>
+<p>Let’s repeat the experiment a whole bunch more times. We can have R do this over and over again using the <code>replicate()</code> function. <code>replicate()</code> requires two arguments (although there are other optional arguments if you want to do more complicated tasks):</p>
+<ul>
+<li><code>n</code> = the number of times you want to repeat your code<br />
+</li>
+<li><code>expr</code> = the expression, or code, you want to repeat</li>
+</ul>
+<p>Copy, paste and run the below code into a new code chunk to run the sample function and sum up the outcomes 20 times.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="b-lab-4.html#cb159-1"></a><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())</span></code></pre></div>
+<pre><code>##  [1] 1 0 3 3 3 2 2 3 3 3 0 4 1 3 2 0 3 2 0 3</code></pre>
+</div>
+<div id="monte-carlo-simulation" class="section level3">
+<h3><span class="header-section-number">8.1.5</span> Monte Carlo simulation</h3>
+<p>Every year, the city of Monte Carlo is the site of innumerable games of chance played in its casinos by people from all over the world. This notoriety is reflected in the use of the term “Monte Carlo simulation” among statisticians to refer to using a computer simulation to estimate statistical properties of a random process. In a Monte Carlo simulation, the random process is repeated over and over again in order to assess its performance over a very large number of trials. It is usually used in situations where mathematical solutions are unknown or hard to compute. Now we are ready to use Monte Carlo simulation to demonstrate the probability of various outcomes.</p>
+</div>
+<div id="activity-4-replicate-2" class="section level3">
+<h3><span class="header-section-number">8.1.6</span> Activity 4: <code>replicate()</code> 2</h3>
+<p>We are going to run our coin flip experiment again but this time we are going to run the experiment 50 times (each including 4 coin tosses), and use the same principles to predict the number of heads we will get.</p>
+<ul>
+<li>Copy, paste, and run the below code to run the simulation and store the result in an object `heads50** using the code below:</li>
+</ul>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="b-lab-4.html#cb161-1"></a>heads50 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">50</span>, <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span>
+<span id="cb161-2"><a href="b-lab-4.html#cb161-2"></a>heads50</span></code></pre></div>
+<pre><code>##  [1] 3 4 1 2 2 2 3 0 3 3 2 3 3 1 2 1 4 3 2 2 2 2 1 1 3 3 2 1 1 3 3 2 2 3 3
+## [36] 2 2 1 1 1 2 2 2 3 2 2 3 3 2 4</code></pre>
+</div>
+<div id="activity-5-probability" class="section level3">
+<h3><span class="header-section-number">8.1.7</span> Activity 5: probability</h3>
+<p>We can estimate the probability of each of the outcomes (0, 1, 2, 3, 4 heads after 4 coin tosses) by counting them up and dividing by the number of experiments. We will do this by putting the results of the replications in a tibble() and then using count().</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="b-lab-4.html#cb163-1"></a>data50 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads50) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># convert to a table</span></span>
+<span id="cb163-2"><a href="b-lab-4.html#cb163-2"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># group by number of possibilities (0,1,2,3,4)</span></span>
+<span id="cb163-3"><a href="b-lab-4.html#cb163-3"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="co"># count occurances of each possibility,</span></span>
+<span id="cb163-4"><a href="b-lab-4.html#cb163-4"></a>                          <span class="dt">p=</span>n<span class="op">/</span><span class="dv">50</span>) <span class="co"># &amp; calculate probability (p) of each</span></span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">heads</th>
+<th align="right">n</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">0.20</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">20</td>
+<td align="right">0.40</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">16</td>
+<td align="right">0.32</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">0.06</td>
+</tr>
+</tbody>
+</table>
+<p>Your numbers may be slightly different to the ones presented in this book - remember that by default, each time you run a simulation, you will get a different random sample.</p>
+</div>
+<div id="activity-6-visualisation" class="section level3">
+<h3><span class="header-section-number">8.1.8</span> Activity 6: visualisation</h3>
+<p>We can then plot a histogram of the outcomes using <code>geom_bar()</code>.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="b-lab-4.html#cb164-1"></a><span class="co"># Note: stat = &quot;identity&quot; tells  ggplot to use the values of the y-axis variable (p) as the height of the bars in our histogram (as opposed to counting the number of occurances of those values)</span></span>
+<span id="cb164-2"><a href="b-lab-4.html#cb164-2"></a></span>
+<span id="cb164-3"><a href="b-lab-4.html#cb164-3"></a><span class="kw">ggplot</span>(data50, <span class="kw">aes</span>(<span class="dt">x =</span> heads,<span class="dt">y =</span> p)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb164-4"><a href="b-lab-4.html#cb164-4"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb164-5"><a href="b-lab-4.html#cb164-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 4 flips (p)&quot;</span>) <span class="op">+</span></span>
+<span id="cb164-6"><a href="b-lab-4.html#cb164-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:data50hist"></span>
+<img src="08-lab08_files/figure-html/data50hist-1.png" alt="No. of heads from 4 coin tosses probability outcomes." width="100%" />
 <p class="caption">
-Figure 4.1: ggplot2 layers from Field et al. (2012)
+Figure 8.1: No. of heads from 4 coin tosses probability outcomes.
 </p>
 </div>
-</div>
-<div id="activity-2-set-up-1" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> Activity 2: Set-up</h3>
-<p>We’re going to use the data from the Labs to explain how <code>ggplot2</code> works so let’s do the set-up as usual.</p>
+<hr />
+<p><strong>Pause here and interpret the above figure</strong></p>
 <ul>
-<li>Open R Studio and ensure the environment is clear.<br />
-</li>
-<li>Download the <a href="files/lab4.zip" download><code>lab 4 files</code></a>, extract the files and then move them in to your Lab 4 folder.</li>
-<li>Open the <code>stub-4.1.Rmd</code> file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
-</li>
-<li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Actvity 1 code chunk.</li>
+<li>What is the estimated probability for flipping 0/4 heads? 1/4 heads? 2/4 heads? 3/4 heads? 4/4 heads?</li>
 </ul>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="a-lab-4.html#cb79-1"></a><span class="kw">library</span>(tidyverse) </span>
-<span id="cb79-2"><a href="a-lab-4.html#cb79-2"></a></span>
-<span id="cb79-3"><a href="a-lab-4.html#cb79-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb79-4"><a href="a-lab-4.html#cb79-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb79-5"><a href="a-lab-4.html#cb79-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span>
-<span id="cb79-6"><a href="a-lab-4.html#cb79-6"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, </span>
-<span id="cb79-7"><a href="a-lab-4.html#cb79-7"></a>                      ahiTotal, cesdTotal, sex, age, </span>
-<span id="cb79-8"><a href="a-lab-4.html#cb79-8"></a>                      educ, income, occasion, elapsed.days) </span></code></pre></div>
+<hr />
+<p>Unfortunately sometimes this calculation will estimate that the probability of an outcome is zero since this outcome never came up when the simulation is run. If you want reliable estimates, you need a <strong>bigger sample</strong> to minimise the probability that a possible outcome won’t occur.</p>
 </div>
-<div id="activity-3-factors" class="section level3">
-<h3><span class="header-section-number">4.1.4</span> Activity 3: Factors</h3>
-<p>Before we go any further we need to perform an additional step of data processing that we have glossed over to this point. First, run the below code to look at the structure of the dataset:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="a-lab-4.html#cb80-1"></a><span class="kw">str</span>(summarydata)</span></code></pre></div>
-<pre><code>## Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 992 obs. of  8 variables:
-##  $ ahiTotal    : num  32 34 34 35 36 37 38 38 38 38 ...
-##  $ cesdTotal   : num  50 49 47 41 36 35 50 55 47 39 ...
-##  $ sex         : num  1 1 1 1 1 1 2 1 2 2 ...
-##  $ age         : num  46 37 37 19 40 49 42 57 41 41 ...
-##  $ educ        : num  4 3 3 2 5 4 4 4 4 4 ...
-##  $ income      : num  3 2 2 1 2 1 1 2 1 1 ...
-##  $ occasion    : num  5 2 3 0 5 0 2 2 2 4 ...
-##  $ elapsed.days: num  182 14.2 33 0 202.1 ...</code></pre>
-<p>R assumes that all of the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
-<p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="a-lab-4.html#cb82-1"></a>summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span></span>
-<span id="cb82-2"><a href="a-lab-4.html#cb82-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),</span>
-<span id="cb82-3"><a href="a-lab-4.html#cb82-3"></a>         <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),</span>
-<span id="cb82-4"><a href="a-lab-4.html#cb82-4"></a>         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</span></code></pre></div>
-<p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
-</div>
-<div id="activity-4-bar-plot" class="section level3">
-<h3><span class="header-section-number">4.1.5</span> Activity 4: Bar plot</h3>
-<p>For our first example we will recreate the bar plot showing the number of males and females from Lab 2 by showing you how the layers of code build up.</p>
-<ul>
-<li>The first line (or layer) sets up the base of the graph: the data to use and the aesthetics (what will go on the x and y axis, how the plot will be grouped).<br />
-</li>
-<li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
-</ul>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="a-lab-4.html#cb83-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:layer1"></span>
-<img src="04-lab04_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
+<div id="activity-7-big-data" class="section level3">
+<h3><span class="header-section-number">8.1.9</span> Activity 7: big data</h3>
+<p>Let’s repeat the Monte Carlo simulation, but with 10,000 trials instead of just 50. All we need to do is change <code>n</code> from 50 to 10000.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="b-lab-4.html#cb165-1"></a>heads10K &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span></code></pre></div>
+<p>Again, we’ll put the outcome into a table using <code>tibble</code> and calculate counts and probabilities of each outcome using <code>group_by()</code> and <code>summarise()</code>. Remember to try reading your code in full sentences to help you understand what multiple lines of code connected by pipes are doing. How would you read the below code?</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="b-lab-4.html#cb166-1"></a>data10K &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads10K) <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb166-2"><a href="b-lab-4.html#cb166-2"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">           </span></span>
+<span id="cb166-3"><a href="b-lab-4.html#cb166-3"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="dt">p=</span>n<span class="op">/</span><span class="dv">10000</span>) </span></code></pre></div>
+<p>Finally, we can visualise this as we did earlier.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="b-lab-4.html#cb167-1"></a><span class="kw">ggplot</span>(data10K, <span class="kw">aes</span>(heads,p)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb167-2"><a href="b-lab-4.html#cb167-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb167-3"><a href="b-lab-4.html#cb167-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 4 flips (p)&quot;</span>) <span class="op">+</span></span>
+<span id="cb167-4"><a href="b-lab-4.html#cb167-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:data10Khist"></span>
+<img src="08-lab08_files/figure-html/data10Khist-1.png" alt="10K coin toss probability outcomes." width="100%" />
 <p class="caption">
-Figure 4.2: First ggplot layer sets the axes
+Figure 8.2: 10K coin toss probability outcomes.
 </p>
 </div>
-<ul>
-<li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
-</ul>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="a-lab-4.html#cb84-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span></span>
-<span id="cb84-2"><a href="a-lab-4.html#cb84-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
-<p class="caption">
-Figure 1.1: Basic barplot
-</p>
+<p>Using Monte Carlo simulation, we estimate that the probability of getting exactly one head on four throws is about 0.25. The above result represents a probability distribution for all the possible outcomes in our experiments. We can derive lots of useful information from this.</p>
+<p>For instance, what is the probability of getting two or more heads in four throws? This is easy: the outcomes meeting the criterion are 2, 3, or 4 heads. We can just add these probabilities together like so:</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="b-lab-4.html#cb168-1"></a>data10K <span class="op">%&gt;%</span></span>
+<span id="cb168-2"><a href="b-lab-4.html#cb168-2"></a><span class="st">  </span><span class="kw">filter</span>(heads <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb168-3"><a href="b-lab-4.html#cb168-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">p2 =</span> <span class="kw">sum</span>(p))</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##      p2
+##   &lt;dbl&gt;
+## 1 0.690</code></pre>
+<p>You can add probabilities for various outcomes together as long as the outcomes are mutually exclusive, that is, when one outcome occurs, the others can’t occur. For this coin flipping example, this is obviously the case: you can’t simultaneously get exactly two and exactly three heads as the outcome of a single experiment. However, be aware that you can’t simply add probabilities together when the events in question are not mutually exclusive: for example, the probability of the coin landing heads up, and it landing with the image of the head being in a particular orientation are not mutually exclusive, and can’t be simply added together.</p>
+<p>This is the basis of how we can calculate the probability of an outcome using a known distribution - by simulating a large number of trials we can use this as an estimate for how our data will look in the real world.</p>
 </div>
+<div id="activity-8-rnorm" class="section level3">
+<h3><span class="header-section-number">8.1.10</span> Activity 8: <code>rnorm()</code></h3>
+<p>We can also use R to simulate continuous data that follow a normal distribution using <code>rnorm()</code>. You’ve actually used <code>rnorm()</code> before, all the way back in Lab 2 of Psych 1A but we’ll go over it again.</p>
 <ul>
-<li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
+<li><code>n</code> is the number of data points you wish to simulate which is the only required argument for <code>rnorm()</code></li>
+<li><code>mean</code> is the mean that you want your data to have. If you don’t provide this argument, <code>rnorm()</code> will use a default value of <code>mean = 0</code>.</li>
+<li><code>sd</code> is the standard deviation you want your data to have. If you don’t provide this argument, <code>rnorm()</code> will use a default value of <code>sd = 1</code>.</li>
 </ul>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="a-lab-4.html#cb85-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb85-2"><a href="a-lab-4.html#cb85-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
+<p>Copy, paste and run the below code in a new code chunk. This will randomly generate 50 numbers that collectively have a mean of 10 and a SD of 2 and then store it in the object <code>normal</code>.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="b-lab-4.html#cb170-1"></a>normal &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>You can check that the data you have generated are as you expected by calculating the mean and SD of this new variable - you shouldn’t expect the values to be exactly 10 and 2 (remember, it’s randomly generated), but they should be reasonably close.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="b-lab-4.html#cb171-1"></a><span class="kw">mean</span>(normal)</span>
+<span id="cb171-2"><a href="b-lab-4.html#cb171-2"></a><span class="kw">sd</span>(normal)</span></code></pre></div>
+<pre><code>## [1] 9.865403
+## [1] 1.939778</code></pre>
+<p>Finally, you can visualise your data with a density plot. Try changing the number of data points generated by <code>rnorm()</code> from 50 to 500 to 5000 and then see how the shape of the distribution changes.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="b-lab-4.html#cb173-1"></a><span class="kw">tibble</span>(<span class="dt">normal =</span> normal) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#turn the variable normal into a table and then</span></span>
+<span id="cb173-2"><a href="b-lab-4.html#cb173-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(normal)) <span class="op">+</span><span class="st"> </span><span class="co"># create a density plot</span></span>
+<span id="cb173-3"><a href="b-lab-4.html#cb173-3"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb173-4"><a href="b-lab-4.html#cb173-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
+<img src="08-lab08_files/figure-html/unnamed-chunk-4-1.png" alt="Distribution of variable created by rnorm" width="100%" />
 <p class="caption">
-Figure 4.3: Barplot with colour
+Figure 4.3: Distribution of variable created by rnorm
 </p>
 </div>
+</div>
+<div id="activity-9-simulate-a-dataset" class="section level3">
+<h3><span class="header-section-number">8.1.11</span> Activity 9: Simulate a dataset</h3>
+<p>Finally, we can put all of this together to simulate a full dataset. Let’s imagine that we’re going to run an experiment to see whether 120 people will roll a higher number on a die if their IQ is higher. This is obviously a stupid experiment but psychology does occasionally do stupid things.</p>
 <ul>
-<li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
+<li>First, let’s create a variable that has all of our subject IDs. We’re just going to assign our participants numerical codes.</li>
 </ul>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="a-lab-4.html#cb86-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb86-2"><a href="a-lab-4.html#cb86-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="b-lab-4.html#cb174-1"></a>subject_id &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">120</span> <span class="co"># create a variable called subject_id that has the numbers 1 to 120 in it</span></span></code></pre></div>
+<p>Then we’re going to create a column for gender using a new but simple function <code>rep</code> which stands for “repeat”. The below code will create a variable that repeats “man” 40 times, then “women” 40 times, then “non-binary” 40 times.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="b-lab-4.html#cb175-1"></a>gender &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;man&quot;</span>, <span class="st">&quot;woman&quot;</span>, <span class="st">&quot;nonbinary&quot;</span>), <span class="dt">each =</span> <span class="dv">40</span>)</span></code></pre></div>
+<p>Next, let’s simulate them all rolling a die once using <code>sample()</code>.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="b-lab-4.html#cb176-1"></a>rolls &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">size =</span> <span class="dv">120</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>Then, let’s simulate their IQ scores. IQ scores are standardised so that overall, the population has an average IQ of 100 and a SD of 15 so we can use this information to simulate the data with <code>rnorm()</code>.</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="b-lab-4.html#cb177-1"></a>iq &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">120</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>)</span></code></pre></div>
+<p>Finally, we can stitch all these variables together into a table.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="b-lab-4.html#cb178-1"></a>sim_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(subject_id, gender, rolls, iq)</span></code></pre></div>
+<p>Now that we’ve got our simulated data we could write code to analyse it even before we’ve collected any real data which will not only save us time in the future, but will help us plan our analyses and we could include this code in a pre-registration document.</p>
+<p>For example, you could create a plot of IQ scores for each dice roll (remember these are not real data…)</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="b-lab-4.html#cb179-1"></a>sim_data <span class="op">%&gt;%</span></span>
+<span id="cb179-2"><a href="b-lab-4.html#cb179-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">rolls =</span> <span class="kw">as.factor</span>(rolls)) <span class="op">%&gt;%</span></span>
+<span id="cb179-3"><a href="b-lab-4.html#cb179-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> rolls, <span class="dt">y =</span> iq, <span class="dt">fill =</span> rolls)) <span class="op">+</span></span>
+<span id="cb179-4"><a href="b-lab-4.html#cb179-4"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb179-5"><a href="b-lab-4.html#cb179-5"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb179-6"><a href="b-lab-4.html#cb179-6"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
+<span id="cb179-7"><a href="b-lab-4.html#cb179-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb179-8"><a href="b-lab-4.html#cb179-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Outcome of dice roll&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="08-lab08_files/figure-html/unnamed-chunk-10-1.png" alt="Boxplot of IQ scores grouped by what each person rolled on the die" width="100%" />
 <p class="caption">
-Figure 4.4: Barplot without legend
-</p>
-</div>
-<p>We might want to tidy up our plot to make it look a bit nicer. First we can edit the axis labels to be more informative. The most common functions you will use are:</p>
-<ul>
-<li><code>scale_x_continuous()</code> for adjusting the x-axis for a continuous variable</li>
-<li><code>scale_y_continuous()</code> for adjusting the y-axis for a continuous variable</li>
-<li><code>scale_x_discrete()</code> for adjusting the x-axis for a discrete/categorical variable</li>
-<li><code>scale_y_discrete()</code> for adjusting the y-axis for a discrete/categorical variable</li>
-</ul>
-<p>And in those functions the two most common arguments you will use are:</p>
-<ul>
-<li><code>name</code> which controls the name of each axis</li>
-<li><code>labels</code> which controls the names of the break points on the axis</li>
-</ul>
-<p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="a-lab-4.html#cb87-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb87-2"><a href="a-lab-4.html#cb87-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb87-3"><a href="a-lab-4.html#cb87-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb87-4"><a href="a-lab-4.html#cb87-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb87-5"><a href="a-lab-4.html#cb87-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
-<p class="caption">
-Figure 4.5: Barplot with axis labels
-</p>
-</div>
-<p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="a-lab-4.html#cb88-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb88-2"><a href="a-lab-4.html#cb88-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb88-3"><a href="a-lab-4.html#cb88-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb88-4"><a href="a-lab-4.html#cb88-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb88-5"><a href="a-lab-4.html#cb88-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb88-6"><a href="a-lab-4.html#cb88-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
-<p class="caption">
-Figure 4.6: Barplot with minimal theme
-</p>
-</div>
-<p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="a-lab-4.html#cb89-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb89-2"><a href="a-lab-4.html#cb89-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb89-3"><a href="a-lab-4.html#cb89-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb89-4"><a href="a-lab-4.html#cb89-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb89-5"><a href="a-lab-4.html#cb89-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb89-6"><a href="a-lab-4.html#cb89-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb89-7"><a href="a-lab-4.html#cb89-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
-<p class="caption">
-Figure 4.7: Barplot with colour-blind friendly colour scheme
-</p>
-</div>
-<p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="a-lab-4.html#cb90-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb90-2"><a href="a-lab-4.html#cb90-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></span>
-<span id="cb90-3"><a href="a-lab-4.html#cb90-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb90-4"><a href="a-lab-4.html#cb90-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb90-5"><a href="a-lab-4.html#cb90-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb90-6"><a href="a-lab-4.html#cb90-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb90-7"><a href="a-lab-4.html#cb90-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
-<p class="caption">
-Figure 4.8: Barplot with adjusted alpha
-</p>
-</div>
-<div class="warning">
-<p>
-In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn’t included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.
+Figure 1.6: Boxplot of IQ scores grouped by what each person rolled on the die
 </p>
 </div>
 </div>
-<div id="activity-5-violin-boxplot" class="section level3">
-<h3><span class="header-section-number">4.1.6</span> Activity 5: Violin-boxplot</h3>
-<p>As our final activity we will also explain the code used to create the violin-boxplot from Lab 2, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:</p>
-<ol style="list-style-type: decimal">
-<li>We have added a <code>y</code> argument to the first layer because we wanted to represent two variables, not just a count.</li>
-<li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
-<li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
-</ol>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="a-lab-4.html#cb91-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span></span>
-<span id="cb91-2"><a href="a-lab-4.html#cb91-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span></span>
-<span id="cb91-3"><a href="a-lab-4.html#cb91-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span></span>
-<span id="cb91-4"><a href="a-lab-4.html#cb91-4"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,</span>
-<span id="cb91-5"><a href="a-lab-4.html#cb91-5"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
-<span id="cb91-6"><a href="a-lab-4.html#cb91-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span></span>
-<span id="cb91-7"><a href="a-lab-4.html#cb91-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb91-8"><a href="a-lab-4.html#cb91-8"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
-<p class="caption">
-Figure 4.9: Violin-boxplot
-</p>
+<div id="finished-6" class="section level3">
+<h3><span class="header-section-number">8.1.12</span> Finished!</h3>
+<p>The in-class activities for Lab 4 are to analyse your group project data which means in terms of new stuff to learn, we’re done! In Psych 1A and 1B, we’ve tried to give you a solid introduction to common data skills you’ll need in order to conduct your own research. Even if you don’t intend to continue with psychology or quantitative research in the future, we hope that you’re proud of the skills you’ve learned. For some of you, R might not have been your favourite bit of the course, but you should be very proud of what you’ve achieved and with such a diverse class we hope you can see that programming isn’t an innate skill that only certain people can learn. It just take a a bit of work, some (hopefully) helpful teaching materials, and a lot of swearing at the error messages.</p>
 </div>
 </div>
-<div id="activity-6-layers-part-2" class="section level3">
-<h3><span class="header-section-number">4.1.7</span> Activity 6: Layers part 2</h3>
-<p>The key thing to note about <code>ggplot</code> is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="a-lab-4.html#cb92-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
-<span id="cb92-2"><a href="a-lab-4.html#cb92-2"></a><span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span></span>
-<span id="cb92-3"><a href="a-lab-4.html#cb92-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span>
-<span id="cb92-4"><a href="a-lab-4.html#cb92-4"></a></span>
-<span id="cb92-5"><a href="a-lab-4.html#cb92-5"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
-<span id="cb92-6"><a href="a-lab-4.html#cb92-6"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
-<span id="cb92-7"><a href="a-lab-4.html#cb92-7"></a><span class="st">  </span><span class="kw">geom_violin</span>()</span></code></pre></div>
-<div id="finished-4" class="section level4">
-<h4><span class="header-section-number">4.1.7.1</span> Finished!</h4>
-<p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
+<div id="in-class-activities-7" class="section level2">
+<h2><span class="header-section-number">8.2</span> In-class activities</h2>
+<p>We’ve spent the last 6 months giving you the skills you need to be able to deal with your own data. Now’s the time to show us what you’ve learned. In this chapter we’re going to describe the steps you will need to go through when analysing your data but, aside from a few lines that will help you deal with the questionnaire data that the Experimentum platform spits out, we’re not going to give you any code solutions.
+Everything you need to do you’ve done before, so use this book to help you. Remember, you don’t need to write the code from memory, you just need to find the relevant examples and then copy and paste and change what needs changing to make it work for you.</p>
+<p>We suggest that you problems-solve the code as a group, however, make sure that you all have a separate copy of the final working code.</p>
+<div id="step-1-load-in-packages-and-data" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Step 1: Load in packages and data</h3>
+<p>The data files are on Moodle. Remember, don’t share them in Messenger etc. because of data protection laws.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="b-lab-4.html#cb180-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb180-2"><a href="b-lab-4.html#cb180-2"></a></span>
+<span id="cb180-3"><a href="b-lab-4.html#cb180-3"></a>demo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;demographics.csv&quot;</span>)</span>
+<span id="cb180-4"><a href="b-lab-4.html#cb180-4"></a>mslq &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;MSLQ.csv&quot;</span>)</span></code></pre></div>
 </div>
+<div id="step-2-clean-up-the-data" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Step 2: Clean up the data</h3>
+<p>Run the below code - don’t change anything. This code will clean up the Experimentum data a little bit to help you on your way.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="b-lab-4.html#cb181-1"></a>demo_final &lt;-<span class="st"> </span>demo <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-2"><a href="b-lab-4.html#cb181-2"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id, team_name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-3"><a href="b-lab-4.html#cb181-3"></a><span class="st">  </span><span class="kw">filter</span>(session_id <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(session_id), endtime <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(endtime)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-4"><a href="b-lab-4.html#cb181-4"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-5"><a href="b-lab-4.html#cb181-5"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-6"><a href="b-lab-4.html#cb181-6"></a><span class="st">  </span><span class="kw">filter</span>(user_status <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;guest&quot;</span>, <span class="st">&quot;registered&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb181-7"><a href="b-lab-4.html#cb181-7"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, team_name, q_name, dv) <span class="op">%&gt;%</span></span>
+<span id="cb181-8"><a href="b-lab-4.html#cb181-8"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> q_name, <span class="dt">values_from =</span> dv)</span>
+<span id="cb181-9"><a href="b-lab-4.html#cb181-9"></a></span>
+<span id="cb181-10"><a href="b-lab-4.html#cb181-10"></a>mslq_final &lt;-<span class="st"> </span>mslq <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-11"><a href="b-lab-4.html#cb181-11"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-12"><a href="b-lab-4.html#cb181-12"></a><span class="st">  </span><span class="kw">filter</span>(session_id <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(session_id), endtime <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(endtime)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-13"><a href="b-lab-4.html#cb181-13"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-14"><a href="b-lab-4.html#cb181-14"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-15"><a href="b-lab-4.html#cb181-15"></a><span class="st">  </span><span class="kw">filter</span>(user_status <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;guest&quot;</span>, <span class="st">&quot;registered&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb181-16"><a href="b-lab-4.html#cb181-16"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, q_name, dv) <span class="op">%&gt;%</span></span>
+<span id="cb181-17"><a href="b-lab-4.html#cb181-17"></a><span class="st">  </span><span class="kw">arrange</span>(q_name) <span class="op">%&gt;%</span></span>
+<span id="cb181-18"><a href="b-lab-4.html#cb181-18"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> q_name, <span class="dt">values_from =</span> dv)</span></code></pre></div>
+<p>Right. Your turn.</p>
 </div>
+<div id="step-3-join" class="section level3">
+<h3><span class="header-section-number">8.2.3</span> Step 3: Join</h3>
+<p>Join together the data files by their common columns.</p>
 </div>
-<div id="in-class-activities-3" class="section level2">
-<h2><span class="header-section-number">4.2</span> In-class activities</h2>
-<div id="getting-the-data-ready-to-work-with" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Getting the data ready to work with</h3>
-<p>Today in the lab we will be working with our data to generate a plot of two variables from the Woodworth et al. dataset. Before we get to generate our plot, we still need to work through the steps to get the data in the shape we need it to be in for our particular question. In particular we need to generate the object <code>summarydata</code> that just has the variable we need.You have done these steps before so go back to the relevant Lab and use that to guide you through.</p>
+<div id="step-4.-select-your-variables" class="section level3">
+<h3><span class="header-section-number">8.2.4</span> Step 4. Select your variables</h3>
+<p>Use select to retain only the variables you need for your chosen research design, i.e. the responses to the sub-scale you’re interested in. You might find it helpful to consult the MSLQ overview document from the Lab 1 pre-class to get the variable names.</p>
 </div>
-<div id="activity-1-set-up-2" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Activity 1: Set-up</h3>
-<p>Open the <code>stub-4.2.Rmd</code> file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).
-* Open R Studio and ensure the environment is clear.<br />
-* Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.<br />
-* Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates an object called <code>all_dat</code> that joins the two objects <code>dat</code> and <code>pinfo</code>.</p>
+<div id="step-5-recode" class="section level3">
+<h3><span class="header-section-number">8.2.5</span> Step 5: Recode</h3>
+<p>Use <code>summary</code> or <code>str</code> to check what type of variable each column is. Recode any necessary variables as factors and, if you would like to, change numeric codes (e.g., 1 for native speaker) into words to make it easier to read the output. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
 </div>
-<div id="activity-2-select-1" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Activity 2: Select</h3>
-<p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create an object named variable <code>summarydata</code>.</p>
+<div id="step-6-filter" class="section level3">
+<h3><span class="header-section-number">8.2.6</span> Step 6: Filter</h3>
+<p>If necessary, use filter to retain only the observations you need, for example, you might need to delete participants above a certain age, or only use mature students etc.</p>
+<p>If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (&gt; 0 hours worked per week) and not employed (0 hours per week) categories.</p>
+<p>If you were feeling really fancy you could do steps 3 - 6 in a single pipeline of code.</p>
 </div>
-<div id="activity-3-arrange-1" class="section level3">
-<h3><span class="header-section-number">4.2.4</span> Activity 3: Arrange</h3>
-<p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first and save it in an object named <code>ahi_asc</code>.</p>
+<div id="step-7-sub-scale-scores" class="section level3">
+<h3><span class="header-section-number">8.2.7</span> Step 7: Sub-scale scores</h3>
+<p>Calculate the mean score for each participant for your chosen sub-scale. There are a few ways you can do this but helpfully the Experimentum documentation provides example code to make this easier, you just need to adapt it for the variables you need. You may also want to change the <code>na.rm = TRUE</code> for the calculation of means depending on whether you want to only include participants who completed all questions.</p>
+<p>At the top of the code chunk below, change <code>eval = FALSE</code> to <code>eval = TRUE</code> once you have amended your code if you want to be able to knit the file.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="b-lab-4.html#cb182-1"></a>dat_means &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change data to the name of the data object you want to work from</span></span>
+<span id="cb182-2"><a href="b-lab-4.html#cb182-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(var, val, question_<span class="dv">1</span><span class="op">:</span>question_<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change question_1:question_5 to the relevant variables for your sub-scale, don&#39;t change anything else </span></span>
+<span id="cb182-3"><a href="b-lab-4.html#cb182-3"></a><span class="st">  </span><span class="kw">group_by_at</span>(<span class="kw">vars</span>(<span class="op">-</span>val, <span class="op">-</span>var)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># don&#39;t change this at all</span></span>
+<span id="cb182-4"><a href="b-lab-4.html#cb182-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">scale_mean =</span> <span class="kw">mean</span>(val, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change scale_mean to the name of your sub-scale, e.g., anxiety_mean</span></span>
+<span id="cb182-5"><a href="b-lab-4.html#cb182-5"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># don&#39;t change this at all</span></span></code></pre></div>
 </div>
-<div id="activity-4filter" class="section level3">
-<h3><span class="header-section-number">4.2.5</span> Activity 4:Filter</h3>
-<p>Filter the data <code>ahi_asc</code> by only keeping those who are 65 years old or younger and save it in an object named <code>age_65max</code>.</p>
+<div id="step-8-split-the-dataset" class="section level3">
+<h3><span class="header-section-number">8.2.8</span> Step 8: Split the dataset</h3>
+<p>Next, use filter again to create a new dataset that only contains the data from participants who contributed to your team and call it <code>dat_means_team</code>. Once this is complete, you will have the final large dataset that contains the scale scores for all participants, and a smaller dataset that just has data from the participants you recruited.</p>
 </div>
-<div id="activity-5-group-and-summarise" class="section level3">
-<h3><span class="header-section-number">4.2.6</span> Activity 5: Group and summarise</h3>
-<p>First, calculate the overall median <code>ahiTotal</code> score for all participants (hint: use <code>summarise()</code>) and save it in an object called <code>median_score</code>.
-Then, group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.
-Then, use summarise to create a new variable <code>sex_median</code>, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called <code>median_score</code>.</p>
-<p><em>(Hint: if you’re stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
+<div id="step-9-descriptives" class="section level3">
+<h3><span class="header-section-number">8.2.9</span> Step 9: Descriptives</h3>
+<p>Use summarise to calculate the minimum, maximum, mean, median, and standard deviation of the sub-scale scores. Do this separately for the full dataset and your team dataset.</p>
 </div>
-<div id="activity-6-mutate" class="section level3">
-<h3><span class="header-section-number">4.2.7</span> Activity 6: Mutate</h3>
-<p>Use <code>mutate()</code> to create a new column in <code>data_sex</code> called Happiness which categorises participants based on whether they score above or below the overall median ahiTotal score (i.e., the median score for all participants, not grouped by sex).</p>
-</div>
-<div id="activity-7-scatterplots" class="section level3">
-<h3><span class="header-section-number">4.2.8</span> Activity 7: Scatterplots</h3>
-<p>In order to visualise two continuous variables, we can use a <strong>scatterplot</strong>. Using the <code>ggplot</code> code you learned about in the pre-class activities, try and recreate the below plot.</p>
-<p>A few hints:</p>
-<ul>
-<li>Use the <code>age_65max</code> data.</li>
-<li>Put <code>ahiTotal</code> on the x-axis and <code>cesdTotal</code> on the y-axis.</li>
-<li>Rather than using <code>geom_bar()</code>, <code>geom_violin()</code>, or <code>geom_boxplot()</code>, for a scatteplot you need to use <code>geom_point()</code>.</li>
-<li>Rather than using <code>scale_fill_viridis_d()</code> to change the colour, add the argument <code>colour = "red"</code> to <code>geom_point</code> (except replace “red” with whatever colour you’d prefer).</li>
-<li>Remember to edit the axis names.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:createplot"></span>
-<img src="04-lab04_files/figure-html/createplot-1.png" alt="Scatterplot of happiness and depression scores" width="100%" />
-<p class="caption">
-Figure 4.10: Scatterplot of happiness and depression scores
-</p>
-</div>
-<p><br></p>
-<p>How would you describe the relationship between the two variables? <select class='solveme' data-answer='["As happiness score increase, depression scores decrease"]'> <option></option> <option>As happiness scores increase, depression scores increase</option> <option>As happiness score increase, depression scores decrease</option> <option>As happiness scores decrease, depression scores decrease</option></select></p>
-<div id="finished-5" class="section level4">
-<h4><span class="header-section-number">4.2.8.1</span> Finished!</h4>
-<p>Great job! You have now worked with the essential basics of good practice in data wrangling! In Psych 1B we will continue using these wrangling skills on new data and also data that you collect yourself.</p>
-</div>
-</div>
-<div id="activity-solutions" class="section level3">
-<h3><span class="header-section-number">4.2.9</span> Activity solutions</h3>
-<div id="activity-1" class="section level4">
-<h4><span class="header-section-number">4.2.9.1</span> Activity 1</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="a-lab-4.html#cb93-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb93-2"><a href="a-lab-4.html#cb93-2"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb93-3"><a href="a-lab-4.html#cb93-3"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb93-4"><a href="a-lab-4.html#cb93-4"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-2" class="section level4">
-<h4><span class="header-section-number">4.2.9.2</span> Activity 2</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="a-lab-4.html#cb94-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-3" class="section level4">
-<h4><span class="header-section-number">4.2.9.3</span> Activity 3</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="a-lab-4.html#cb95-1"></a>ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-4" class="section level4">
-<h4><span class="header-section-number">4.2.9.4</span> Activity 4</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="a-lab-4.html#cb96-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-5" class="section level4">
-<h4><span class="header-section-number">4.2.9.5</span> Activity 5</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="a-lab-4.html#cb97-1"></a>median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))</span>
-<span id="cb97-2"><a href="a-lab-4.html#cb97-2"></a>data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)</span>
-<span id="cb97-3"><a href="a-lab-4.html#cb97-3"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-6" class="section level4">
-<h4><span class="header-section-number">4.2.9.6</span> Activity 6</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="a-lab-4.html#cb98-1"></a>happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-7" class="section level4">
-<h4><span class="header-section-number">4.2.9.7</span> Activity 7</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="a-lab-4.html#cb99-1"></a><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb99-2"><a href="a-lab-4.html#cb99-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb99-3"><a href="a-lab-4.html#cb99-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="op">+</span></span>
-<span id="cb99-4"><a href="a-lab-4.html#cb99-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="op">+</span></span>
-<span id="cb99-5"><a href="a-lab-4.html#cb99-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div id="homework-2" class="section level2">
-<h2><span class="header-section-number">4.3</span> Homework</h2>
-<p>You can download all the R homework files and Assessment Information you need from the Lab Homework section of the <a href="https://moodle.gla.ac.uk/course/view.php?id=16358">Psych 1A Moodle</a>.</p>
+<div id="step-10-visualisation" class="section level3">
+<h3><span class="header-section-number">8.2.10</span> Step 10: visualisation</h3>
+<p>You now need to create a bar chart with error bars, a violin-boxplot and a grouped density plot for both the full dataset and your team dataset. You’ve done all of these before, just find a previous example code and change the variables and axis labels.</p>
 
 </div>
+</div>
+</div>
+
+
+
 </div>
 <div class="psyteachr_footer">
   
@@ -845,8 +793,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="a-lab-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="b-lab-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="b-lab-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

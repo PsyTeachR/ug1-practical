@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 1B: Lab 2 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 1B: Lab 2 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="b-lab-1.html">
-<link rel="next" href="b-lab-3.html">
+<link rel="prev" href="b-lab-1.html"/>
+<link rel="next" href="b-lab-3.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -38,6 +38,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -48,26 +51,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -76,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -322,6 +326,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.12" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.12</b> Activity solutions</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="b-lab-4.html"><a href="b-lab-4.html"><i class="fa fa-check"></i><b>8</b> 1B: Lab 4</a><ul>
+<li class="chapter" data-level="8.1" data-path="b-lab-4.html"><a href="b-lab-4.html#pre-class-activities-6"><i class="fa fa-check"></i><b>8.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="b-lab-4.html"><a href="b-lab-4.html#simulation"><i class="fa fa-check"></i><b>8.1.1</b> Simulation</a></li>
+<li class="chapter" data-level="8.1.2" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-1-sample"><i class="fa fa-check"></i><b>8.1.2</b> Activity 1: <code>sample()</code></a></li>
+<li class="chapter" data-level="8.1.3" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-2-sum"><i class="fa fa-check"></i><b>8.1.3</b> Activity 2: <code>sum()</code></a></li>
+<li class="chapter" data-level="8.1.4" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-3-replicate-1"><i class="fa fa-check"></i><b>8.1.4</b> Activity 3: <code>replicate()</code> 1</a></li>
+<li class="chapter" data-level="8.1.5" data-path="b-lab-4.html"><a href="b-lab-4.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>8.1.5</b> Monte Carlo simulation</a></li>
+<li class="chapter" data-level="8.1.6" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-4-replicate-2"><i class="fa fa-check"></i><b>8.1.6</b> Activity 4: <code>replicate()</code> 2</a></li>
+<li class="chapter" data-level="8.1.7" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-5-probability"><i class="fa fa-check"></i><b>8.1.7</b> Activity 5: probability</a></li>
+<li class="chapter" data-level="8.1.8" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-6-visualisation"><i class="fa fa-check"></i><b>8.1.8</b> Activity 6: visualisation</a></li>
+<li class="chapter" data-level="8.1.9" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-7-big-data"><i class="fa fa-check"></i><b>8.1.9</b> Activity 7: big data</a></li>
+<li class="chapter" data-level="8.1.10" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-8-rnorm"><i class="fa fa-check"></i><b>8.1.10</b> Activity 8: <code>rnorm()</code></a></li>
+<li class="chapter" data-level="8.1.11" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-9-simulate-a-dataset"><i class="fa fa-check"></i><b>8.1.11</b> Activity 9: Simulate a dataset</a></li>
+<li class="chapter" data-level="8.1.12" data-path="b-lab-4.html"><a href="b-lab-4.html#finished-6"><i class="fa fa-check"></i><b>8.1.12</b> Finished!</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="b-lab-4.html"><a href="b-lab-4.html#in-class-activities-7"><i class="fa fa-check"></i><b>8.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="b-lab-4.html"><a href="b-lab-4.html#step-1-load-in-packages-and-data"><i class="fa fa-check"></i><b>8.2.1</b> Step 1: Load in packages and data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="b-lab-4.html"><a href="b-lab-4.html#step-2-clean-up-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Step 2: Clean up the data</a></li>
+<li class="chapter" data-level="8.2.3" data-path="b-lab-4.html"><a href="b-lab-4.html#step-3-join"><i class="fa fa-check"></i><b>8.2.3</b> Step 3: Join</a></li>
+<li class="chapter" data-level="8.2.4" data-path="b-lab-4.html"><a href="b-lab-4.html#step-4.-select-your-variables"><i class="fa fa-check"></i><b>8.2.4</b> Step 4. Select your variables</a></li>
+<li class="chapter" data-level="8.2.5" data-path="b-lab-4.html"><a href="b-lab-4.html#step-5-recode"><i class="fa fa-check"></i><b>8.2.5</b> Step 5: Recode</a></li>
+<li class="chapter" data-level="8.2.6" data-path="b-lab-4.html"><a href="b-lab-4.html#step-6-filter"><i class="fa fa-check"></i><b>8.2.6</b> Step 6: Filter</a></li>
+<li class="chapter" data-level="8.2.7" data-path="b-lab-4.html"><a href="b-lab-4.html#step-7-sub-scale-scores"><i class="fa fa-check"></i><b>8.2.7</b> Step 7: Sub-scale scores</a></li>
+<li class="chapter" data-level="8.2.8" data-path="b-lab-4.html"><a href="b-lab-4.html#step-8-split-the-dataset"><i class="fa fa-check"></i><b>8.2.8</b> Step 8: Split the dataset</a></li>
+<li class="chapter" data-level="8.2.9" data-path="b-lab-4.html"><a href="b-lab-4.html#step-9-descriptives"><i class="fa fa-check"></i><b>8.2.9</b> Step 9: Descriptives</a></li>
+<li class="chapter" data-level="8.2.10" data-path="b-lab-4.html"><a href="b-lab-4.html#step-10-visualisation"><i class="fa fa-check"></i><b>8.2.10</b> Step 10: visualisation</a></li>
+</ul></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
@@ -364,12 +396,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>So far, when you’ve done these steps you’ve created a new object for each part of the process. The code below should look familiar - once you’ve loaded in the data to <code>demographic</code> and <code>raw_data</code>, you then create a new object named <code>sel_data</code> that stores the output of the <code>select()</code> operation, then you create a new object named <code>joined_data</code> that uses <code>sel_data</code> as its input and then finally you create another object called <code>final_data</code> that uses <code>joined_data</code> as its input.</p>
 <div class="left-float">
-<pre class="sourceCode r"><code class="sourceCode r">demographic &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;demographic.csv&quot;</span>)
-raw_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;my_data.csv&quot;</span>)
-
-sel_data &lt;-<span class="st"> </span><span class="kw">select</span>(raw_data, id, score)
-joined_data &lt;-<span class="st"> </span><span class="kw">inner_join</span>(sel_data, demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)
-final_data &lt;-<span class="st"> </span><span class="kw">filter</span>(joined_data, age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">18</span>)</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="b-lab-2.html#cb110-1"></a>demographic &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;demographic.csv&quot;</span>)</span>
+<span id="cb110-2"><a href="b-lab-2.html#cb110-2"></a>raw_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;my_data.csv&quot;</span>)</span>
+<span id="cb110-3"><a href="b-lab-2.html#cb110-3"></a></span>
+<span id="cb110-4"><a href="b-lab-2.html#cb110-4"></a>sel_data &lt;-<span class="st"> </span><span class="kw">select</span>(raw_data, id, score)</span>
+<span id="cb110-5"><a href="b-lab-2.html#cb110-5"></a>joined_data &lt;-<span class="st"> </span><span class="kw">inner_join</span>(sel_data, demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)</span>
+<span id="cb110-6"><a href="b-lab-2.html#cb110-6"></a>final_data &lt;-<span class="st"> </span><span class="kw">filter</span>(joined_data, age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">18</span>)</span></code></pre></div>
 </div>
 <p>This code will work, however, there’s a more efficient way of doing all of these steps that needs far less typing which means fewer chances to make typos. Additionally, if you create lots of objects, it increases the chances that you might accidentally use the wrong one (e.g., <code>rlong</code> instead of <code>rlong2</code>).</p>
 <p>By using pipes, we can reduce the amount of code we write and the number of objects we create.</p>
@@ -378,13 +410,13 @@ final_data &lt;-<span class="st"> </span><span class="kw">filter</span>(joined_d
 <li>Try and translate the below code into plain English. You can read the <code>%&gt;%</code> as <strong>then</strong>.</li>
 </ul>
 <div class="right-float">
-<pre class="sourceCode r"><code class="sourceCode r">demographic &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;demographic.csv&quot;</span>)
-raw_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;my_data.csv&quot;</span>)
-
-final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(id, score) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)
-  <span class="kw">filter</span>(age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">18</span>) </code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="b-lab-2.html#cb111-1"></a>demographic &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;demographic.csv&quot;</span>)</span>
+<span id="cb111-2"><a href="b-lab-2.html#cb111-2"></a>raw_data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;my_data.csv&quot;</span>)</span>
+<span id="cb111-3"><a href="b-lab-2.html#cb111-3"></a></span>
+<span id="cb111-4"><a href="b-lab-2.html#cb111-4"></a>final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb111-5"><a href="b-lab-2.html#cb111-5"></a><span class="st">  </span><span class="kw">select</span>(id, score) <span class="op">%&gt;%</span></span>
+<span id="cb111-6"><a href="b-lab-2.html#cb111-6"></a><span class="st">  </span><span class="kw">inner_join</span>(demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)</span>
+<span id="cb111-7"><a href="b-lab-2.html#cb111-7"></a>  <span class="kw">filter</span>(age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">18</span>) </span></code></pre></div>
 </div>
 <div class="solution">
 <button>
@@ -395,17 +427,17 @@ Solution
 <p><br>
 Importantly, you don’t need to write the entire pipe at once, in fact, it’s useful to check that each line works as you intended and then add on the next one to make it easier to spot where errors have come in to your code.</p>
 <p>For example you might start with:</p>
-<pre class="sourceCode r"><code class="sourceCode r">final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(id, score)</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="b-lab-2.html#cb112-1"></a>final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb112-2"><a href="b-lab-2.html#cb112-2"></a><span class="st">  </span><span class="kw">select</span>(id, score)</span></code></pre></div>
 <p>Then check the output of <code>final_data</code> to make sure that it contains the columns you intended to select. Then you would add on another line of the pipe:</p>
-<pre class="sourceCode r"><code class="sourceCode r">final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(id, score) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="b-lab-2.html#cb113-1"></a>final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb113-2"><a href="b-lab-2.html#cb113-2"></a><span class="st">  </span><span class="kw">select</span>(id, score) <span class="op">%&gt;%</span></span>
+<span id="cb113-3"><a href="b-lab-2.html#cb113-3"></a><span class="st">  </span><span class="kw">inner_join</span>(demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)</span></code></pre></div>
 <p>And check the output again to make sure that the join had worked properly before adding on the final line.</p>
-<pre class="sourceCode r"><code class="sourceCode r">final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(id, score) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)
-  <span class="kw">filter</span>(age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">18</span>) </code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="b-lab-2.html#cb114-1"></a>final_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<span id="cb114-2"><a href="b-lab-2.html#cb114-2"></a><span class="st">  </span><span class="kw">select</span>(id, score) <span class="op">%&gt;%</span></span>
+<span id="cb114-3"><a href="b-lab-2.html#cb114-3"></a><span class="st">  </span><span class="kw">inner_join</span>(demographic, <span class="dt">by =</span> <span class="st">&quot;id&quot;</span>)</span>
+<span id="cb114-4"><a href="b-lab-2.html#cb114-4"></a>  <span class="kw">filter</span>(age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">18</span>) </span></code></pre></div>
 <br>
 <div class="danger">
 <p>
@@ -424,8 +456,8 @@ When you’re completing assessments and we want you to save the output from a c
 </li>
 </ol>
 </div>
-<p>Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option>&lt;-</option> <option>%&lt;%</option> <option>%&gt;%</option></select></p>
-<p>Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the last argument of the next function.</option> <option>To the first argument of the next function.</option> <option>To the third argument of the 18th function.</option></select></p>
+<p>Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option>&lt;-</option> <option>%&gt;%</option> <option>%&lt;%</option></select></p>
+<p>Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the first argument of the next function.</option> <option>To the third argument of the 18th function.</option> <option>To the last argument of the next function.</option></select></p>
 </div>
 <div id="activity-2-set-up-2" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Activity 2: Set-up</h3>
@@ -436,10 +468,10 @@ When you’re completing assessments and we want you to save the output from a c
 <li>Delete the welcome text and insert a new code chunk.</li>
 <li>Copy, paste, and run the below code into the new code chunk.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)
-responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)
-qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="b-lab-2.html#cb115-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb115-2"><a href="b-lab-2.html#cb115-2"></a>scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
+<span id="cb115-3"><a href="b-lab-2.html#cb115-3"></a>responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
+<span id="cb115-4"><a href="b-lab-2.html#cb115-4"></a>qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="activity-3-example-pipe-1" class="section level3">
 <h3><span class="header-section-number">6.1.3</span> Activity 3: Example pipe 1</h3>
@@ -447,21 +479,21 @@ qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cl
 <p><strong>Hint 1:</strong> You’re not creating new objects so you can delete the intermediate object names and save the output straight into the final object name <code>scores</code>.<br />
 <strong>Hint 2:</strong> The point of using pipes is that they pipe the output into the first argument of the next function, in other words, you can delete the first argument of the new function.<br />
 <strong>Hint 3:</strong> Build the pipe up line-by-line and check it at each stage. The output of the first line of the pipe should look like <code>rlong</code>, the output of the second line should look like <code>rlong_join</code> and so on.</p>
-<pre class="sourceCode r"><code class="sourceCode r">rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, 
-                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  
-                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,
-                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)
-
-rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="st">&quot;Question&quot;</span>)
-
-scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="b-lab-2.html#cb116-1"></a>rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, </span>
+<span id="cb116-2"><a href="b-lab-2.html#cb116-2"></a>                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb116-3"><a href="b-lab-2.html#cb116-3"></a>                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb116-4"><a href="b-lab-2.html#cb116-4"></a>                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)</span>
+<span id="cb116-5"><a href="b-lab-2.html#cb116-5"></a></span>
+<span id="cb116-6"><a href="b-lab-2.html#cb116-6"></a>rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="st">&quot;Question&quot;</span>)</span>
+<span id="cb116-7"><a href="b-lab-2.html#cb116-7"></a></span>
+<span id="cb116-8"><a href="b-lab-2.html#cb116-8"></a>scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span></code></pre></div>
 </div>
 <div id="activity-4-example-pipe-2" class="section level3">
 <h3><span class="header-section-number">6.1.4</span> Activity 4: Example pipe 2</h3>
 <p>Rewrite the below code to use pipes.</p>
-<pre class="sourceCode r"><code class="sourceCode r">data1 &lt;-<span class="st"> </span><span class="kw">select</span>(scores, <span class="op">-</span>QFormat)
-data2 &lt;-<span class="st"> </span><span class="kw">filter</span>(data1, Question <span class="op">==</span><span class="st"> &quot;Q1&quot;</span>)
-example_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summarise</span>(data2, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="b-lab-2.html#cb117-1"></a>data1 &lt;-<span class="st"> </span><span class="kw">select</span>(scores, <span class="op">-</span>QFormat)</span>
+<span id="cb117-2"><a href="b-lab-2.html#cb117-2"></a>data2 &lt;-<span class="st"> </span><span class="kw">filter</span>(data1, Question <span class="op">==</span><span class="st"> &quot;Q1&quot;</span>)</span>
+<span id="cb117-3"><a href="b-lab-2.html#cb117-3"></a>example_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">summarise</span>(data2, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
 </div>
 <div id="activity-5-example-pipe-3" class="section level3">
 <h3><span class="header-section-number">6.1.5</span> Activity 5: Example pipe 3</h3>
@@ -469,12 +501,12 @@ example_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw"
 <p><strong>Hint 1:</strong> You do not need to save this output to an object.<br />
 <strong>Hint 2:</strong> First, write the code that calculates the scores and then pipe into <code>gggplot()</code><br />
 <strong>Hint 3:</strong> The pipe works exactly the same with <code>ggplot()</code>, you can delete the first argument.</p>
-<pre class="sourceCode r"><code class="sourceCode r">data_group &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Question)
-question_scores &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_group, <span class="dt">item_scores =</span> <span class="kw">sum</span>(Score))
-
-<span class="kw">ggplot</span>(question_scores, <span class="kw">aes</span>(<span class="dt">x =</span> Question, <span class="dt">y =</span> item_scores)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="b-lab-2.html#cb118-1"></a>data_group &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Question)</span>
+<span id="cb118-2"><a href="b-lab-2.html#cb118-2"></a>question_scores &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_group, <span class="dt">item_scores =</span> <span class="kw">sum</span>(Score))</span>
+<span id="cb118-3"><a href="b-lab-2.html#cb118-3"></a></span>
+<span id="cb118-4"><a href="b-lab-2.html#cb118-4"></a><span class="kw">ggplot</span>(question_scores, <span class="kw">aes</span>(<span class="dt">x =</span> Question, <span class="dt">y =</span> item_scores)) <span class="op">+</span></span>
+<span id="cb118-5"><a href="b-lab-2.html#cb118-5"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb118-6"><a href="b-lab-2.html#cb118-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="06-lab06_files/figure-html/unnamed-chunk-11-1.png" alt="Total scores for each AQ question" width="100%" />
 <p class="caption">
@@ -494,21 +526,21 @@ Figure 4.9: Total scores for each AQ question
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">scores &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, 
-                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  
-                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,
-                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(qformats, <span class="st">&quot;Question&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))
-
-<span class="co"># this also does the same thing but the first line is slightly different</span>
-
-scores &lt;-<span class="st"> </span>responses <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  
-               <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,
-               <span class="dt">cols =</span> Q1<span class="op">:</span>Q10) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(qformats, <span class="st">&quot;Question&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="b-lab-2.html#cb119-1"></a>scores &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, </span>
+<span id="cb119-2"><a href="b-lab-2.html#cb119-2"></a>                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb119-3"><a href="b-lab-2.html#cb119-3"></a>                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb119-4"><a href="b-lab-2.html#cb119-4"></a>                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10) <span class="op">%&gt;%</span></span>
+<span id="cb119-5"><a href="b-lab-2.html#cb119-5"></a><span class="st">  </span><span class="kw">inner_join</span>(qformats, <span class="st">&quot;Question&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb119-6"><a href="b-lab-2.html#cb119-6"></a><span class="st">  </span><span class="kw">inner_join</span>(scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span>
+<span id="cb119-7"><a href="b-lab-2.html#cb119-7"></a></span>
+<span id="cb119-8"><a href="b-lab-2.html#cb119-8"></a><span class="co"># this also does the same thing but the first line is slightly different</span></span>
+<span id="cb119-9"><a href="b-lab-2.html#cb119-9"></a></span>
+<span id="cb119-10"><a href="b-lab-2.html#cb119-10"></a>scores &lt;-<span class="st"> </span>responses <span class="op">%&gt;%</span></span>
+<span id="cb119-11"><a href="b-lab-2.html#cb119-11"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb119-12"><a href="b-lab-2.html#cb119-12"></a>               <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb119-13"><a href="b-lab-2.html#cb119-13"></a>               <span class="dt">cols =</span> Q1<span class="op">:</span>Q10) <span class="op">%&gt;%</span></span>
+<span id="cb119-14"><a href="b-lab-2.html#cb119-14"></a><span class="st">  </span><span class="kw">inner_join</span>(qformats, <span class="st">&quot;Question&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb119-15"><a href="b-lab-2.html#cb119-15"></a><span class="st">  </span><span class="kw">inner_join</span>(scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-4-3" class="section level4">
@@ -517,9 +549,9 @@ scores &lt;-<span class="st"> </span>responses <span class="op">%&gt;%</span>
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">example_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">select</span>(scores, <span class="op">-</span>QFormat) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(Question <span class="op">==</span><span class="st"> &quot;Q1&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="b-lab-2.html#cb120-1"></a>example_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">select</span>(scores, <span class="op">-</span>QFormat) <span class="op">%&gt;%</span></span>
+<span id="cb120-2"><a href="b-lab-2.html#cb120-2"></a><span class="st">  </span><span class="kw">filter</span>(Question <span class="op">==</span><span class="st"> &quot;Q1&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb120-3"><a href="b-lab-2.html#cb120-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-5-2" class="section level4">
@@ -528,12 +560,12 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">scores <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(Question) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">item_scores =</span> <span class="kw">sum</span>(Score)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Question, <span class="dt">y =</span> item_scores)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="b-lab-2.html#cb121-1"></a>scores <span class="op">%&gt;%</span></span>
+<span id="cb121-2"><a href="b-lab-2.html#cb121-2"></a><span class="st">  </span><span class="kw">group_by</span>(Question) <span class="op">%&gt;%</span></span>
+<span id="cb121-3"><a href="b-lab-2.html#cb121-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">item_scores =</span> <span class="kw">sum</span>(Score)) <span class="op">%&gt;%</span></span>
+<span id="cb121-4"><a href="b-lab-2.html#cb121-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Question, <span class="dt">y =</span> item_scores)) <span class="op">+</span></span>
+<span id="cb121-5"><a href="b-lab-2.html#cb121-5"></a><span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span></span>
+<span id="cb121-6"><a href="b-lab-2.html#cb121-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -557,18 +589,18 @@ Solution
 <li>Joins together the three objects by their common columns</li>
 <li>Calculates a total AQ score for each participant</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, 
-                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  
-                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,
-                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)
-
-rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="dt">by =</span> <span class="st">&quot;Question&quot;</span>)
-
-scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))
-
-scores_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Id, gender)
-
-AQ_all &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_grouped, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="b-lab-2.html#cb122-1"></a>rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, </span>
+<span id="cb122-2"><a href="b-lab-2.html#cb122-2"></a>                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb122-3"><a href="b-lab-2.html#cb122-3"></a>                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb122-4"><a href="b-lab-2.html#cb122-4"></a>                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)</span>
+<span id="cb122-5"><a href="b-lab-2.html#cb122-5"></a></span>
+<span id="cb122-6"><a href="b-lab-2.html#cb122-6"></a>rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="dt">by =</span> <span class="st">&quot;Question&quot;</span>)</span>
+<span id="cb122-7"><a href="b-lab-2.html#cb122-7"></a></span>
+<span id="cb122-8"><a href="b-lab-2.html#cb122-8"></a>scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span>
+<span id="cb122-9"><a href="b-lab-2.html#cb122-9"></a></span>
+<span id="cb122-10"><a href="b-lab-2.html#cb122-10"></a>scores_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Id, gender)</span>
+<span id="cb122-11"><a href="b-lab-2.html#cb122-11"></a></span>
+<span id="cb122-12"><a href="b-lab-2.html#cb122-12"></a>AQ_all &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_grouped, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
 <ul>
 <li>Rewrite the above code using pipes <code>%&gt;%</code>. Make sure you have completed the pre-class before you attempt this.</li>
 </ul>
@@ -610,11 +642,11 @@ Figure 6.1: Histogram of scores for female participants
 <li>Making a bar chart works a little differently to the other graphs you have made so far. Previously, <code>ggplot()</code> has just visualised the raw data, however, for a bar chart you actually want to visualise a summary of the data, e.g., the mean.</li>
 <li>You can read the <code>stat_summary</code> code as “draw a summary of the data, use a bar chart to do so and the function to display on the y-axis should be the mean. Then, draw another summary but this time use an errorbar and the function to apply to the data is standard error of the mean”.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">AQ_all <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> gender, <span class="dt">y =</span> total_score)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">fun.y =</span> <span class="st">&quot;mean&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="dt">fun.data =</span> <span class="st">&quot;mean_se&quot;</span>, <span class="dt">width =</span> <span class="fl">.2</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="b-lab-2.html#cb123-1"></a>AQ_all <span class="op">%&gt;%</span></span>
+<span id="cb123-2"><a href="b-lab-2.html#cb123-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> gender, <span class="dt">y =</span> total_score)) <span class="op">+</span></span>
+<span id="cb123-3"><a href="b-lab-2.html#cb123-3"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">fun.y =</span> <span class="st">&quot;mean&quot;</span>) <span class="op">+</span></span>
+<span id="cb123-4"><a href="b-lab-2.html#cb123-4"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="dt">fun.data =</span> <span class="st">&quot;mean_se&quot;</span>, <span class="dt">width =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb123-5"><a href="b-lab-2.html#cb123-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
 <img src="06-lab06_files/figure-html/unnamed-chunk-16-1.png" alt="Bad bar chart of means" width="100%" />
 <p class="caption">
@@ -633,12 +665,12 @@ Figure 6.2: Bad bar chart of means
 <li>Adding <code>fill = gender</code> tells <code>ggplot</code> to produce different coloured geoms for each level of <code>gender</code>. Try removing <code>fill = gender</code> and see what happens to the plot.</li>
 <li><code>geom_density()</code> is our new geom and tells R to draw the density curve. The argument <code>alpha</code> controls the transparency of the colours, try adjusting this value.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(<span class="dt">x =</span> total_score, <span class="dt">fill =</span> gender)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">.3</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;D&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Density&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="b-lab-2.html#cb124-1"></a><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(<span class="dt">x =</span> total_score, <span class="dt">fill =</span> gender)) <span class="op">+</span></span>
+<span id="cb124-2"><a href="b-lab-2.html#cb124-2"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">.3</span>) <span class="op">+</span></span>
+<span id="cb124-3"><a href="b-lab-2.html#cb124-3"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb124-4"><a href="b-lab-2.html#cb124-4"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;D&quot;</span>) <span class="op">+</span></span>
+<span id="cb124-5"><a href="b-lab-2.html#cb124-5"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb124-6"><a href="b-lab-2.html#cb124-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
 <img src="06-lab06_files/figure-html/unnamed-chunk-17-1.png" alt="Grouped density plot" width="100%" />
 <p class="caption">
@@ -665,26 +697,26 @@ Solution
 <li>Copy, paste and run the below code into a new code chunk.</li>
 <li>Check your Psych 1B folder, you should now see the saved image file.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="st">&quot;density.png&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="b-lab-2.html#cb125-1"></a><span class="kw">ggsave</span>(<span class="st">&quot;density.png&quot;</span>)</span></code></pre></div>
 <p>The default size for an image is 7 x 7, you can change this manually if you think that the dimensions of the plot are not correct or if you need a particular size.</p>
 <ul>
 <li>Copy paste and run the below code to overwrite the image file with new dimensions.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="st">&quot;density.png&quot;</span>, <span class="dt">width =</span> <span class="dv">10</span>, <span class="dt">height =</span> <span class="dv">8</span>)</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="b-lab-2.html#cb126-1"></a><span class="kw">ggsave</span>(<span class="st">&quot;density.png&quot;</span>, <span class="dt">width =</span> <span class="dv">10</span>, <span class="dt">height =</span> <span class="dv">8</span>)</span></code></pre></div>
 <p>The second way of using <code>ggsave()</code> is to save your plot as an object and then tell it which object to write to a file. The below code saves the pipe plot from Activity 3 into an object named <code>AQ_histogram</code> and then saves it to an image file “AQ_histogram.png”.</p>
 <p>Note that when you save a plot to an object, it won’t display in R Studio. To get it to display you need to type the object name in the console (i.e., <code>AQ_histogram</code>). The benefit of doing it this way is that if you are making lots of plots, you can’t accidentally save the wrong one because you are explicitly specifying which plot to save rather than just saving the last one.</p>
 <ul>
 <li>Copy, paste and run the below code and then check your Psych 1B folder for the image file. Resize the plot if you think it needs it.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">AQ_histogram &lt;-<span class="st"> </span>AQ_all <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(gender <span class="op">==</span><span class="st"> &quot;female&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)
-
-<span class="kw">ggsave</span>(<span class="st">&quot;AQ_histogram.png&quot;</span>, <span class="dt">plot =</span> AQ_histogram)</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="b-lab-2.html#cb127-1"></a>AQ_histogram &lt;-<span class="st"> </span>AQ_all <span class="op">%&gt;%</span></span>
+<span id="cb127-2"><a href="b-lab-2.html#cb127-2"></a><span class="st">  </span><span class="kw">filter</span>(gender <span class="op">==</span><span class="st"> &quot;female&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb127-3"><a href="b-lab-2.html#cb127-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span></span>
+<span id="cb127-4"><a href="b-lab-2.html#cb127-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span></span>
+<span id="cb127-5"><a href="b-lab-2.html#cb127-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span></span>
+<span id="cb127-6"><a href="b-lab-2.html#cb127-6"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb127-7"><a href="b-lab-2.html#cb127-7"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)</span>
+<span id="cb127-8"><a href="b-lab-2.html#cb127-8"></a></span>
+<span id="cb127-9"><a href="b-lab-2.html#cb127-9"></a><span class="kw">ggsave</span>(<span class="st">&quot;AQ_histogram.png&quot;</span>, <span class="dt">plot =</span> AQ_histogram)</span></code></pre></div>
 </div>
 <div id="activity-solutions-4" class="section level3">
 <h3><span class="header-section-number">6.2.8</span> Activity solutions</h3>
@@ -694,10 +726,10 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
-scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)
-responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)
-qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="b-lab-2.html#cb128-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb128-2"><a href="b-lab-2.html#cb128-2"></a>scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
+<span id="cb128-3"><a href="b-lab-2.html#cb128-3"></a>responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
+<span id="cb128-4"><a href="b-lab-2.html#cb128-4"></a>qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-2-1" class="section level4">
@@ -706,14 +738,14 @@ qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cl
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">AQ_all &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, 
-                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  
-                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,
-                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(qformats, <span class="dt">by =</span> <span class="st">&quot;Question&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">inner_join</span>(scoring, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">group_by</span>(Id, gender) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="b-lab-2.html#cb129-1"></a>AQ_all &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, </span>
+<span id="cb129-2"><a href="b-lab-2.html#cb129-2"></a>                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb129-3"><a href="b-lab-2.html#cb129-3"></a>                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb129-4"><a href="b-lab-2.html#cb129-4"></a>                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10) <span class="op">%&gt;%</span></span>
+<span id="cb129-5"><a href="b-lab-2.html#cb129-5"></a><span class="st">  </span><span class="kw">inner_join</span>(qformats, <span class="dt">by =</span> <span class="st">&quot;Question&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb129-6"><a href="b-lab-2.html#cb129-6"></a><span class="st">  </span><span class="kw">inner_join</span>(scoring, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb129-7"><a href="b-lab-2.html#cb129-7"></a><span class="st">  </span><span class="kw">group_by</span>(Id, gender) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb129-8"><a href="b-lab-2.html#cb129-8"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-3-3" class="section level4">
@@ -722,13 +754,13 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">AQ_all <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">filter</span>(gender <span class="op">==</span><span class="st"> &quot;female&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="b-lab-2.html#cb130-1"></a>AQ_all <span class="op">%&gt;%</span></span>
+<span id="cb130-2"><a href="b-lab-2.html#cb130-2"></a><span class="st">  </span><span class="kw">filter</span>(gender <span class="op">==</span><span class="st"> &quot;female&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb130-3"><a href="b-lab-2.html#cb130-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span></span>
+<span id="cb130-4"><a href="b-lab-2.html#cb130-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span></span>
+<span id="cb130-5"><a href="b-lab-2.html#cb130-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span></span>
+<span id="cb130-6"><a href="b-lab-2.html#cb130-6"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span></span>
+<span id="cb130-7"><a href="b-lab-2.html#cb130-7"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-4-4" class="section level4">
@@ -737,10 +769,10 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(gender, total_score)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="b-lab-2.html#cb131-1"></a><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(gender, total_score)) <span class="op">+</span></span>
+<span id="cb131-2"><a href="b-lab-2.html#cb131-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb131-3"><a href="b-lab-2.html#cb131-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>) <span class="op">+</span></span>
+<span id="cb131-4"><a href="b-lab-2.html#cb131-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 </div>
 
 </div>
@@ -843,11 +875,13 @@ window.onload = function() {
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -855,12 +889,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -872,6 +906,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -891,8 +929,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
