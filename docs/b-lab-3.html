@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 1B: Lab 3 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 1B: Lab 3 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="b-lab-2.html">
-
+<link rel="prev" href="b-lab-2.html"/>
+<link rel="next" href="b-lab-4.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -38,6 +38,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -48,26 +51,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -76,9 +80,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -322,6 +326,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.12" data-path="b-lab-3.html"><a href="b-lab-3.html#activity-solutions-5"><i class="fa fa-check"></i><b>7.2.12</b> Activity solutions</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="b-lab-4.html"><a href="b-lab-4.html"><i class="fa fa-check"></i><b>8</b> 1B: Lab 4</a><ul>
+<li class="chapter" data-level="8.1" data-path="b-lab-4.html"><a href="b-lab-4.html#pre-class-activities-6"><i class="fa fa-check"></i><b>8.1</b> Pre-class activities</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="b-lab-4.html"><a href="b-lab-4.html#simulation"><i class="fa fa-check"></i><b>8.1.1</b> Simulation</a></li>
+<li class="chapter" data-level="8.1.2" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-1-sample"><i class="fa fa-check"></i><b>8.1.2</b> Activity 1: <code>sample()</code></a></li>
+<li class="chapter" data-level="8.1.3" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-2-sum"><i class="fa fa-check"></i><b>8.1.3</b> Activity 2: <code>sum()</code></a></li>
+<li class="chapter" data-level="8.1.4" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-3-replicate-1"><i class="fa fa-check"></i><b>8.1.4</b> Activity 3: <code>replicate()</code> 1</a></li>
+<li class="chapter" data-level="8.1.5" data-path="b-lab-4.html"><a href="b-lab-4.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>8.1.5</b> Monte Carlo simulation</a></li>
+<li class="chapter" data-level="8.1.6" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-4-replicate-2"><i class="fa fa-check"></i><b>8.1.6</b> Activity 4: <code>replicate()</code> 2</a></li>
+<li class="chapter" data-level="8.1.7" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-5-probability"><i class="fa fa-check"></i><b>8.1.7</b> Activity 5: probability</a></li>
+<li class="chapter" data-level="8.1.8" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-6-visualisation"><i class="fa fa-check"></i><b>8.1.8</b> Activity 6: visualisation</a></li>
+<li class="chapter" data-level="8.1.9" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-7-big-data"><i class="fa fa-check"></i><b>8.1.9</b> Activity 7: big data</a></li>
+<li class="chapter" data-level="8.1.10" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-8-rnorm"><i class="fa fa-check"></i><b>8.1.10</b> Activity 8: <code>rnorm()</code></a></li>
+<li class="chapter" data-level="8.1.11" data-path="b-lab-4.html"><a href="b-lab-4.html#activity-9-simulate-a-dataset"><i class="fa fa-check"></i><b>8.1.11</b> Activity 9: Simulate a dataset</a></li>
+<li class="chapter" data-level="8.1.12" data-path="b-lab-4.html"><a href="b-lab-4.html#finished-6"><i class="fa fa-check"></i><b>8.1.12</b> Finished!</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="b-lab-4.html"><a href="b-lab-4.html#in-class-activities-7"><i class="fa fa-check"></i><b>8.2</b> In-class activities</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="b-lab-4.html"><a href="b-lab-4.html#step-1-load-in-packages-and-data"><i class="fa fa-check"></i><b>8.2.1</b> Step 1: Load in packages and data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="b-lab-4.html"><a href="b-lab-4.html#step-2-clean-up-the-data"><i class="fa fa-check"></i><b>8.2.2</b> Step 2: Clean up the data</a></li>
+<li class="chapter" data-level="8.2.3" data-path="b-lab-4.html"><a href="b-lab-4.html#step-3-join"><i class="fa fa-check"></i><b>8.2.3</b> Step 3: Join</a></li>
+<li class="chapter" data-level="8.2.4" data-path="b-lab-4.html"><a href="b-lab-4.html#step-4.-select-your-variables"><i class="fa fa-check"></i><b>8.2.4</b> Step 4. Select your variables</a></li>
+<li class="chapter" data-level="8.2.5" data-path="b-lab-4.html"><a href="b-lab-4.html#step-5-recode"><i class="fa fa-check"></i><b>8.2.5</b> Step 5: Recode</a></li>
+<li class="chapter" data-level="8.2.6" data-path="b-lab-4.html"><a href="b-lab-4.html#step-6-filter"><i class="fa fa-check"></i><b>8.2.6</b> Step 6: Filter</a></li>
+<li class="chapter" data-level="8.2.7" data-path="b-lab-4.html"><a href="b-lab-4.html#step-7-sub-scale-scores"><i class="fa fa-check"></i><b>8.2.7</b> Step 7: Sub-scale scores</a></li>
+<li class="chapter" data-level="8.2.8" data-path="b-lab-4.html"><a href="b-lab-4.html#step-8-split-the-dataset"><i class="fa fa-check"></i><b>8.2.8</b> Step 8: Split the dataset</a></li>
+<li class="chapter" data-level="8.2.9" data-path="b-lab-4.html"><a href="b-lab-4.html#step-9-descriptives"><i class="fa fa-check"></i><b>8.2.9</b> Step 9: Descriptives</a></li>
+<li class="chapter" data-level="8.2.10" data-path="b-lab-4.html"><a href="b-lab-4.html#step-10-visualisation"><i class="fa fa-check"></i><b>8.2.10</b> Step 10: visualisation</a></li>
+</ul></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
@@ -367,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Probability (<em>p</em>) is the extent to which an event is likely to occur and is represented by a number between 0 and 1. For example, the probability of flipping a coin and it landing on ‘heads’ would be estimated at <em>p = .5</em>, i.e., there is a 50% chance of getting a head when you flip a coin. Calculating the probability of any discrete event occurring can be formulated as:</p>
 <p><span class="math display">\[p = \frac{number \  of  \ ways \ the \ event \ could \  arise}{number \ of \ possible \ outcomes}\]</span>
 For example, what is the probability of randomly drawing your name out of a hat of 12 names where one name is definitely yours?</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">/</span><span class="dv">12</span></code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="b-lab-3.html#cb132-1"></a><span class="dv">1</span><span class="op">/</span><span class="dv">12</span></span></code></pre></div>
 <pre><code>## [1] 0.08333333</code></pre>
 <p>The probability is .08, or to put it another way, there is an 8.3% chance that you would pull your name out of the hat.</p>
 </div>
@@ -386,9 +418,9 @@ For example, what is the probability of randomly drawing your name out of a hat 
 <p>What types of data are the below measurements?</p>
 <ul>
 <li>Time taken to run a marathon (in seconds): <select class='solveme' data-answer='["ratio"]'> <option></option> <option>interval</option> <option>ordinal</option> <option>categorical</option> <option>ratio</option></select></li>
-<li>Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>interval</option> <option>categorical</option> <option>ratio</option> <option>ordinal</option></select></li>
-<li>Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>ordinal</option> <option>categorical</option> <option>interval</option> <option>ratio</option></select></li>
-<li>Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>categorical</option> <option>ratio</option> <option>ordinal</option> <option>interval</option></select></li>
+<li>Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>interval</option> <option>ratio</option> <option>ordinal</option> <option>categorical</option></select></li>
+<li>Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>categorical</option> <option>ordinal</option> <option>ratio</option> <option>interval</option></select></li>
+<li>Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>interval</option> <option>ordinal</option> <option>categorical</option> <option>ratio</option></select></li>
 </ul>
 </div>
 <div id="probability-distributions" class="section level3">
@@ -421,18 +453,18 @@ Figure 1.1: Probability of no. of heads from 10 coin tosses
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">heads10000 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())
-
-data10000 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads10000) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># convert to a tibble</span>
-<span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">     </span><span class="co"># group by number of possibilities </span>
-<span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="co"># count occurances of each possibility,</span>
-                          <span class="dt">p=</span>n<span class="op">/</span><span class="dv">10000</span>) <span class="co"># &amp; calculate probability (p) of each</span>
-
-<span class="kw">ggplot</span>(data10000, <span class="kw">aes</span>(<span class="dt">x =</span> heads,<span class="dt">y =</span> p)) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 10 flips (p)&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>))</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="b-lab-3.html#cb134-1"></a>heads10000 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())</span>
+<span id="cb134-2"><a href="b-lab-3.html#cb134-2"></a></span>
+<span id="cb134-3"><a href="b-lab-3.html#cb134-3"></a>data10000 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads10000) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># convert to a tibble</span></span>
+<span id="cb134-4"><a href="b-lab-3.html#cb134-4"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">     </span><span class="co"># group by number of possibilities </span></span>
+<span id="cb134-5"><a href="b-lab-3.html#cb134-5"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="co"># count occurances of each possibility,</span></span>
+<span id="cb134-6"><a href="b-lab-3.html#cb134-6"></a>                          <span class="dt">p=</span>n<span class="op">/</span><span class="dv">10000</span>) <span class="co"># &amp; calculate probability (p) of each</span></span>
+<span id="cb134-7"><a href="b-lab-3.html#cb134-7"></a></span>
+<span id="cb134-8"><a href="b-lab-3.html#cb134-8"></a><span class="kw">ggplot</span>(data10000, <span class="kw">aes</span>(<span class="dt">x =</span> heads,<span class="dt">y =</span> p)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb134-9"><a href="b-lab-3.html#cb134-9"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb134-10"><a href="b-lab-3.html#cb134-10"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 10 flips (p)&quot;</span>) <span class="op">+</span></span>
+<span id="cb134-11"><a href="b-lab-3.html#cb134-11"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb134-12"><a href="b-lab-3.html#cb134-12"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="the-normal-distribution" class="section level3">
@@ -460,8 +492,8 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <p>Complete the sentences so that they are correct.</p>
 <ul>
 <li>In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>are always different</option> <option>are all equal</option> <option>sum to zero</option></select>.</li>
-<li>In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the lower its probability of occuring</option> <option>the higher its probability of occuring</option></select>.</li>
-<li>Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='solveme' data-answer='["is a continuous variable"]'> <option></option> <option>is a continuous variable</option> <option>is a categorical variable</option> <option>has three possible values</option></select>.</li>
+<li>In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the higher its probability of occuring</option> <option>the lower its probability of occuring</option></select>.</li>
+<li>Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='solveme' data-answer='["is a continuous variable"]'> <option></option> <option>has three possible values</option> <option>is a continuous variable</option> <option>is a categorical variable</option></select>.</li>
 </ul>
 </div>
 <div id="activity-4-distribution-test" class="section level3">
@@ -504,7 +536,7 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <li><p><code>prob</code>: the probability of ‘heads’ on one trial. Here chance is 50-50 which as a probability we state as 0.5 or .5</p></li>
 </ul>
 <p>Copy, paste and run the below code in a new code chunk:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dt">x =</span> <span class="dv">5</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="b-lab-3.html#cb135-1"></a><span class="kw">dbinom</span>(<span class="dt">x =</span> <span class="dv">5</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <ul>
 <li>What is the probability of getting 5 heads out of 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.25",".25"]'/><br />
 </li>
@@ -517,7 +549,7 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <p>This time we use <code>pbinom()</code> as we want to know the <strong>cumulative probability</strong> of getting a maximum of 2 heads from 10 coin flips. so we have set a cut-off point of 2 but we still have a probability of getting a heads of 0.5.</p>
 <p><strong>Note:</strong> <code>pbinom()</code> takes the arguments <code>size</code> and <code>prob</code> argument just like <code>dbinom()</code>. However, the first input argument is <code>q</code> rather than <code>x</code>. This is because in dbinom <code>x</code> is a fixed number, whereas <code>q</code> is all the possibilities <strong>up to</strong> a given number (e.g. 0, 1, 2).</p>
 <p>Copy, paste and run the below code in a new code chunk:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dt">q =</span> <span class="dv">2</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="b-lab-3.html#cb136-1"></a><span class="kw">pbinom</span>(<span class="dt">q =</span> <span class="dv">2</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <ul>
 <li>What is the probability of getting a maximum of 2 heads on 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.06",".06"]'/><br />
 </li>
@@ -528,7 +560,7 @@ Figure 4.5: A simulation of an experiment collecting height data from 2000 parti
 <h3><span class="header-section-number">7.2.4</span> Activity 4: <code>pbinom()</code> 2</h3>
 <p>Let’s try one more scenario with a cut-off point to make sure you have understood this. What is the probability of getting 7 or more heads on 10 flips?</p>
 <p>We can use the same function as in the previous example, however, there’s an extra argument if we want to get the correct answer. Let’s try running the code we used above but change <code>q = 2</code> to <code>q = 7</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dt">q =</span> <span class="dv">7</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>) </code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="b-lab-3.html#cb137-1"></a><span class="kw">pbinom</span>(<span class="dt">q =</span> <span class="dv">7</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>) </span></code></pre></div>
 <pre><code>## [1] 0.9453125</code></pre>
 <p>This tells us that the probability is .95 or 95% - that doesn’t seem right does it? The default behaviour for <code>pbinom()</code> is to calculate cumulative probability for the lower tail of the curve, i.e., if you specify <code>q = 2</code> it calculates the probability of all outcomes below 2. We specified <code>q = 7</code> which means that it’s calculated the probability of getting an outcome of 0, 1, 2, 3, 4, 5, 6, and 7, the blue area in the below figure - which is obviously very high.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
@@ -539,7 +571,7 @@ Figure 4.6: Lower and upper tails
 </div>
 <p>To get the right answer, we have to add <code>lower.tail = FALSE</code> as we are interested in the upper tail of the distribution. Because we want the cumulative probability to include 7, we set <code>q = 6</code>. This will now calculate the cumulative probability of getting 7, 8, 9, or 10 heads out of 10 coin flips.</p>
 <p>Copy, paste and run the below code in a new code chunk:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dt">q =</span> <span class="dv">6</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) </code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="b-lab-3.html#cb139-1"></a><span class="kw">pbinom</span>(<span class="dt">q =</span> <span class="dv">6</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>) </span></code></pre></div>
 <ul>
 <li>What is the probability of getting between 7 and 10 heads from 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.17",".17"]'/><br />
 </li>
@@ -551,7 +583,7 @@ Figure 4.6: Lower and upper tails
 <p>OK, now let’s consider a scenario in which you’d use the quantile function <code>qbinom</code>. Imagine that you’ve been accosted by a street magician and they want to bet you that they can predict whether the coin will land on heads or tails. You suspect that they’ve done something to the coin so that it’s not fair and that the probability of the coin landing on a head is no longer .5 or 50/50, it’s now more likely to land on tails. Your null hypothesis is that the coin is not dodgy and that the probability should be even (P(heads)=.5).You are going to run a single experiment to test your hypothesis, with 10 trials. What is the minimum number of heads that is acceptable if p really does equal .5?</p>
 <p>You have used the argument <code>prob</code> in the previous two functions, <code>dbinom</code> and <code>pbinom</code>, and it represents the probability of success on a single trial (here it is the probability of ‘heads’ in one coin flip, .5). For <code>qbinom</code>, <code>prob</code> still represents the probability of success in one trial, whereas <code>p</code> represents the overall probability of success across all trials. When you run <code>pbinom</code>, it calculates the number of heads that would give that probability.</p>
 <p>In other words, you ask it for the minimum number of successes (e.g. heads) to maintain an overall probability of .5, in 10 flips, when the probability of a success on any one flip is .5.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>)</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="b-lab-3.html#cb140-1"></a><span class="kw">qbinom</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">prob =</span> <span class="fl">.5</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>And it tells you the answer is 2. <code>qbinom</code> also uses the lower.tail argument and it works in a similar fashion to pbinom.
 So if you got fewer than two heads, you would reject the null hypothesis that the coin was unbiased against heads.</p>
@@ -561,7 +593,7 @@ So if you got fewer than two heads, you would reject the null hypothesis that th
 <li>What would your cut-off be if you ran 1000 trials? <input class='solveme nospaces' size='3' data-answer='["474"]'/></li>
 <li>What would your cut-off be if you ran 10,000 trials? <input class='solveme nospaces' size='4' data-answer='["4918"]'/></li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">size =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="dt">prob =</span> <span class="fl">.5</span>)</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="b-lab-3.html#cb142-1"></a><span class="kw">qbinom</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">size =</span> <span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="dt">prob =</span> <span class="fl">.5</span>)</span></code></pre></div>
 <hr />
 <p><strong>Visualise it!</strong></p>
 <p>Have a go at playing around with different numbers of coin flips and probabilities in our <code>dbinom()</code> and <code>pbinom()</code> app!</p>
@@ -595,16 +627,16 @@ Figure 4.7: Binomial distribution app
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r">men &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100000</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>)
-women &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100000</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>)
-
-heights &lt;-<span class="st"> </span><span class="kw">tibble</span>(men, women) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;height&quot;</span>, men<span class="op">:</span>women)
-
-<span class="kw">ggplot</span>(heights, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">fill =</span> sex)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">theme_minimal</span>()</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="b-lab-3.html#cb143-1"></a>men &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100000</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>)</span>
+<span id="cb143-2"><a href="b-lab-3.html#cb143-2"></a>women &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">100000</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>)</span>
+<span id="cb143-3"><a href="b-lab-3.html#cb143-3"></a></span>
+<span id="cb143-4"><a href="b-lab-3.html#cb143-4"></a>heights &lt;-<span class="st"> </span><span class="kw">tibble</span>(men, women) <span class="op">%&gt;%</span></span>
+<span id="cb143-5"><a href="b-lab-3.html#cb143-5"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;sex&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;height&quot;</span>, men<span class="op">:</span>women)</span>
+<span id="cb143-6"><a href="b-lab-3.html#cb143-6"></a></span>
+<span id="cb143-7"><a href="b-lab-3.html#cb143-7"></a><span class="kw">ggplot</span>(heights, <span class="kw">aes</span>(<span class="dt">x =</span> height, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
+<span id="cb143-8"><a href="b-lab-3.html#cb143-8"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span></span>
+<span id="cb143-9"><a href="b-lab-3.html#cb143-9"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
+<span id="cb143-10"><a href="b-lab-3.html#cb143-10"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="07-lab07_files/figure-html/unnamed-chunk-10-1.png" alt="Simulation of Scottish height data" width="100%" />
@@ -623,7 +655,7 @@ Figure 1.6: Simulation of Scottish height data
 <li><code>sd</code> is the standard deviation of the data</li>
 <li><code>lower.tail</code> works as above and depends on whether you are interested in the upper or lower tail</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="b-lab-3.html#cb144-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</span></code></pre></div>
 <p>Replace the NULLs in the above code to calculate the probability of meeting a 16-24 y.o. Scottish woman who is taller than the average 16-24 y.o. Scottish man.</p>
 <ul>
 <li>What is the probability of meeting a 16-24 y.o. Scottish woman who is taller than the average 16-24 y.o. Scottish man? <input class='solveme nospaces' size='4' data-answer='["0.04",".04"]'/><br />
@@ -653,7 +685,7 @@ Figure 1.6: Simulation of Scottish height data
 <h3><span class="header-section-number">7.2.11</span> Activity 9: <code>qnorm()</code></h3>
 <p>In the previous examples we calculated the probability of a particular outcome. Now we want to calculate what outcome would be associated with a particular probability and we can use <code>qnorm()</code> to do this.</p>
 <p><code>qnorm()</code> is very similar to <code>pnorm()</code> with one exception, rather than specifying <code>q</code> our known observation or quantile, instead we have to specify <code>p</code>, our known probability.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="b-lab-3.html#cb145-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="ot">NULL</span>, <span class="dt">mean =</span> <span class="ot">NULL</span>, <span class="dt">sd =</span> <span class="ot">NULL</span>, <span class="dt">lower.tail =</span> <span class="ot">NULL</span>)</span></code></pre></div>
 <p>Replace the NULLs in the above code to calculate how tall a 16-24 y.o. Scottish man would have to be in order to be in the top 5% (i.e., p = .05) of the height distribution for Scottish men in his age group.</p>
 <p><strong>Visualise it!</strong></p>
 <p>Have a go at playing around with different distributions in our <code>dnorm()</code> and <code>pnorm()</code> app - <a href="http://shiny.psy.gla.ac.uk/jackt/ShinyPsyTeachR/ug1/normal-distributions/">access it here</a></p>
@@ -668,7 +700,7 @@ Figure 1.6: Simulation of Scottish height data
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fl">.25</span></code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="b-lab-3.html#cb146-1"></a><span class="fl">.25</span></span></code></pre></div>
 </div>
 </div>
 <div id="activity-3-4" class="section level4">
@@ -677,7 +709,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fl">.06</span></code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="b-lab-3.html#cb147-1"></a><span class="fl">.06</span></span></code></pre></div>
 </div>
 </div>
 <div id="activity-4-5" class="section level4">
@@ -686,7 +718,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fl">.17</span></code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="b-lab-3.html#cb148-1"></a><span class="fl">.17</span></span></code></pre></div>
 </div>
 </div>
 <div id="activity-5-3" class="section level4">
@@ -695,7 +727,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">176.2</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="b-lab-3.html#cb149-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">176.2</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-6-2" class="section level4">
@@ -704,7 +736,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="b-lab-3.html#cb150-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-7-1" class="section level4">
@@ -713,7 +745,7 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="b-lab-3.html#cb151-1"></a><span class="kw">pnorm</span>(<span class="dt">q =</span> <span class="fl">181.12</span>, <span class="dt">mean =</span> <span class="fl">163.8</span>, <span class="dt">sd =</span> <span class="fl">6.931</span>, <span class="dt">lower.tail =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-8-1" class="section level4">
@@ -722,16 +754,12 @@ Solution
 <button>
 Solution
 </button>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="b-lab-3.html#cb152-1"></a><span class="kw">qnorm</span>(<span class="dt">p =</span> <span class="fl">.05</span>, <span class="dt">mean =</span> <span class="fl">176.2</span>, <span class="dt">sd =</span> <span class="fl">6.748</span>, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 
 </div>
 </div>
 </div>
-</div>
-
-
-
 </div>
 <div class="psyteachr_footer">
   
@@ -823,17 +851,19 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="b-lab-2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="b-lab-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="b-lab-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -841,12 +871,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -858,6 +888,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -877,8 +911,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
