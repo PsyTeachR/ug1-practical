@@ -247,7 +247,7 @@ pbinom(q = 6, size = 10, prob = .5, lower.tail = FALSE)
 ```
 
 * What is the probability of getting between 7 and 10 heads from 10 coin flips to 2 decimal places? `r fitb(c("0.17", ".17"))`  
-* What is this probability expressed in percent? `r mcq(c("0.017%", "0.17", answer = "17%"))`
+* What is this probability expressed in percent? `r mcq(c("0.017%", "0.17", answer = "17%"))` 
 
 ### Activity 5: `qbinom()`
 
