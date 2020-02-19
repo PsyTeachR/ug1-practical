@@ -350,8 +350,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.6" data-path="b-lab-4.html"><a href="b-lab-4.html#step-6-filter"><i class="fa fa-check"></i><b>8.2.6</b> Step 6: Filter</a></li>
 <li class="chapter" data-level="8.2.7" data-path="b-lab-4.html"><a href="b-lab-4.html#step-7-sub-scale-scores"><i class="fa fa-check"></i><b>8.2.7</b> Step 7: Sub-scale scores</a></li>
 <li class="chapter" data-level="8.2.8" data-path="b-lab-4.html"><a href="b-lab-4.html#step-8-split-the-dataset"><i class="fa fa-check"></i><b>8.2.8</b> Step 8: Split the dataset</a></li>
-<li class="chapter" data-level="8.2.9" data-path="b-lab-4.html"><a href="b-lab-4.html#step-9-descriptives"><i class="fa fa-check"></i><b>8.2.9</b> Step 9: Descriptives</a></li>
-<li class="chapter" data-level="8.2.10" data-path="b-lab-4.html"><a href="b-lab-4.html#step-10-visualisation"><i class="fa fa-check"></i><b>8.2.10</b> Step 10: visualisation</a></li>
+<li class="chapter" data-level="8.2.9" data-path="b-lab-4.html"><a href="b-lab-4.html#step-9-demoraphic-information"><i class="fa fa-check"></i><b>8.2.9</b> Step 9: Demoraphic information</a></li>
+<li class="chapter" data-level="8.2.10" data-path="b-lab-4.html"><a href="b-lab-4.html#step-10-descriptive-statistics"><i class="fa fa-check"></i><b>8.2.10</b> Step 10: Descriptive statistics</a></li>
+<li class="chapter" data-level="8.2.11" data-path="b-lab-4.html"><a href="b-lab-4.html#step-11-visualisation"><i class="fa fa-check"></i><b>8.2.11</b> Step 11: visualisation</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -406,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb153-2"><a href="b-lab-4.html#cb153-2"></a><span class="co"># we need to enter them into the function in &quot;quotes&quot; </span></span>
 <span id="cb153-3"><a href="b-lab-4.html#cb153-3"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb153-4"><a href="b-lab-4.html#cb153-4"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;HEADS&quot;</span>, <span class="st">&quot;TAILS&quot;</span>), <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;TAILS&quot; &quot;TAILS&quot; &quot;HEADS&quot; &quot;TAILS&quot;</code></pre>
+<pre><code>## [1] &quot;TAILS&quot; &quot;HEADS&quot; &quot;HEADS&quot; &quot;HEADS&quot;</code></pre>
 <p>How many heads did you get? Don’t worry if it’s different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times?</p>
 <p>When you perform data simulation, you’re unlikely to get the same outcome each time you take a sample, just like if you flipped a coin 4 times on 5 separate occasions you would be unlikely to get the same number of heads each time. What’s so useful about data simulation is that we can use the outcomes from lots of different sampling attempts to calculate the probability of a particular outcome, e.g., getting 4 heads from 4 flips of a coin.</p>
 <p>So that we can add up the number of heads and tails more easily, let’s simulate those coin flips again, but using numerical codes, 1 = HEADS, 0 = TAILS.</p>
@@ -416,7 +417,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>0:1 means all numbers from 0 to 1 in steps of 1. So basically, 0 and 1. If you wanted to simulate rolling a die, you would write <code>1:6</code> which would give you all the whole numbers from 1 to 6.</li>
 </ul>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="b-lab-4.html#cb155-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] 0 1 1 1</code></pre>
+<pre><code>## [1] 0 0 1 0</code></pre>
 </div>
 <div id="activity-2-sum" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> Activity 2: <code>sum()</code></h3>
@@ -440,7 +441,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Copy, paste and run the below code into a new code chunk to run the sample function and sum up the outcomes 20 times.</p>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="b-lab-4.html#cb159-1"></a><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())</span></code></pre></div>
-<pre><code>##  [1] 2 0 0 3 3 3 1 3 0 4 2 3 2 2 0 3 0 3 2 4</code></pre>
+<pre><code>##  [1] 2 2 1 1 1 1 2 2 1 2 3 1 1 3 1 4 2 3 1 2</code></pre>
 </div>
 <div id="monte-carlo-simulation" class="section level3">
 <h3><span class="header-section-number">8.1.5</span> Monte Carlo simulation</h3>
@@ -454,8 +455,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="b-lab-4.html#cb161-1"></a>heads50 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">50</span>, <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span>
 <span id="cb161-2"><a href="b-lab-4.html#cb161-2"></a>heads50</span></code></pre></div>
-<pre><code>##  [1] 1 2 1 1 1 2 2 1 3 1 2 1 1 1 1 3 0 3 2 2 1 1 3 3 2 2 3 3 0 2 3 1 2 3 3
-## [36] 1 1 3 3 1 2 1 0 2 4 3 2 2 2 0</code></pre>
+<pre><code>##  [1] 3 1 2 1 3 3 3 1 3 1 2 2 2 1 3 3 2 1 2 3 3 2 2 1 3 4 3 4 2 3 1 3 3 1 1
+## [36] 1 2 2 1 2 2 4 3 1 2 2 1 2 4 4</code></pre>
 </div>
 <div id="activity-5-probability" class="section level3">
 <h3><span class="header-section-number">8.1.7</span> Activity 5: probability</h3>
@@ -474,29 +475,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0</td>
-<td align="right">4</td>
-<td align="right">0.08</td>
+<td align="right">1</td>
+<td align="right">14</td>
+<td align="right">0.28</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="right">17</td>
-<td align="right">0.34</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">0.32</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
+<td align="right">3</td>
 <td align="right">15</td>
 <td align="right">0.30</td>
 </tr>
 <tr class="even">
-<td align="right">3</td>
-<td align="right">13</td>
-<td align="right">0.26</td>
-</tr>
-<tr class="odd">
 <td align="right">4</td>
-<td align="right">1</td>
-<td align="right">0.02</td>
+<td align="right">5</td>
+<td align="right">0.10</td>
 </tr>
 </tbody>
 </table>
@@ -552,7 +548,7 @@ Figure 8.2: 10K coin toss probability outcomes.
 <pre><code>## # A tibble: 1 x 1
 ##      p2
 ##   &lt;dbl&gt;
-## 1 0.686</code></pre>
+## 1 0.679</code></pre>
 <p>You can add probabilities for various outcomes together as long as the outcomes are mutually exclusive, that is, when one outcome occurs, the others can’t occur. For this coin flipping example, this is obviously the case: you can’t simultaneously get exactly two and exactly three heads as the outcome of a single experiment. However, be aware that you can’t simply add probabilities together when the events in question are not mutually exclusive: for example, the probability of the coin landing heads up, and it landing with the image of the head being in a particular orientation are not mutually exclusive, and can’t be simply added together.</p>
 <p>This is the basis of how we can calculate the probability of an outcome using a known distribution - by simulating a large number of trials we can use this as an estimate for how our data will look in the real world.</p>
 </div>
@@ -569,17 +565,17 @@ Figure 8.2: 10K coin toss probability outcomes.
 <p>You can check that the data you have generated are as you expected by calculating the mean and SD of this new variable - you shouldn’t expect the values to be exactly 10 and 2 (remember, it’s randomly generated), but they should be reasonably close.</p>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="b-lab-4.html#cb171-1"></a><span class="kw">mean</span>(normal)</span>
 <span id="cb171-2"><a href="b-lab-4.html#cb171-2"></a><span class="kw">sd</span>(normal)</span></code></pre></div>
-<pre><code>## [1] 10.04089
-## [1] 2.03288</code></pre>
+<pre><code>## [1] 10.42691
+## [1] 2.14788</code></pre>
 <p>Finally, you can visualise your data with a density plot. Try changing the number of data points generated by <code>rnorm()</code> from 50 to 500 to 5000 and then see how the shape of the distribution changes.</p>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="b-lab-4.html#cb173-1"></a><span class="kw">tibble</span>(<span class="dt">normal =</span> normal) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#turn the variable normal into a table and then</span></span>
 <span id="cb173-2"><a href="b-lab-4.html#cb173-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(normal)) <span class="op">+</span><span class="st"> </span><span class="co"># create a density plot</span></span>
 <span id="cb173-3"><a href="b-lab-4.html#cb173-3"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
 <span id="cb173-4"><a href="b-lab-4.html#cb173-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="08-lab08_files/figure-html/unnamed-chunk-4-1.png" alt="Distribution of variable created by rnorm" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="08-lab08_files/figure-html/unnamed-chunk-5-1.png" alt="Distribution of variable created by rnorm" width="100%" />
 <p class="caption">
-Figure 4.3: Distribution of variable created by rnorm
+Figure 4.4: Distribution of variable created by rnorm
 </p>
 </div>
 </div>
@@ -608,10 +604,10 @@ Figure 4.3: Distribution of variable created by rnorm
 <span id="cb179-6"><a href="b-lab-4.html#cb179-6"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
 <span id="cb179-7"><a href="b-lab-4.html#cb179-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
 <span id="cb179-8"><a href="b-lab-4.html#cb179-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Outcome of dice roll&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="08-lab08_files/figure-html/unnamed-chunk-10-1.png" alt="Boxplot of IQ scores grouped by what each person rolled on the die" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="08-lab08_files/figure-html/unnamed-chunk-11-1.png" alt="Boxplot of IQ scores grouped by what each person rolled on the die" width="100%" />
 <p class="caption">
-Figure 1.6: Boxplot of IQ scores grouped by what each person rolled on the die
+Figure 4.9: Boxplot of IQ scores grouped by what each person rolled on the die
 </p>
 </div>
 </div>
@@ -631,46 +627,57 @@ Everything you need to do you’ve done before, so use this book to help you. Re
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="b-lab-4.html#cb180-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb180-2"><a href="b-lab-4.html#cb180-2"></a></span>
 <span id="cb180-3"><a href="b-lab-4.html#cb180-3"></a>demo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;demographics.csv&quot;</span>)</span>
-<span id="cb180-4"><a href="b-lab-4.html#cb180-4"></a>mslq &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;MSLQ.csv&quot;</span>)</span></code></pre></div>
+<span id="cb180-4"><a href="b-lab-4.html#cb180-4"></a>mslq &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;mslq.csv&quot;</span>)</span>
+<span id="cb180-5"><a href="b-lab-4.html#cb180-5"></a>teams &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;team-name.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="step-2-clean-up-the-data" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Step 2: Clean up the data</h3>
-<p>Run the below code - don’t change anything. This code will clean up the Experimentum data a little bit to help you on your way.</p>
+<p>Run the below code - don’t change anything. This code will clean up the Experimentum data a little bit to help you on your way. You will get a message saying <code>NAs introduced by coercion</code>. Ignore this message, it’s a result of converting the employment hours to a numeric variable.</p>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="b-lab-4.html#cb181-1"></a>demo_final &lt;-<span class="st"> </span>demo <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb181-2"><a href="b-lab-4.html#cb181-2"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id, team_name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-2"><a href="b-lab-4.html#cb181-2"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb181-3"><a href="b-lab-4.html#cb181-3"></a><span class="st">  </span><span class="kw">filter</span>(session_id <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(session_id), endtime <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(endtime)) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb181-4"><a href="b-lab-4.html#cb181-4"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb181-5"><a href="b-lab-4.html#cb181-5"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb181-6"><a href="b-lab-4.html#cb181-6"></a><span class="st">  </span><span class="kw">filter</span>(user_status <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;guest&quot;</span>, <span class="st">&quot;registered&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb181-7"><a href="b-lab-4.html#cb181-7"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, team_name, q_name, dv) <span class="op">%&gt;%</span></span>
-<span id="cb181-8"><a href="b-lab-4.html#cb181-8"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> q_name, <span class="dt">values_from =</span> dv)</span>
-<span id="cb181-9"><a href="b-lab-4.html#cb181-9"></a></span>
-<span id="cb181-10"><a href="b-lab-4.html#cb181-10"></a>mslq_final &lt;-<span class="st"> </span>mslq <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb181-11"><a href="b-lab-4.html#cb181-11"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb181-12"><a href="b-lab-4.html#cb181-12"></a><span class="st">  </span><span class="kw">filter</span>(session_id <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(session_id), endtime <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(endtime)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb181-13"><a href="b-lab-4.html#cb181-13"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb181-14"><a href="b-lab-4.html#cb181-14"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb181-15"><a href="b-lab-4.html#cb181-15"></a><span class="st">  </span><span class="kw">filter</span>(user_status <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;guest&quot;</span>, <span class="st">&quot;registered&quot;</span>)) <span class="op">%&gt;%</span></span>
-<span id="cb181-16"><a href="b-lab-4.html#cb181-16"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, q_name, dv) <span class="op">%&gt;%</span></span>
-<span id="cb181-17"><a href="b-lab-4.html#cb181-17"></a><span class="st">  </span><span class="kw">arrange</span>(q_name) <span class="op">%&gt;%</span></span>
-<span id="cb181-18"><a href="b-lab-4.html#cb181-18"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> q_name, <span class="dt">values_from =</span> dv)</span></code></pre></div>
+<span id="cb181-7"><a href="b-lab-4.html#cb181-7"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, q_name, dv) <span class="op">%&gt;%</span></span>
+<span id="cb181-8"><a href="b-lab-4.html#cb181-8"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> q_name, <span class="dt">values_from =</span> dv)<span class="op">%&gt;%</span></span>
+<span id="cb181-9"><a href="b-lab-4.html#cb181-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">employment =</span> <span class="kw">as.numeric</span>(employment))</span>
+<span id="cb181-10"><a href="b-lab-4.html#cb181-10"></a></span>
+<span id="cb181-11"><a href="b-lab-4.html#cb181-11"></a>teams_final &lt;-<span class="st"> </span>teams <span class="op">%&gt;%</span></span>
+<span id="cb181-12"><a href="b-lab-4.html#cb181-12"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-13"><a href="b-lab-4.html#cb181-13"></a><span class="st">  </span><span class="kw">filter</span>(session_id <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(session_id), endtime <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(endtime)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-14"><a href="b-lab-4.html#cb181-14"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-15"><a href="b-lab-4.html#cb181-15"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-16"><a href="b-lab-4.html#cb181-16"></a><span class="st">  </span><span class="kw">filter</span>(user_status <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;guest&quot;</span>, <span class="st">&quot;registered&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb181-17"><a href="b-lab-4.html#cb181-17"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, dv) <span class="op">%&gt;%</span></span>
+<span id="cb181-18"><a href="b-lab-4.html#cb181-18"></a><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;team&quot;</span> =<span class="st"> &quot;dv&quot;</span>)</span>
+<span id="cb181-19"><a href="b-lab-4.html#cb181-19"></a>  </span>
+<span id="cb181-20"><a href="b-lab-4.html#cb181-20"></a>mslq_final &lt;-<span class="st"> </span>mslq <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-21"><a href="b-lab-4.html#cb181-21"></a><span class="st">  </span><span class="kw">group_by</span>(user_id, q_id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-22"><a href="b-lab-4.html#cb181-22"></a><span class="st">  </span><span class="kw">filter</span>(session_id <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(session_id), endtime <span class="op">==</span><span class="st"> </span><span class="kw">min</span>(endtime)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-23"><a href="b-lab-4.html#cb181-23"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">row_number</span>() <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-24"><a href="b-lab-4.html#cb181-24"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb181-25"><a href="b-lab-4.html#cb181-25"></a><span class="st">  </span><span class="kw">filter</span>(user_status <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;guest&quot;</span>, <span class="st">&quot;registered&quot;</span>)) <span class="op">%&gt;%</span></span>
+<span id="cb181-26"><a href="b-lab-4.html#cb181-26"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, q_name, dv) <span class="op">%&gt;%</span></span>
+<span id="cb181-27"><a href="b-lab-4.html#cb181-27"></a><span class="st">  </span><span class="kw">arrange</span>(q_name) <span class="op">%&gt;%</span></span>
+<span id="cb181-28"><a href="b-lab-4.html#cb181-28"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> q_name, <span class="dt">values_from =</span> dv)</span></code></pre></div>
 <p>Right. Your turn.</p>
 </div>
 <div id="step-3-join" class="section level3">
 <h3><span class="header-section-number">8.2.3</span> Step 3: Join</h3>
-<p>Join together the data files by their common columns.</p>
+<p>Join together the data files by their common columns. The resulting dataset is going to have 91 columns which means that R won’t show you them all if you just click on the object, you’ll need to run <code>summary()</code>.</p>
 </div>
 <div id="step-4.-select-your-variables" class="section level3">
 <h3><span class="header-section-number">8.2.4</span> Step 4. Select your variables</h3>
-<p>Use select to retain only the variables you need for your chosen research design, i.e. the responses to the sub-scale you’re interested in. You might find it helpful to consult the MSLQ overview document from the Lab 1 pre-class to get the variable names.</p>
+<p>Use select to retain only the variables you need for your chosen research design and analysis, i.e. the responses to the sub-scale you’re interested in as well as the user id, sex, age, team name, and any variables you’re going to use as criteria for inclusion. You might find it helpful to consult the MSLQ overview document from the Lab 1 pre-class to get the variable names.</p>
 </div>
 <div id="step-5-recode" class="section level3">
 <h3><span class="header-section-number">8.2.5</span> Step 5: Recode</h3>
-<p>Use <code>summary</code> or <code>str</code> to check what type of variable each column is. Recode any necessary variables as factors and, if you would like to, change numeric codes (e.g., 1 for native speaker) into words to make it easier to read the output. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
+<p>Use <code>summary</code> or <code>str</code> to check what type of variable each column is. Recode any necessary variables as factors and then run summary again to see how many you have in each group. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
 </div>
 <div id="step-6-filter" class="section level3">
 <h3><span class="header-section-number">8.2.6</span> Step 6: Filter</h3>
-<p>If necessary, use filter to retain only the observations you need, for example, you might need to delete participants above a certain age, or only use mature students etc.</p>
+<p>If necessary, use filter to retain only the observations you need, for example, you might need to delete participants above a certain age, or only use mature students etc. (and make sure you kept all these columns in step 4). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
 <p>If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (&gt; 0 hours worked per week) and not employed (0 hours per week) categories.</p>
 <p>If you were feeling really fancy you could do steps 3 - 6 in a single pipeline of code.</p>
 </div>
@@ -679,22 +686,52 @@ Everything you need to do you’ve done before, so use this book to help you. Re
 <p>Calculate the mean score for each participant for your chosen sub-scale. There are a few ways you can do this but helpfully the Experimentum documentation provides example code to make this easier, you just need to adapt it for the variables you need. You may also want to change the <code>na.rm = TRUE</code> for the calculation of means depending on whether you want to only include participants who completed all questions.</p>
 <p>At the top of the code chunk below, change <code>eval = FALSE</code> to <code>eval = TRUE</code> once you have amended your code if you want to be able to knit the file.</p>
 <div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="b-lab-4.html#cb182-1"></a>dat_means &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change data to the name of the data object you want to work from</span></span>
-<span id="cb182-2"><a href="b-lab-4.html#cb182-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(var, val, question_<span class="dv">1</span><span class="op">:</span>question_<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change question_1:question_5 to the relevant variables for your sub-scale, don&#39;t change anything else </span></span>
+<span id="cb182-2"><a href="b-lab-4.html#cb182-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">names_to =</span> <span class="st">&quot;var&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;val&quot;</span>, question_<span class="dv">1</span><span class="op">:</span>question_<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change question_1:question_5 to the relevant variables for your sub-scale, don&#39;t change anything else </span></span>
 <span id="cb182-3"><a href="b-lab-4.html#cb182-3"></a><span class="st">  </span><span class="kw">group_by_at</span>(<span class="kw">vars</span>(<span class="op">-</span>val, <span class="op">-</span>var)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># don&#39;t change this at all</span></span>
 <span id="cb182-4"><a href="b-lab-4.html#cb182-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">scale_mean =</span> <span class="kw">mean</span>(val, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># change scale_mean to the name of your sub-scale, e.g., anxiety_mean</span></span>
-<span id="cb182-5"><a href="b-lab-4.html#cb182-5"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># don&#39;t change this at all</span></span></code></pre></div>
+<span id="cb182-5"><a href="b-lab-4.html#cb182-5"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># don&#39;t change this at all</span></span></code></pre></div>
 </div>
 <div id="step-8-split-the-dataset" class="section level3">
 <h3><span class="header-section-number">8.2.8</span> Step 8: Split the dataset</h3>
-<p>Next, use filter again to create a new dataset that only contains the data from participants who contributed to your team and call it <code>dat_means_team</code>. Once this is complete, you will have the final large dataset that contains the scale scores for all participants, and a smaller dataset that just has data from the participants you recruited.</p>
+<p>Next, use filter again to create a new dataset that only contains the data from participants who contributed to your team and call it <code>dat_means_team</code>. Once this is complete, you will have the final large dataset that contains the scale scores for all participants, and a smaller dataset that just has data from the participants you recruited. Use the codebook to find which number corresponds to your team.</p>
 </div>
-<div id="step-9-descriptives" class="section level3">
-<h3><span class="header-section-number">8.2.9</span> Step 9: Descriptives</h3>
-<p>Use summarise to calculate the minimum, maximum, mean, median, and standard deviation of the sub-scale scores. Do this separately for the full dataset and your team dataset.</p>
+<div id="step-9-demoraphic-information" class="section level3">
+<h3><span class="header-section-number">8.2.9</span> Step 9: Demoraphic information</h3>
+<p>That should be the really hard bit done, now you’ve got the data in the right format for analysis.</p>
+<p>First, calculate the demographic information you need: number of participants, gender split, grouping variable split (if you’re using a variable that’s not gender), mean age and SD.</p>
+<p>You can calculate mean age and SD using <code>summarise()</code> like you’ve done before. There’s several different ways that you can count the number of participants in each group, we haven’t explicitly shown you how to do this yet so we’ll give you example code for this below. The code is fairly simple, you just need to plug in the variables you need.</p>
+<p>Do this separately for the full dataset and your team dataset.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="b-lab-4.html#cb183-1"></a><span class="co"># count the total number of participants in the dataset</span></span>
+<span id="cb183-2"><a href="b-lab-4.html#cb183-2"></a></span>
+<span id="cb183-3"><a href="b-lab-4.html#cb183-3"></a>dat_means <span class="op">%&gt;%</span></span>
+<span id="cb183-4"><a href="b-lab-4.html#cb183-4"></a><span class="st">  </span><span class="kw">count</span>()</span>
+<span id="cb183-5"><a href="b-lab-4.html#cb183-5"></a></span>
+<span id="cb183-6"><a href="b-lab-4.html#cb183-6"></a><span class="co"># count the number of responses to each level of user_sex (for gender)</span></span>
+<span id="cb183-7"><a href="b-lab-4.html#cb183-7"></a>dat_means <span class="op">%&gt;%</span></span>
+<span id="cb183-8"><a href="b-lab-4.html#cb183-8"></a><span class="st">  </span><span class="kw">group_by</span>(user_sex) <span class="op">%&gt;%</span></span>
+<span id="cb183-9"><a href="b-lab-4.html#cb183-9"></a><span class="st">  </span><span class="kw">count</span>()</span>
+<span id="cb183-10"><a href="b-lab-4.html#cb183-10"></a></span>
+<span id="cb183-11"><a href="b-lab-4.html#cb183-11"></a><span class="co"># count the number of responses to each level of mature student status (you may need to change this variable to the one you&#39;re using)</span></span>
+<span id="cb183-12"><a href="b-lab-4.html#cb183-12"></a>dat_means <span class="op">%&gt;%</span></span>
+<span id="cb183-13"><a href="b-lab-4.html#cb183-13"></a><span class="st">  </span><span class="kw">group_by</span>(mature) <span class="op">%&gt;%</span></span>
+<span id="cb183-14"><a href="b-lab-4.html#cb183-14"></a><span class="st">  </span><span class="kw">count</span>()</span>
+<span id="cb183-15"><a href="b-lab-4.html#cb183-15"></a></span>
+<span id="cb183-16"><a href="b-lab-4.html#cb183-16"></a><span class="co"># count the number of responses across two categories (you might not need or want to do this)</span></span>
+<span id="cb183-17"><a href="b-lab-4.html#cb183-17"></a>dat_means <span class="op">%&gt;%</span></span>
+<span id="cb183-18"><a href="b-lab-4.html#cb183-18"></a><span class="st">  </span><span class="kw">group_by</span>(user_sex,mature) <span class="op">%&gt;%</span></span>
+<span id="cb183-19"><a href="b-lab-4.html#cb183-19"></a><span class="st">  </span><span class="kw">count</span>()</span></code></pre></div>
+<p>Once you’ve done this you might realise that you have participants in the dataset that shouldn’t be there. For example, you might have people who have answered “Not applicable” to the mature student question, or you might have some NAs (missing data from when people didn’t respond).</p>
+<p>You need to think about whether you need to get rid of any observationse from your dataset. For example, if you’re looking at gender differences, then you can’t have people who are missing gender information. You may have said in your pre-reg that you would only include non-binary people if they made up a certain proportion of the data. If you’re looking at mature student status, you can’t have people who didn’t answer the question or who said not applicable (i.e., postgrad students). You need to decide whether any of this is a problem, and potentially go back and add in an extra filter to step 6.</p>
 </div>
-<div id="step-10-visualisation" class="section level3">
-<h3><span class="header-section-number">8.2.10</span> Step 10: visualisation</h3>
+<div id="step-10-descriptive-statistics" class="section level3">
+<h3><span class="header-section-number">8.2.10</span> Step 10: Descriptive statistics</h3>
+<p>Use summarise and group_by to calculate the mean, median, and standard deviation of the sub-scale scores for each group. Do this separately for the full dataset and your team dataset.</p>
+</div>
+<div id="step-11-visualisation" class="section level3">
+<h3><span class="header-section-number">8.2.11</span> Step 11: visualisation</h3>
 <p>You now need to create a bar chart with error bars, a violin-boxplot and a grouped density plot for both the full dataset and your team dataset. You’ve done all of these before, just find a previous example code and change the variables and axis labels.</p>
+<p>It’s up to you how your present these in presentation. You might want to put all of the team graphs on one slide and then all of the overall dataset graphs on another. Or you might decide that it is better to put the same type of graphs on the same slide, to help comparisons. We want you to think about what will communicate the data best, so it’s up to you.</p>
+<p>`</p>
 
 </div>
 </div>
