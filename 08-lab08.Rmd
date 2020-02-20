@@ -306,7 +306,12 @@ mslq_final <- mslq %>%
 
 ```
 
-Right. Your turn.
+Right. Your turn. Remember, coding isn't about memorising code, it's about knowing where to look for examples that you can modify with your new variables. You may find it helpful to use the search function in this book.
+
+```{r, echo=FALSE, fig.cap="Searching for functions", out.width="75%", out.height="75%"}
+knitr::include_graphics(path="./images/searching.gif")
+```
+
 
 ### Step 3: Join 
 
@@ -316,9 +321,9 @@ Join together the data files by their common columns. The resulting dataset is g
 
 Use select to retain only the variables you need for your chosen research design and analysis, i.e. the responses to the sub-scale you're interested in as well as the user id, sex, age, team name, and any variables you're going to use as criteria for inclusion. You might find it helpful to consult the MSLQ overview document from the Lab 1 pre-class to get the variable names.
 
-### Step 5: Recode
+### Step 5: Factors
 
-Use `summary` or `str` to check what type of variable each column is. Recode any necessary variables as factors and then run summary again to see how many you have in each group. You will find the code book you downloaded with the data files from Moodle helpful for this task.
+Use `summary` or `str` to check what type of variable each column is. Recode any necessary variables as factors and then run summary again to see how many you have in each group. You will find the code book you downloaded with the data files from Moodle helpful for this task. You may find the [Psych 1A section on factors](https://psyteachr.github.io/ug1-practical/a-lab-4.html#activity-3-factors) helpful for this.
 
 ### Step 6: Filter
 
