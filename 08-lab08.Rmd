@@ -335,9 +335,7 @@ If you were feeling really fancy you could do steps 3 - 6 in a single pipeline o
 
 ### Step 7: Sub-scale scores
 
-Calculate the mean score for each participant for your chosen sub-scale. There are a few ways you can do this but helpfully the Experimentum documentation provides example code to make this easier, you just need to adapt it for the variables you need. You may also want to change the `na.rm = TRUE` for the calculation of means depending on whether you want to only include participants who completed all questions.
-
-At the top of the code chunk below, change `eval = FALSE` to `eval = TRUE` once you have amended your code if you want to be able to knit the file.
+Calculate the mean score for each participant for your chosen sub-scale. There are a few ways you can do this but helpfully the [Experimentum documentation](https://gla-my.sharepoint.com/:w:/g/personal/2087153l_student_gla_ac_uk/EfFPtssPMV9HkrZALfdln8wBBJKClQ0eAXzrrHxa0nOo7g?e=SNIhSt) provides example code to make this easier, you just need to adapt it for the variables you need. You may also want to change the `na.rm = TRUE` for the calculation of means depending on whether you want to only include participants who completed all questions.
 
 
 ```{r eval = FALSE}
