@@ -262,6 +262,8 @@ We suggest that you problems-solve the code as a group, however, make sure that 
 
 The data files are on Moodle. Remember, don't share them in Messenger etc. because of data protection laws.
 
+Don't change ANY of the code from step 1 and 2. Just copy and paste it into R EXACTLY as it is below. 
+
 ```{r eval = FALSE}
 library(tidyverse)
 
@@ -315,7 +317,7 @@ knitr::include_graphics(path="./images/searching.gif")
 
 ### Step 3: Join 
 
-Join together the data files by their common columns. The resulting dataset is going to have 91 columns which means that R won't show you them all if you just click on the object, you'll need to run `summary()`.
+Join together the data files by their common columns. The resulting dataset is going to have 91 columns which means that R won't show you them all if you just click on the object, you'll need to run `summary()`. **Hint:** You can only join two objects at once, so you'll need to do multiple joins (in a pipeline if you're feeling snazzy).
 
 ### Step 4. Select your variables
 
@@ -330,6 +332,21 @@ Use `summary` or `str` to check what type of variable each column is. Recode any
 If necessary, use filter to retain only the observations you need, for example, you might need to delete participants above a certain age, or only use mature students etc. (and make sure you kept all these columns in step 4). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.
 
 If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (> 0 hours worked per week) and not employed (0 hours per week) categories.
+
+An additional bit of syntax you might find useful for this is the `%in% notation which allows you to filter by multiple values. For example, the following code will retain all rows where `user_sex` equals male OR female and nothing else (i.e., it would get rid of non-binary participants, prefer not to says, and missing values).
+
+```{r eval=FALSE}
+
+dat %>%
+  filter(user_sex %in% c("male", "female"))
+```
+
+You can also do it by exclusion with `!`. The below code would retain everything where `user_sex` doesn't equal male or female.
+
+```{r eval = FALSE}
+dat %>%
+  filter(!user_sex %in% c("male", "female"))
+```
 
 If you were feeling really fancy you could do steps 3 - 6 in a single pipeline of code.
 
