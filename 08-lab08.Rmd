@@ -333,7 +333,7 @@ If necessary, use filter to retain only the observations you need, for example, 
 
 If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (> 0 hours worked per week) and not employed (0 hours per week) categories.
 
-An additional bit of syntax you might find useful for this is the `%in% notation which allows you to filter by multiple values. For example, the following code will retain all rows where `user_sex` equals male OR female and nothing else (i.e., it would get rid of non-binary participants, prefer not to says, and missing values).
+An additional bit of syntax you might find useful for this is the `%in%` notation which allows you to filter by multiple values. For example, the following code will retain all rows where `user_sex` equals male OR female and nothing else (i.e., it would get rid of non-binary participants, prefer not to says, and missing values).
 
 ```{r eval=FALSE}
 
