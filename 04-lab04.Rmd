@@ -43,9 +43,9 @@ knitr::include_graphics("images/layers.png")
 We're going to use the data from the Labs to explain how `ggplot2` works so let's do the set-up as usual. 
 
 * Open R Studio and ensure the environment is clear.  
-* Download the <a href="files/lab4.zip" download>`lab 4 files`</a>, extract the files and then move them in to your Lab 4 folder.
-* Open the `stub-4.1.Rmd` file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane).  
-* Type and run the below code to load the `tidyverse` package and to load in the data files in to the Actvity 1 code chunk. 
+* Download the <a href="files/stub-4.1.zip" download>`lab 4 pre-class Markdown file`</a>, extract the file and then move it in to your Data Skills folder.
+* Open the `stub-4.1.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).  
+* Type and run the below code to load the `tidyverse` package and to load in the data files in to the Activity 2 code chunk. 
 
 ```{r T1a, eval = FALSE}
 
@@ -74,7 +74,7 @@ summarydata <- select(.data = all_dat,
 
 ### Activity 3: Factors
 
-Before we go any further we need to perform an additional step of data processing that we have glossed over to this point. First, run the below code to look at the structure of the dataset:
+Before we go any further we need to perform an additional step of data processing that we have glossed over up until this point. First, run the below code to look at the structure of the dataset:
 
 ```{r}
 str(summarydata)
@@ -91,11 +91,13 @@ summarydata <- summarydata %>%
          income = as.factor(income))
 ```
 
+You can read this code as "overwrite the data that is in the column sex with sex as a factor".
+
 **Remember this. It's a really important step and if your graphs are looking weird this might be the reason.**
 
 ### Activity 4: Bar plot
 
-For our first example we will recreate the bar plot showing the number of males and females from Lab 2 by showing you how the layers of code build up.
+For our first example we will recreate the bar plot showing the number of male and female participants from Lab 2 by showing you how the layers of code build up (next semester we have data that includes non-binary participants).
 
 * The first line (or layer) sets up the base of the graph: the data to use and the aesthetics (what will go on the x and y axis, how the plot will be grouped).    
 * `aes()` can take both an `x` and `y` argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don't need to specify this. 
@@ -237,10 +239,10 @@ Today in the lab we will be working with our data to generate a plot of two vari
 
 ### Activity 1: Set-up
 
-Open the `stub-4.2.Rmd` file that you downloaded in the pre-class activities and ensure that the working directory is set to your Lab 4 folder and that the two .csv data files are in your working directory (you should see them in the file pane). 
 * Open R Studio and ensure the environment is clear.  
-* Open the Markdown stub file and ensure that your working directory is set to your Lab 4 folder.  
-* Look through your previous work to find the code that loads the `tidyverse`, reads in the data files and creates an object called `all_dat` that joins the two objects `dat` and `pinfo`.
+* Download the <a href="files/stub-4.2.zip" download>`lab 4 in-class Markdown file`</a>, extract the file and then move it in to your Data Skills folder.  
+* Open the `stub-4.2.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).  
+* Look through your previous work to find the code that loads the `tidyverse`, reads in the data files and creates an object called `all_dat` that joins the two objects `dat` and `pinfo`.  
 
 ```{r T1 getting started, message=FALSE, echo=FALSE}
 library(tidyverse)
@@ -277,9 +279,9 @@ age_65max <- filter(ahi_asc, age <= 65)
 
 ### Activity 5: Group and summarise
 
-First, calculate the overall median `ahiTotal` score for all participants (hint: use `summarise()`) and save it in an object called `median_score`.
-Then, group the data stored in the variable ```age_65max``` by sex, and store it in ```data_sex```. 
-Then, use summarise to create a new variable ```sex_median```, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called ```median_score```.
+* First, calculate the overall median `ahiTotal` score for all participants (hint: use `summarise()`) and save it in an object called `overall_median`.  
+* Then, group the data stored in the variable ```age_65max``` by sex, and store it in ```data_sex```.   
+* Then, use summarise to create a new variable ```sex_median```, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called ```median_score```.
 
 *(Hint: if you're stuck, see [this dplyr documentation](https://dplyr.tidyverse.org/reference/group_by.html)).*
 
@@ -292,6 +294,12 @@ sex_median <- summarise(data_sex, median_score = median(ahiTotal))
 ### Activity 6: Mutate
 
 Use `mutate()` to create a new column in `data_sex` called Happiness which categorises participants based on whether they score above or below the overall median ahiTotal score (i.e., the median score for all participants, not grouped by sex).
+
+`r hide("Hint")`
+```{r, echo = FALSE, results='asis'}
+cat("mutate(data, new_variable = old_variable > median score")
+```
+`r unhide()` 
 
 ```{r T6, echo = FALSE}
 happy <- mutate(data_sex, Happiness = (ahiTotal > 73))
@@ -374,7 +382,7 @@ age_65max <- filter(ahi_asc, age <= 65)
 `r webex::hide()`
 
 ```{r T5s}
-median_score <- summarise(age_65max, median = median(ahiTotal))
+overall_median <- summarise(age_65max, median = median(ahiTotal))
 data_sex <- group_by(age_65max, sex)
 data_median <- summarise(data_sex, median_score = median(ahiTotal))
 ```

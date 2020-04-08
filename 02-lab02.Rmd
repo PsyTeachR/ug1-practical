@@ -8,7 +8,7 @@ There are eight activities in total for this pre-class, but don't worry, they ar
 
 If you want to load data into R, or save the output of what you've created (which you almost always will want to do), you first need to tell R where the **working directory** is. All this means is that we tell R where the files we need (such as raw data) are located and where we want to save any files you have created. Think of it just like when you have different subjects, and you have separate folders for each topic e.g. biology, history and so on. When working with R, it's useful to have all the data sets and files you need in one folder. 
 
-We recommend making a new folder called "Level 1" with sub-folders for each lab and saving any data, scripts, and homework files for each lab in these folders. We suggest that you create this folder on the M: drive. This is your personal area on the University network that is safe and secure so it is much better than flashdrives or desktops. 
+We recommend making a new folder called "Psych 1A" with sub-folders for the tutorial and data skills secctions of the labs and saving any slides, activities, data, scripts, and homework files in these folders. We suggest that you create these folders on the M: drive. This is your personal area on the University network that is safe and secure so it is much better than flashdrives or desktops. 
 
 
 ```{r img-folders, echo=FALSE, fig.cap="Folder structure"}
@@ -17,17 +17,16 @@ knitr::include_graphics("images/folders.gif")
 
 ```
 
-First, choose a location for your lab work and then create the necessary folders for all five Psych 1A labs.
+* Choose a location for your lab work and then create the necessary folders.
+
+```{block, type="warning"}
+Whatever you do, do NOT call the folder you store your R work in "R". You don't have to call it Data Skills, but if you call it simply R then R will have an existential crisis about saving into itself and you will find that you have problems reading and saving your files. 
+```
 
 ### Activity 2: Set the working directory
 
-Once you have created your folders, open R Studio. To set the working directory click `Session` -> `Set Working Directory` -> `Choose Directory` and then select the Lab 2 folder as your working directory. 
+Once you have created your folders, open R Studio. To set the working directory click `Session` -> `Set Working Directory` -> `Choose Directory` and then select the Data Skills folder as your working directory. 
 
-```{r img-working-dir, echo=FALSE, fig.cap="Setting the working directory"}
-
-knitr::include_graphics("images/setwd.gif")
-
-```
 
 ### R Markdown for lab work and homework assignments
 
@@ -37,9 +36,9 @@ For more information about R Markdown feel free to have a look at their main web
 
 ### Activity 3: Open and save a new R Markdown document
 
-To open a new R Markdown document click the 'new item' icon and then click 'R Markdown'. You will be prompted to give it a title, call it "Lab 2". Also, change the author name to your GUID as this will be good practice for the homework. Keep the output format as HTML.
+To open a new R Markdown document click the 'new item' icon and then click 'R Markdown'. You will be prompted to give it a title, call it "Lab 2 pre-class". Also, change the author name to your GUID as this will be good practice for the homework. Keep the output format as HTML.
 
-Once you've opened a new document be sure to save it by clicking `File` -> `Save as`. Name this file "Pre-class". If you've set the working directory correctly, you should now see this file appear in your file viewer pane.
+Once you've opened a new document be sure to save it by clicking `File` -> `Save as`. You should also name this file "Lab 2 pre-class". If you've set the working directory correctly, you should now see this file appear in your file viewer pane.
 
 ```{r img-new-markdown, echo=FALSE, fig.cap="Opening a new R Markdown document"}
 
@@ -82,7 +81,10 @@ When you create a new code chunk you should notice that the grey box starts and 
 
 ### Activity 5: Write some code
 
-Now we're going to use the code examples you read about in Lab 1 to add some simple code to our R Markdown document. In your code chunk write the below code but replace the values of name/age/birthday with your own details). Note that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!
+Now we're going to use the code examples you read about in Lab 1 to add some simple code to our R Markdown document. 
+
+* In your code chunk write the below code but replace the values of name/age/birthday with your own details).   
+* Note that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!
 
 ```{r}
 name <- "Emily" 
@@ -169,7 +171,14 @@ According to APA style:
 
 * The title of the paper should be `r mcq(c("In bold text", "In italics", answer = "In normal text"))`.
 * When using a direct in-text citation you should use `r mcq(c(answer = "and", "&"))` to connect the names of the authors.
-* When citing a paper with multiple authors, if there are fewer than six authors the first time you cite the paper in the essay you should `r mcq(c(answer = "Write out all of the names", "Use et al."))`
+* When citing a paper with multiple authors, if there are more than two authors the first time you cite the paper in the essay you should `r mcq(c(answer = "Write out all of the names", "Use et al."))`
+
+`r hide("Explain this answer")`
+```{r, echo = FALSE, results='asis'}
+cat("*Et al* means *and others*. It's a common academic phrase that's used when referring to work with more than three authors.")
+```
+`r unhide()` 
+
 
 ### Data skills
 
@@ -189,10 +198,11 @@ Today in the lab you will learn how to load the packages required to work with o
 
 Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter \@ref(ref1): 
 
-* Download the <a href="files/lab2.zip" download>`lab 2 files`</a>, extract the files and then move them in to your Lab 2 folder.
+* You should have already download the data files as part of Activity 5 in Lab 1, however, here they are again if you need them: <a href="files/1a_data.zip" download>`Psych 1A Data Files`</a>. Extract the files and then move them in to your Data Skills folder.
+* Download the <a href="files/stub-2.2.zip" download>`Lab 2 Markdown File`</a>, extract it, and move it to your Data Skills folder.
 * Open R and ensure the environment is clear.
-* Set the working directory to your Lab 2 folder.  
-* Open the `stub-2.2.Rmd` file and ensure that the working directory is set to your Lab 2 folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
+* Set the working directory to your Data Skills folder.  
+* Open the `stub-2.2.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
 
 ### Activity  3: Load in the package
 

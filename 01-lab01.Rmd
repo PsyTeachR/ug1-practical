@@ -23,7 +23,7 @@ You need to make sure that you check your e-mail at least once a day. Failing to
 
 If you have a Twitter or Facebook account you may find it helpful to follow the School accounts. On Facebook we have a [Level 1 group](https://www.facebook.com/groups/psych2023/) so that you can contact other students. On Twitter, you can follow the [School of Psychology](https://twitter.com/UofGPsychology) account, but many of your 1st year lecturers and GTAs are also active on Twitter and you may find it interesting to follow them as well - [Emily Nordmann](https://twitter.com/emilynordmann), [Niamh Stack](https://twitter.com/Eavanmac), [Heather Cleland-Woods](https://twitter.com/clelandwoods), [Helena Paterson](https://twitter.com/PatersonHelena), [Holly Scott](https://twitter.com/hollyscott248), [Steven McNair](https://twitter.com/stevenwmcnair), [Jude Stevenson](https://twitter.com/william_the_sir), [Carolina Kuepper-Tetzel](https://twitter.com/pimpmymemory).
 
-Ok, let's start talking about psychology.
+OK, let's start talking about psychology.
 
 
 ### The replication crisis 
@@ -85,7 +85,7 @@ Take some time now to read through the study and familiarise yourself with the d
 In this course we will often ask you to download a folder with multiple files and this will be stored on the server as a zip file. A zip file is a folder that contains files that have been compressed to make the file size smaller and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extract them.
 
 1. Click on the link to download the folder and select to save the zip file in your lab 1 folder.
-2. Navgiate to the zip file and open it. You will see all the files it contains but don't use these - click "Extract all" on the top ribbon.
+2. Navigate to the zip file and open it. You will see all the files it contains but don't use these - click "Extract all" on the top ribbon.
 3. You will be asked to select a location to save the unzipped files. Normally the default location it suggests will be the same folder and so you can just click "Extract".
 4. You can now delete the zip file and use the unzipped files. This is a really important step - if you use the compressed files your code may not work properly.
 
@@ -99,10 +99,6 @@ knitr::include_graphics(path="./images/zipping.gif")
 **Pause and test your knowledge!**
 
 When you get the correct answer, the answer box will turn green. Sometimes this doesn't work on Internet Explorer or Edge so be sure to use Chrome or Firefox.
-
-* How many questionnaire variables are in the dataset? 
-
-`r mcq(c(answer = "2", "4", "3"))`
 
 * What does the AHI measure? (Hint, use a single word)
 
@@ -128,7 +124,7 @@ This is a long chapter but we don't expect you to memorise all the information t
 
 Research methods and statistics is a large part of doing a psychology degree. In fact, it's so important for your understanding of psychology that it's one of the core areas that the British Psychological Society require for you to graduate with an accredited degree. Unfortunately, many students don't realise that this is a part of psychology until the first week of lectures and for some people it comes as a bit of a shock. 
 
-But! There is no need to worry. With both statistics and programming we're going to start from the very beginning and develop your skills slowly over the next three years. The skills that you learn from this course will allow you to read research papers, design, conduct and analyse both qualitative and quantitative studies, evaluate research in all its forms (even fake news), and make some pretty fancy visualisations. Even if you don't plan on a career in research, the transferable skills that you develop from this course will make you an employable and versitile graduate.
+But! There is no need to worry. With both statistics and programming we're going to start from the very beginning and develop your skills slowly over the next three years. The skills that you learn from this course will allow you to read research papers, design, conduct and analyse both qualitative and quantitative studies, evaluate research in all its forms (even fake news), and make some pretty fancy visualisations. Even if you don't plan on a career in research, the transferable skills that you develop from this course will make you an employable and versatile graduate.
 
 The reason that we're going to teach you how to do statistics and manage data using R is because of the issues we've been discussing regarding replication and reproducibility. Writing code is essentially like writing a fool-proof recipe. You can give other people (or just you after a long holiday) your raw data and code and they'll be able to see exactly what you did, step-by-step with nothing missing. R is just the tool we will use to teach you how to do reproducible science so that you won't make the same mistakes we did and so that psychological research will keep on improving.
 
@@ -138,7 +134,9 @@ Right. Let's begin.
 
 For this course, you need two different bits of software, [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download). R is a programming language that you will write code in and R Studio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn't look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn't recommend it. The key thing to remember is that although you will do all of your work using R Studio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 
-All of the University of Glasgow computers should already have R and R Studio installed, however, both are freely available so you may wish to install them on your own machine. There is a useful [guide to installing them both here](https://psyteachr.github.io/hack-your-data/r_instructions.html) that you can use but if you need help wih this you can attend one of the PAL sessions or practice sessions (check your e-mails for details of when these run).
+All of the University of Glasgow computers have R and R Studio installed, however, we can only guarantee that the computers in the Level 5 and 6 Boyd Orr psychology labs have the right set-up. Additionally, both are freely available so you may wish to install them on your own machine. There is a useful [guide to installing them both here](https://psyteachr.github.io/hack-your-data/r_instructions.html) that you can use but if you need help wig this you can attend one of the PAL sessions or practice sessions (check your e-mails for details of when these run).
+
+Most computers will install R without any problems, however, if your computer cannot run it (for example, if you have a notebook lapatop), there is a browser version of R and you can find instructions for how to use this in Appendix \@ref(cloud)
 
 ### Getting to know R Studio
 
@@ -158,7 +156,9 @@ You will learn more about how to use the features included in R Studio throughou
 
 As an example, let’s look at the help documentation for the function `rnorm()` which randomly generates a set of numbers with a normal distribution. 
 
-### Activity 1: Open up R Studio and in the console, type the following code:
+### Activity 1
+
+* Open up R Studio and in the console, type the following code:  
 
 ```{r help-doc, eval=FALSE}
 
@@ -176,7 +176,9 @@ In the arguments section, there are explanations for each of the arguments. `n` 
 
 Let's try an example and just change the required argument `n` to ask R to produce 5 random numbers. 
 
-### Activity 2: Copy and paste the following code into the console.
+### Activity 2
+
+* Copy and paste the following code into the console.  
 
 ```{r rnorm-n}
 set.seed(12042016)
@@ -240,7 +242,7 @@ However, the power of R is that it is extendable and open source - put simply, i
 ### Installing and loading packages
 
 ```{block, type="info"}
-All of the University of Glasgow computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine. **Please do not install any packages on the university machines.**
+The Boyd Orr psychology computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine. **Please do not install any packages on the university machines.**
 ```
 
 
@@ -248,12 +250,11 @@ All of the University of Glasgow computers will already have all of the packages
 
 In order to use a package, you must first install it. The following code installs the package `tidyverse`, a package we will use very frequently in this course.
 
-If you are working on your own computer, use the below code to install the tidyverse. **Do not do this if you are working on a University machine**.
+* If you are working on your own computer, use the below code to install the tidyverse. **Do not do this if you are working on a University machine**.  
 
 ```{r install-packages, eval = FALSE}
 install.packages("tidyverse")
 ```
-
 
 You only need to install a package once, however, each time you start R you need to load the packages you want to use, in a similar way that you need to install an app on your phone once, but you need to open it every time you want to use it.
 
@@ -261,11 +262,13 @@ To load packages we use the function `library()`. Typically you would start any 
 
 ### Activity 4: Load the tidyverse
 
-Run the below code to load the tidyverse. You can do this regardless of whether you are using your own computer or a University machine.
+* Run the below code to load the tidyverse. You can do this regardless of whether you are using your own computer or a University machine.  
 
 ```{r library-load, eval = FALSE}
 library(tidyverse)
 ```
+
+You will get what looks like an error message - it's not. It's just R telling you what it's done.
 
 Now that we've loaded the `tidyverse` package we can use any of the functions it contains but remember, you need to run the `library()` function every time you start R.
 
@@ -276,7 +279,7 @@ In addition to updates to R and R Studio, the creators of packages also sometime
 
 ```{block, type="danger"}
 
-To avoid accidentally overwriting a package with a later version, you should **never** include `install.packages()` in your analysis scripts in case you, or someone else runs the code by mistake. Remember, the University of Glasgow computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine.
+To avoid accidentally overwriting a package with a later version, you should **never** include `install.packages()` in your analysis scripts in case you, or someone else runs the code by mistake. Remember, the Boyd Orr psychology computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine.
 
 ```
 
@@ -304,7 +307,7 @@ A large part of your coding will involve creating and manipulating objects. Obje
 
 ### Activity 5: Create some objects
 
-Copy and paste the following code into the console, change the code so that it uses your own name and age and run it. You should see that `name`, `age`, `today`, `new_year`, and `data` appear in the environment pane.
+* Copy and paste the following code into the console, change the code so that it uses your own name and age and run it. You should see that `name`, `age`, `today`, `new_year`, and `data` appear in the environment pane.  
 
 ```{r objects}
 
@@ -324,7 +327,7 @@ knitr::include_graphics("images/objects-enviro.png")
 
 Note that in these examples, `name`,`age`, and `new_year` would always contain the values `emily`, `33`, and the date of New Year's Day 2020, however, `today` will draw the date from the operating system and `data` will be a randomly generated set of data so the values of these objects will not be static.
 
-As a side note, if you ever have to teach programming and statistics, don't use your age as an example because you'll have to update your teaching materials and it will make you feel old. 
+As a side note, if you ever have to teach programming and statistics, don't use your age as an example because everytime you have to update your teaching materials you get a reminder of the fragility of existence and your advancing age. 
 
 Importantly, objects can be involved in calculations and can interact with each other. For example:
 
@@ -373,9 +376,9 @@ knitr::include_graphics("images/broom.png")
 
 ### Setting the working directory
 
-What this means is that we need to tell R where the files we need are located. Think of it just like when you have different subjects, and you have seperate folders for each topic e.g. biology, history and so on. When working on R, it's useful to have all the data sets and files you need in one folder.
+What this means is that we need to tell R where the files we need are located. Think of it just like when you have different subjects, and you have separate folders for each topic e.g. biology, history and so on. When working on R, it's useful to have all the data sets and files you need in one folder.
 
-To set the working directory press session -> set working directory -> choose directory and then select the folder where the data sets we are working on are saved, and save this file in the same folder as well. In other words- make sure your data sets and scripts are all in the same folder. In the labs, we recommend that you create a folder for Psychology labs with sub-folders within for each lab in your M: drive. This is your personal area on the University network that is safe and secure so is much better than flashdrives or desktops. You can access your M drive by logging into any computer on the University network.
+To set the working directory press session -> set working directory -> choose directory and then select the folder where the data sets we are working on are saved, and save this file in the same folder as well. In other words- make sure your data sets and scripts are all in the same folder. In the labs, we recommend that you create a folder for your Psychology labs with sub-folders for the tutorial and data skills sections on your M: drive. This is your personal area on the University network that is safe and secure so is much better than flashdrives or desktops. You can access your M drive by logging into any computer on the University network.
 
 ```{r, echo=FALSE, fig.cap="Setting your working directory", out.width="75%", out.height="75%"}
 knitr::include_graphics(path="./images/setwd.gif")
@@ -383,7 +386,7 @@ knitr::include_graphics(path="./images/setwd.gif")
 
 ### Activity 6: Set the working directory
 
-Create new folders for each of the labs and then, following the above instructions, set your working directory to your Lab 1 folder.
+* Create a new folder for Psych 1A on your M:Drive and then two sub-folders called Tutorial and Data Skills. Following the above instructions, set your working directory to your Data Skills folder.  
 
 ### R sessions
 
