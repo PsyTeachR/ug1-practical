@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 1A: Lab 4 | Level 1 Data Skills</title>
+  <title>3 Programming basics | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 1A: Lab 4 | Level 1 Data Skills" />
+  <meta property="og:title" content="3 Programming basics | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 1A: Lab 4 | Level 1 Data Skills" />
+  <meta name="twitter:title" content="3 Programming basics | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="a-lab-3.html"/>
-<link rel="next" href="b-lab-1.html"/>
+<link rel="prev" href="a-lab-2.html"/>
+<link rel="next" href="a-lab-3.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -405,395 +405,286 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-lab-4" class="section level1">
-<h1><span class="header-section-number">5</span> 1A: Lab 4</h1>
-<div id="pre-class-activities-1" class="section level2">
-<h2><span class="header-section-number">5.1</span> Pre-class activities</h2>
-<div id="activity-1-dplyr-recap" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Activity 1: dplyr recap</h3>
-<p>In <a href="lab-3.html">Lab 3</a> we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
+<div id="programming-basics" class="section level1">
+<h1><span class="header-section-number">3</span> Programming basics</h1>
+<p>In this chapter, we will go over some basic programming concepts and terminology, common pitfalls, helpful hints, and where to get help. Those of you who have no programming experience should find this chapter particularly helpful, however, even if you’ve used R before there may be some helpful hints and tips so please make sure you read through this chapter before the moving on.</p>
+<p>This is a long chapter but we don’t expect you to memorise all the information that is contained in it and some sections of it will not make sense until you start writing your own code - just make sure you know what help is available!</p>
+<div id="r-and-r-studio-1" class="section level3">
+<h3><span class="header-section-number">3.0.1</span> R and R Studio</h3>
+<p>For this course, you need two different bits of software, <a href="https://www.r-project.org/">R</a> and <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio</a>. R is a programming language that you will write code in and R Studio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn’t look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn’t recommend it. The key thing to remember is that although you will do all of your work using R Studio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.</p>
+<p>All of the University of Glasgow computers have R and R Studio installed, however, we can only guarantee that the computers in the Level 5 and 6 Boyd Orr psychology labs have the right set-up. Additionally, both are freely available so you may wish to install them on your own machine. There is a useful <a href="https://psyteachr.github.io/hack-your-data/r_instructions.html">guide to installing them both here</a> that you can use but if you need help wig this you can attend one of the PAL sessions or practice sessions (check your e-mails for details of when these run).</p>
+<p>Most computers will install R without any problems, however, if your computer cannot run it (for example, if you have a notebook laptop), there is a browser version of R and you can find instructions for how to use this in Appendix <a href="cloud.html#cloud">A</a></p>
+</div>
+<div id="getting-to-know-r-studio-1" class="section level3">
+<h3><span class="header-section-number">3.0.2</span> Getting to know R Studio</h3>
+<p>R Studio has a console that you can try out code in (appearing as the bottom left window in Figure <a href="getting-to-know-the-data.html#fig:img-rstudio">1.2</a>), there is a script editor (top left), a window showing functions and objects you have created in the “Environment” tab (top right window in the figure), and a window that shows plots, files packages, and help documentation (bottom right).</p>
+<div class="figure" style="text-align: center"><span id="fig:img-rstudio"></span>
+<img src="images/RStudio.png" alt="RStudio interface" width="100%" />
+<p class="caption">
+Figure 1.2: RStudio interface
+</p>
+</div>
+<p>You will learn more about how to use the features included in R Studio throughout this course, however, we highly recommend watching <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/">RStudio Essentials 1</a> from the R Studio team. The video lasts ~30 minutes and gives a tour of the main parts of R Studio.</p>
+</div>
+<div id="functions-and-arguments-1" class="section level3">
+<h3><span class="header-section-number">3.0.3</span> Functions and arguments</h3>
+<p><strong>Functions</strong> in R execute specific tasks and normally take a number of <strong>arguments</strong> (if you’re into linguistics you might want to think as these as verbs that require a subject and an object). You can look up all the arguments that a function takes by using the help documentation by using the format <code>?function</code>. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.</p>
+<p>As an example, let’s look at the help documentation for the function <code>rnorm()</code> which randomly generates a set of numbers with a normal distribution.</p>
+</div>
+<div id="activity-1-1" class="section level3">
+<h3><span class="header-section-number">3.0.4</span> Activity 1</h3>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>arrange()</option> <option>select()</option> <option>mutate()</option> <option>filter()</option> <option>group_by()</option> <option>summarise()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>filter()</option> <option>summarise()</option> <option>mutate()</option> <option>arrange()</option> <option>group_by()</option> <option>select()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>filter()</option> <option>select()</option> <option>mutate()</option> <option>group_by()</option> <option>arrange()</option> <option>summarise()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and summarise()</option> <option>arrange() and mutate()</option> <option>filter() and select()</option> <option>group_by() and arrange()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>select() and summarise()</option> <option>group_by() and mutate()</option> <option>mutate() and filter()</option> <option>arrange() and select()</option></select> functions.</p></li>
+<li>Open up R Studio and in the console, type the following code:</li>
 </ul>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="programming-basics.html#cb31-1"></a>?rnorm</span></code></pre></div>
+<p>The help documentation for <code>rnorm()</code> should appear in the bottom right help panel. In the usage section, we see that <code>rnorm()</code> takes the following form:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="programming-basics.html#cb32-1"></a><span class="kw">rnorm</span>(n, <span class="dt">mean =</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>In the arguments section, there are explanations for each of the arguments. <code>n</code> is the number of observations we want to create, <code>mean</code> is the mean of the data points we will create and <code>sd</code> is the standard deviation of the set. In the details section it notes that if no values are entered for <code>mean</code> and <code>sd</code> it will use a default of 0 and 1 for these values. Because there is no default value for <code>n</code> it must be specified otherwise the code won’t run.</p>
+<p>Let’s try an example and just change the required argument <code>n</code> to ask R to produce 5 random numbers.</p>
 </div>
-<div id="data-visualisation" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Data visualisation</h3>
-<p>As Grolemund and Wickham tell us:</p>
-<blockquote>
-<p>Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.</p>
-</blockquote>
-<p>(<a href="http://r4ds.had.co.nz/introduction.html" class="uri">http://r4ds.had.co.nz/introduction.html</a>)</p>
-<p>Being able to visualise our variables, and relationships between our variables, is a very useful skill. Before we do any statistical analyses or present any summary statistics, we should visualising our data as it is:</p>
-<ol style="list-style-type: decimal">
-<li><p>A quick and easy way to check our data make sense, and to identify any unusual trends.</p></li>
-<li><p>A way to honestly present the features of our data to anyone who reads our research.</p></li>
-</ol>
-<p><code>ggplot()</code> builds plots by combining layers (see Figure <a href="a-lab-4.html#fig:img-layers">5.1</a>)). If you’re used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures (<a href="https://www.data-to-viz.com/">this website</a> gives you a good sense of what’s possible).</p>
-<div class="figure" style="text-align: center"><span id="fig:img-layers"></span>
-<img src="images/layers.png" alt="ggplot2 layers from Field et al. (2012)" width="100%" />
-<p class="caption">
-Figure 5.1: ggplot2 layers from Field et al. (2012)
-</p>
-</div>
-</div>
-<div id="activity-2-set-up-1" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Activity 2: Set-up</h3>
-<p>We’re going to use the data from the Labs to explain how <code>ggplot2</code> works so let’s do the set-up as usual.</p>
+<div id="activity-2-1" class="section level3">
+<h3><span class="header-section-number">3.0.5</span> Activity 2</h3>
 <ul>
-<li>Open R Studio and ensure the environment is clear.<br />
-</li>
-<li>Download the <a href="files/stub-4.1.zip" download><code>lab 4 pre-class Markdown file</code></a>, extract the file and then move it in to your Data Skills folder.</li>
-<li>Open the <code>stub-4.1.Rmd</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
-</li>
-<li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Activity 2 code chunk.</li>
+<li>Copy and paste the following code into the console.</li>
 </ul>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="a-lab-4.html#cb97-1"></a><span class="kw">library</span>(tidyverse) </span>
-<span id="cb97-2"><a href="a-lab-4.html#cb97-2"></a></span>
-<span id="cb97-3"><a href="a-lab-4.html#cb97-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb97-4"><a href="a-lab-4.html#cb97-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb97-5"><a href="a-lab-4.html#cb97-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span>
-<span id="cb97-6"><a href="a-lab-4.html#cb97-6"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, </span>
-<span id="cb97-7"><a href="a-lab-4.html#cb97-7"></a>                      ahiTotal, cesdTotal, sex, age, </span>
-<span id="cb97-8"><a href="a-lab-4.html#cb97-8"></a>                      educ, income, occasion, elapsed.days) </span></code></pre></div>
-</div>
-<div id="activity-3-factors" class="section level3">
-<h3><span class="header-section-number">5.1.4</span> Activity 3: Factors</h3>
-<p>Before we go any further we need to perform an additional step of data processing that we have glossed over up until this point. First, run the below code to look at the structure of the dataset:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="a-lab-4.html#cb98-1"></a><span class="kw">str</span>(summarydata)</span></code></pre></div>
-<pre><code>## tibble [992 x 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
-##  $ ahiTotal    : num [1:992] 32 34 34 35 36 37 38 38 38 38 ...
-##  $ cesdTotal   : num [1:992] 50 49 47 41 36 35 50 55 47 39 ...
-##  $ sex         : num [1:992] 1 1 1 1 1 1 2 1 2 2 ...
-##  $ age         : num [1:992] 46 37 37 19 40 49 42 57 41 41 ...
-##  $ educ        : num [1:992] 4 3 3 2 5 4 4 4 4 4 ...
-##  $ income      : num [1:992] 3 2 2 1 2 1 1 2 1 1 ...
-##  $ occasion    : num [1:992] 5 2 3 0 5 0 2 2 2 4 ...
-##  $ elapsed.days: num [1:992] 182 14.2 33 0 202.1 ...</code></pre>
-<p>R assumes that all of the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
-<p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="a-lab-4.html#cb100-1"></a>summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span></span>
-<span id="cb100-2"><a href="a-lab-4.html#cb100-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),</span>
-<span id="cb100-3"><a href="a-lab-4.html#cb100-3"></a>         <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),</span>
-<span id="cb100-4"><a href="a-lab-4.html#cb100-4"></a>         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</span></code></pre></div>
-<p>You can read this code as “overwrite the data that is in the column sex with sex as a factor”.</p>
-<p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
-</div>
-<div id="activity-4-bar-plot" class="section level3">
-<h3><span class="header-section-number">5.1.5</span> Activity 4: Bar plot</h3>
-<p>For our first example we will recreate the bar plot showing the number of male and female participants from Lab 2 by showing you how the layers of code build up (next semester we have data that includes non-binary participants).</p>
-<ul>
-<li>The first line (or layer) sets up the base of the graph: the data to use and the aesthetics (what will go on the x and y axis, how the plot will be grouped).<br />
-</li>
-<li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
-</ul>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="a-lab-4.html#cb101-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:layer1"></span>
-<img src="04-lab04_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
-<p class="caption">
-Figure 5.2: First ggplot layer sets the axes
-</p>
-</div>
-<ul>
-<li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
-</ul>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="a-lab-4.html#cb102-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span></span>
-<span id="cb102-2"><a href="a-lab-4.html#cb102-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-2-1.png" alt="Basic barplot" width="100%" />
-<p class="caption">
-Figure 5.3: Basic barplot
-</p>
-</div>
-<ul>
-<li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
-</ul>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="a-lab-4.html#cb103-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb103-2"><a href="a-lab-4.html#cb103-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-3-1.png" alt="Barplot with colour" width="100%" />
-<p class="caption">
-Figure 5.4: Barplot with colour
-</p>
-</div>
-<ul>
-<li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
-</ul>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="a-lab-4.html#cb104-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb104-2"><a href="a-lab-4.html#cb104-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot without legend" width="100%" />
-<p class="caption">
-Figure 5.5: Barplot without legend
-</p>
-</div>
-<p>We might want to tidy up our plot to make it look a bit nicer. First we can edit the axis labels to be more informative. The most common functions you will use are:</p>
-<ul>
-<li><code>scale_x_continuous()</code> for adjusting the x-axis for a continuous variable</li>
-<li><code>scale_y_continuous()</code> for adjusting the y-axis for a continuous variable</li>
-<li><code>scale_x_discrete()</code> for adjusting the x-axis for a discrete/categorical variable</li>
-<li><code>scale_y_discrete()</code> for adjusting the y-axis for a discrete/categorical variable</li>
-</ul>
-<p>And in those functions the two most common arguments you will use are:</p>
-<ul>
-<li><code>name</code> which controls the name of each axis</li>
-<li><code>labels</code> which controls the names of the break points on the axis</li>
-</ul>
-<p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="a-lab-4.html#cb105-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb105-2"><a href="a-lab-4.html#cb105-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb105-3"><a href="a-lab-4.html#cb105-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb105-4"><a href="a-lab-4.html#cb105-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb105-5"><a href="a-lab-4.html#cb105-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot with axis labels" width="100%" />
-<p class="caption">
-Figure 5.6: Barplot with axis labels
-</p>
-</div>
-<p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="a-lab-4.html#cb106-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb106-2"><a href="a-lab-4.html#cb106-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb106-3"><a href="a-lab-4.html#cb106-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb106-4"><a href="a-lab-4.html#cb106-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb106-5"><a href="a-lab-4.html#cb106-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb106-6"><a href="a-lab-4.html#cb106-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with minimal theme" width="100%" />
-<p class="caption">
-Figure 5.7: Barplot with minimal theme
-</p>
-</div>
-<p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="a-lab-4.html#cb107-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb107-2"><a href="a-lab-4.html#cb107-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb107-3"><a href="a-lab-4.html#cb107-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb107-4"><a href="a-lab-4.html#cb107-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb107-5"><a href="a-lab-4.html#cb107-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb107-6"><a href="a-lab-4.html#cb107-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb107-7"><a href="a-lab-4.html#cb107-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
-<p class="caption">
-Figure 3.1: Barplot with colour-blind friendly colour scheme
-</p>
-</div>
-<p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="a-lab-4.html#cb108-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb108-2"><a href="a-lab-4.html#cb108-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></span>
-<span id="cb108-3"><a href="a-lab-4.html#cb108-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb108-4"><a href="a-lab-4.html#cb108-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb108-5"><a href="a-lab-4.html#cb108-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb108-6"><a href="a-lab-4.html#cb108-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb108-7"><a href="a-lab-4.html#cb108-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with adjusted alpha" width="100%" />
-<p class="caption">
-Figure 1.6: Barplot with adjusted alpha
-</p>
-</div>
-<div class="warning">
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="programming-basics.html#cb33-1"></a><span class="kw">set.seed</span>(<span class="dv">12042016</span>)</span>
+<span id="cb33-2"><a href="programming-basics.html#cb33-2"></a><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] -0.2896163 -0.6428964  0.5829221 -0.3286728 -0.5110101</code></pre>
+<p>These numbers have a mean of 0 and an SD of 1. Now we can change the additional arguments to produce a different set of numbers.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="programming-basics.html#cb35-1"></a><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 13.320853  9.377956 10.235461  9.811793 13.019102</code></pre>
+<p>This time R has still produced 5 random numbers, but now this set of numbers has a mean of 10 and an sd of 2 as specified. Always remember to use the help documentation to help you understand what arguments a function requires.</p>
+<div class="info">
 <p>
-In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn’t included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.
+If you’re looking up examples of code online, you may often see code that starts with the function <code>set.seed()</code>. This function controls the random number generator - if you’re using any functions that generate numbers randomly (such as <code>rnorm()</code>), running <code>set.seed()</code> will ensure that you get the same result (in some cases this may not be what you want to do). We call <code>set.seed()</code> in this example because it means that you will get the same random numbers as this book.
 </p>
 </div>
 </div>
-<div id="activity-5-violin-boxplot" class="section level3">
-<h3><span class="header-section-number">5.1.6</span> Activity 5: Violin-boxplot</h3>
-<p>As our final activity we will also explain the code used to create the violin-boxplot from Lab 2, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:</p>
+<div id="argument-names-1" class="section level3">
+<h3><span class="header-section-number">3.0.6</span> Argument names</h3>
+<p>In the above examples, we have written out the argument names in our code (e.g., <code>n</code>, <code>mean</code>, <code>sd</code>), however, this is not strictly necessary. The following two lines of code would both produce the same result (although each time you run <code>rnorm()</code> it will produce a slightly different set of numbers, because it’s random, but they would still have the same mean and SD):</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="programming-basics.html#cb37-1"></a><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">6</span>, <span class="dt">mean =</span> <span class="dv">3</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb37-2"><a href="programming-basics.html#cb37-2"></a><span class="kw">rnorm</span>(<span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span></code></pre></div>
+<p>Importantly, if you do not write out the argument names, R will use the default order of arguments, that is for <code>rnorm</code> it will assume that the first number you enter is <code>n</code>. the second number is <code>mean</code> and the third number is <code>sd</code>.</p>
+<p>If you write out the argument names then you can write the arguments in whatever order you like:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="programming-basics.html#cb38-1"></a><span class="kw">rnorm</span>(<span class="dt">sd =</span> <span class="dv">1</span>, <span class="dt">n =</span> <span class="dv">6</span>, <span class="dt">mean =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p>When you are first learning R, you may find it useful to write out the argument names as it can help you remember and understand what each part of the function is doing. However, as your skills progress you may find it quicker to omit the argument names and you will also see examples of code online that do not use argument names so it is important to be able to understand which argument each bit of code is referring to (or look up the help documentation to check).</p>
+<p>In this course, we will always write out the argument names the first time we use each function, however, in subsequent uses they may be omitted.</p>
+</div>
+<div id="tab-auto-complete-1" class="section level3">
+<h3><span class="header-section-number">3.0.7</span> Tab auto-complete</h3>
+<p>One very useful feature of R Studio is the tab auto-complete for functions (see Figure <a href="getting-to-know-the-data.html#fig:img-autocomplete">1.3</a>). If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
+<div class="figure" style="text-align: center"><span id="fig:img-autocomplete"></span>
+<img src="images/autocomplete.png" alt="Tab auto-complete" width="100%" />
+<p class="caption">
+Figure 1.3: Tab auto-complete
+</p>
+</div>
+</div>
+<div id="packages" class="section level3">
+<h3><span class="header-section-number">3.0.8</span> Base R and packages</h3>
+<p>When you install R you will have access to a range of functions including options for data wrangling and statistical analysis. The functions that are included in the default installation are typically referred to as <strong>Base R</strong> and there is a useful cheat sheet that shows many Base R functions <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf">here</a>.</p>
+<p>However, the power of R is that it is extendable and open source - put simply, if a function doesn’t exist or doesn’t work very well, anyone can create a new <strong>package</strong> that contains data and code to allow you to perform new tasks. You may find it useful to think of Base R as the default apps that come on your phone and packages as additional apps that you need to download separately.</p>
+</div>
+<div id="installing-and-loading-packages-1" class="section level3">
+<h3><span class="header-section-number">3.0.9</span> Installing and loading packages</h3>
+<div class="info">
+<p>
+The Boyd Orr psychology computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine. <strong>Please do not install any packages on the university machines.</strong>
+</p>
+</div>
+</div>
+<div id="activity-3-install-the-tidyverse-1" class="section level3">
+<h3><span class="header-section-number">3.0.10</span> Activity 3: Install the tidyverse</h3>
+<p>In order to use a package, you must first install it. The following code installs the package <code>tidyverse</code>, a package we will use very frequently in this course.</p>
+<ul>
+<li>If you are working on your own computer, use the below code to install the tidyverse. <strong>Do not do this if you are working on a University machine</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="programming-basics.html#cb39-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>You only need to install a package once, however, each time you start R you need to load the packages you want to use, in a similar way that you need to install an app on your phone once, but you need to open it every time you want to use it.</p>
+<p>To load packages we use the function <code>library()</code>. Typically you would start any analysis script by loading all of the packages you need, but we will come back to that in the labs.</p>
+</div>
+<div id="activity-4-load-the-tidyverse-1" class="section level3">
+<h3><span class="header-section-number">3.0.11</span> Activity 4: Load the tidyverse</h3>
+<ul>
+<li>Run the below code to load the tidyverse. You can do this regardless of whether you are using your own computer or a University machine.</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="programming-basics.html#cb40-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<p>You will get what looks like an error message - it’s not. It’s just R telling you what it’s done.</p>
+<p>Now that we’ve loaded the <code>tidyverse</code> package we can use any of the functions it contains but remember, you need to run the <code>library()</code> function every time you start R.</p>
+</div>
+<div id="package-updates-1" class="section level3">
+<h3><span class="header-section-number">3.0.12</span> Package updates</h3>
+<p>In addition to updates to R and R Studio, the creators of packages also sometimes update their code. This can be to add functions to a package, or it can be to fix errors. One thing to avoid is unintentionally updating an installed package. When you run <code>install.packages()</code> it will always install the latest version of the package and it will overwrite any older versions you may have installed. Sometimes this isn’t a problem, however, sometimes you will find that the update means your code no longer works as the package has changed substantially. It is possible to revert back to an older version of a package but try to avoid this anyway.</p>
+<div class="danger">
+<p>
+To avoid accidentally overwriting a package with a later version, you should <strong>never</strong> include <code>install.packages()</code> in your analysis scripts in case you, or someone else runs the code by mistake. Remember, the Boyd Orr psychology computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine.
+</p>
+</div>
+</div>
+<div id="conflicts" class="section level3">
+<h3><span class="header-section-number">3.0.13</span> Package conflicts</h3>
+<p>There are thousands of different R packages with even more functions. Unfortunately, sometimes different packages have the same function names. For example, the packages <code>dplyr</code> and <code>MASS</code> both have a function named <code>select()</code>. If you load both of these packages, R will produce a warning telling you that there is a conflict.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="programming-basics.html#cb41-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb41-2"><a href="programming-basics.html#cb41-2"></a><span class="kw">library</span>(MASS)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<p>In this case, R is telling you that the function <code>select()</code> in the <code>dplyr</code> package is being hidden (or ‘masked’) by another function with the same name. If you were to try and use <code>select()</code>, R would use the function from the package that was loaded most recently - in this case it would use the function from <code>MASS</code>.</p>
+<p>If you want to specify which package you want to use for a particular function you can use code in the format <code>package::function</code>, for example:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="programming-basics.html#cb44-1"></a>dplyr<span class="op">::</span><span class="kw">select</span>()</span>
+<span id="cb44-2"><a href="programming-basics.html#cb44-2"></a>MASS<span class="op">::</span><span class="kw">select</span>()</span></code></pre></div>
+</div>
+<div id="objects-1" class="section level3">
+<h3><span class="header-section-number">3.0.14</span> Objects</h3>
+<p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses.You assign content to an object using <code>&lt;-</code>.</p>
+</div>
+<div id="activity-5-create-some-objects-1" class="section level3">
+<h3><span class="header-section-number">3.0.15</span> Activity 5: Create some objects</h3>
+<ul>
+<li>Copy and paste the following code into the console, change the code so that it uses your own name and age and run it. You should see that <code>name</code>, <code>age</code>, <code>today</code>, <code>new_year</code>, and <code>data</code> appear in the environment pane.</li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="programming-basics.html#cb45-1"></a>name &lt;-<span class="st"> &quot;emily&quot;</span></span>
+<span id="cb45-2"><a href="programming-basics.html#cb45-2"></a>age &lt;-<span class="st"> </span><span class="dv">16</span> <span class="op">+</span><span class="st"> </span><span class="dv">19</span> </span>
+<span id="cb45-3"><a href="programming-basics.html#cb45-3"></a>today &lt;-<span class="kw">Sys.Date</span>()</span>
+<span id="cb45-4"><a href="programming-basics.html#cb45-4"></a>new_year &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>)</span>
+<span id="cb45-5"><a href="programming-basics.html#cb45-5"></a>data &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">mean =</span> <span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:img-objects-enviro"></span>
+<img src="images/objects-enviro.png" alt="Objects in the environment" width="100%" />
+<p class="caption">
+Figure 1.4: Objects in the environment
+</p>
+</div>
+<p>Note that in these examples, <code>name</code>,<code>age</code>, and <code>new_year</code> would always contain the values <code>emily</code>, <code>35</code>, and the date of New Year’s Day 2020, however, <code>today</code> will draw the date from the operating system and <code>data</code> will be a randomly generated set of data so the values of these objects will not be static.</p>
+<p>As a side note, if you ever have to teach programming and statistics, don’t use your age as an example because every time you have to update your teaching materials you get a reminder of the fragility of existence and your advancing age.</p>
+<p>Importantly, objects can be involved in calculations and can interact with each other. For example:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="programming-basics.html#cb46-1"></a>age <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span>
+<span id="cb46-2"><a href="programming-basics.html#cb46-2"></a>new_year <span class="op">-</span><span class="st"> </span>today</span>
+<span id="cb46-3"><a href="programming-basics.html#cb46-3"></a><span class="kw">mean</span>(data)</span></code></pre></div>
+<pre><code>## [1] 45
+## Time difference of -211 days
+## [1] 17.66644</code></pre>
+<p>Finally, you can store the result of these operations in a new object:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="programming-basics.html#cb48-1"></a>decade &lt;-<span class="st"> </span>age <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span></code></pre></div>
+<div class="try">
+<p>
+You may find it helpful to read <code>&lt;-</code> as <code>contains</code>, e.g., <code>name</code> contains the text <code>emily</code>.
+</p>
+</div>
+<p>You will constantly be creating objects throughout this course and you will learn more about them and how they behave as we go along, however, for now it is enough to understand that they are a way of saving values, that these values can be numbers, text, or the result of operations, and that they can be used in further operations to create new variables.</p>
+<div class="info">
+<p>
+You may also see objects referred to as ‘variables’. There is a difference between the two in programming terms, however, they are used synonymously very frequently.
+</p>
+</div>
+</div>
+<div id="looking-after-the-environment-1" class="section level3">
+<h3><span class="header-section-number">3.0.16</span> Looking after the environment</h3>
+<p>If you’ve been writing a lot of code you may find that the environment pane (or workspace) has become cluttered with many objects. This can make it difficult to figure out which object you need and therefore you run the risk of using the wrong data frame. If you’re working on a new dataset, or if you’ve tried lots of different code before getting the final version, it is good practice to remember to clear the environment to avoid using the wrong object. You can do this in several way.</p>
 <ol style="list-style-type: decimal">
-<li>We have added a <code>y</code> argument to the first layer because we wanted to represent two variables, not just a count.</li>
-<li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
-<li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
+<li>To remove individual objects, you can type <code>rm(object_name)</code> in the console. Try this now to remove one of the objects you created in the previous section.</li>
+<li>To clear all objects from the environment run <code>rm(list = ls())</code> in the console.</li>
+<li>To clear all objects from the environment you can also click the broom icon in the environment pane.</li>
 </ol>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="a-lab-4.html#cb109-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span></span>
-<span id="cb109-2"><a href="a-lab-4.html#cb109-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span></span>
-<span id="cb109-3"><a href="a-lab-4.html#cb109-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span></span>
-<span id="cb109-4"><a href="a-lab-4.html#cb109-4"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,</span>
-<span id="cb109-5"><a href="a-lab-4.html#cb109-5"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
-<span id="cb109-6"><a href="a-lab-4.html#cb109-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span></span>
-<span id="cb109-7"><a href="a-lab-4.html#cb109-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb109-8"><a href="a-lab-4.html#cb109-8"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="04-lab04_files/figure-html/unnamed-chunk-10-1.png" alt="Violin-boxplot" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:img-broom"></span>
+<img src="images/broom.png" alt="Clearing the workspace" width="100%" />
 <p class="caption">
-Figure 5.8: Violin-boxplot
+Figure 1.5: Clearing the workspace
 </p>
 </div>
 </div>
-<div id="activity-6-layers-part-2" class="section level3">
-<h3><span class="header-section-number">5.1.7</span> Activity 6: Layers part 2</h3>
-<p>The key thing to note about <code>ggplot</code> is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="a-lab-4.html#cb110-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
-<span id="cb110-2"><a href="a-lab-4.html#cb110-2"></a><span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span></span>
-<span id="cb110-3"><a href="a-lab-4.html#cb110-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span>
-<span id="cb110-4"><a href="a-lab-4.html#cb110-4"></a></span>
-<span id="cb110-5"><a href="a-lab-4.html#cb110-5"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
-<span id="cb110-6"><a href="a-lab-4.html#cb110-6"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
-<span id="cb110-7"><a href="a-lab-4.html#cb110-7"></a><span class="st">  </span><span class="kw">geom_violin</span>()</span></code></pre></div>
-<div id="finished-4" class="section level4">
-<h4><span class="header-section-number">5.1.7.1</span> Finished!</h4>
-<p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
-</div>
-</div>
-</div>
-<div id="in-class-activities-2" class="section level2">
-<h2><span class="header-section-number">5.2</span> In-class activities</h2>
-<div id="getting-the-data-ready-to-work-with" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Getting the data ready to work with</h3>
-<p>Today in the lab we will be working with our data to generate a plot of two variables from the Woodworth et al. dataset. Before we get to generate our plot, we still need to work through the steps to get the data in the shape we need it to be in for our particular question. In particular we need to generate the object <code>summarydata</code> that just has the variable we need.You have done these steps before so go back to the relevant Lab and use that to guide you through.</p>
-</div>
-<div id="activity-1-set-up-2" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> Activity 1: Set-up</h3>
-<ul>
-<li>Open R Studio and ensure the environment is clear.<br />
-</li>
-<li>Download the <a href="files/stub-4.2.zip" download><code>lab 4 in-class Markdown file</code></a>, extract the file and then move it in to your Data Skills folder.<br />
-</li>
-<li>Open the <code>stub-4.2.Rmd</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).<br />
-</li>
-<li>Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates an object called <code>all_dat</code> that joins the two objects <code>dat</code> and <code>pinfo</code>.</li>
-</ul>
-</div>
-<div id="activity-2-select-1" class="section level3">
-<h3><span class="header-section-number">5.2.3</span> Activity 2: Select</h3>
-<p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create an object named variable <code>summarydata</code>.</p>
-</div>
-<div id="activity-3-arrange-1" class="section level3">
-<h3><span class="header-section-number">5.2.4</span> Activity 3: Arrange</h3>
-<p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first and save it in an object named <code>ahi_asc</code>.</p>
-</div>
-<div id="activity-4filter" class="section level3">
-<h3><span class="header-section-number">5.2.5</span> Activity 4:Filter</h3>
-<p>Filter the data <code>ahi_asc</code> by only keeping those who are 65 years old or younger and save it in an object named <code>age_65max</code>.</p>
-</div>
-<div id="activity-5-group-and-summarise" class="section level3">
-<h3><span class="header-section-number">5.2.6</span> Activity 5: Group and summarise</h3>
-<ul>
-<li>First, calculate the overall median <code>ahiTotal</code> score for all participants (hint: use <code>summarise()</code>) and save it in an object called <code>overall_median</code>.<br />
-</li>
-<li>Then, group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.<br />
-</li>
-<li>Then, use summarise to create a new variable <code>sex_median</code>, which calculates the median ahiTotal score for each sex in this grouped data and assign it a table head called <code>median_score</code>.</li>
-</ul>
-<p><em>(Hint: if you’re stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
-</div>
-<div id="activity-6-mutate" class="section level3">
-<h3><span class="header-section-number">5.2.7</span> Activity 6: Mutate</h3>
-<p>Use <code>mutate()</code> to create a new column in <code>data_sex</code> called Happiness which categorises participants based on whether they score above or below the overall median ahiTotal score (i.e., the median score for all participants, not grouped by sex).</p>
-<div class="solution">
-<button>
-Hint
-</button>
-<p>mutate(data, new_variable = old_variable &gt; median score</p>
-</div>
-</div>
-<div id="activity-7-scatterplots" class="section level3">
-<h3><span class="header-section-number">5.2.8</span> Activity 7: Scatterplots</h3>
-<p>In order to visualise two continuous variables, we can use a <strong>scatterplot</strong>. Using the <code>ggplot</code> code you learned about in the pre-class activities, try and recreate the below plot.</p>
-<p>A few hints:</p>
-<ul>
-<li>Use the <code>age_65max</code> data.</li>
-<li>Put <code>ahiTotal</code> on the x-axis and <code>cesdTotal</code> on the y-axis.</li>
-<li>Rather than using <code>geom_bar()</code>, <code>geom_violin()</code>, or <code>geom_boxplot()</code>, for a scatteplot you need to use <code>geom_point()</code>.</li>
-<li>Rather than using <code>scale_fill_viridis_d()</code> to change the colour, add the argument <code>colour = "red"</code> to <code>geom_point</code> (except replace “red” with whatever colour you’d prefer).</li>
-<li>Remember to edit the axis names.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:createplot"></span>
-<img src="04-lab04_files/figure-html/createplot-1.png" alt="Scatterplot of happiness and depression scores" width="100%" />
+<div id="setting-the-working-directory-1" class="section level3">
+<h3><span class="header-section-number">3.0.17</span> Setting the working directory</h3>
+<p>What this means is that we need to tell R where the files we need are located. Think of it just like when you have different subjects, and you have separate folders for each topic e.g. biology, history and so on. When working on R, it’s useful to have all the data sets and files you need in one folder.</p>
+<p>To set the working directory press session -&gt; set working directory -&gt; choose directory and then select the folder where the data sets we are working on are saved, and save this file in the same folder as well. In other words- make sure your data sets and scripts are all in the same folder. In the labs, we recommend that you create a folder for your Psychology labs with sub-folders for the tutorial and data skills sections on your M: drive. This is your personal area on the University network that is safe and secure so is much better than flashdrives or desktops. You can access your M drive by logging into any computer on the University network.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="images/setwd.gif" alt="Setting your working directory" width="75%" height="75%" />
 <p class="caption">
-Figure 5.9: Scatterplot of happiness and depression scores
+Figure 3.1: Setting your working directory
 </p>
 </div>
-<p><br></p>
-<p>How would you describe the relationship between the two variables? <select class='solveme' data-answer='["As happiness score increase, depression scores decrease"]'> <option></option> <option>As happiness scores increase, depression scores increase</option> <option>As happiness score increase, depression scores decrease</option> <option>As happiness scores decrease, depression scores decrease</option></select></p>
-<div id="finished-5" class="section level4">
-<h4><span class="header-section-number">5.2.8.1</span> Finished!</h4>
-<p>Great job! You have now worked with the essential basics of good practice in data wrangling! In Psych 1B we will continue using these wrangling skills on new data and also data that you collect yourself.</p>
+</div>
+<div id="activity-6-set-the-working-directory-1" class="section level3">
+<h3><span class="header-section-number">3.0.18</span> Activity 6: Set the working directory</h3>
+<ul>
+<li>Create a new folder for Psych 1A on your M:Drive and then two sub-folders called Tutorial and Data Skills. Following the above instructions, set your working directory to your Data Skills folder.</li>
+</ul>
+</div>
+<div id="r-sessions-1" class="section level3">
+<h3><span class="header-section-number">3.0.19</span> R sessions</h3>
+<p>When you open up R and start writing code, loading packages, and creating objects, you’re doing so in a new <strong>session</strong>. In addition to clearing the workspace, it can sometimes be useful to start a new session. This will happen automatically each time you start R, however, if you find your code isn’t working and you can’t figure out why, it might be worth starting a new session. This will clear the environment and detach all loaded packages - think of it like restarting your phone.</p>
+<p>To do this, click ‘Session - Restart R’. Remember that you will then need to load the packages you need and your data again.</p>
+<div class="figure" style="text-align: center"><span id="fig:img-session"></span>
+<img src="images/new_session.png" alt="The truth about programming" width="100%" />
+<p class="caption">
+Figure 1.7: The truth about programming
+</p>
 </div>
 </div>
-<div id="activity-solutions" class="section level3">
-<h3><span class="header-section-number">5.2.9</span> Activity solutions</h3>
-<div id="activity-1-2" class="section level4">
-<h4><span class="header-section-number">5.2.9.1</span> Activity 1</h4>
+<div id="help-and-additional-resources-1" class="section level3">
+<h3><span class="header-section-number">3.0.20</span> Help and additional resources</h3>
+<div class="figure" style="text-align: center"><span id="fig:img-kitteh"></span>
+<img src="images/kitteh.PNG" alt="The truth about programming" width="100%" />
+<p class="caption">
+Figure 1.8: The truth about programming
+</p>
+</div>
+<p>Getting good at programming really means getting good trying stuff out, searching for help online, and finding examples of code to copy. If you are having difficulty with any of the exercises contained in this book then you can ask for help on Slack or Moodle, however, learning to problem-solve effectively is a key skill that you need to develop throughout this course.</p>
+<ul>
+<li>Use the help documentation. If you’re struggling to understand how a function works, remember the <code>?function</code> command.</li>
+<li>If you get an error message, copy and paste it in to Google - it’s very likely someone else has had the same problem.</li>
+<li>In addition to these course materials there are a number of excellent resources for learning R:
+<ul>
+<li><a href="http://www.cookbook-r.com/">R Cookbook</a></li>
+<li><a href="https://stackoverflow.com/">StackOverflow</a></li>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
+<li>Search or use the <a href="https://twitter.com/search?f=tweets&amp;q=%23rstats&amp;src=typd">#rstats</a> hashtag on Twitter</li>
+</ul></li>
+</ul>
+</div>
+<div id="debugging-tips-2" class="section level3">
+<h3><span class="header-section-number">3.0.21</span> Debugging tips</h3>
+<p>A large part of coding is trying to figure why your code doesn’t work and this is true whether you are a novice or an expert. As you progress through this course you should keep a record of mistakes you make and how you fixed them. In each chapter we will provide a number of common mistakes to look out for but you will undoubtedly make (and fix!) new mistakes yourself.</p>
+<ul>
+<li>Have you loaded the correct packages for the functions you are trying to use? One very common mistake is to write the code to load the package, e.g., <code>library(tidyverse)</code> but then forget to run it.</li>
+<li>Have you made a typo? Remember <code>data</code> is not the same as <code>DATA</code> and <code>t.test</code> is not the same as <code>t_test</code>.</li>
+<li>Is there a package conflict? Have you tried specifying the package and function with <code>package::function</code>?</li>
+<li>Is it definitely an error? Not all red text in R means an error - sometimes it is just giving you a message with information.</li>
+</ul>
+</div>
+<div id="activity-7-test-yourself-1" class="section level3">
+<h3><span class="header-section-number">3.0.22</span> Activity 7: Test yourself</h3>
+<p><strong>Question 1.</strong> Why should you never include the code <code>install.packages()</code> in your analysis scripts? <select class='solveme' data-answer='["You (or someone else) may accidentally install a package update that stops your code working"]'> <option></option> <option>You should use library() instead</option> <option>Packages are already part of Base R</option> <option>You (or someone else) may accidentally install a package update that stops your code working</option> <option>You already have the latest version of the package</option></select></p>
 <div class="solution">
 <button>
-Solution
+Explain This Answer
 </button>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="a-lab-4.html#cb111-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb111-2"><a href="a-lab-4.html#cb111-2"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb111-3"><a href="a-lab-4.html#cb111-3"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb111-4"><a href="a-lab-4.html#cb111-4"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span><span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</span></code></pre></div>
+<p>Remember, when you run <code>install.packages()</code> it will always install the latest version of the package and it will overwrite any older versions of the package you may have installed.</p>
 </div>
-</div>
-<div id="activity-2-2" class="section level4">
-<h4><span class="header-section-number">5.2.9.2</span> Activity 2</h4>
+<p><br>
+<strong>Question 2.</strong>What will the following code produce?</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="programming-basics.html#cb49-1"></a><span class="kw">rnorm</span>(<span class="dv">6</span>, <span class="dv">50</span>, <span class="dv">10</span>)</span></code></pre></div>
+<p><select class='solveme' data-answer='["A dataset with 6 numbers that has a mean of 50 and an SD of 10"]'> <option></option> <option>A dataset with 10 numbers that has a mean of 6 and an SD of 50</option> <option>A dataset with 6 numbers that has a mean of 50 and an SD of 10</option> <option>A dataset with 50 numbers that has a mean of 10 and an SD of 6</option> <option>A dataset with 50 numbers that has a mean of 10 and an SD of 6</option></select></p>
 <div class="solution">
 <button>
-Solution
+Explain This Answer
 </button>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="a-lab-4.html#cb112-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
+<p>The default form for <code>rnorm()</code> is <code>rnorm(n, mean, sd)</code>. If you need help remembering what each argument of a function does, look up the help documentation by running <code>?rnorm</code></p>
 </div>
-</div>
-<div id="activity-3" class="section level4">
-<h4><span class="header-section-number">5.2.9.3</span> Activity 3</h4>
+<p><br>
+<strong>Question 3.</strong> If you have two packages that have functions with the same name and you want to specify exactly which package to use, what code would you use?</p>
+<p><select class='solveme' data-answer='["package::function"]'> <option></option> <option>package::function</option> <option>function::package</option> <option>library(package)</option> <option>install.packages(package)</option></select></p>
 <div class="solution">
 <button>
-Solution
+Explain This Answer
 </button>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="a-lab-4.html#cb113-1"></a>ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</span></code></pre></div>
+<p>You should use the form <code>package::function</code>, for example <code>dplyr::select</code>. Remember that when you first load your packages R will warn you if any functions have the same name - remember to look out for this!</p>
 </div>
-</div>
-<div id="activity-4" class="section level4">
-<h4><span class="header-section-number">5.2.9.4</span> Activity 4</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="a-lab-4.html#cb114-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">65</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-5" class="section level4">
-<h4><span class="header-section-number">5.2.9.5</span> Activity 5</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="a-lab-4.html#cb115-1"></a>overall_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))</span>
-<span id="cb115-2"><a href="a-lab-4.html#cb115-2"></a>data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)</span>
-<span id="cb115-3"><a href="a-lab-4.html#cb115-3"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-6" class="section level4">
-<h4><span class="header-section-number">5.2.9.6</span> Activity 6</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="a-lab-4.html#cb116-1"></a>happy &lt;-<span class="st"> </span><span class="kw">mutate</span>(data_sex, <span class="dt">Happiness =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">73</span>))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-7" class="section level4">
-<h4><span class="header-section-number">5.2.9.7</span> Activity 7</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="a-lab-4.html#cb117-1"></a><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> ahiTotal , <span class="dt">y =</span> cesdTotal)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb117-2"><a href="a-lab-4.html#cb117-2"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb117-3"><a href="a-lab-4.html#cb117-3"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="op">+</span></span>
-<span id="cb117-4"><a href="a-lab-4.html#cb117-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="op">+</span></span>
-<span id="cb117-5"><a href="a-lab-4.html#cb117-5"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div id="homework-2" class="section level2">
-<h2><span class="header-section-number">5.3</span> Homework</h2>
-<p>You can download all the R homework files and Assessment Information you need from the Lab Homework section of the <a href="https://moodle.gla.ac.uk/course/view.php?id=16358">Psych 1A Moodle</a>.</p>
+<p><strong>Question 4.</strong> Which of the following is most likely to be an argument? <select class='solveme' data-answer='["35"]'> <option></option> <option>35</option> <option>read_csv()</option> <option>&lt;-</option></select></p>
+<p><strong>Question 5.</strong> An easy way to spot functions is to look for <select class='solveme' data-answer='["brackets"]'> <option></option> <option>brackets</option> <option>numbers</option> <option>computers</option></select>.</p>
+<p><strong>Question 6.</strong> The job of <code>&lt;-</code> is to send the output from the function to a/an <select class='solveme' data-answer='["object"]'> <option></option> <option>argument</option> <option>assignment</option> <option>object</option></select>.</p>
 
 </div>
 </div>
@@ -887,8 +778,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="a-lab-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="b-lab-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-lab-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-lab-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

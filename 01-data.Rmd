@@ -1,80 +1,5 @@
 
-# 1A: Lab 1 
-
-```{block, type="info"}
-In this lab you will be introduced to the skills you will develop over the next year and beyond. This lab will introduce open science and why it is relevant to your development as a Psychologist. You will meet your groups and the staff that will be leading your labs and who you will get to know well over the two semesters. We can't wait to get started!
-```
-
-## Pre-class activities
-
-Before we get started learning about psychology, it's useful to do a few admin jobs to make sure that you're getting all the information you need and the best experience possible.
-
-### Activity 1: Make sure you know your University username and password and have your student ID card.
-
-This may seem a bit simple however, there's nothing worse than turning up to a lab and not being able to access the computers. Make sure that you know your username and password and consider using a [password manager](https://www.techradar.com/uk/news/software/applications/the-best-password-manager-1325845) so that you don't need to remember it yourself. If something has gone wrong and your account isn't working or if you've forgotten your password you can find the [IT help support for students here](https://www.gla.ac.uk/myglasgow/it/forstudents/). You will also need to bring your student card to the labs as we will scan it to take attendance. If you have lost your card you can find out how to [get a replacement here](https://www.gla.ac.uk/myglasgow/students/sset/idcards/). 
-
-### Activity 2: Set-up your university e-mail on your phone
-
-Setting up your University e-mail on your phone is one of the most important things you can do to make sure you know what is going on. When we contact you, it will be through your University e-mail, and when you contact us you should use this e-mail so that we can verify your identity. Please do not use your personal gmail/hotmail etc. e-mail addresses. 
-
-You need to make sure that you check your e-mail at least once a day. Failing to read the information we send you is not a valid excuse for missing something so if you have your email on your phone with push notifications enabled it makes it much more likely that you will do this. You can find instructions for how to [set up your email on your phone here](https://www.gla.ac.uk/myglasgow/it/studentemail/setupdevice/). You may find that you get a lot of e-mails as you progress through University. Please **do not** turn off your e-mail or turn off e-mails from Moodle because you will miss information. Instead, [you can use folders and rules](https://support.office.com/en-us/article/manage-email-messages-by-using-rules-c24f5dea-9465-4df4-ad17-a50704d66c59) to help organise your inbox (e.g., you can set a rule that all emails from a mailing list go to a specific folder rather than your inbox to help keep things tidy).
-
-### Activity 3: Be social
-
-If you have a Twitter or Facebook account you may find it helpful to follow the School accounts. On Facebook we have a [Level 1 group](https://www.facebook.com/groups/psych2023/) so that you can contact other students. On Twitter, you can follow the [School of Psychology](https://twitter.com/UofGPsychology) account, but many of your 1st year lecturers and GTAs are also active on Twitter and you may find it interesting to follow them as well - [Emily Nordmann](https://twitter.com/emilynordmann), [Niamh Stack](https://twitter.com/Eavanmac), [Heather Cleland-Woods](https://twitter.com/clelandwoods), [Helena Paterson](https://twitter.com/PatersonHelena), [Holly Scott](https://twitter.com/hollyscott248), [Steven McNair](https://twitter.com/stevenwmcnair), [Jude Stevenson](https://twitter.com/william_the_sir), [Carolina Kuepper-Tetzel](https://twitter.com/pimpmymemory).
-
-OK, let's start talking about psychology.
-
-
-### The replication crisis 
-
-There is an ongoing debate within Psychology regarding whether the discipline is experiencing a **replication crisis**. When we say **replication** we mean the extent to which **consistent results** are obtained when we repeat an experiment under **comparable conditions**. So, when we say replication **crisis** we mean that efforts to replicate past study findings often do not show the same results. For example, in 2015, a [team of researchers](https://www.nature.com/articles/s41562-018-0399-z) examined social science experiments published in the academic journals _Nature_ and _Science_ between 2010 and 2015. Out of 21 experiments, 13 were successfully replicated. 
-
-**Why is this happening?**
-
-When conducting research, you have to ask yourself a lot of questions: How many participants will I recruit? What variables am I interested in? What's the best way to analyse my data? This is called **researcher degrees of freedom**. This means researchers often have a lot of flexibility and can approach data in a "have a look" manner. Crucially, researcher degrees of freedom can lead to researchers using **questionable research practices** such as: 
-
-* Failing to report all of a study's dependent measures (e.g what you measure in the experiment)
-* Collecting more data after peeking at your results in order to make your results turn out the way you wanted 
-* Failing to report all conditions in a study (e.g. Collecting data from three conditions - no/low/high anxiety - but only reporting two)
-* Stopping data collection earlier than planned because you found results you wanted
-* Only reporting studies that "worked"
-* HARKing - Hypothesising After Results Are Known (e.g. claiming you **predicted** these results before collecting data)
-
-In some cases, researchers have even been known to [falsify](https://www.sciencemag.org/news/2012/09/harvard-psychology-researcher-committed-fraud-us-investigation-concludes) their data. 
-
-A related concept is **reproducibility**. If research is reproducible it means someone else could take the information provided by the authors (e.g., data, method section, analysis code) and reproduce their results. This may sound like it should be easy enough to do, but as you'll learn about in class and throughout the lectures, this is very difficult, partially because often researchers have not shared their data or code.
-
-
-**Why should I care?**
-
-Science does not occur in a vacuum. Work that is published and disseminated then goes on to influence public knowledge (e.g. through reporting in the media) and the decisions our politicians make every day.  
-
-**What can be done about it?**
-
-During your time here at Glasgow, we will support you in developing skills and experience in **open science** practices. Open science practices are actions which aim to improve the **transparency**, **accessibility**, and **reproducibility** of scientific research. 
-
-### Activity 4: Open science video
-
-Watch this [video](https://www.youtube.com/watch?v=1rFWeTryiW4&feature=youtu.be) of [Dr Simine Vazire](https://twitter.com/siminevazire?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) talking about open science and why it is an important concept for us to understand in Psychology.  
-
-#### Additional resources around open science and reproducibility 
-
-[Is most published research wrong?](https://youtu.be/42QuXLucH3Q)
-
-[Replicability and Reproducibility Debate with Professor Dorothy Bishop](https://www.youtube.com/watch?v=UN8jgyXtz6A)
-
-[Why an Entire Field of Psychology Is in Trouble](https://youtu.be/2MDNvKXdLEM)
-
-[Beyond Cherry-picking](https://socialsciences.nature.com/users/200472-amy-orben/posts/42763-beyond-cherry-picking) by [Amy Orben](https://twitter.com/orbenamy?lang=en)
-
-******
-
-## In-class activities
-
-All of the slides that are presented in the Labs are available on the [Psych 1A Moodle page](https://moodle.gla.ac.uk/course/view.php?id=16358).
-
-### Activity 5: Getting to know the data
+# Getting to know the data
 
 This semester we will use the same dataset each week to develop our skills and knowledge. The dataset is from Woodworth et al. (2018). You can <a href="files/1a_data.zip" download>download all the files here</a> and you can find an explanation of the data here [Web-based Positive Psychology Interventions: A Reexamination of Effectiveness](https://openpsychologydata.metajnl.com/articles/10.5334/jopd.35/).
 
@@ -122,11 +47,6 @@ This is a long chapter but we don't expect you to memorise all the information t
 
 ### Why are you teaching me programming?? I signed up for psychology not computer science!!
 
-Research methods and statistics is a large part of doing a psychology degree. In fact, it's so important for your understanding of psychology that it's one of the core areas that the British Psychological Society require for you to graduate with an accredited degree. Unfortunately, many students don't realise that this is a part of psychology until the first week of lectures and for some people it comes as a bit of a shock. 
-
-But! There is no need to worry. With both statistics and programming we're going to start from the very beginning and develop your skills slowly over the next three years. The skills that you learn from this course will allow you to read research papers, design, conduct and analyse both qualitative and quantitative studies, evaluate research in all its forms (even fake news), and make some pretty fancy visualisations. Even if you don't plan on a career in research, the transferable skills that you develop from this course will make you an employable and versatile graduate.
-
-The reason that we're going to teach you how to do statistics and manage data using R is because of the issues we've been discussing regarding replication and reproducibility. Writing code is essentially like writing a fool-proof recipe. You can give other people (or just you after a long holiday) your raw data and code and they'll be able to see exactly what you did, step-by-step with nothing missing. R is just the tool we will use to teach you how to do reproducible science so that you won't make the same mistakes we did and so that psychological research will keep on improving.
 
 Right. Let's begin.
 
