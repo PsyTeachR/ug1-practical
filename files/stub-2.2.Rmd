@@ -1,5 +1,5 @@
 ---
-title: "Lab 4 pre-class"
+title: "Lab 2"
 author: "GUID"
 date: "01/09/2019"
 output: html_document
@@ -10,17 +10,6 @@ output: html_document
 * You can add additional code chunks if needed.
 * Be careful not to delete or add any backticks (```) or to change the chunk name (e.g., a1)
 
-## Activity 1
-
-```{r a1}
-
-```
-
-## Activity 2
-
-```{r a2}
-
-```
 
 ## Activity 3
 
@@ -46,6 +35,16 @@ output: html_document
 
 ```
 
+## Activity 7
 
+```{r a7}
+
+```
+
+## Activity 8
+
+```{r a8}
+
+```
 
 
