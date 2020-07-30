@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Level 1 Data Skills</title>
+  <title>5 Loading data | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Level 1 Data Skills" />
+  <meta property="og:title" content="5 Loading data | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Level 1 Data Skills" />
+  <meta name="twitter:title" content="5 Loading data | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="getting-to-know-the-data.html"/>
+<link rel="prev" href="a-lab-4.html"/>
+<link rel="next" href="b-lab-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -392,15 +392,264 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Level 1 Data Skills</h1>
-<p class="date"><em>2019-2020</em></p>
+<div id="loading-data" class="section level1">
+<h1><span class="header-section-number">5</span> Loading data</h1>
+<p>Part of becoming a psychologist is asking questions and gathering data to enable you to answer these questions effectively. It is very important that you understand all aspects of the research process such as experimental design, ethics, data management and visualisation.</p>
+<p>In this chapter, you will continue to develop reproducible scripts. This means scripts that completely and transparently perform an analysis from start to finish in a way that yields the same result for different people using the same software on different computers. And transparency is a key value of science, as embodied in the “trust but verify” motto. When you do things reproducibly, others can understand and check your work.</p>
+<p>This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off.</p>
+<p>As part of your skill development, it is important that you work with data so that you can become confident and competent in your management and analysis of data. In all of your psychology data skills courses, we will work with real data that has been shared by other researchers.</p>
+<div id="getting-data-ready-to-work-with" class="section level3">
+<h3><span class="header-section-number">5.0.1</span> Getting data ready to work with</h3>
+<p>In this chapter you will learn how to load the packages required to work with our data. You’ll then load the data into R Studio before getting it organised into a sensible format that relates to our research question. If you can’t remember what packages are, go back and revise <a href="programming-basics.html#packages">2.0.8</a>.</p>
 </div>
-<div id="course-information" class="section level1 unnumbered">
-<h1>Course Information</h1>
-<p><img src="images/L1.png" style="width: 200px; float: right;"></p>
-<p>Hello and welcome to Level 1 Psychology at the University of Glasgow! This is the data skills course book for Psych 1A and Psych 1B and will contain almost everything you need for the data skills element of the course. We say almost because there’s some stuff that we need to host on Moodle for admin reasons, for example, resources related to the assignments, however, you should keep this book very close. In fact, it would be a very good idea to save a bookmark for this page to your phone and computer!</p>
+<div id="activity-1-set-up-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Activity 1: Set-up</h2>
+<p>Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter <a href="ref1.html#ref1">3</a>:</p>
+<ul>
+<li>You should have already download the data files as part of Getting to Know the Data, however, here they are again if you need them: <a href="files/1a_data.zip" download><code>Psych 1A Data Files</code></a>. Extract the files and then move them in to your Data Skills folder.</li>
+<li>Download the <a href="files/stub-loading-data.zip" download><code>Loading Data Markdown File</code></a>, extract it, and move it to your Data Skills folder.</li>
+<li>Open R and ensure the environment is clear.</li>
+<li>Set the working directory to your Data Skills folder.<br />
+</li>
+<li>Open the <code>stub-loading-data.Rmd</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).</li>
+</ul>
+</div>
+<div id="activity-2-load-in-the-package" class="section level2">
+<h2><span class="header-section-number">5.2</span> Activity 2: Load in the package</h2>
+<p>Today we need to use the <code>tidyverse</code> package. You will use this package in almost every single chapter on this course as the functions it contains are those we use for data wrangling, descriptive statistics, and visualisation.</p>
+<ul>
+<li>To load the <code>tidyverse</code> type the following code into your <strong>code chunk</strong> (not the console) and then run it.</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="loading-data.html#cb43-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+</div>
+<div id="open-data" class="section level2">
+<h2><span class="header-section-number">5.3</span> Open data</h2>
+<p>For this chapter we are going to be using the real dataset that you looked at in Getting to Know the Data. Click the below link if you want a refresher of what the dataset contains.</p>
+<p><a href="https://openpsychologydata.metajnl.com/articles/10.5334/jopd.35/">Woodworth, R.J., O’Brien-Malone, A., Diamond, M.R. and Schüz, B., 2018. Data from, ‘Web-based Positive Psychology Interventions: A Reexamination of Effectiveness’. Journal of Open Psychology Data, 6(1).</a></p>
+</div>
+<div id="activity-3-read-in-data" class="section level2">
+<h2><span class="header-section-number">5.4</span> Activity 3: Read in data</h2>
+<p>Now we can read in the data. To do this we will use the function <code>read_csv()</code> that allows us to read in .csv files. There are also functions that allow you to read in .xlsx files and other formats, however in this course we will only use .csv files.</p>
+<ul>
+<li>First, we will create an object called <code>dat</code> that contains the data in the <code>ahi-cesd.csv</code> file. Then, we will create an object called <code>info</code> that contains the data in the <code>participant-info.csv</code>.</li>
+</ul>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="loading-data.html#cb44-1"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;ahi-cesd.csv&quot;</span>)</span>
+<span id="cb44-2"><a href="loading-data.html#cb44-2"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;participant-info.csv&quot;</span>)</span></code></pre></div>
+<div class="danger">
+<p>
+There is also a function called <code>read.csv()</code>. Be very careful NOT to use this function instead of <code>read_csv()</code> as they have different ways of naming columns. For the homework, unless your results match ours <strong>exactly</strong> you will not get the marks which means you need to be careful to use the right functions.
+</p>
+</div>
+<div id="activity-4-check-your-data" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Activity 4: Check your data</h3>
+<p>You should now see that the objects <code>dat</code> and <code>pinfo</code> have appeared in the environment pane. Whenever you read data into R you should always do an initial check to see that your data looks like you expected. There are several ways you can do this, try them all out to see how the results differ.</p>
+<ul>
+<li>In the environment pane, click on <code>dat</code> and <code>pinfo</code>. This will open the data to give you a spreadsheet-like view (although you can’t edit it like in Excel)</li>
+<li>In the environment pane, click the small blue play button to the left of <code>dat</code> and <code>pinfo</code>. This will show you the structure of the object information including the names of all the variables in that object and what type they are (also see <code>str(pinfo)</code>)</li>
+<li>Use <code>summary(pinfo)</code></li>
+<li>Use <code>head(pinfo)</code></li>
+<li>Just type the name of the object you want to view, e.g., <code>dat</code>.</li>
+</ul>
+</div>
+<div id="activity-5-join-the-files-together" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Activity 5: Join the files together</h3>
+<p>We have two files, <code>dat</code> and <code>info</code> but what we really want is a single file that has both the data and the demographic information about the participants. R makes this very easy by using the function <code>inner_join()</code>.</p>
+<p>Remember to use the help function <code>?inner_join</code> if you want more information about how to use a function and to use tab auto-complete to help you write your code.</p>
+<p>The below code will create a new object <code>all_dat</code> that has the data from both <code>dat</code> and <code>pinfo</code> and it will use the columns <code>id</code> and <code>intervention</code> to match the participants’ data.</p>
+<ul>
+<li>Run this code and then view the new dataset using one of the methods from Activity 4.</li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="loading-data.html#cb45-1"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(<span class="dt">x =</span> dat, <span class="co"># the first table you want to join</span></span>
+<span id="cb45-2"><a href="loading-data.html#cb45-2"></a>                      <span class="dt">y =</span> pinfo, <span class="co"># the second table you want to join</span></span>
+<span id="cb45-3"><a href="loading-data.html#cb45-3"></a>                      <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)) <span class="co"># columns the two tables have in common</span></span></code></pre></div>
+</div>
+<div id="activity-6-pull-out-variables-of-interest" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Activity 6: Pull out variables of interest</h3>
+<p>Our final step is to pull our variables of interest. Very frequently, datasets will have more variables and data than you actually want to use and it can make life easier to create a new object with just the data you need.</p>
+<p>In this case, the file contains the responses to each individual question on both the AHI scale and the CESD scale as well as the total score (i.e., the sum of all the individual responses). For our analysis, all we care about is the total scores, as well as the demographic information about participants.</p>
+<p>To do this we use the <code>select()</code> function to create a new object named <code>summarydata</code>.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="loading-data.html#cb46-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, <span class="co"># name of the object to take data from</span></span>
+<span id="cb46-2"><a href="loading-data.html#cb46-2"></a>                      ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) <span class="co"># all the columns you want to keep</span></span></code></pre></div>
+<ul>
+<li>Run the above code and then run <code>head(summarydata)</code>. If everything has gone to plan it should look something like this:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">ahiTotal</th>
+<th align="center">cesdTotal</th>
+<th align="center">sex</th>
+<th align="center">age</th>
+<th align="center">educ</th>
+<th align="center">income</th>
+<th align="center">occasion</th>
+<th align="center">elapsed.days</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">32</td>
+<td align="center">50</td>
+<td align="center">1</td>
+<td align="center">46</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">5</td>
+<td align="center">182.03</td>
+</tr>
+<tr class="even">
+<td align="center">34</td>
+<td align="center">49</td>
+<td align="center">1</td>
+<td align="center">37</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">14.19</td>
+</tr>
+<tr class="odd">
+<td align="center">34</td>
+<td align="center">47</td>
+<td align="center">1</td>
+<td align="center">37</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">33.03</td>
+</tr>
+<tr class="even">
+<td align="center">35</td>
+<td align="center">41</td>
+<td align="center">1</td>
+<td align="center">19</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.00</td>
+</tr>
+<tr class="odd">
+<td align="center">36</td>
+<td align="center">36</td>
+<td align="center">1</td>
+<td align="center">40</td>
+<td align="center">5</td>
+<td align="center">2</td>
+<td align="center">5</td>
+<td align="center">202.10</td>
+</tr>
+<tr class="even">
+<td align="center">37</td>
+<td align="center">35</td>
+<td align="center">1</td>
+<td align="center">49</td>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="activity-8-visualise-the-data" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Activity 8: Visualise the data</h3>
+<p>As you’re going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead.</p>
+<p>We’re going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but do not worry about understanding the code. Just copy and paste it.</p>
+<p>Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="loading-data.html#cb47-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.factor</span>(sex), <span class="dt">fill =</span> <span class="kw">as.factor</span>(sex))) <span class="op">+</span></span>
+<span id="cb47-2"><a href="loading-data.html#cb47-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></span>
+<span id="cb47-3"><a href="loading-data.html#cb47-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Sex&quot;</span>) <span class="op">+</span></span>
+<span id="cb47-4"><a href="loading-data.html#cb47-4"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
+<span id="cb47-5"><a href="loading-data.html#cb47-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)<span class="op">+</span></span>
+<span id="cb47-6"><a href="loading-data.html#cb47-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<p>Are there more male or more female participants (you will need to check the codebook to find out what 1 and 2 mean to answer this)? <select class='solveme' data-answer='["More female participants"]'> <option></option> <option>More female participants</option> <option>More male participants</option></select></p>
+<p>Copy, paste, and run the below code to create violin-boxplots of happiness scores for each income group.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="loading-data.html#cb48-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.factor</span>(income), <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> <span class="kw">as.factor</span>(income))) <span class="op">+</span></span>
+<span id="cb48-2"><a href="loading-data.html#cb48-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span></span>
+<span id="cb48-3"><a href="loading-data.html#cb48-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span></span>
+<span id="cb48-4"><a href="loading-data.html#cb48-4"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
+<span id="cb48-5"><a href="loading-data.html#cb48-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span></span>
+<span id="cb48-6"><a href="loading-data.html#cb48-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb48-7"><a href="loading-data.html#cb48-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</span></code></pre></div>
+<ul>
+<li>The violin (the wavy line) shows density. Basically, the fatter the wavy shape, the more data points there are at that point. It’s called a violin plot because it very often looks (kinda) like a violin.</li>
+<li>The boxplot is the box in the middle. The black line shows the median score in each group. The median is calculated by arranging the scores in order from the smallest to the largest and then selecting the middle score.</li>
+<li>The other lines on the boxplot show the interquartile range. There is a really good explanation of <a href="https://medium.com/dayem-siddiqui/understanding-and-interpreting-box-plots-d07aab9d1b6c">how to read a boxplot here</a>.</li>
+<li>The black dots are outliers, i.e., extreme values.</li>
+</ul>
+<p>Which income group has the highest median happiness score? <select class='solveme' data-answer='["Above average"]'> <option></option> <option>Below average</option> <option>Average</option> <option>Above average</option></select></p>
+<p>Which income group has the lowest median happiness score? <select class='solveme' data-answer='["Below average"]'> <option></option> <option>Below average</option> <option>Average</option></select></p>
+<p>How many outliers does the Average income group have? <input class='solveme nospaces' size='1' data-answer='["2"]'/></p>
+<p>Finally, try knitting the file to HTML. And that’s it, well done! Remember to save your Markdown in your Data Skills folder and make a note of any mistakes you made and how you fixed them.</p>
+<div id="finished-3" class="section level4">
+<h4><span class="header-section-number">5.4.4.1</span> Finished!</h4>
+<p>Well done! You have started on your journey to become a confident and competent member of the open science community! To show us how competent you are you should now complete the homework for this week which follows the same instructions as this in-class activity but asks you to work with different variables. Always use the data skills materials and videos to help you complete the assessments!</p>
+</div>
+</div>
+<div id="debugging-tips-1" class="section level3">
+<h3><span class="header-section-number">5.4.5</span> Debugging tips</h3>
+<ul>
+<li>When you downloaded the files did you save the file names <strong>exactly</strong> as they were originally? If you download the file more than once you will find your computer may automatically add a number to the end of the file name. <code>data.csv</code> is not the same as <code>data(1).csv</code>. Pay close attention to names!</li>
+<li>Have you used the <strong>exact</strong> same object names as we did in each activity? Remember, <code>name</code> is different to <code>Name</code>. In order to make sure you can follow along with this book, pay special attention to ensuring you use the same object names as we do.<br />
+</li>
+<li>Have you used quotation marks where needed?<br />
+</li>
+<li>Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?</li>
+</ul>
+</div>
+<div id="test-yourself" class="section level3">
+<h3><span class="header-section-number">5.4.6</span> Test yourself</h3>
+<ol style="list-style-type: decimal">
+<li>When loading in a .csv file, which function should you use?</li>
+</ol>
+<p><select class='solveme' data-answer='["read_csv()"]'> <option></option> <option>read_csv()</option> <option>read.csv()</option></select></p>
+<div class="solution">
+<button>
+Explain this answer
+</button>
+<p>Remember, in this course we use <code>read_csv()</code> and it is important for the homework that you use this function otherwise you may find that the variable names are slightly different and you won’t get the marks</p>
+</div>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li>The function <code>inner_join()</code> takes the arguments <code>x</code>, <code>y</code>, <code>by</code>. What does <code>by</code> do?</li>
+</ol>
+<p><select class='solveme' data-answer='["Specifies the column to join by that both tables have in common"]'> <option></option> <option>Specifies the first table to join</option> <option>Specifies the second table to join</option> <option>Specifies the column to join by that both tables have in common</option></select></p>
+<ol start="3" style="list-style-type: decimal">
+<li>What does the function <code>select()</code> do?
+<br>
+<select class='solveme' data-answer='["Keeps only the variables you specify"]'> <option></option> <option>Keeps only the observations you specify</option> <option>Keeps only the variables you specify</option> <option>Keeps only the objects you specify</option></select></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="homework-instructions" class="section level2">
+<h2><span class="header-section-number">5.5</span> Homework instructions</h2>
+<p>Just like you did in Intro to R, we’re going to use R Markdown for the homework sheets. If you haven’t done Intro to R, please work through it before attempting the homework.</p>
+<p><strong>There are just a couple of important rules we need you to follow to make sure this all runs smoothly.</strong></p>
+<ol style="list-style-type: decimal">
+<li>These worksheets need to you fill in your answers and not change any other information. For example, if we ask you to replace NULL with your answer, only write in the code you are giving as your answer and nothing else. To illustrate -</li>
+</ol>
+<p><strong>Task 1 read in your data</strong></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="loading-data.html#cb49-1"></a>data &lt;-<span class="st"> </span><span class="ot">NULL</span></span></code></pre></div>
+<p>The task above is to read in the data file we are using for this task - the correct answer is <code>data &lt;- read_csv(data.csv)</code>. You would replace the NULL with:</p>
+<p><strong>Solution to Task 1</strong></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="loading-data.html#cb50-1"></a>data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span></code></pre></div>
+<p>This means that we can look for your code and if it is in the format we expect to see it in, we can give you the marks! If you decide to get all creative on us then we can’t give you the marks as ‘my_lab_work_lol.csv’ isn’t the filename we have given to you to use. So don’t change the file, variable or data frame names as we need these to be consistent.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>We will look for your answers within the boxes which start and end with ``` and have {r task name} in them e.g. </li>
+</ol>
+<div class="verbatim">
+<p><code>```{r tidyverse, messages=FALSE}</code></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="loading-data.html#cb51-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<code>```</code>
+</div>
+<p>These are called code chunks and are the part of the worksheet that we can read and pick out your answers. If you change these in any way we can’t read your answer and therefore we can’t give you marks. You can see in the example above that the code chunk (the grey zone), starts and ends with these back ticks (usually found on top left corner of the keyboard). This code chunk has the ticks and text which makes it the part of the worksheet that will contain code. The {r tidyverse} part tells us which task it is (e.g., loading in tidyverse) and therefore what we should be looking for and what we can give marks for - loading in the package called tidyverse in the example above. If this changes then it won’t be read properly, so will impact on your grade.</p>
+<p>The easiest way to use our worksheets is to think of them as fill-in-the-blanks and keep the file names and names used in the worksheet the same. If you are unsure about anything then use the Data Skills channel on Teams to ask any questions and come along to the GTA support sessions.</p>
+<div id="homework-files" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Homework files</h3>
+<p>You can download all the R homework files and Assessment Information you need from the Lab Homework section of Moodle.</p>
 
+</div>
+</div>
 </div>
 <div class="psyteachr_footer">
   
@@ -492,8 +741,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-
-<a href="getting-to-know-the-data.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-lab-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="b-lab-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

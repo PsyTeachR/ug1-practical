@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Level 1 Data Skills</title>
+  <title>7 Data wrangling 1 | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Level 1 Data Skills" />
+  <meta property="og:title" content="7 Data wrangling 1 | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Level 1 Data Skills" />
+  <meta name="twitter:title" content="7 Data wrangling 1 | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="getting-to-know-the-data.html"/>
+<link rel="prev" href="b-lab-1.html"/>
+<link rel="next" href="b-lab-2.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -392,15 +392,444 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Level 1 Data Skills</h1>
-<p class="date"><em>2019-2020</em></p>
+<div id="data-wrangling-1" class="section level1">
+<h1><span class="header-section-number">7</span> Data wrangling 1</h1>
+<div class="info">
+<p>
+So far you have been introduced to the R environment (e.g. setting your working directory and the difference between .R and .Rmd files). You also began working with messy data by having a go at loading in datasets using <code>read_csv()</code>, joined files together using <code>inner_join()</code>, and pulled out variables of interest using <code>select()</code>.
+</p>
+<p>
+In this chapter, we’ll be moving on to becoming familiar with the Wickham Six and the functionality of the R package, <code>tidyverse</code>!
+</p>
 </div>
-<div id="course-information" class="section level1 unnumbered">
-<h1>Course Information</h1>
-<p><img src="images/L1.png" style="width: 200px; float: right;"></p>
-<p>Hello and welcome to Level 1 Psychology at the University of Glasgow! This is the data skills course book for Psych 1A and Psych 1B and will contain almost everything you need for the data skills element of the course. We say almost because there’s some stuff that we need to host on Moodle for admin reasons, for example, resources related to the assignments, however, you should keep this book very close. In fact, it would be a very good idea to save a bookmark for this page to your phone and computer!</p>
+<p>Data comes in lots of different formats. One of the most common formats is that of a two-dimensional table (the two dimensions being rows and columns). Usually, each row stands for a separate observation (e.g. a subject), and each column stands for a different variable (e.g. a response, category, or group). A key benefit of tabular data (i.e., data in a table) is that it allows you to store different types of data-numerical measurements, alphanumeric labels, categorical descriptors-all in one place.</p>
+<p>It may surprise you to learn that scientists actually spend far more time cleaning and preparing their data than they spend actually analysing it. This means completing tasks such as cleaning up bad values, changing the structure of tables, merging information stored in separate tables, reducing the data down to a subset of observations, and producing data summaries. Some have estimated that up to 80% of time spent on data analysis involves such data preparation tasks (Dasu &amp; Johnson, 2003)!</p>
+<p>Many people seem to operate under the assumption that the only option for data cleaning is the painstaking and time-consuming cutting and pasting of data within a spreadsheet program like Excel. We have witnessed students and colleagues waste days, weeks, and even months manually transforming their data in Excel, cutting, copying, and pasting data. Fixing up your data by hand is not only a terrible use of your time, but it is error-prone and not reproducible. Additionally, in this age where we can easily collect massive datasets online, you will not be able to organise, clean, and prepare these by hand.</p>
+<p>In short, you will not thrive as a psychologist if you do not learn some key data wrangling skills. Although every dataset presents unique challenges, there are some systematic principles you should follow that will make your analyses easier, less error-prone, more efficient, and more reproducible.</p>
+<p>In this chapter you will see how data science skills will allow you to efficiently get answers to nearly any question you might want to ask about your data. By learning how to properly make your computer do the hard and boring work for you, you can focus on the bigger issues.</p>
+<div id="tidyverse" class="section level2">
+<h2><span class="header-section-number">7.1</span> Tidyverse</h2>
+<p>Tidyverse (<a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>) is a collection of R packages created by world-famous data scientist Hadley Wickham.</p>
+<p>Tidyverse contains six core packages: <code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, <code>purrr</code>, <code>ggplot2</code>, and <code>tibble</code>. In the last chapter when you typed <code>library(tidyverse)</code> into R, you will have seen that it loads in all of these packages in one go. Within these six core packages, you should be able to find everything you need to wrangle and visualise your data.</p>
+<p>In this chapter, we are going to focus on the <code>dplyr</code> package, which contains six important functions:</p>
+<ul>
+<li><code>select()</code> Include or exclude certain variables (columns)</li>
+<li><code>filter()</code> Include or exclude certain observations (rows)</li>
+<li><code>mutate()</code> Create new variables (columns)</li>
+<li><code>arrange()</code> Change the order of observations (rows)</li>
+<li><code>group_by()</code> Organize the observations into groups</li>
+<li><code>summarise()</code> Derive aggregate variables for groups of observations</li>
+</ul>
+<p>These six functions are known as ’single table verbs’ because they only operate on one table at a time. Although the operations of these functions may seem very simplistic, it’s amazing what you can accomplish when you string them together: Hadley Wickham has claimed that 90% of data analysis can be reduced to the operations described by these six functions.</p>
+<p>Again, we don’t expect you to remember everything in this chapter - the important thing is that you know where to come and look for help when you need to do particular tasks. Being good at coding really is just being good at knowing what to copy and paste.</p>
+</div>
+<div id="the-babynames-database" class="section level2">
+<h2><span class="header-section-number">7.2</span> The <code>babynames</code> database</h2>
+<p>To demonstrate the power of the six <code>dplyr</code> verbs, we will use them to work with the babynames data from the <code>babynames</code> package (we will return to the AHI and CES-D dataset in the next chapter!). The babynames dataset has historical information about births of babies in the U.S.</p>
+</div>
+<div id="activity-1-set-up-2" class="section level2">
+<h2><span class="header-section-number">7.3</span> Activity 1: Set-up</h2>
+<p>Do the following. If you need help, consult Programming Basics and Intro to R.</p>
+<ul>
+<li>Download the <a href="files/stub-wrangling-1.zip" download><code>Data Wrangling 1 Markdown</code></a>, extract the file and then move it in to your Data Skills folder.</li>
+<li>Open R Studio and ensure the environment is clear.<br />
+</li>
+<li>Open the <code>stub-wrangling-1.Rmd</code> file and ensure that the working directory is set to your Data Skills folder.<br />
+</li>
+<li>If you are working on your own computer, install the package <code>babynames</code>. If you are working on the server or a university computer, this package will already be installed.</li>
+<li>Type and run the code that loads the packages <code>tidyverse</code> and <code>babynames</code> using <code>library()</code> in the Activity 1 code chunk.</li>
+</ul>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-wrangling-1.html#cb62-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb62-2"><a href="data-wrangling-1.html#cb62-2"></a><span class="kw">library</span>(babynames)</span></code></pre></div>
+</div>
+<div id="activity-2-look-at-the-data" class="section level2">
+<h2><span class="header-section-number">7.4</span> Activity 2: Look at the data</h2>
+<p>The package <code>babynames</code> contains an object of the same name that contains all the data about babynames.</p>
+<ul>
+<li>View a preview of this dataset by typing <code>babynames</code> in to the console. You should see the following output:</li>
+</ul>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-wrangling-1.html#cb63-1"></a>babynames</span></code></pre></div>
+<pre><code>## # A tibble: 1,924,665 x 5
+##     year sex   name          n   prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+##  1  1880 F     Mary       7065 0.0724
+##  2  1880 F     Anna       2604 0.0267
+##  3  1880 F     Emma       2003 0.0205
+##  4  1880 F     Elizabeth  1939 0.0199
+##  5  1880 F     Minnie     1746 0.0179
+##  6  1880 F     Margaret   1578 0.0162
+##  7  1880 F     Ida        1472 0.0151
+##  8  1880 F     Alice      1414 0.0145
+##  9  1880 F     Bertha     1320 0.0135
+## 10  1880 F     Sarah      1288 0.0132
+## # ... with 1,924,655 more rows</code></pre>
+<p>The first line tells us that the object we are looking at is in a <code>tibble</code> with information on five variables with over 1.9 million rows. Yes, this dataset contains 1.8 <strong>million</strong> observations. Interested in analyzing these data by hand? No thanks! A tibble is basically a table of data presenting a two dimensional array of your data.</p>
+<p>Each row in the table represents data about births for a given name and sex in a given year. The variables are:</p>
+<table>
+<thead>
+<tr class="header">
+<th>variable</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>year</td>
+<td>double (numeric)</td>
+<td>year of birth</td>
+</tr>
+<tr class="even">
+<td>sex</td>
+<td>character</td>
+<td>recorded sex of baby (F = female, M = male)</td>
+</tr>
+<tr class="odd">
+<td>name</td>
+<td>character</td>
+<td>forename given to baby</td>
+</tr>
+<tr class="even">
+<td>n</td>
+<td>integer</td>
+<td>number of babies given that name</td>
+</tr>
+<tr class="odd">
+<td>prop</td>
+<td>double (numeric)</td>
+<td>proportion of all babies of that sex</td>
+</tr>
+</tbody>
+</table>
+<p>The first row of the table tells us that in the year 1880, there were 7065 baby girls born in the U.S. who were given the name Mary, and this accounted for about 7% of all baby girls.</p>
+</div>
+<div id="activity-3-data-visualisation" class="section level2">
+<h2><span class="header-section-number">7.5</span> Activity 3: Data visualisation</h2>
+<ul>
+<li>Type the code below into a new code chunk and run it.</li>
+</ul>
+<p>We’re going to cover how to write visualisation code in the next chapter so still don’t worry about not understanding the plot code yet. The point is show you how much you can accomplish with very little code. The code creates a graph showing the popularity of four girl baby names - Alexandra, Beverly, Emily, and Kathleen - from 1880 to 2014. You should see Figure <a href="data-wrangling-1.html#fig:babynames-plot">7.1</a> appear, which shows the proportion of each name across different years.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-wrangling-1.html#cb65-1"></a>dat &lt;-<span class="st"> </span>babynames <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb65-2"><a href="data-wrangling-1.html#cb65-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>)</span>
+<span id="cb65-3"><a href="data-wrangling-1.html#cb65-3"></a></span>
+<span id="cb65-4"><a href="data-wrangling-1.html#cb65-4"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> dat,<span class="kw">aes</span>(<span class="dt">x =</span> year,<span class="dt">y =</span> prop, <span class="dt">colour=</span>name))<span class="op">+</span></span>
+<span id="cb65-5"><a href="data-wrangling-1.html#cb65-5"></a><span class="st">  </span><span class="kw">geom_line</span>()  </span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:babynames-plot"></span>
+<img src="05-wrangling-1_files/figure-html/babynames-plot-1.png" alt="Proportion of four baby names from 1880 to 2014" width="100%" />
+<p class="caption">
+Figure 7.1: Proportion of four baby names from 1880 to 2014
+</p>
+</div>
+<ul>
+<li>Change the names to your own examples and see how the plot changes. You can also change the sex from “F” to “M”. Post the photos of your new plots on the Teams Data Skills channel.</li>
+<li>Because in most countries assigned sex at birth is binary, there is no data on intersex, trans or non-binary names. In lieu of that, here’s the <a href="https://en.wikipedia.org/wiki/Unisex_name">Wikipedia page about gender-neutral names and naming laws</a> around the world which will hopefully make you question why on earth we ascribe someone’s entire gender identity to a bunch of sounds and letters we use to label them.</li>
+</ul>
+</div>
+<div id="activity-4-selecting-variables-of-interest" class="section level2">
+<h2><span class="header-section-number">7.6</span> Activity 4: Selecting variables of interest</h2>
+<p>There are two numeric measurements of name popularity, <code>prop</code> (the proportion of all babies with each name) is probably more useful than <code>n</code> (total number of babies with that name), because it takes into account that different numbers of babies are born in different years.</p>
+<p>Just like in Loading Data, if we wanted to create a dataset that only includes certain variables, we can use the <code>select()</code> function from the <code>dplyr</code> package. Run the below code to only select the columns <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-wrangling-1.html#cb66-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="co"># the object you want to select variables from</span></span>
+<span id="cb66-2"><a href="data-wrangling-1.html#cb66-2"></a>       year, sex, name, prop) <span class="co"># the variables you want to select</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,924,665 x 4
+##     year sex   name        prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
+##  1  1880 F     Mary      0.0724
+##  2  1880 F     Anna      0.0267
+##  3  1880 F     Emma      0.0205
+##  4  1880 F     Elizabeth 0.0199
+##  5  1880 F     Minnie    0.0179
+##  6  1880 F     Margaret  0.0162
+##  7  1880 F     Ida       0.0151
+##  8  1880 F     Alice     0.0145
+##  9  1880 F     Bertha    0.0135
+## 10  1880 F     Sarah     0.0132
+## # ... with 1,924,655 more rows</code></pre>
+<p>Alternatively, you can also tell R which variables you don’t want, in this case, rather than telling R to select <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>, we can simply tell it to drop the column <code>n</code> using the minus sign <code>-</code> before the variable name.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-wrangling-1.html#cb68-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
+<pre><code>## # A tibble: 1,924,665 x 4
+##     year sex   name        prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
+##  1  1880 F     Mary      0.0724
+##  2  1880 F     Anna      0.0267
+##  3  1880 F     Emma      0.0205
+##  4  1880 F     Elizabeth 0.0199
+##  5  1880 F     Minnie    0.0179
+##  6  1880 F     Margaret  0.0162
+##  7  1880 F     Ida       0.0151
+##  8  1880 F     Alice     0.0145
+##  9  1880 F     Bertha    0.0135
+## 10  1880 F     Sarah     0.0132
+## # ... with 1,924,655 more rows</code></pre>
+<p>Note that <code>select()</code> does not change the original tibble, but makes a new tibble with the specified columns. If you don’t save this new tibble to an object, it won’t be saved. If you want to keep this new dataset, create a new object. When you run this code, you will see your new tibble appear in the environment pane.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-wrangling-1.html#cb70-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
+</div>
+<div id="activity-5-arranging-the-data" class="section level2">
+<h2><span class="header-section-number">7.7</span> Activity 5: Arranging the data</h2>
+<p>The function <code>arrange()</code> will sort the rows in the table according to the columns you supply. Try running the following code:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-wrangling-1.html#cb71-1"></a><span class="kw">arrange</span>(<span class="dt">.data =</span> babynames, <span class="co"># the data you want to sort</span></span>
+<span id="cb71-2"><a href="data-wrangling-1.html#cb71-2"></a>        name) <span class="co"># the variable you want to sort by</span></span></code></pre></div>
+<pre><code>## # A tibble: 1,924,665 x 5
+##     year sex   name      n       prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1  2007 M     Aaban     5 0.00000226
+##  2  2009 M     Aaban     6 0.00000283
+##  3  2010 M     Aaban     9 0.00000439
+##  4  2011 M     Aaban    11 0.00000542
+##  5  2012 M     Aaban    11 0.00000543
+##  6  2013 M     Aaban    14 0.00000694
+##  7  2014 M     Aaban    16 0.00000783
+##  8  2015 M     Aaban    15 0.00000736
+##  9  2016 M     Aaban     9 0.00000446
+## 10  2017 M     Aaban    11 0.0000056 
+## # ... with 1,924,655 more rows</code></pre>
+<p>The data are now sorted in ascending alphabetical order by name. The default is to sort in ascending order. If you want it descending, wrap the name of the variable in the <code>desc()</code> function. For instance, to sort by year in descending order, run the following code:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-wrangling-1.html#cb73-1"></a><span class="kw">arrange</span>(babynames,<span class="kw">desc</span>(year)) </span></code></pre></div>
+<pre><code>## # A tibble: 1,924,665 x 5
+##     year sex   name          n    prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
+##  1  2017 F     Emma      19738 0.0105 
+##  2  2017 F     Olivia    18632 0.00994
+##  3  2017 F     Ava       15902 0.00848
+##  4  2017 F     Isabella  15100 0.00805
+##  5  2017 F     Sophia    14831 0.00791
+##  6  2017 F     Mia       13437 0.00717
+##  7  2017 F     Charlotte 12893 0.00688
+##  8  2017 F     Amelia    11800 0.00629
+##  9  2017 F     Evelyn    10675 0.00569
+## 10  2017 F     Abigail   10551 0.00563
+## # ... with 1,924,655 more rows</code></pre>
+<p>You can also sort by more than one column. What do you think the following code will do?</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data-wrangling-1.html#cb75-1"></a><span class="kw">arrange</span>(babynames, <span class="kw">desc</span>(year), <span class="kw">desc</span>(sex), <span class="kw">desc</span>(prop)) </span></code></pre></div>
+</div>
+<div id="activity-6-using-filter-to-select-observations" class="section level2">
+<h2><span class="header-section-number">7.8</span> Activity 6: Using filter to select observations</h2>
+<p>We have previously used <code>select()</code> to select certain variables or columns, however, frequently you will also want to select only certain observations or rows, for example, only babies born after 1999, or only babies named “Mary”. You do this using the verb <code>filter()</code>. The <code>filter()</code> function is a bit more involved than the other verbs, and requires more detailed explanation, but this is because it is also extremely powerful.</p>
+<p>Here is an example of filter, can you guess what it will do?</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="data-wrangling-1.html#cb76-1"></a> <span class="kw">filter</span>(<span class="dt">.data =</span> babynames, year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>)</span></code></pre></div>
+<p>The first part of the code tells the function to use the object <code>babynames</code>. The second argument, <code>year &gt; 2000</code>, is what is known as a <strong>Boolean expression</strong>: an expression whose evaluation results in a value of TRUE or FALSE. What <code>filter()</code> does is include any observations (rows) for which the expression evaluates to TRUE, and exclude any for which it evaluates to FALSE. So in effect, behind the scenes, <code>filter()</code> goes through the entire set of 1.8 million observations, row by row, checking the value of year for each row, keeping it if the value is greater than 2000, and rejecting it if it is less than 2000. To see how a boolean expression works, consider the code below:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="data-wrangling-1.html#cb77-1"></a>years &lt;-<span class="st"> </span><span class="dv">1996</span><span class="op">:</span><span class="dv">2005</span></span>
+<span id="cb77-2"><a href="data-wrangling-1.html#cb77-2"></a>years</span>
+<span id="cb77-3"><a href="data-wrangling-1.html#cb77-3"></a>years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span></span></code></pre></div>
+<pre><code>##  [1] 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005
+##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<p>You can see that the expression <code>years &gt; 2000</code> returns a <strong>logical vector</strong> (a vector of TRUE and FALSE values), where each element represents whether the expression is true or false for that element. For the first five elements (1996 to 2000) it is false, and for the last five elements (2001 to 2005) it is true.</p>
+<p>Here are the most commonly used Boolean expressions.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Name</th>
+<th>is TRUE if and only if</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A &lt; B</td>
+<td>less than</td>
+<td>A is less than B</td>
+</tr>
+<tr class="even">
+<td>A &lt;= B</td>
+<td>less than or equal</td>
+<td>A is less than or equal to B</td>
+</tr>
+<tr class="odd">
+<td>A &gt; B</td>
+<td>greater than</td>
+<td>A is greater than B</td>
+</tr>
+<tr class="even">
+<td>A &gt;= B</td>
+<td>greater than or equal</td>
+<td>A is greater than or equal to B</td>
+</tr>
+<tr class="odd">
+<td>A == B</td>
+<td>equivalence</td>
+<td>A exactly equals B</td>
+</tr>
+<tr class="even">
+<td>A != B</td>
+<td>not equal</td>
+<td>A does not exactly equal B</td>
+</tr>
+<tr class="odd">
+<td>A %in% B</td>
+<td>in</td>
+<td>A is an element of vector B</td>
+</tr>
+</tbody>
+</table>
+<p>If you want only those observations for a specific name (e.g., Mary), you use the equivalence operator <code>==</code>. Note that you use double equal signs, not a single equal sign.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="data-wrangling-1.html#cb79-1"></a><span class="kw">filter</span>(babynames, name <span class="op">==</span><span class="st"> &quot;Mary&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 268 x 5
+##     year sex   name      n     prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt;
+##  1  1880 F     Mary   7065 0.0724  
+##  2  1880 M     Mary     27 0.000228
+##  3  1881 F     Mary   6919 0.0700  
+##  4  1881 M     Mary     29 0.000268
+##  5  1882 F     Mary   8148 0.0704  
+##  6  1882 M     Mary     30 0.000246
+##  7  1883 F     Mary   8012 0.0667  
+##  8  1883 M     Mary     32 0.000284
+##  9  1884 F     Mary   9217 0.0670  
+## 10  1884 M     Mary     36 0.000293
+## # ... with 258 more rows</code></pre>
+<p>If you wanted all the names except Mary, you use the ‘not equals’ operator:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-wrangling-1.html#cb81-1"></a><span class="kw">filter</span>(babynames, name<span class="op">!=</span><span class="st">&quot;Mary&quot;</span>) </span></code></pre></div>
+<pre><code>## # A tibble: 1,924,397 x 5
+##     year sex   name          n   prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+##  1  1880 F     Anna       2604 0.0267
+##  2  1880 F     Emma       2003 0.0205
+##  3  1880 F     Elizabeth  1939 0.0199
+##  4  1880 F     Minnie     1746 0.0179
+##  5  1880 F     Margaret   1578 0.0162
+##  6  1880 F     Ida        1472 0.0151
+##  7  1880 F     Alice      1414 0.0145
+##  8  1880 F     Bertha     1320 0.0135
+##  9  1880 F     Sarah      1288 0.0132
+## 10  1880 F     Annie      1258 0.0129
+## # ... with 1,924,387 more rows</code></pre>
+<p>And if you wanted names from a defined set - e.g., names of British queens - you can use <code>%in%</code>:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="data-wrangling-1.html#cb83-1"></a><span class="kw">filter</span>(babynames, name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 772 x 5
+##     year sex   name          n      prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1  1880 F     Mary       7065 0.0724   
+##  2  1880 F     Elizabeth  1939 0.0199   
+##  3  1880 F     Victoria     93 0.000953 
+##  4  1880 M     Mary         27 0.000228 
+##  5  1880 M     Elizabeth     9 0.0000760
+##  6  1881 F     Mary       6919 0.0700   
+##  7  1881 F     Elizabeth  1852 0.0187   
+##  8  1881 F     Victoria    117 0.00118  
+##  9  1881 M     Mary         29 0.000268 
+## 10  1882 F     Mary       8148 0.0704   
+## # ... with 762 more rows</code></pre>
+<p>This gives you data for the names in the vector on the right hand side of <code>%in%</code>. You can always invert an expression to get its opposite. So, for instance, if you instead wanted to get rid of all Marys, Elizabeths, and Victorias you would use the following:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-wrangling-1.html#cb85-1"></a><span class="kw">filter</span>(babynames, <span class="op">!</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>)))</span></code></pre></div>
+<pre><code>## # A tibble: 1,923,893 x 5
+##     year sex   name         n   prop
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;  &lt;dbl&gt;
+##  1  1880 F     Anna      2604 0.0267
+##  2  1880 F     Emma      2003 0.0205
+##  3  1880 F     Minnie    1746 0.0179
+##  4  1880 F     Margaret  1578 0.0162
+##  5  1880 F     Ida       1472 0.0151
+##  6  1880 F     Alice     1414 0.0145
+##  7  1880 F     Bertha    1320 0.0135
+##  8  1880 F     Sarah     1288 0.0132
+##  9  1880 F     Annie     1258 0.0129
+## 10  1880 F     Clara     1226 0.0126
+## # ... with 1,923,883 more rows</code></pre>
+<p>You can include as many expressions as you like as additional arguments to <code>filter()</code> and it will only pull out the rows for which all of the expressions for that row evaluate to TRUE. For instance, <code>filter(babynames, year &gt; 2000, prop &gt; .01)</code> will pull out only those observations beyond the year 2000 that represent greater than 1% of the names for a given sex; any observation where either expression is false will be excluded. This ability to string together criteria makes <code>filter()</code> a very powerful member of the Wickham Six.</p>
+<p><strong>Remember that this section exists. It will contain a lot of the answers to problems you face when wrangling data!</strong></p>
+</div>
+<div id="activity-7-creating-new-variables" class="section level2">
+<h2><span class="header-section-number">7.9</span> Activity 7: Creating new variables</h2>
+<p>Sometimes we need to create a new variable that doesn’t exist in our dataset. For instance, we might want to figure out what decade a particular year belongs to. To create new variables, we use the function <code>mutate()</code>. Note that if you want to save this new column, you need to save it to an object. Here, you are mutating a new column and attaching it to the <code>new_dat</code> object you created in Activity 4.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="data-wrangling-1.html#cb87-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">.data =</span> babynames, <span class="co"># the tibble you want to add a column to</span></span>
+<span id="cb87-2"><a href="data-wrangling-1.html#cb87-2"></a>                  <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="co"># new column name = what you want it to contain</span></span>
+<span id="cb87-3"><a href="data-wrangling-1.html#cb87-3"></a>new_dat</span></code></pre></div>
+<pre><code>## # A tibble: 1,924,665 x 6
+##     year sex   name          n   prop decade
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1  1880 F     Mary       7065 0.0724   1880
+##  2  1880 F     Anna       2604 0.0267   1880
+##  3  1880 F     Emma       2003 0.0205   1880
+##  4  1880 F     Elizabeth  1939 0.0199   1880
+##  5  1880 F     Minnie     1746 0.0179   1880
+##  6  1880 F     Margaret   1578 0.0162   1880
+##  7  1880 F     Ida        1472 0.0151   1880
+##  8  1880 F     Alice      1414 0.0145   1880
+##  9  1880 F     Bertha     1320 0.0135   1880
+## 10  1880 F     Sarah      1288 0.0132   1880
+## # ... with 1,924,655 more rows</code></pre>
+<p>In this case, you are creating a new column decade which has the decade each year appears in. This is calculated using the command <code>decade = floor(year/10)*10</code>.</p>
+</div>
+<div id="activity-8-grouping-and-summarising" class="section level2">
+<h2><span class="header-section-number">7.10</span> Activity 8: Grouping and summarising</h2>
+<p>Most quantitative analyses will require you to summarise your data somehow, for example, by calculating the mean, median or a sum total of your data. You can perform all of these operations using the function <code>summarise()</code>.</p>
+<p>First, let’s use the object <code>dat</code> that just has the data for the four girls names, Alexandra, Beverly, Emily, and Kathleen. To start off, we’re simply going to calculate the total number of babies across all years that were given one of these four names.</p>
+<p>It’s useful to get in the habit of translating your code into full sentences to make it easier to figure out what’s happening. You can read the below code as “run the function summarise using the data in the object <code>dat</code> to create a new variable named <code>total</code> that is the result of adding up all the numbers in the column <code>n</code>”.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="data-wrangling-1.html#cb89-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to use</span></span>
+<span id="cb89-2"><a href="data-wrangling-1.html#cb89-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) <span class="co"># result = operation</span></span></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##     total
+##     &lt;int&gt;
+## 1 2161374</code></pre>
+<p><code>summarise()</code> becomes even more powerful when combined with the final <code>dplyr</code> function, <code>group_by()</code>. Quite often, you will want to produce your summary statistics broken down by groups, for examples, the scores of participants in different conditions, or the reading time for native and non-native speakers.</p>
+<p>There are two ways you can use <code>group_by()</code>. First, you can create a new, grouped object.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="data-wrangling-1.html#cb91-1"></a>group_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to group</span></span>
+<span id="cb91-2"><a href="data-wrangling-1.html#cb91-2"></a>                      name) <span class="co"># the variable you want to group by</span></span></code></pre></div>
+<p>If you look at this object in the viewer, it won’t look any different to the original <code>dat</code>, however, the underlying structure has changed. Let’s run the above summarise code again, but now using the grouped data.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data-wrangling-1.html#cb92-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> group_dat, </span>
+<span id="cb92-2"><a href="data-wrangling-1.html#cb92-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) </span></code></pre></div>
+<pre><code>## # A tibble: 4 x 2
+##   name       total
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 Alexandra 231364
+## 2 Beverly   376914
+## 3 Emily     841491
+## 4 Kathleen  711605</code></pre>
+<p><code>summarise()</code> has performed exactly the same operation as before - adding up the total number in the column <code>n</code> - but this time it has done is separately for each group, which in this case was the variable <code>name</code>.</p>
+<p>You can request multiple summary calculations to be performed in the same function. For example, the following code calculates the mean and median number of babies given each name every year.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="data-wrangling-1.html#cb94-1"></a><span class="kw">summarise</span>(group_dat,</span>
+<span id="cb94-2"><a href="data-wrangling-1.html#cb94-2"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
+<span id="cb94-3"><a href="data-wrangling-1.html#cb94-3"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 3
+##   name      mean_year median_year
+##   &lt;chr&gt;         &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Alexandra     1977.        192 
+## 2 Beverly       3089.        710.
+## 3 Emily         6098.       1392.
+## 4 Kathleen      5157.       3098</code></pre>
+<p>You can also add multiple grouping variables. For example, the following code groups <code>new_dat</code> by <code>sex</code> and <code>decade</code> and then calculates the summary statistics to give us the mean and median number of male and female babies in each decade.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="data-wrangling-1.html#cb96-1"></a>group_new_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(new_dat, sex, decade)</span>
+<span id="cb96-2"><a href="data-wrangling-1.html#cb96-2"></a><span class="kw">summarise</span>(group_new_dat,</span>
+<span id="cb96-3"><a href="data-wrangling-1.html#cb96-3"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
+<span id="cb96-4"><a href="data-wrangling-1.html#cb96-4"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
+<pre><code>## # A tibble: 28 x 4
+## # Groups:   sex [2]
+##    sex   decade mean_year median_year
+##    &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+##  1 F       1880      111.          13
+##  2 F       1890      128.          13
+##  3 F       1900      131.          12
+##  4 F       1910      187.          12
+##  5 F       1920      211.          12
+##  6 F       1930      214.          12
+##  7 F       1940      262.          12
+##  8 F       1950      288.          13
+##  9 F       1960      235.          12
+## 10 F       1970      147.          11
+## # ... with 18 more rows</code></pre>
+</div>
+<div id="activity-9-pipes" class="section level2">
+<h2><span class="header-section-number">7.11</span> Activity 9: Pipes</h2>
+<p>The final activity for this chapter essentially repeats what we’ve already covered but in a slightly different way. In the previous activities, you created new objects with new variables or groupings and then you called <code>summarise()</code> on those new objects in separate lines of code. As a result, you had multiple objects in your environment pane and you need to make sure that you keep track of the different names.</p>
+<p>Instead, you can use <strong>pipes</strong>. Pipes are written as <code>%&gt;%</code>and they should be read as “and then”. Pipes allow you to string together ‘sentences’ of code into ‘paragraphs’ so that you don’t need to create intermediary objects. Again, it is easier to show than tell.</p>
+<p>The below code does <strong>exactly</strong> the same as all the code we wrote above but it only creates one object.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="data-wrangling-1.html#cb98-1"></a>pipe_summary &lt;-<span class="st"> </span><span class="kw">mutate</span>(babynames, <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
+<span id="cb98-2"><a href="data-wrangling-1.html#cb98-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb98-3"><a href="data-wrangling-1.html#cb98-3"></a><span class="st">  </span><span class="kw">group_by</span>(name, decade) <span class="op">%&gt;%</span></span>
+<span id="cb98-4"><a href="data-wrangling-1.html#cb98-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_decade =</span> <span class="kw">mean</span>(n))</span></code></pre></div>
+<p>The reason that this function is called a pipe is because it ‘pipes’ the data through to the next function. When you wrote the code previously, the first argument of each function was the dataset you wanted to work on. When you use pipes it will automatically take the data from the previous line of code so you don’t need to specify it again.</p>
+<div class="try">
+<p>
+When learning to code it can be a useful practice to read your code ‘out loud’ in full sentences to help you understand what it is doing. You can read the code above as “create a new variable called decade AND THEN only keep the names Emily, Kathleen, Alexandra and Beverly that belong to female babies AND THEN group the dataset by name and decade AND THEN calculate the mean number of babies with each name per decade.” Try doing this each time you write a new bit of code.
+</p>
+</div>
+<p>Some people find pipes a bit tricky to understand from a conceptual point of view, however, it’s well worth learning to use them as when your code starts getting longer they are much more efficient and mean you have to write less code which is always a good thing!</p>
+</div>
+<div id="finished-4" class="section level2">
+<h2><span class="header-section-number">7.12</span> Finished!</h2>
+<p>That was a long chapter but remember, you don’t need to memorise all of this code. You just need to know where to look for help.</p>
 
+</div>
 </div>
 <div class="psyteachr_footer">
   
@@ -492,8 +921,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-
-<a href="getting-to-know-the-data.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="b-lab-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="b-lab-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

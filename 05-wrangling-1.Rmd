@@ -1,31 +1,14 @@
----
-title: "03-lab03"
-output:
-  html_document:
-    css: webex.css
-    includes:
-      after_body: webex.js
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-library(webex)
-```
-
-# 1A: Lab 3
+# Data wrangling 1
 
 ```{block, type = "info"}
 
-In lab 2, you were introduced to the R environment (e.g. setting your working directory and the difference between .R and .Rmd files). You also began working with messy data by having a go at loading in datasets using `read_csv()`, joined files together using `inner_join()`, and pulled out variables of interest using `select()`. 
+So far you have been introduced to the R environment (e.g. setting your working directory and the difference between .R and .Rmd files). You also began working with messy data by having a go at loading in datasets using `read_csv()`, joined files together using `inner_join()`, and pulled out variables of interest using `select()`. 
 
-In lab 3, we'll be moving on to becoming familiar with the Wickham Six and the functionality of the R package, `tidyverse`! 
+In this chapter, we'll be moving on to becoming familiar with the Wickham Six and the functionality of the R package, `tidyverse`! 
 
 ```
 
-## Pre-class activities
-
-Data comes in lots of different formats. One of the most common formats is that of a two-dimensional table (the two dimensions being rows and columns).  Usually, each row stands for a separate observation (e.g. a subject), and each column stands for a different variable (e.g. a response, category, or group). A key benefit of tabular data is that it allows you to store different types of data-numerical measurements, alphanumeric labels, categorical descriptors-all in one place.
+Data comes in lots of different formats. One of the most common formats is that of a two-dimensional table (the two dimensions being rows and columns).  Usually, each row stands for a separate observation (e.g. a subject), and each column stands for a different variable (e.g. a response, category, or group). A key benefit of tabular data (i.e., data in a table) is that it allows you to store different types of data-numerical measurements, alphanumeric labels, categorical descriptors-all in one place.
 
 It may surprise you to learn that scientists actually spend far more time cleaning and preparing their data than they spend actually analysing it. This means completing tasks such as cleaning up bad values, changing the structure of tables, merging information stored in separate tables, reducing the data down to a subset of observations, and producing data summaries. Some have estimated that up to 80% of time spent on data analysis involves such data preparation tasks (Dasu & Johnson, 2003)!
 
@@ -33,13 +16,13 @@ Many people seem to operate under the assumption that the only option for data c
 
 In short, you will not thrive as a psychologist if you do not learn some key data wrangling skills. Although every dataset presents unique challenges, there are some systematic principles you should follow that will make your analyses easier, less error-prone, more efficient, and more reproducible.
 
-In this lesson you will see how data science skills will allow you to efficiently get answers to nearly any question you might want to ask about your data. By learning how to properly make your computer do the hard and boring work for you, you can focus on the bigger issues.
+In this chapter you will see how data science skills will allow you to efficiently get answers to nearly any question you might want to ask about your data. By learning how to properly make your computer do the hard and boring work for you, you can focus on the bigger issues.
 
-### Tidyverse
+## Tidyverse
 
 Tidyverse (https://www.tidyverse.org/) is a collection of R packages created by world-famous data scientist Hadley Wickham. 
 
-Tidyverse contains six core packages:  `dplyr`, `tidyr`, `readr`, `purrr`,  `ggplot2`, and `tibble`. Last week when you typed `library(tidyverse)` into R, you will have seen that it loads in all of these packages in one go. Within these six core packages, you should be able to find everything you need to wrangle and visualise your data. 
+Tidyverse contains six core packages:  `dplyr`, `tidyr`, `readr`, `purrr`,  `ggplot2`, and `tibble`. In the last chapter when you typed `library(tidyverse)` into R, you will have seen that it loads in all of these packages in one go. Within these six core packages, you should be able to find everything you need to wrangle and visualise your data. 
 
 In this chapter, we are going to focus on the `dplyr` package, which contains six important functions: 
 
@@ -52,21 +35,21 @@ In this chapter, we are going to focus on the `dplyr` package, which contains si
 
 These six functions are known as ’single table verbs’ because they only operate on one table at a time. Although the operations of these functions may seem very simplistic, it’s amazing what you can accomplish when you string them together: Hadley Wickham has claimed that 90% of data analysis can be reduced to the operations described by these six functions. 
 
-Again, we don't expect you to remember everything in this pre-class - the important thing is that you know where to come and look for help when you need to do particular tasks. Being good at coding really is just being good at knowing what to copy and paste. 
+Again, we don't expect you to remember everything in this chapter - the important thing is that you know where to come and look for help when you need to do particular tasks. Being good at coding really is just being good at knowing what to copy and paste. 
 
 
-### The `babynames` database
+## The `babynames` database
 
-To demonstrate the power of the six `dplyr` verbs, we will use them to work with the babynames data from the `babynames` package. The babynames dataset has historical information about births of babies in the U.S.
+To demonstrate the power of the six `dplyr` verbs, we will use them to work with the babynames data from the `babynames` package (we will return to the AHI and CES-D dataset in the next chapter!). The babynames dataset has historical information about births of babies in the U.S.
 
-### Activity 1: Set-up
+## Activity 1: Set-up
 
-Do the following. If you need help, consult the Lab 2 materials.
+Do the following. If you need help, consult Programming Basics and Intro to R.
 
-* Download the <a href="files/stub-3.1.zip" download>`lab 3 pre-class Markdown`</a>, extract the file and then move it in to your Data Skills folder.
+* Download the <a href="files/stub-wrangling-1.zip" download>`Data Wrangling 1 Markdown`</a>, extract the file and then move it in to your Data Skills folder.
 * Open R Studio and ensure the environment is clear.  
-* Open the `stub-3.1.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
-* If you are working on your own computer, install the package `babynames`. Remember, **never install packages if you are working on a university computer**. The university computers will already have this package installed.  
+* Open the `stub-wrangling-1.Rmd` file and ensure that the working directory is set to your Data Skills folder.    
+* If you are working on your own computer, install the package `babynames`. If you are working on the server or a university computer, this package will already be installed.
 * Type and run the code that loads the packages `tidyverse` and `babynames` using `library()` in the Activity 1 code chunk.  
 
 ```{r, message=FALSE, warning=FALSE}
@@ -77,7 +60,7 @@ library(babynames)
 ```
 
 
-### Activity 2: Look at the data
+## Activity 2: Look at the data
 
 The package `babynames` contains an object of the same name that contains all the data about babynames. 
 
@@ -103,11 +86,11 @@ variable|type             |description
 
 The first row of the table tells us that in the year 1880, there were 7065 baby girls born in the U.S. who were given the name Mary, and this accounted for about 7% of all baby girls.
 
-### Activity 3: Data visualisation
+## Activity 3: Data visualisation
 
 * Type the code below into a new code chunk and run it. 
 
-We're going to cover how to write visualisation code in Lab so still don't worry about not understanding the plot code yet. The point is show you how much you can accomplish with very little code. The code creates a graph showing the popularity of four girl baby names - Alexandra, Beverly, Emily, and Kathleen - from 1880 to 2014.  You should see Figure \@ref(fig:babynames-plot) appear, which shows the proportion of each name across different years -  you can plug in different names if you like and see how the plot changes.
+We're going to cover how to write visualisation code in the next chapter so still don't worry about not understanding the plot code yet. The point is show you how much you can accomplish with very little code. The code creates a graph showing the popularity of four girl baby names - Alexandra, Beverly, Emily, and Kathleen - from 1880 to 2014.  You should see Figure \@ref(fig:babynames-plot) appear, which shows the proportion of each name across different years.
 
 ```{r babynames-plot, fig.cap= "Proportion of four baby names from 1880 to 2014"}
 
@@ -119,11 +102,14 @@ ggplot(data = dat,aes(x = year,y = prop, colour=name))+
 
 ```
 
-### Activity 4: Selecting variables of interest
+* Change the names to your own examples and see how the plot changes. You can also change the sex from "F" to "M". Post the photos of your new plots on the Teams Data Skills channel.
+* Because in most countries assigned sex at birth is binary, there is no data on intersex, trans or non-binary names. In lieu of that, here's the [Wikipedia page about gender-neutral names and naming laws](https://en.wikipedia.org/wiki/Unisex_name) around the world which will hopefully make you question why on earth we ascribe someone's entire gender identity to a bunch of sounds and letters we use to label them. 
+
+## Activity 4: Selecting variables of interest
 
 There are two numeric measurements of name popularity, `prop` (the proportion of all babies with each name) is probably more useful than `n`  (total number of babies with that name), because it takes into account that different numbers of babies are born in different years. 
 
-Just like in Lab 2, if we wanted to create a dataset that only includes certain variables, we can use the `select()` function from the `dplyr` package. Run the below code to only select the columns `year`, `sex`, `name` and `prop`.  
+Just like in Loading Data, if we wanted to create a dataset that only includes certain variables, we can use the `select()` function from the `dplyr` package. Run the below code to only select the columns `year`, `sex`, `name` and `prop`.  
 
 ```{r}
 select(.data = babynames, # the object you want to select variables from
@@ -145,7 +131,7 @@ new_dat <- select(.data = babynames, -n)
 
 ```
 
-### Activity 5: Arranging the data
+## Activity 5: Arranging the data
 
 The function `arrange()` will sort the rows in the table according to the columns you supply. Try running the following code:
 
@@ -155,7 +141,6 @@ arrange(.data = babynames, # the data you want to sort
         name) # the variable you want to sort by
 
 ```
-
 
 The data are now sorted in ascending alphabetical order by name. The default is to sort in ascending order. If you want it descending, wrap the name of the variable in the `desc()` function. For instance, to sort by year in descending order, run the following code:
 
@@ -173,7 +158,7 @@ arrange(babynames, desc(year), desc(sex), desc(prop))
 
 ```
 
-### Activity 6: Using filter to select observations
+## Activity 6: Using filter to select observations
 
 We have previously used `select()` to select certain variables or columns, however, frequently you will also want to select only certain observations or rows, for example, only babies born after 1999, or only babies named "Mary". You do this using the verb `filter()`. The `filter()` function is a bit more involved than the other verbs, and requires more detailed explanation, but this is because it is also extremely powerful. 
 
@@ -242,19 +227,19 @@ You can include as many expressions as you like as additional arguments to `filt
 
 **Remember that this section exists. It will contain a lot of the answers to problems you face when wrangling data!**
 
-### Activity 7: Creating new variables
+## Activity 7: Creating new variables
 
 Sometimes we need to create a new variable that doesn’t exist in our dataset. For instance, we might want to figure out what decade a particular year belongs to. To create new variables, we use the function `mutate()`. Note that if you want to save this new column, you need to save it to an object. Here, you are mutating a new column and attaching it to the `new_dat` object you created in Activity 4.
 
 ```{r}
-new_dat <- mutate(.data = babynames, # the tibble you want to add a colum to
+new_dat <- mutate(.data = babynames, # the tibble you want to add a column to
                   decade = floor(year/10) *10) # new column name = what you want it to contain
 new_dat
 ```
 
 In this case, you are creating a new column decade  which has the decade each year appears in. This is calculated using the command `decade = floor(year/10)*10`.
 
-### Activity 8: Grouping and summarising
+## Activity 8: Grouping and summarising
 
 Most quantitative analyses will require you to summarise your data somehow, for example, by calculating the mean, median or a sum total of your data. You can perform all of these operations using the function `summarise()`.
 
@@ -302,7 +287,7 @@ summarise(group_new_dat,
           median_year = median(n))
 ```
 
-### Activity 9: Pipes
+## Activity 9: Pipes
 
 The final activity for this chapter essentially repeats what we've already covered but in a slightly different way. In the previous activities, you created new objects with new variables or groupings and then you called `summarise()` on those new objects in separate lines of code. As a result, you had multiple objects in your environment pane and you need to make sure that you keep track of the different names. 
 
@@ -318,7 +303,6 @@ pipe_summary <- mutate(babynames, decade = floor(year/10) *10) %>%
   summarise(mean_decade = mean(n))
 ```
 
-
 The reason that this function is called a pipe is because it 'pipes' the data through to the next function. When you wrote the code previously, the first argument of each function was the dataset you wanted to work on. When you use pipes it will automatically take the data from the previous line of code so you don't need to specify it again.
 
 ```{block, type="try"}
@@ -327,198 +311,6 @@ When learning to code it can be a useful practice to read your code 'out loud' i
 
 Some people find pipes a bit tricky to understand from a conceptual point of view, however, it's well worth learning to use them as when your code starts getting longer they are much more efficient and mean you have to write less code which is always a good thing! 
 
-#### Finished!
+## Finished!
 
-That was a long pre-class but remember, you don't need to memorise all of this code. You just need to know where to look for help. 
-
-## In-class activities
-
-### Activity 1: Set-up
-
-Do the following. If you need help, consult the Lab 2 materials.
-
-* Download the <a href="files/stub-3.2.zip" download>`lab 3 in-class Markdown`</a>, extract the file and then move it in to your Data Skills folder.
-* Open R Studio and ensure the environment is clear.  
-* Open the `stub-3.2.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).   
-* Type and run the below code to load the `tidyverse` package and to load in the data files. 
-
-```{r T1a, eval = FALSE}
-
-library(tidyverse) 
-
-dat <- read_csv('ahi-cesd.csv')
-pinfo <- read_csv('participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by= c("id", "intervention"))
-
-```
-
-
-```{r T1, warning = FALSE, message = FALSE, echo = FALSE}
-
-library(tidyverse) 
-
-dat <- read_csv('files/ahi-cesd.csv')
-pinfo <- read_csv('files/participant-info.csv')
-all_dat <- inner_join(dat, pinfo, by = c("id","intervention"))
-
-```
-
-Now let's start working with our `tidyverse` verb functions...
-
-### Activity 2: Select  
-
-Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create a variable called ```summarydata```. 
-
-```{r, T2}
-summarydata <- select(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)
-```
-
-******
-
-**Pause here and interpret the above code and output**
-
-* Discuss in pairs or groups how you would translate this code into English 
-* What columns have been removed from the data? 
-
-******
-
-### Activity 3: Arrange  
-
-Arrange the data in the variable created above (```summarydata```) by ahiTotal with lowest score first. 
-```{r, T3}
-ahi_asc <- arrange(summarydata, by = ahiTotal)
-```
-
-******
-
-* How could you arrange this data in **descending** order (highest score first)?  
-
-`r hide("Solution")`
-```{r, eval = FALSE}
-arrange(summarydata, by = desc(ahiTotal))
-```
-`r unhide()`
-
-* What is the smallest ahiTotal score? `r fitb("32")`
-
-* What is the largest ahiTotal score? `r fitb("114")`
-
-******
-
-### Activity 4: Filter  
-
-Filter the data ```ahi_asc``` by taking out those who are over 65 years of age.  
-```{r, T4}
-age_65max <- filter(ahi_asc, age < 65)
-```
-
-******
-
-* What does `filter()` do? 
-
-`r mcq(c("splits a column into multiple columns", "transforms existing columns", "takes multiple columns and collapses them together", answer = "removes information that we are not interested in"))`
-
-* How many observations are left in `age_65max` after running `filter()`? `r fitb("939")`
-
-******
-
-### Activity 5: Summarise  
-
-Then, use summarise to create a new variable ```data_median```, which calculates the median ahiTotal score in this grouped data and assign it a table head called ```median_score```.
-```{r T5}
-data_median <- summarise(age_65max, median_score = median(ahiTotal))
-```
-
-******
-
-* What is the median score? `r fitb("74")`
-
-* Change the above code to give you the **mean score**. What is the mean score to 2 decimal places? `r fitb("72.48")`
-
-`r hide("Solution")`
-```{r, eval = FALSE}
-summarise(age_65max, mean_score = mean(ahiTotal))
-```
-`r unhide()`
-
-******
-
-### Activity 6: Group_by  
-
-Use mutate to create a new column called `Happiness_Category` in `age_65max` which categorises participants based on whether they score above the median `ahiTotal` score for all participants. 
-
-Then, group the data stored in  ```age_65max``` by `Happiness_Category`, and store it in an object named ```happy_dat```. 
-
-Finally, use summarise to calculate the median `cesdTotal` score for participants who scored above and below the median `ahiTotal` score and save it in a new object named `data_median_group`.
-
-```{r T6}
-age_65max <- mutate(age_65max, Happiness_Category = (ahiTotal > 74))
-happy_dat <- group_by(age_65max, Happiness_Category)
-
-data_median_group <- summarise(happy_dat, median_score = median(cesdTotal))
-
-```
-
-******
-
-**Pause here and interpret the above code and output**
-
-* What does `group_by()` do? 
-
-`r mcq(c("provides summary statistics of an existing dataframe","organises information in ascending or descending order", "transforms existing columns", answer = "groups data frames based on a specific column so that all later operations are carried out on a group basis"))`
-
-* How would you change the code to group by education rather than `Happiness_Category`?
-
-`r hide("Solution")`
-```{r, eval = FALSE}
-group_by(age_65max, educ)
-```
-`r unhide()`
-
-******
-
-### Activity 7: Data visualisation
-
-Copy, paste and run the below code into a new code chunk to create a plot of depression scores grouped by income level using the `age_65max` data.
-
-```{r, eval = FALSE}
-ggplot(age_65max, aes(x = as.factor(income), y = cesdTotal, fill = as.factor(income))) +
-  geom_violin(trim = FALSE, show.legend = FALSE, alpha = .6) +
-  geom_boxplot(width = .2, show.legend = FALSE, alpha = .5) +
-  scale_fill_viridis_d(option = "D") +
-  scale_x_discrete(name = "Income Level", labels = c("Below Average", "Average", "Above Average")) +
-  scale_y_continuous(name = "Depression Score")
-```
-
-* Which income group has the highest median depression scores? `r mcq(c(answer = "Below Average", "Average", "Above Average"))`
-
-* Which group has the highest density of scores at any one point? `r mcq(c("Below Average", "Average", answer = "Above Average"))`
-
-`r hide("Explain This Answer")`
-```{r,echo = FALSE, results='asis'}
-cat("Density is represented by the curvy line around the boxplot that looks a little bit like a (drunk) violin. The fatter the violin, the more data points there are at any one point. This means that in the above plot, the Above Average group has the highest density because this has the widest violin, i.e., there are lots of people in the Above Average income group with a score of about 5.")
-```
-`r unhide()`
-
-* Is income group a between-subject or within-subject variable? `r mcq(c(answer = "Between-subjects", "Within-subjects"))`
-
-`r hide("Explain This Answer")`
-```{r,echo = FALSE, results='asis'}
-cat("Between-subjects designs are where different participants are in different groups. Within-subject designs are when the same participants are in all groups. Income is an example of a between-subject variable because participants can only be in one grouping level of the independent variable")
-```
-`r unhide()`
-
-## Activity 8: Make R your own
-
-Finally, you can customise how R Studio looks to make it feel more like your own personal version. Click `Tools` - `Global Options` - `Apperance`. You can change the default font, font size, and general apperance of R Studio, including using dark mode. Play around with the settings and see which one you prefer - you're going to spend a lot of time with R, it might as well look nice!
-
-
-#### Finished!
-
-Well done! As a final step, try knitting the file to HTML. Remember to save your Markdown in your Lab 3 folder and make a note of any mistakes you made and how you fixed them. 
-
-## Homework
-
-You can download all the R homework files and Assessment Information you need from the Lab Homework section of the [Psych 1A Moodle](https://moodle.gla.ac.uk/course/view.php?id=16358). 
-
-You should also begin to write your essay. 
+That was a long chapter but remember, you don't need to memorise all of this code. You just need to know where to look for help.
