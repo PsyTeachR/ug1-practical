@@ -16,11 +16,10 @@ In this chapter you will learn how to load the packages required to work with ou
 
 Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter \@ref(ref1): 
 
-* You should have already download the data files as part of Getting to Know the Data, however, here they are again if you need them: <a href="files/1a_data.zip" download>`Psych 1A Data Files`</a>. Extract the files and then move them in to your Data Skills folder.
-* Download the <a href="files/stub-loading-data.zip" download>`Loading Data Markdown File`</a>, extract it, and move it to your Data Skills folder.
+* You should have already download the data files as part of Getting to Know the Data, however, here they are again if you need them: <a href="files/1a_files.zip" download>`Psych 1A Data Files`</a>. Extract the files and then move them in to your Data Skills folder.
 * Open R and ensure the environment is clear.
 * Set the working directory to your Data Skills folder.  
-* Open the `stub-loading-data.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
+* Open the `stub-loading-data` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
 
 ## Activity 2: Load in the package
 

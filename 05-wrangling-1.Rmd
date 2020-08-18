@@ -46,7 +46,6 @@ To demonstrate the power of the six `dplyr` verbs, we will use them to work with
 
 Do the following. If you need help, consult Programming Basics and Intro to R.
 
-* Download the <a href="files/stub-wrangling-1.zip" download>`Data Wrangling 1 Markdown`</a>, extract the file and then move it in to your Data Skills folder.
 * Open R Studio and ensure the environment is clear.  
 * Open the `stub-wrangling-1.Rmd` file and ensure that the working directory is set to your Data Skills folder.    
 * If you are working on your own computer, install the package `babynames`. If you are working on the server or a university computer, this package will already be installed.

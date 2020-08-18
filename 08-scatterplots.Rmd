@@ -5,7 +5,6 @@ In this chapter we will work with our data to generate a plot of two variables f
 ### Activity 1: Set-up
 
 * Open R Studio and ensure the environment is clear.  
-* Download the <a href="files/stub-scatterplot.zip" download>`Scatterplot Markdown file`</a>, extract the file and then move it in to your Data Skills folder.  
 * Open the `stub-scatterplot.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (`participant-info.csv` and `ahi-cesd.csv`) are in your working directory (you should see them in the file pane).  
 * Look through your previous work to find the code that loads the `tidyverse`, reads in the data files and creates an object called `all_dat` that joins the two objects `dat` and `pinfo`.  
 

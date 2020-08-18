@@ -2,7 +2,6 @@
 
 ## Activity 1: Set-up
 
-* Download the <a href="files/stub-wrangling-2.zip" download>`Wrangling 2 Markdown`</a>, extract the file and then move it in to your Data Skills folder.
 * Open R Studio and ensure the environment is clear.  
 * Open the `stub-wrangling-2.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (`participant-info.csv` and `ahi-cesd.csv`) are in your working directory (you should see them in the file pane).   
 * Type and run the below code to load the `tidyverse` package and to load in the data files. 
