@@ -43,7 +43,7 @@ The files are stored in a **zip file"". A zip file is a folder that contains fil
 
 
 ```{r, echo=FALSE, fig.cap="Unzipping a folder", out.width="75%", out.height="75%"}
-knitr::include_graphics(path="./images/zipping.gif")
+knitr::include_graphics(path="./images/zip.gif")
 ```
 
 ## Activity 3

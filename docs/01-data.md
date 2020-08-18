@@ -43,7 +43,7 @@ The files are stored in a **zip file"". A zip file is a folder that contains fil
 
 
 <div class="figure" style="text-align: center">
-<img src="./images/zipping.gif" alt="Unzipping a folder" width="75%" height="75%" />
+<img src="./images/zip.gif" alt="Unzipping a folder" width="75%" height="75%" />
 <p class="caption">(\#fig:unnamed-chunk-1)Unzipping a folder</p>
 </div>
 
