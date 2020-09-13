@@ -14,13 +14,13 @@ There are two ways you can use R for psychology. First, you can use a online ver
 
 The advantage of using the R server is that you do not need to install anything on your machine and all of the extra packages and functions you need will already be installed so you will have fewer potential technical issues. The advantage to installing R on your laptop is that you do not need to be connected to the internet to use it, and it is easier to save and manage your files. Unless you do not have reliable access to the internet **we strongly recommend that you use the R server**.
 
-With the exception of how they save files, both versions are identical and We will show you how to use both in this book.
+With the exception of how they save files, both versions are identical and we will show you how to use both in this book.
 
 ### R server
 
 To access the R server, [click here](https://rstudio.psy.gla.ac.uk/). Please note that the R server is only for use by students and staff in the School of Psychology and Institute for Neuroscience and Psychology. Sign in to the R server with your usual GUID and password.
 
-### Installing a R on your computer
+### Installing R on your computer
 
 To use R on your computer you need to install two piece for software. First, you need to [download and install R](https://cloud.r-project.org/) and second, you need to [download and install R Studio](https://rstudio.com/products/rstudio/download/#download). If you have any problems with the installation you can ask for help on Teams or attend one of the GTA support sessions, however, to reiterate, we strongly recommend that unless you need to install a local copy that you use the server.
 
@@ -35,6 +35,10 @@ R Studio has a console that you can try out code in (appearing as the bottom lef
 
 You will learn more about how to use the features included in R Studio throughout this course, however, we highly recommend watching [RStudio Essentials 1](https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/) from the R Studio team. The video lasts ~30 minutes and gives a tour of the main parts of R Studio. 
 
+### Console vs. scripts
+
+When you first open up R Studio you won't see a script like above, there will just be a single pane on the left, which is the console. You can write code in the console to test it out, but it won't save anywhere. For this chapter, we'll use the console to show you some simple code examples but moving forward you'll save your code in a script file, and you'll see the extra pane appear.
+
 ### Functions and arguments
 
 **Functions** in R execute specific tasks and normally take a number of **arguments** (if you're into linguistics you might want to think as these as verbs that require a subject and an object). You can look up all the arguments that a function takes by using the help documentation by using the format `?function`. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.
@@ -43,7 +47,7 @@ As an example, let’s look at the help documentation for the function `rnorm()`
 
 ### Activity 1
 
-* Open up R Studio (server or on your machine) and in the console, type the following code:  
+* Open up R Studio (either on the server or on your machine) and in the console, type the following code:  
 
 
 ```r
@@ -144,6 +148,10 @@ install.packages("tidyverse")
 
 You only need to install a package once, however, each time you start R you need to load the packages you want to use, in a similar way that you need to install an app on your phone once, but you need to open it every time you want to use it.
 
+<div class="danger">
+<p>If you get an error message that says something like “WARNING: Rtools is required to build R packages” you may need to download and install an extra bit of software called <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a> (this is one of the many reasons why using the server can be easier).</p>
+</div>
+
 To load packages we use the function `library()`. Typically you would start any analysis script by loading all of the packages you need, but we will come back to that in the next chapter.
 
 ### Activity 4: Load the tidyverse
@@ -212,7 +220,7 @@ A large part of your coding will involve creating and manipulating objects. Obje
 name <- "emily"
 age <- 16 + 19 
 today <-Sys.Date()
-new_year <- as.Date("2020-01-01")
+new_year <- as.Date("2021-01-01")
 data <- rnorm(n = 10, mean = 15, sd = 3)
 ```
 
@@ -221,7 +229,7 @@ data <- rnorm(n = 10, mean = 15, sd = 3)
 <p class="caption">(\#fig:img-objects-enviro)Objects in the environment</p>
 </div>
 
-Note that in these examples, `name`,`age`, and `new_year` would always contain the values `emily`, `35`, and the date of New Year's Day 2020, however, `today` will draw the date from the operating system and `data` will be a randomly generated set of data so the values of these objects will not be static.
+Note that in these examples, `name`,`age`, and `new_year` would always contain the values `emily`, `35`, and the date of New Year's Day 2021, however, `today` will draw the date from the operating system and `data` will be a randomly generated set of data so the values of these objects will not be static.
 
 As a side note, if you ever have to teach programming and statistics, don't use your age as an example because every time you have to update your teaching materials you get a reminder of the fragility of existence and your advancing age. 
 
@@ -236,7 +244,7 @@ mean(data)
 
 ```
 ## [1] 45
-## Time difference of -256 days
+## Time difference of 110 days
 ## [1] 17.66644
 ```
 
@@ -289,7 +297,7 @@ To do this, click 'Session - Restart R'. Remember that you will then need to loa
 <p class="caption">(\#fig:img-kitteh)The truth about programming</p>
 </div>
 
-Getting good at programming really means getting good trying stuff out,  searching for help online, and finding examples of code to copy. If you are having difficulty with any of the exercises contained in this book then you can ask for help on Slack or Moodle, however, learning to problem-solve effectively is a key skill that you need to develop throughout this course. 
+Getting good at programming really means getting good trying stuff out,  searching for help online, and finding examples of code to copy. If you are having difficulty with any of the exercises contained in this book then you can ask for help on Teams, however, learning to problem-solve effectively is a key skill that you need to develop throughout this course. 
 
 * Use the help documentation. If you're struggling to understand how a function works, remember the `?function` command.
 * If you get an error message, copy and paste it in to Google - it's very likely someone else has had the same problem.

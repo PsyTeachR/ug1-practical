@@ -12,6 +12,10 @@ As part of your skill development, it is important that you work with data so th
 
 In this chapter you will learn how to load the packages required to work with our data. You'll then load the data into R Studio before getting it organised into a sensible format that relates to our research question. If you can't remember what packages are, go back and revise \@ref(packages). 
 
+### Stub files
+
+When you downloading the data in week 1, you will have noticed that there were five Rmd files that all started with `stub-`. These stub files are set-up with code chunks for each activity of the chapter to help make your life a a bit easier as you are first learning to code. We will take these away in Psych 1B but for this semester, you don't need to set up your own file, just open the relevant stub file for each chapter.
+
 ## Activity 1: Set-up
 
 Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter \@ref(ref1): 

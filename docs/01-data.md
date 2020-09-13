@@ -31,9 +31,9 @@ When you get the correct answer, the answer box will turn green. Sometimes this 
 
 ## Activity 2
 
-<a href="files/1a_files.zip" download>Download the files for Psych 1A here</a>
+<a href="files/Data Skills 1A.zip" download>Download the files for Psych 1A here</a>
 
-The files are stored in a **zip file"". A zip file is a folder that contains files that have been compressed to make the file size smaller (like vacuum packed food) and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extract them.
+The files are stored in a **zip file**. A zip file is a folder that contains files that have been compressed to make the file size smaller (like vacuum packed food) and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extract them.
 
 1. If you haven't already, make a folder on your computer for Psych 1A.
 2. Click on the above link to download the folder and save it in your Psych 1A folder. If your computer does not ask you where to save the file, chances are it has saved it in your Downloads folder. If this is the case, once it has downloaded go to your downloads folder and then move it to your Psych 1A folder
@@ -41,15 +41,9 @@ The files are stored in a **zip file"". A zip file is a folder that contains fil
 4. You will be asked to select a location to save the unzipped files. Assuming that you followed step 2, the default option should be your Psych 1A folder
 5. You can now use the unzipped files. Save the zip folder for now, we're going to use it again in chapter 3.
 
-
-<div class="figure" style="text-align: center">
-<img src="./images/zip.gif" alt="Unzipping a folder" width="75%" height="75%" />
-<p class="caption">(\#fig:unnamed-chunk-1)Unzipping a folder</p>
-</div>
-
 ## Activity 3
 
-Now that you've unzipped the folder, you should see that you have eight files. Three of these files are the data from Wodworth et al. -  `code-book.pdf`, `ahi-cesd.csv` and `participant-info.csv`. Open and review each of these files and use the code book to figure out what the data in each variable (column) represents.
+Now that you've unzipped the folder, you should see that you have eight files. Three of these files are the data from Woodworth et al. -  `code-book.pdf`, `ahi-cesd.csv` and `participant-info.csv`. Open and review each of these files and use the code book to figure out what the data in each variable (column) represents.
 
 * How many variables/columns data does `participant-info.csv` have?
 
