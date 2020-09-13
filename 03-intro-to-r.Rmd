@@ -2,29 +2,22 @@
 
 There are eight activities in total for this chapter, but don't worry, they are broken down into very small steps!
 
-### Activity 1: Create the working directory 
+### Activity 1: Upload data files to the server
 
-If you want to load data into R, or save the output of what you've created (which you almost always will want to do), you first need to tell R where the **working directory** is. All this means is that we tell R where the files we need (such as raw data) are located and where we want to save any files you have created. Think of it just like when you have different subjects, and you have separate folders for each topic e.g. biology, history and so on. When working with R, it's useful to have all the data sets and files you need in one folder. 
+The main disadvantage to using the R server is that you will need to upload and download any files you are working on to and from the server (if you are using a local installation on your laptop you can skip this step).
 
-We recommend making a new folder called "Psych 1A" with sub-folders for the academic writing and data skills and saving any slides, activities, data, scripts, and homework files in these folders. We suggest that you create these folders on the M: drive. This is your personal area on the University network that is safe and secure so it is much better than flashdrives or desktops. 
+In [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) you downloaded the data files we will be using for this semester and you created a folder structure on your computer. In order to use these files, we need to copy them to the R server.
 
-
-```{r img-folders, echo=FALSE, fig.cap="Folder structure"}
-
-knitr::include_graphics("images/folders.gif")
-
-```
-
-* Choose a location for your lab work and then create the necessary folders.
-
-```{block, type="warning"}
-Whatever you do, do NOT call the folder you store your R work in "R". You don't have to call it Data Skills, but if you call it simply R then R will have an existential crisis about saving into itself and you will find that you have problems reading and saving your files. 
-```
+* In the Files pane, click `New folder` and call it Psych 1A.
+* Click `Upload` then `Browse`and choose the Psych 1A folder that you just created.
+* Click `Choose file` and go and find the **zip folder** that you downloaded in [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) (if you deleted it you can download it again). Using the zip folder means you can upload files one at a time.
+* Once you have uploaded the zip file, the server will automatically unzip the files and you should be able to see all the files you have on your computer.
 
 ### Activity 2: Set the working directory
 
-Once you have created your folders, open R Studio. To set the working directory click `Session` -> `Set Working Directory` -> `Choose Directory` and then select the Data Skills folder as your working directory. 
+Once you have uploaded the data, set the working directory by clicking `Session` -> `Set Working Directory` -> `Choose Directory` and then select the Data Skills 1A folder as your working directory. 
 
+You need to do this step regardless of whether you are working from the server or from your laptop. This means that R knows which folder to look in for the data and scripts you might want to use.
 
 ### R Markdown for data skills work and homework assignments
 
@@ -68,7 +61,6 @@ knitr::include_graphics("images/new-chunk.png")
 ```
 
 What you have created is a **code chunk**. In R Markdown, anything written in the white space is regarded as normal text, and anything written in a grey code chunk is assumed to be code. This makes it easy to combine both text and code in one document.
-
 
 ```{block, type="warning"}
 
@@ -150,4 +142,6 @@ Before we finish, there are a few final things to note about knitting that will 
 And you're done! On your very first time using R you've not only written functioning code but you've written a reproducible output! You could send someone else your R Markdown document and they would be able to produce exactly the same HTML document as you, just by pressing knit.
 
 The key thing we want you to take away from this chapter is that R isn't scary. It might be very new to a lot of you, but we're going to take you through it step-by-step. You'll be amazed at how quickly you can start producing professional-looking data visualisations and analysis.
+
+If you're using the server, we recommend that you download any files that you have been working on so that you have a backup.
 

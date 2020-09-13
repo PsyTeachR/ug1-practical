@@ -1,7 +1,6 @@
 ---
-title: "Lab 2"
+title: "Wrangling 1 stub"
 author: "GUID"
-date: "01/09/2019"
 output: html_document
 ---
 
@@ -10,6 +9,18 @@ output: html_document
 * You can add additional code chunks if needed.
 * Be careful not to delete or add any backticks (```) or to change the chunk name (e.g., a1)
 
+
+## Activity 1
+
+```{r a1}
+
+```
+
+## Activity 2
+
+```{r a2}
+
+```
 
 ## Activity 3
 
@@ -44,6 +55,12 @@ output: html_document
 ## Activity 8
 
 ```{r a8}
+
+```
+
+## Activity 9
+
+```{r a9}
 
 ```
 

@@ -31,25 +31,25 @@ When you get the correct answer, the answer box will turn green. Sometimes this 
 
 ## Activity 2
 
-<a href="files/1a_data.zip" download>Download the data files here</a>
+<a href="files/1a_files.zip" download>Download the files for Psych 1A here</a>
 
 The files are stored in a **zip file"". A zip file is a folder that contains files that have been compressed to make the file size smaller (like vacuum packed food) and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extract them.
 
-1. If you haven't already, make a folder on your computer for Psych 1A and then make two additional sub-folders called "Data Skills" and "Academic Writing".
-2. Click on the above link to download the folder and select to save the zip file in your Data Skills folder.
-3. Navigate to the zip file and open it. You will see all the files it contains but don't use these - click "Extract all" on the top ribbon.
-4. You will be asked to select a location to save the unzipped files. Normally the default location it suggests will be the same folder and so you can just click "Extract".
-5. You can now delete the zip file and use the unzipped files. This is a really important step - if you use the compressed files your code may not work properly.
+1. If you haven't already, make a folder on your computer for Psych 1A.
+2. Click on the above link to download the folder and save it in your Psych 1A folder. If your computer does not ask you where to save the file, chances are it has saved it in your Downloads folder. If this is the case, once it has downloaded go to your downloads folder and then move it to your Psych 1A folder
+3. Navigate to the zip file and open it. You will see all the files it contains but **don't use these** - click **"Extract all"** on the top ribbon.
+4. You will be asked to select a location to save the unzipped files. Assuming that you followed step 2, the default option should be your Psych 1A folder
+5. You can now use the unzipped files. Save the zip folder for now, we're going to use it again in chapter 3.
 
 
 <div class="figure" style="text-align: center">
-<img src="./images/zipping.gif" alt="Unzipping a folder" width="75%" height="75%" />
+<img src="./images/zip.gif" alt="Unzipping a folder" width="75%" height="75%" />
 <p class="caption">(\#fig:unnamed-chunk-1)Unzipping a folder</p>
 </div>
 
 ## Activity 3
 
-Now that you've unzipped the folder, you should see that you have three files, `code-book.pdf`, `ahi-cesd.csv` and `participant-info.csv`. Open and review each of these files and use the code book to figure out what the data in each variable (column) represents.
+Now that you've unzipped the folder, you should see that you have eight files. Three of these files are the data from Wodworth et al. -  `code-book.pdf`, `ahi-cesd.csv` and `participant-info.csv`. Open and review each of these files and use the code book to figure out what the data in each variable (column) represents.
 
 * How many variables/columns data does `participant-info.csv` have?
 
@@ -61,3 +61,4 @@ Now that you've unzipped the folder, you should see that you have three files, `
 
 * What does a response of 1 for sex mean? <select class='solveme' data-answer='["female"]'> <option></option> <option>female</option> <option>male</option></select>
 
+The remaining five files are "stub files" that you will use as you work through this book, so don't worry about them just now. 

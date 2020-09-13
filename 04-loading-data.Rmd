@@ -16,11 +16,10 @@ In this chapter you will learn how to load the packages required to work with ou
 
 Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter \@ref(ref1): 
 
-* You should have already download the data files as part of Getting to Know the Data, however, here they are again if you need them: <a href="files/1a_data.zip" download>`Psych 1A Data Files`</a>. Extract the files and then move them in to your Data Skills folder.
-* Download the <a href="files/stub-loading-data.zip" download>`Loading Data Markdown File`</a>, extract it, and move it to your Data Skills folder.
+* You should have already download the data files and uploaded them to the R server as part of [Intro to R](https://psyteachr.github.io/ug1-practical/ref1.html), if you haven't done this, go back and work through that chapter now.
 * Open R and ensure the environment is clear.
 * Set the working directory to your Data Skills folder.  
-* Open the `stub-loading-data.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
+* Open the `stub-loading-data` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
 
 ## Activity 2: Load in the package
 
@@ -156,9 +155,11 @@ Finally, try knitting the file to HTML. And that's it, well done! Remember to sa
 
 Well done! You have started on your journey to become a confident and competent member of the open science community! To show us how competent you are you should now complete the homework for this week which follows the same instructions as this in-class activity but asks you to work with different variables. Always use the data skills materials and videos to help you complete the assessments! 
 
+Finally, if you're working from the R server, we'd recommend that you download a copy of the changes you've made to `stub-loading-data` so that you have a backup.
+
 ### Debugging tips
 
-* When you downloaded the files did you save the file names **exactly** as they were originally? If you download the file more than once you will find your computer may automatically add a number to the end of the file name. `data.csv` is not the same as `data(1).csv`. Pay close attention to names!
+* When you downloaded and uploaded the files did you save the file names **exactly** as they were originally? If you download the file more than once you will find your computer may automatically add a number to the end of the file name. `data.csv` is not the same as `data(1).csv`. Pay close attention to names!
 * Have you used the **exact** same object names as we did in each activity? Remember, `name` is different to `Name`. In order to make sure you can follow along with this book, pay special attention to ensuring you use the same object names as we do.  
 * Have you used quotation marks where needed?  
 * Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?
@@ -224,5 +225,5 @@ The easiest way to use our worksheets is to think of them as fill-in-the-blanks 
 
 ### Homework files
 
-You can download all the R homework files and Assessment Information you need from the Lab Homework section of Moodle.
+You can download all the R homework files and Assessment Information you need from the Data Skills homework section of Moodle.
 

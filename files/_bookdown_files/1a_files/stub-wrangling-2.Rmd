@@ -1,7 +1,6 @@
 ---
-title: "Lab 3 in-class"
+title: "Wrangling 2 stub"
 author: "GUID"
-date: "01/09/2019"
 output: html_document
 ---
 

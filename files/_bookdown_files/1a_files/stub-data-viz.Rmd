@@ -1,7 +1,6 @@
 ---
-title: "Lab 4 in-class"
+title: "Intro to Data Viz"
 author: "GUID"
-date: "01/09/2019"
 output: html_document
 ---
 
@@ -10,12 +9,6 @@ output: html_document
 * You can add additional code chunks if needed.
 * Be careful not to delete or add any backticks (```) or to change the chunk name (e.g., a1)
 
-
-## Activity 1
-
-```{r a1}
-
-```
 
 ## Activity 2
 
@@ -47,11 +40,6 @@ output: html_document
 
 ```
 
-## Activity 7
-
-```{r a7}
-
-```
 
 
 
