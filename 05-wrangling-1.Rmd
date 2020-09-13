@@ -312,4 +312,4 @@ Some people find pipes a bit tricky to understand from a conceptual point of vie
 
 ## Finished!
 
-That was a long chapter but remember, you don't need to memorise all of this code. You just need to know where to look for help.
+That was a long chapter but remember, you don't need to memorise all of this code. You just need to know where to look for help. Finally, if you're working from the R server, we'd recommend that you download a copy of the changes you've made to `stub-wrangling-1` so that you have a backup.

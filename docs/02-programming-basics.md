@@ -1,16 +1,28 @@
 # Programming basics
 
-In this chapter, we will go over some basic programming concepts and terminology, common pitfalls, helpful hints, and where to get help. Those of you who have no programming experience should find this chapter particularly helpful, however, even if you've used R before there may be some helpful hints and tips so please make sure you read through this chapter before the moving on.
+In this chapter, we will cover how to use R and RStudio at the University of Glasgow as well as some basic programming concepts and terminology, common pitfalls, helpful hints, and where to get help. Those of you who have no programming experience should find this chapter particularly helpful, however, even if you've used R before there may be some helpful hints and tips so please make sure you read through this chapter before the moving on.
 
 This is a long chapter but we don't expect you to memorise all the information that is contained in it and some sections of it will  not make sense until you start writing your own code - just make sure you know what help is available!
 
 ### R and R Studio
 
-For this course, you need two different bits of software, [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/#download). R is a programming language that you will write code in and R Studio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn't look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn't recommend it. The key thing to remember is that although you will do all of your work using R Studio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
+R is a programming language that you will write code in and R Studio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn't look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn't recommend it. The key thing to remember is that although you will do all of your work using R Studio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 
-All of the University of Glasgow computers have R and R Studio installed, however, we can only guarantee that the computers in the Level 5 and 6 Boyd Orr psychology labs have the right set-up. Additionally, both are freely available so you may wish to install them on your own machine. There is a useful [guide to installing them both here](https://psyteachr.github.io/hack-your-data/r_instructions.html) that you can use but if you need help wig this you can attend one of the PAL sessions or practice sessions (check your e-mails for details of when these run).
+### How to use R and R Studio
 
-Most computers will install R without any problems, however, if your computer cannot run it (for example, if you have a notebook laptop), there is a browser version of R and you can find instructions for how to use this in Appendix \@ref(cloud)
+There are two ways you can use R for psychology. First, you can use a online version of R through your web browser and we will refer to this as the **R server**. Second, you can download and install R and R Studio for free on your laptop or desktop computer.
+
+The advantage of using the R server is that you do not need to install anything on your machine and all of the extra packages and functions you need will already be installed so you will have fewer potential technical issues. The advantage to installing R on your laptop is that you do not need to be connected to the internet to use it, and it is easier to save and manage your files. Unless you do not have reliable access to the internet **we strongly recommend that you use the R server**.
+
+With the exception of how they save files, both versions are identical and We will show you how to use both in this book.
+
+### R server
+
+To access the R server, [click here](https://rstudio.psy.gla.ac.uk/). Please note that the R server is only for use by students and staff in the School of Psychology and Institute for Neuroscience and Psychology. Sign in to the R server with your usual GUID and password.
+
+### Installing a R on your computer
+
+To use R on your computer you need to install two piece for software. First, you need to [download and install R](https://cloud.r-project.org/) and second, you need to [download and install R Studio](https://rstudio.com/products/rstudio/download/#download). If you have any problems with the installation you can ask for help on Teams or attend one of the GTA support sessions, however, to reiterate, we strongly recommend that unless you need to install a local copy that you use the server.
 
 ### Getting to know R Studio
 
@@ -21,7 +33,7 @@ R Studio has a console that you can try out code in (appearing as the bottom lef
 <p class="caption">(\#fig:img-rstudio)RStudio interface</p>
 </div>
 
-You will learn more about how to use the features included in R Studio throughout this course, however, we highly recommend watching [RStudio Essentials 1](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/) from the R Studio team. The video lasts ~30 minutes and gives a tour of the main parts of R Studio. 
+You will learn more about how to use the features included in R Studio throughout this course, however, we highly recommend watching [RStudio Essentials 1](https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/) from the R Studio team. The video lasts ~30 minutes and gives a tour of the main parts of R Studio. 
 
 ### Functions and arguments
 
@@ -31,7 +43,7 @@ As an example, let’s look at the help documentation for the function `rnorm()`
 
 ### Activity 1
 
-* Open up R Studio and in the console, type the following code:  
+* Open up R Studio (server or on your machine) and in the console, type the following code:  
 
 
 ```r
@@ -119,18 +131,11 @@ When you install R you will have access to a range of functions including option
 
 However, the power of R is that it is extendable and open source - put simply, if a function doesn't exist or doesn't work very well, anyone can create a new **package** that contains data and code to allow you to perform new tasks. You may find it useful to think of Base R as the default apps that come on your phone and packages as additional apps that you need to download separately.
 
-### Installing and loading packages
-
-<div class="info">
-<p>The Boyd Orr psychology computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine. <strong>Please do not install any packages on the university machines.</strong></p>
-</div>
-
-
-### Activity 3: Install the tidyverse
+### Activity 3: Install the tidyverse (optional)
 
 In order to use a package, you must first install it. The following code installs the package `tidyverse`, a package we will use very frequently in this course.
 
-* If you are working on your own computer, use the below code to install the tidyverse. **Do not do this if you are working on a University machine**.  
+* If you are working on your own computer, use the below code to install the tidyverse. **You do not need to do this if you are working on the server (which is why we recommend using it) or if you are using the computers in the Boyd Orr building**.  
 
 
 ```r
@@ -139,11 +144,11 @@ install.packages("tidyverse")
 
 You only need to install a package once, however, each time you start R you need to load the packages you want to use, in a similar way that you need to install an app on your phone once, but you need to open it every time you want to use it.
 
-To load packages we use the function `library()`. Typically you would start any analysis script by loading all of the packages you need, but we will come back to that in the labs.
+To load packages we use the function `library()`. Typically you would start any analysis script by loading all of the packages you need, but we will come back to that in the next chapter.
 
 ### Activity 4: Load the tidyverse
 
-* Run the below code to load the tidyverse. You can do this regardless of whether you are using your own computer or a University machine.  
+* Run the below code to load the tidyverse. You can do this regardless of whether you are using your own computer or the server.  
 
 
 ```r
@@ -160,7 +165,7 @@ Now that we've loaded the `tidyverse` package we can use any of the functions it
 In addition to updates to R and R Studio, the creators of packages also sometimes update their code. This can be to add functions to a package, or it can be to fix errors. One thing to avoid is unintentionally updating an installed package. When you run `install.packages()` it will always install the latest version of the package and it will overwrite any older versions you may have installed. Sometimes this isn't a problem, however, sometimes you will find that the update means your code no longer works as the package has changed substantially. It is possible to revert back to an older version of a package but try to avoid this anyway.
 
 <div class="danger">
-<p>To avoid accidentally overwriting a package with a later version, you should <strong>never</strong> include <code>install.packages()</code> in your analysis scripts in case you, or someone else runs the code by mistake. Remember, the Boyd Orr psychology computers will already have all of the packages you need for this course so you only need to install packages if you are using your own machine.</p>
+<p>To avoid accidentally overwriting a package with a later version, you should <strong>never</strong> include <code>install.packages()</code> in your analysis scripts in case you, or someone else runs the code by mistake. Remember, the server will already have all of the packages you need for this course so you only need to install packages if you are using your own machine.</p>
 </div>
 
 ### Package conflicts {#conflicts}
@@ -231,7 +236,7 @@ mean(data)
 
 ```
 ## [1] 45
-## Time difference of -230 days
+## Time difference of -256 days
 ## [1] 17.66644
 ```
 
@@ -265,21 +270,6 @@ If you've been writing a lot of code you may find that the environment pane (or 
 <img src="images/broom.png" alt="Clearing the workspace" width="100%" />
 <p class="caption">(\#fig:img-broom)Clearing the workspace</p>
 </div>
-
-### Setting the working directory
-
-What this means is that we need to tell R where the files we need are located. Think of it just like when you have different subjects, and you have separate folders for each topic e.g. biology, history and so on. When working on R, it's useful to have all the data sets and files you need in one folder.
-
-To set the working directory press session -> set working directory -> choose directory and then select the folder where the data sets we are working on are saved, and save this file in the same folder as well. In other words- make sure your data sets and scripts are all in the same folder. In the labs, we recommend that you create a folder for your Psychology labs with sub-folders for the tutorial and data skills sections on your M: drive. This is your personal area on the University network that is safe and secure so is much better than flashdrives or desktops. You can access your M drive by logging into any computer on the University network.
-
-<div class="figure" style="text-align: center">
-<img src="./images/setwd.gif" alt="Setting your working directory" width="75%" height="75%" />
-<p class="caption">(\#fig:unnamed-chunk-7)Setting your working directory</p>
-</div>
-
-### Activity 6: Set the working directory
-
-* Create a new folder for Psych 1A on your M:Drive and then two sub-folders called Tutorial and Data Skills. Following the above instructions, set your working directory to your Data Skills folder.  
 
 ### R sessions
 
@@ -319,7 +309,7 @@ A large part of coding is trying to figure why your code doesn't work and this i
 * Is there a package conflict? Have you tried specifying the package and function with `package::function`?
 * Is it definitely an error? Not all red text in R means an error - sometimes it is just giving you a message with information. 
 
-### Activity 7: Test yourself
+### Activity 6: Test yourself
 
 **Question 1.** Why should you never include the code `install.packages()` in your analysis scripts? <select class='solveme' data-answer='["You (or someone else) may accidentally install a package update that stops your code working"]'> <option></option> <option>You should use library() instead</option> <option>Packages are already part of Base R</option> <option>You (or someone else) may accidentally install a package update that stops your code working</option> <option>You already have the latest version of the package</option></select> 
 
