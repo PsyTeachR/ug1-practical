@@ -8,9 +8,10 @@ The main disadvantage to using the R server is that you will need to upload and 
 
 In [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) you downloaded the data files we will be using for this semester and you created a folder structure on your computer. In order to use these files, we need to copy them to the R server.
 
+* Log on to the [R server](https://rstudio.psy.gla.ac.uk/)
 * In the Files pane, click `New folder` and call it Psych 1A.
 * Click `Upload` then `Browse`and choose the Psych 1A folder that you just created.
-* Click `Choose file` and go and find the **zip folder** that you downloaded in [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) (if you deleted it you can download it again). Using the zip folder means you can upload files one at a time.
+* Click `Choose file` and go and find the **zip folder** that you downloaded in [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) (if you deleted it you can download it again). Using the zip folder means you can upload multiple files at once rather than one at a time.
 * Once you have uploaded the zip file, the server will automatically unzip the files and you should be able to see all the files you have on your computer.
 
 ### Activity 2: Set the working directory
