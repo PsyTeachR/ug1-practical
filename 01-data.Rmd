@@ -31,7 +31,7 @@ When you get the correct answer, the answer box will turn green. Sometimes this 
 
 ## Activity 2
 
-<a href="files/Data Skills 1A.zip" download>Download the files for Psych 1A here</a>
+<a href="files/Data_Skills_1A.zip" download>Download the files for Psych 1A here</a>
 
 The files are stored in a **zip file**. A zip file is a folder that contains files that have been compressed to make the file size smaller (like vacuum packed food) and enables you to download multiple files at once, however, before you use the files from a zip folder you first need to extract them.
 

@@ -263,6 +263,17 @@ knitr::include_graphics("images/broom.png")
 
 ```
 
+### Global options
+
+By default, when you open R Studio it will show you what you were last working on, including your code and any objects you have created. This might sound helpful, but actually it tends to cause more problems than it's worth because it means that you risk accidentally using an old version of an object. We recommend changing the settings so that each time you start R Studio, it opens a fresh copy. You can do this by clicking `Tools` -  `Global Options` and then deselecting boxes so that it looks like the below.
+
+```{r img-options, echo=FALSE, fig.cap="Global options"}
+
+knitr::include_graphics("images/global_options.jpg")
+
+```
+
+
 ### R sessions
 
 When you open up R and start writing code, loading packages, and creating objects, you're doing so in a new **session**. In addition to clearing the workspace, it can sometimes be useful to start a new session. This will happen automatically each time you start R, however, if you find your code isn't working and you can't figure out why, it might be worth starting a new session. This will clear the environment and detach all loaded packages - think of it like restarting your phone.

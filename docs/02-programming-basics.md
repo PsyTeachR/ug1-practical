@@ -244,7 +244,7 @@ mean(data)
 
 ```
 ## [1] 45
-## Time difference of 110 days
+## Time difference of 109 days
 ## [1] 17.66644
 ```
 
@@ -278,6 +278,16 @@ If you've been writing a lot of code you may find that the environment pane (or 
 <img src="images/broom.png" alt="Clearing the workspace" width="100%" />
 <p class="caption">(\#fig:img-broom)Clearing the workspace</p>
 </div>
+
+### Global options
+
+By default, when you open R Studio it will show you what you were last working on, including your code and any objects you have created. This might sound helpful, but actually it tends to cause more problems than it's worth because it means that you risk accidentally using an old version of an object. We recommend changing the settings so that each time you start R Studio, it opens a fresh copy. You can do this by clicking `Tools` -  `Global Options` and then deselecting boxes so that it looks like the below.
+
+<div class="figure" style="text-align: center">
+<img src="images/global_options.jpg" alt="Global options" width="100%" />
+<p class="caption">(\#fig:img-options)Global options</p>
+</div>
+
 
 ### R sessions
 

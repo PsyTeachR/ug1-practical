@@ -159,10 +159,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.0.17" data-path="programming-basics.html"><a href="programming-basics.html#objects"><i class="fa fa-check"></i><b>2.0.17</b> Objects</a></li>
 <li class="chapter" data-level="2.0.18" data-path="programming-basics.html"><a href="programming-basics.html#activity-5-create-some-objects"><i class="fa fa-check"></i><b>2.0.18</b> Activity 5: Create some objects</a></li>
 <li class="chapter" data-level="2.0.19" data-path="programming-basics.html"><a href="programming-basics.html#looking-after-the-environment"><i class="fa fa-check"></i><b>2.0.19</b> Looking after the environment</a></li>
-<li class="chapter" data-level="2.0.20" data-path="programming-basics.html"><a href="programming-basics.html#r-sessions"><i class="fa fa-check"></i><b>2.0.20</b> R sessions</a></li>
-<li class="chapter" data-level="2.0.21" data-path="programming-basics.html"><a href="programming-basics.html#help-and-additional-resources"><i class="fa fa-check"></i><b>2.0.21</b> Help and additional resources</a></li>
-<li class="chapter" data-level="2.0.22" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>2.0.22</b> Debugging tips</a></li>
-<li class="chapter" data-level="2.0.23" data-path="programming-basics.html"><a href="programming-basics.html#activity-6-test-yourself"><i class="fa fa-check"></i><b>2.0.23</b> Activity 6: Test yourself</a></li>
+<li class="chapter" data-level="2.0.20" data-path="programming-basics.html"><a href="programming-basics.html#global-options"><i class="fa fa-check"></i><b>2.0.20</b> Global options</a></li>
+<li class="chapter" data-level="2.0.21" data-path="programming-basics.html"><a href="programming-basics.html#r-sessions"><i class="fa fa-check"></i><b>2.0.21</b> R sessions</a></li>
+<li class="chapter" data-level="2.0.22" data-path="programming-basics.html"><a href="programming-basics.html#help-and-additional-resources"><i class="fa fa-check"></i><b>2.0.22</b> Help and additional resources</a></li>
+<li class="chapter" data-level="2.0.23" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>2.0.23</b> Debugging tips</a></li>
+<li class="chapter" data-level="2.0.24" data-path="programming-basics.html"><a href="programming-basics.html#activity-6-test-yourself"><i class="fa fa-check"></i><b>2.0.24</b> Activity 6: Test yourself</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ref1.html"><a href="ref1.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
 <li class="chapter" data-level="3.0.1" data-path="ref1.html"><a href="ref1.html#activity-1-upload-data-files-to-the-server"><i class="fa fa-check"></i><b>3.0.1</b> Activity 1: Upload data files to the server</a></li>
@@ -175,7 +176,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.0.8" data-path="ref1.html"><a href="ref1.html#activity-6-run-your-code"><i class="fa fa-check"></i><b>3.0.8</b> Activity 6: Run your code</a></li>
 <li class="chapter" data-level="3.0.9" data-path="ref1.html"><a href="ref1.html#activity-7-inline-code"><i class="fa fa-check"></i><b>3.0.9</b> Activity 7: Inline code</a></li>
 <li class="chapter" data-level="3.0.10" data-path="ref1.html"><a href="ref1.html#activity-8-knitting-your-file"><i class="fa fa-check"></i><b>3.0.10</b> Activity 8: Knitting your file</a></li>
-<li class="chapter" data-level="3.0.11" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>3.0.11</b> Finished</a></li>
+<li class="chapter" data-level="3.1" data-path="ref1.html"><a href="ref1.html#activity-9-make-r-your-own"><i class="fa fa-check"></i><b>3.1</b> Activity 9: Make R your own</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>3.1.1</b> Finished</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="loading-data.html"><a href="loading-data.html"><i class="fa fa-check"></i><b>4</b> Loading data</a><ul>
 <li class="chapter" data-level="4.0.1" data-path="loading-data.html"><a href="loading-data.html#getting-data-ready-to-work-with"><i class="fa fa-check"></i><b>4.0.1</b> Getting data ready to work with</a></li>
@@ -538,7 +541,7 @@ Figure 2.3: Objects in the environment
 <span id="cb16-2"><a href="programming-basics.html#cb16-2"></a>new_year <span class="op">-</span><span class="st"> </span>today</span>
 <span id="cb16-3"><a href="programming-basics.html#cb16-3"></a><span class="kw">mean</span>(data)</span></code></pre></div>
 <pre><code>## [1] 45
-## Time difference of 110 days
+## Time difference of 109 days
 ## [1] 17.66644</code></pre>
 <p>Finally, you can store the result of these operations in a new object:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="programming-basics.html#cb18-1"></a>decade &lt;-<span class="st"> </span>age <span class="op">+</span><span class="st"> </span><span class="dv">10</span></span></code></pre></div>
@@ -569,23 +572,33 @@ Figure 2.4: Clearing the workspace
 </p>
 </div>
 </div>
+<div id="global-options" class="section level3">
+<h3><span class="header-section-number">2.0.20</span> Global options</h3>
+<p>By default, when you open R Studio it will show you what you were last working on, including your code and any objects you have created. This might sound helpful, but actually it tends to cause more problems than it’s worth because it means that you risk accidentally using an old version of an object. We recommend changing the settings so that each time you start R Studio, it opens a fresh copy. You can do this by clicking <code>Tools</code> - <code>Global Options</code> and then deselecting boxes so that it looks like the below.</p>
+<div class="figure" style="text-align: center"><span id="fig:img-options"></span>
+<img src="images/global_options.jpg" alt="Global options" width="100%" />
+<p class="caption">
+Figure 2.5: Global options
+</p>
+</div>
+</div>
 <div id="r-sessions" class="section level3">
-<h3><span class="header-section-number">2.0.20</span> R sessions</h3>
+<h3><span class="header-section-number">2.0.21</span> R sessions</h3>
 <p>When you open up R and start writing code, loading packages, and creating objects, you’re doing so in a new <strong>session</strong>. In addition to clearing the workspace, it can sometimes be useful to start a new session. This will happen automatically each time you start R, however, if you find your code isn’t working and you can’t figure out why, it might be worth starting a new session. This will clear the environment and detach all loaded packages - think of it like restarting your phone.</p>
 <p>To do this, click ‘Session - Restart R’. Remember that you will then need to load the packages you need and your data again.</p>
 <div class="figure" style="text-align: center"><span id="fig:img-session"></span>
 <img src="images/new_session.png" alt="The truth about programming" width="100%" />
 <p class="caption">
-Figure 2.5: The truth about programming
+Figure 2.6: The truth about programming
 </p>
 </div>
 </div>
 <div id="help-and-additional-resources" class="section level3">
-<h3><span class="header-section-number">2.0.21</span> Help and additional resources</h3>
+<h3><span class="header-section-number">2.0.22</span> Help and additional resources</h3>
 <div class="figure" style="text-align: center"><span id="fig:img-kitteh"></span>
 <img src="images/kitteh.PNG" alt="The truth about programming" width="100%" />
 <p class="caption">
-Figure 2.6: The truth about programming
+Figure 2.7: The truth about programming
 </p>
 </div>
 <p>Getting good at programming really means getting good trying stuff out, searching for help online, and finding examples of code to copy. If you are having difficulty with any of the exercises contained in this book then you can ask for help on Teams, however, learning to problem-solve effectively is a key skill that you need to develop throughout this course.</p>
@@ -602,7 +615,7 @@ Figure 2.6: The truth about programming
 </ul>
 </div>
 <div id="debugging-tips" class="section level3">
-<h3><span class="header-section-number">2.0.22</span> Debugging tips</h3>
+<h3><span class="header-section-number">2.0.23</span> Debugging tips</h3>
 <p>A large part of coding is trying to figure why your code doesn’t work and this is true whether you are a novice or an expert. As you progress through this course you should keep a record of mistakes you make and how you fixed them. In each chapter we will provide a number of common mistakes to look out for but you will undoubtedly make (and fix!) new mistakes yourself.</p>
 <ul>
 <li>Have you loaded the correct packages for the functions you are trying to use? One very common mistake is to write the code to load the package, e.g., <code>library(tidyverse)</code> but then forget to run it.</li>
@@ -612,7 +625,7 @@ Figure 2.6: The truth about programming
 </ul>
 </div>
 <div id="activity-6-test-yourself" class="section level3">
-<h3><span class="header-section-number">2.0.23</span> Activity 6: Test yourself</h3>
+<h3><span class="header-section-number">2.0.24</span> Activity 6: Test yourself</h3>
 <p><strong>Question 1.</strong> Why should you never include the code <code>install.packages()</code> in your analysis scripts? <select class='solveme' data-answer='["You (or someone else) may accidentally install a package update that stops your code working"]'> <option></option> <option>You should use library() instead</option> <option>Packages are already part of Base R</option> <option>You (or someone else) may accidentally install a package update that stops your code working</option> <option>You already have the latest version of the package</option></select></p>
 <div class="solution">
 <button>
