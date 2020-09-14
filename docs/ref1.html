@@ -159,10 +159,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.0.17" data-path="programming-basics.html"><a href="programming-basics.html#objects"><i class="fa fa-check"></i><b>2.0.17</b> Objects</a></li>
 <li class="chapter" data-level="2.0.18" data-path="programming-basics.html"><a href="programming-basics.html#activity-5-create-some-objects"><i class="fa fa-check"></i><b>2.0.18</b> Activity 5: Create some objects</a></li>
 <li class="chapter" data-level="2.0.19" data-path="programming-basics.html"><a href="programming-basics.html#looking-after-the-environment"><i class="fa fa-check"></i><b>2.0.19</b> Looking after the environment</a></li>
-<li class="chapter" data-level="2.0.20" data-path="programming-basics.html"><a href="programming-basics.html#r-sessions"><i class="fa fa-check"></i><b>2.0.20</b> R sessions</a></li>
-<li class="chapter" data-level="2.0.21" data-path="programming-basics.html"><a href="programming-basics.html#help-and-additional-resources"><i class="fa fa-check"></i><b>2.0.21</b> Help and additional resources</a></li>
-<li class="chapter" data-level="2.0.22" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>2.0.22</b> Debugging tips</a></li>
-<li class="chapter" data-level="2.0.23" data-path="programming-basics.html"><a href="programming-basics.html#activity-6-test-yourself"><i class="fa fa-check"></i><b>2.0.23</b> Activity 6: Test yourself</a></li>
+<li class="chapter" data-level="2.0.20" data-path="programming-basics.html"><a href="programming-basics.html#global-options"><i class="fa fa-check"></i><b>2.0.20</b> Global options</a></li>
+<li class="chapter" data-level="2.0.21" data-path="programming-basics.html"><a href="programming-basics.html#r-sessions"><i class="fa fa-check"></i><b>2.0.21</b> R sessions</a></li>
+<li class="chapter" data-level="2.0.22" data-path="programming-basics.html"><a href="programming-basics.html#help-and-additional-resources"><i class="fa fa-check"></i><b>2.0.22</b> Help and additional resources</a></li>
+<li class="chapter" data-level="2.0.23" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>2.0.23</b> Debugging tips</a></li>
+<li class="chapter" data-level="2.0.24" data-path="programming-basics.html"><a href="programming-basics.html#activity-6-test-yourself"><i class="fa fa-check"></i><b>2.0.24</b> Activity 6: Test yourself</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ref1.html"><a href="ref1.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
 <li class="chapter" data-level="3.0.1" data-path="ref1.html"><a href="ref1.html#activity-1-upload-data-files-to-the-server"><i class="fa fa-check"></i><b>3.0.1</b> Activity 1: Upload data files to the server</a></li>
@@ -175,7 +176,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.0.8" data-path="ref1.html"><a href="ref1.html#activity-6-run-your-code"><i class="fa fa-check"></i><b>3.0.8</b> Activity 6: Run your code</a></li>
 <li class="chapter" data-level="3.0.9" data-path="ref1.html"><a href="ref1.html#activity-7-inline-code"><i class="fa fa-check"></i><b>3.0.9</b> Activity 7: Inline code</a></li>
 <li class="chapter" data-level="3.0.10" data-path="ref1.html"><a href="ref1.html#activity-8-knitting-your-file"><i class="fa fa-check"></i><b>3.0.10</b> Activity 8: Knitting your file</a></li>
-<li class="chapter" data-level="3.0.11" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>3.0.11</b> Finished</a></li>
+<li class="chapter" data-level="3.1" data-path="ref1.html"><a href="ref1.html#activity-9-make-r-your-own"><i class="fa fa-check"></i><b>3.1</b> Activity 9: Make R your own</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>3.1.1</b> Finished</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="loading-data.html"><a href="loading-data.html"><i class="fa fa-check"></i><b>4</b> Loading data</a><ul>
 <li class="chapter" data-level="4.0.1" data-path="loading-data.html"><a href="loading-data.html#getting-data-ready-to-work-with"><i class="fa fa-check"></i><b>4.0.1</b> Getting data ready to work with</a></li>
@@ -475,23 +478,27 @@ Figure 3.5: Slightly better method of running code
 <h3><span class="header-section-number">3.0.10</span> Activity 8: Knitting your file</h3>
 <p>Nearly finished! As our final step we are going to “knit” our file. This simply means that we’re going to compile our code into a document that is more presentable. To do this click <code>Knit</code> -&gt; <code>Knit to HMTL</code>. R Markdown will create a new HTML document and it will automatically save this file in your working directory.</p>
 <p>As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
-<p><strong>My name is Emily and I am 35 years old. It is 301 days until my birthday.</strong></p>
+<p><strong>My name is Emily and I am 35 years old. It is 300 days until my birthday.</strong></p>
 <p>We’re not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers! R Markdown is an incredibly powerful and flexible format - this book was written using it! If you want to push yourself with R, additional functions and features of R Markdown would be a good place to start.</p>
 <p>Before we finish, there are a few final things to note about knitting that will be useful for the homework:</p>
 <ul>
 <li>R Markdown will only knit if your code works - this is a good way of checking for the homework assignments whether you’ve written legal code!<br />
 </li>
 <li>You can choose to knit to a Word document rather than HTML. This can be useful for e.g., sharing with others, however, it may lose some functionality and it probably won’t look as good so we’d recommend always knitting to HTML.</li>
-<li>You can choose to knit to PDF, however, this requires an LaTex installation and is quite complicated. If you don’t already know what LaTex is and how to use it, do not knit to PDF. If you do know how to use LaTex, you don’t need us to give you instructions!</li>
+<li>You can choose to knit to PDF, however, unless you’re using the server this requires an LaTex installation and is quite complicated. If you don’t already know what LaTex is and how to use it, do not knit to PDF. If you do know how to use LaTex, you don’t need us to give you instructions!</li>
 <li>R will automatically open the knitted HTML file in the viewer, however, you can also navigate to the folder it is stored in and open the HTML file in your web browser (e.g., Chrome or Firefox).</li>
 </ul>
 </div>
+<div id="activity-9-make-r-your-own" class="section level2">
+<h2><span class="header-section-number">3.1</span> Activity 9: Make R your own</h2>
+<p>Finally, you can customise how R Studio looks to make it feel more like your own personal version. Click <code>Tools</code> - <code>Global Options</code> - <code>Apperance</code>. You can change the default font, font size, and general appearance of R Studio, including using dark mode. Play around with the settings and see which one you prefer - you’re going to spend a lot of time with R, it might as well look nice!</p>
 <div id="finished" class="section level3">
-<h3><span class="header-section-number">3.0.11</span> Finished</h3>
+<h3><span class="header-section-number">3.1.1</span> Finished</h3>
 <p>And you’re done! On your very first time using R you’ve not only written functioning code but you’ve written a reproducible output! You could send someone else your R Markdown document and they would be able to produce exactly the same HTML document as you, just by pressing knit.</p>
 <p>The key thing we want you to take away from this chapter is that R isn’t scary. It might be very new to a lot of you, but we’re going to take you through it step-by-step. You’ll be amazed at how quickly you can start producing professional-looking data visualisations and analysis.</p>
 <p>If you’re using the server, we recommend that you download any files that you have been working on so that you have a backup.</p>
 
+</div>
 </div>
 </div>
 <div class="psyteachr_footer">
