@@ -190,12 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.1" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.4.1</b> Activity 4: Check your data</a></li>
 <li class="chapter" data-level="4.4.2" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.4.2</b> Activity 5: Join the files together</a></li>
 <li class="chapter" data-level="4.4.3" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.4.3</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-8-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 8: Visualise the data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 7: Visualise the data</a></li>
 <li class="chapter" data-level="4.4.5" data-path="loading-data.html"><a href="loading-data.html#debugging-tips-1"><i class="fa fa-check"></i><b>4.4.5</b> Debugging tips</a></li>
 <li class="chapter" data-level="4.4.6" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.4.6</b> Test yourself</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#homework-instructions"><i class="fa fa-check"></i><b>4.5</b> Homework instructions</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="loading-data.html"><a href="loading-data.html#homework-files"><i class="fa fa-check"></i><b>4.5.1</b> Homework files</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a><ul>
@@ -344,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.3.2" data-path="cloud.html"><a href="cloud.html#uploading-files"><i class="fa fa-check"></i><b>A.3.2</b> Uploading Files</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="homework-instructions-1.html"><a href="homework-instructions-1.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
+<li class="chapter" data-level="B" data-path="homework-instructions.html"><a href="homework-instructions.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -390,11 +387,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Open a new R Markdown document, name it “Simulation” and save it in your Data Skills folder.</p></li>
 <li><p>Copy, paste, and run the below code in a new code chunk to simulate flipping a coin 4 times (and load the <code>tidyverse</code>).</p></li>
 </ul>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="simulation.html#cb153-1"></a><span class="co"># Notice that because our event labels are strings (text), </span></span>
-<span id="cb153-2"><a href="simulation.html#cb153-2"></a><span class="co"># we need to enter them into the function in &quot;quotes&quot; </span></span>
-<span id="cb153-3"><a href="simulation.html#cb153-3"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb153-4"><a href="simulation.html#cb153-4"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;HEADS&quot;</span>, <span class="st">&quot;TAILS&quot;</span>), <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;HEADS&quot; &quot;HEADS&quot; &quot;TAILS&quot; &quot;HEADS&quot;</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="simulation.html#cb150-1"></a><span class="co"># Notice that because our event labels are strings (text), </span></span>
+<span id="cb150-2"><a href="simulation.html#cb150-2"></a><span class="co"># we need to enter them into the function in &quot;quotes&quot; </span></span>
+<span id="cb150-3"><a href="simulation.html#cb150-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb150-4"><a href="simulation.html#cb150-4"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;HEADS&quot;</span>, <span class="st">&quot;TAILS&quot;</span>), <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) </span></code></pre></div>
+<pre><code>## [1] &quot;HEADS&quot; &quot;HEADS&quot; &quot;HEADS&quot; &quot;HEADS&quot;</code></pre>
 <p>How many heads did you get? Don’t worry if it’s different to our example. Run the code again. How many heads did you get this time? How many do you get on each turn if you run the code five more times?</p>
 <p>When you perform data simulation, you’re unlikely to get the same outcome each time you take a sample, just like if you flipped a coin 4 times on 5 separate occasions you would be unlikely to get the same number of heads each time. What’s so useful about data simulation is that we can use the outcomes from lots of different sampling attempts to calculate the probability of a particular outcome, e.g., getting 4 heads from 4 flips of a coin.</p>
 <p>So that we can add up the number of heads and tails more easily, let’s simulate those coin flips again, but using numerical codes, 1 = HEADS, 0 = TAILS.</p>
@@ -403,8 +400,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>0:1 means all numbers from 0 to 1 in steps of 1. So basically, 0 and 1. If you wanted to simulate rolling a die, you would write <code>1:6</code> which would give you all the whole numbers from 1 to 6.</li>
 </ul>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="simulation.html#cb155-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] 0 1 0 0</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="simulation.html#cb152-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 1 0 0 1</code></pre>
 </div>
 <div id="activity-2-sum" class="section level3">
 <h3><span class="header-section-number">15.0.3</span> Activity 2: <code>sum()</code></h3>
@@ -412,9 +409,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Copy, paste and run the code below in a new code chunk.</li>
 </ul>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="simulation.html#cb157-1"></a><span class="co"># This code pipes the output of sample() into sum() which counts up the number of heads/1s.</span></span>
-<span id="cb157-2"><a href="simulation.html#cb157-2"></a></span>
-<span id="cb157-3"><a href="simulation.html#cb157-3"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="simulation.html#cb154-1"></a><span class="co"># This code pipes the output of sample() into sum() which counts up the number of heads/1s.</span></span>
+<span id="cb154-2"><a href="simulation.html#cb154-2"></a></span>
+<span id="cb154-3"><a href="simulation.html#cb154-3"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>()</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Run this function multiple times (you can use the green markdown play arrow at the top right of the code chunk to make this easy). In our simulation of five sets of four flips we got 1, 3, 2, 2, and 3 heads. So in only one out of the five simulations did we get exactly one heads, i.e., a proportion of .2 or 20% of the time.</p>
 </div>
@@ -427,8 +424,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>expr</code> = the expression, or code, you want to repeat</li>
 </ul>
 <p>Copy, paste and run the below code into a new code chunk to run the sample function and sum up the outcomes 20 times.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="simulation.html#cb159-1"></a><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())</span></code></pre></div>
-<pre><code>##  [1] 2 2 1 2 1 1 2 3 1 3 2 2 2 2 1 3 2 2 3 2</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="simulation.html#cb156-1"></a><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())</span></code></pre></div>
+<pre><code>##  [1] 1 1 2 4 3 1 1 4 1 0 3 1 4 2 4 1 1 2 2 1</code></pre>
 </div>
 <div id="monte-carlo-simulation" class="section level3">
 <h3><span class="header-section-number">15.0.5</span> Monte Carlo simulation</h3>
@@ -440,18 +437,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Copy, paste, and run the below code to run the simulation and store the result in an object `heads50** using the code below:</li>
 </ul>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="simulation.html#cb161-1"></a>heads50 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">50</span>, <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span>
-<span id="cb161-2"><a href="simulation.html#cb161-2"></a>heads50</span></code></pre></div>
-<pre><code>##  [1] 1 1 3 1 2 2 2 3 1 1 3 3 3 3 2 0 0 2 3 2 2 1 2 1 3 3 2 2 2 3 2 1 2 3 1 2 1 2
-## [39] 2 2 4 2 4 3 3 1 2 2 2 3</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="simulation.html#cb158-1"></a>heads50 &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dv">50</span>, <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span>
+<span id="cb158-2"><a href="simulation.html#cb158-2"></a>heads50</span></code></pre></div>
+<pre><code>##  [1] 3 2 1 2 3 2 2 3 2 1 3 3 2 0 4 1 2 1 2 1 1 3 0 2 3 2 1 2 2 3 1 1 2 2 1 0 3 1
+## [39] 1 2 0 2 1 3 2 3 2 2 1 1</code></pre>
 </div>
 <div id="activity-5-probability" class="section level3">
 <h3><span class="header-section-number">15.0.7</span> Activity 5: probability</h3>
 <p>We can estimate the probability of each of the outcomes (0, 1, 2, 3, 4 heads after 4 coin tosses) by counting them up and dividing by the number of experiments. We will do this by putting the results of the replications in a tibble() and then using count().</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="simulation.html#cb163-1"></a>data50 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads50) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># convert to a table</span></span>
-<span id="cb163-2"><a href="simulation.html#cb163-2"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># group by number of possibilities (0,1,2,3,4)</span></span>
-<span id="cb163-3"><a href="simulation.html#cb163-3"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="co"># count occurances of each possibility,</span></span>
-<span id="cb163-4"><a href="simulation.html#cb163-4"></a>                          <span class="dt">p=</span>n<span class="op">/</span><span class="dv">50</span>) <span class="co"># &amp; calculate probability (p) of each</span></span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="simulation.html#cb160-1"></a>data50 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads50) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># convert to a table</span></span>
+<span id="cb160-2"><a href="simulation.html#cb160-2"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">   </span><span class="co"># group by number of possibilities (0,1,2,3,4)</span></span>
+<span id="cb160-3"><a href="simulation.html#cb160-3"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="co"># count occurances of each possibility,</span></span>
+<span id="cb160-4"><a href="simulation.html#cb160-4"></a>                          <span class="dt">p=</span>n<span class="op">/</span><span class="dv">50</span>) <span class="co"># &amp; calculate probability (p) of each</span></span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -463,28 +460,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td align="right">0</td>
-<td align="right">2</td>
-<td align="right">0.04</td>
+<td align="right">4</td>
+<td align="right">0.08</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
+<td align="right">15</td>
+<td align="right">0.30</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">19</td>
+<td align="right">0.38</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
 <td align="right">11</td>
 <td align="right">0.22</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
-<td align="right">21</td>
-<td align="right">0.42</td>
-</tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="right">14</td>
-<td align="right">0.28</td>
-</tr>
-<tr class="odd">
 <td align="right">4</td>
-<td align="right">2</td>
-<td align="right">0.04</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
 </tr>
 </tbody>
 </table>
@@ -493,12 +490,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="activity-6-visualisation" class="section level3">
 <h3><span class="header-section-number">15.0.8</span> Activity 6: visualisation</h3>
 <p>We can then plot a histogram of the outcomes using <code>geom_bar()</code>.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="simulation.html#cb164-1"></a><span class="co"># Note: stat = &quot;identity&quot; tells  ggplot to use the values of the y-axis variable (p) as the height of the bars in our histogram (as opposed to counting the number of occurances of those values)</span></span>
-<span id="cb164-2"><a href="simulation.html#cb164-2"></a></span>
-<span id="cb164-3"><a href="simulation.html#cb164-3"></a><span class="kw">ggplot</span>(data50, <span class="kw">aes</span>(<span class="dt">x =</span> heads,<span class="dt">y =</span> p)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb164-4"><a href="simulation.html#cb164-4"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb164-5"><a href="simulation.html#cb164-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 4 flips (p)&quot;</span>) <span class="op">+</span></span>
-<span id="cb164-6"><a href="simulation.html#cb164-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="simulation.html#cb161-1"></a><span class="co"># Note: stat = &quot;identity&quot; tells  ggplot to use the values of the y-axis variable (p) as the height of the bars in our histogram (as opposed to counting the number of occurances of those values)</span></span>
+<span id="cb161-2"><a href="simulation.html#cb161-2"></a></span>
+<span id="cb161-3"><a href="simulation.html#cb161-3"></a><span class="kw">ggplot</span>(data50, <span class="kw">aes</span>(<span class="dt">x =</span> heads,<span class="dt">y =</span> p)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb161-4"><a href="simulation.html#cb161-4"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb161-5"><a href="simulation.html#cb161-5"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 4 flips (p)&quot;</span>) <span class="op">+</span></span>
+<span id="cb161-6"><a href="simulation.html#cb161-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:data50hist"></span>
 <img src="15-simulation_files/figure-html/data50hist-1.png" alt="No. of heads from 4 coin tosses probability outcomes." width="100%" />
 <p class="caption">
@@ -516,16 +513,16 @@ Figure 15.1: No. of heads from 4 coin tosses probability outcomes.
 <div id="activity-7-big-data" class="section level3">
 <h3><span class="header-section-number">15.0.9</span> Activity 7: big data</h3>
 <p>Let’s repeat the Monte Carlo simulation, but with 10,000 trials instead of just 50. All we need to do is change <code>n</code> from 50 to 10000.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="simulation.html#cb165-1"></a>heads10K &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="simulation.html#cb162-1"></a>heads10K &lt;-<span class="st"> </span><span class="kw">replicate</span>(<span class="dt">n =</span> <span class="dv">10000</span>, <span class="dt">expr =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>())   </span></code></pre></div>
 <p>Again, we’ll put the outcome into a table using <code>tibble</code> and calculate counts and probabilities of each outcome using <code>group_by()</code> and <code>summarise()</code>. Remember to try reading your code in full sentences to help you understand what multiple lines of code connected by pipes are doing. How would you read the below code?</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="simulation.html#cb166-1"></a>data10K &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads10K) <span class="op">%&gt;%</span><span class="st">   </span></span>
-<span id="cb166-2"><a href="simulation.html#cb166-2"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">           </span></span>
-<span id="cb166-3"><a href="simulation.html#cb166-3"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="dt">p=</span>n<span class="op">/</span><span class="dv">10000</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="simulation.html#cb163-1"></a>data10K &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">heads =</span> heads10K) <span class="op">%&gt;%</span><span class="st">   </span></span>
+<span id="cb163-2"><a href="simulation.html#cb163-2"></a><span class="st">                </span><span class="kw">group_by</span>(heads) <span class="op">%&gt;%</span><span class="st">           </span></span>
+<span id="cb163-3"><a href="simulation.html#cb163-3"></a><span class="st">                </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="dt">p=</span>n<span class="op">/</span><span class="dv">10000</span>) </span></code></pre></div>
 <p>Finally, we can visualise this as we did earlier.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="simulation.html#cb167-1"></a><span class="kw">ggplot</span>(data10K, <span class="kw">aes</span>(heads,p)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb167-2"><a href="simulation.html#cb167-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb167-3"><a href="simulation.html#cb167-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 4 flips (p)&quot;</span>) <span class="op">+</span></span>
-<span id="cb167-4"><a href="simulation.html#cb167-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="simulation.html#cb164-1"></a><span class="kw">ggplot</span>(data10K, <span class="kw">aes</span>(heads,p)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb164-2"><a href="simulation.html#cb164-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;purple&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb164-3"><a href="simulation.html#cb164-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Probability of Heads in 4 flips (p)&quot;</span>) <span class="op">+</span></span>
+<span id="cb164-4"><a href="simulation.html#cb164-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:data10Khist"></span>
 <img src="15-simulation_files/figure-html/data10Khist-1.png" alt="10K coin toss probability outcomes." width="100%" />
 <p class="caption">
@@ -534,13 +531,13 @@ Figure 15.2: 10K coin toss probability outcomes.
 </div>
 <p>Using Monte Carlo simulation, we estimate that the probability of getting exactly one head on four throws is about 0.25. The above result represents a probability distribution for all the possible outcomes in our experiments. We can derive lots of useful information from this.</p>
 <p>For instance, what is the probability of getting two or more heads in four throws? This is easy: the outcomes meeting the criterion are 2, 3, or 4 heads. We can just add these probabilities together like so:</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="simulation.html#cb168-1"></a>data10K <span class="op">%&gt;%</span></span>
-<span id="cb168-2"><a href="simulation.html#cb168-2"></a><span class="st">  </span><span class="kw">filter</span>(heads <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb168-3"><a href="simulation.html#cb168-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">p2 =</span> <span class="kw">sum</span>(p))</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="simulation.html#cb165-1"></a>data10K <span class="op">%&gt;%</span></span>
+<span id="cb165-2"><a href="simulation.html#cb165-2"></a><span class="st">  </span><span class="kw">filter</span>(heads <span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb165-3"><a href="simulation.html#cb165-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">p2 =</span> <span class="kw">sum</span>(p))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##      p2
 ##   &lt;dbl&gt;
-## 1 0.681</code></pre>
+## 1 0.690</code></pre>
 <p>You can add probabilities for various outcomes together as long as the outcomes are mutually exclusive, that is, when one outcome occurs, the others can’t occur. For this coin flipping example, this is obviously the case: you can’t simultaneously get exactly two and exactly three heads as the outcome of a single experiment. However, be aware that you can’t simply add probabilities together when the events in question are not mutually exclusive: for example, the probability of the coin landing heads up, and it landing with the image of the head being in a particular orientation are not mutually exclusive, and can’t be simply added together.</p>
 <p>This is the basis of how we can calculate the probability of an outcome using a known distribution - by simulating a large number of trials we can use this as an estimate for how our data will look in the real world.</p>
 </div>
@@ -553,17 +550,17 @@ Figure 15.2: 10K coin toss probability outcomes.
 <li><code>sd</code> is the standard deviation you want your data to have. If you don’t provide this argument, <code>rnorm()</code> will use a default value of <code>sd = 1</code>.</li>
 </ul>
 <p>Copy, paste and run the below code in a new code chunk. This will randomly generate 50 numbers that collectively have a mean of 10 and a SD of 2 and then store it in the object <code>normal</code>.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="simulation.html#cb170-1"></a>normal &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="simulation.html#cb167-1"></a>normal &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p>You can check that the data you have generated are as you expected by calculating the mean and SD of this new variable - you shouldn’t expect the values to be exactly 10 and 2 (remember, it’s randomly generated), but they should be reasonably close.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="simulation.html#cb171-1"></a><span class="kw">mean</span>(normal)</span>
-<span id="cb171-2"><a href="simulation.html#cb171-2"></a><span class="kw">sd</span>(normal)</span></code></pre></div>
-<pre><code>## [1] 10.0591
-## [1] 1.852539</code></pre>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="simulation.html#cb168-1"></a><span class="kw">mean</span>(normal)</span>
+<span id="cb168-2"><a href="simulation.html#cb168-2"></a><span class="kw">sd</span>(normal)</span></code></pre></div>
+<pre><code>## [1] 9.775373
+## [1] 2.048042</code></pre>
 <p>Finally, you can visualise your data with a density plot. Try changing the number of data points generated by <code>rnorm()</code> from 50 to 500 to 5000 and then see how the shape of the distribution changes.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="simulation.html#cb173-1"></a><span class="kw">tibble</span>(<span class="dt">normal =</span> normal) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#turn the variable normal into a table and then</span></span>
-<span id="cb173-2"><a href="simulation.html#cb173-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(normal)) <span class="op">+</span><span class="st"> </span><span class="co"># create a density plot</span></span>
-<span id="cb173-3"><a href="simulation.html#cb173-3"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
-<span id="cb173-4"><a href="simulation.html#cb173-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="simulation.html#cb170-1"></a><span class="kw">tibble</span>(<span class="dt">normal =</span> normal) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#turn the variable normal into a table and then</span></span>
+<span id="cb170-2"><a href="simulation.html#cb170-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(normal)) <span class="op">+</span><span class="st"> </span><span class="co"># create a density plot</span></span>
+<span id="cb170-3"><a href="simulation.html#cb170-3"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb170-4"><a href="simulation.html#cb170-4"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="15-simulation_files/figure-html/unnamed-chunk-3-1.png" alt="Distribution of variable created by rnorm" width="100%" />
 <p class="caption">
@@ -577,25 +574,25 @@ Figure 7.4: Distribution of variable created by rnorm
 <ul>
 <li>First, let’s create a variable that has all of our subject IDs. We’re just going to assign our participants numerical codes.</li>
 </ul>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="simulation.html#cb174-1"></a>subject_id &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">120</span> <span class="co"># create a variable called subject_id that has the numbers 1 to 120 in it</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="simulation.html#cb171-1"></a>subject_id &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">120</span> <span class="co"># create a variable called subject_id that has the numbers 1 to 120 in it</span></span></code></pre></div>
 <p>Then we’re going to create a column for gender using a new but simple function <code>rep</code> which stands for “repeat”. The below code will create a variable that repeats “man” 40 times, then “women” 40 times, then “non-binary” 40 times.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="simulation.html#cb175-1"></a>gender &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;man&quot;</span>, <span class="st">&quot;woman&quot;</span>, <span class="st">&quot;nonbinary&quot;</span>), <span class="dt">each =</span> <span class="dv">40</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="simulation.html#cb172-1"></a>gender &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="st">&quot;man&quot;</span>, <span class="st">&quot;woman&quot;</span>, <span class="st">&quot;nonbinary&quot;</span>), <span class="dt">each =</span> <span class="dv">40</span>)</span></code></pre></div>
 <p>Next, let’s simulate them all rolling a die once using <code>sample()</code>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="simulation.html#cb176-1"></a>rolls &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">size =</span> <span class="dv">120</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="simulation.html#cb173-1"></a>rolls &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">size =</span> <span class="dv">120</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p>Then, let’s simulate their IQ scores. IQ scores are standardised so that overall, the population has an average IQ of 100 and a SD of 15 so we can use this information to simulate the data with <code>rnorm()</code>.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="simulation.html#cb177-1"></a>iq &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">120</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="simulation.html#cb174-1"></a>iq &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">120</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>)</span></code></pre></div>
 <p>Finally, we can stitch all these variables together into a table.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="simulation.html#cb178-1"></a>sim_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(subject_id, gender, rolls, iq)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="simulation.html#cb175-1"></a>sim_data &lt;-<span class="st"> </span><span class="kw">tibble</span>(subject_id, gender, rolls, iq)</span></code></pre></div>
 <p>Now that we’ve got our simulated data we could write code to analyse it even before we’ve collected any real data which will not only save us time in the future, but will help us plan our analyses and we could include this code in a pre-registration document.</p>
 <p>For example, you could create a plot of IQ scores for each dice roll (remember these are not real data…)</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="simulation.html#cb179-1"></a>sim_data <span class="op">%&gt;%</span></span>
-<span id="cb179-2"><a href="simulation.html#cb179-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">rolls =</span> <span class="kw">as.factor</span>(rolls)) <span class="op">%&gt;%</span></span>
-<span id="cb179-3"><a href="simulation.html#cb179-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> rolls, <span class="dt">y =</span> iq, <span class="dt">fill =</span> rolls)) <span class="op">+</span></span>
-<span id="cb179-4"><a href="simulation.html#cb179-4"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb179-5"><a href="simulation.html#cb179-5"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb179-6"><a href="simulation.html#cb179-6"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
-<span id="cb179-7"><a href="simulation.html#cb179-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb179-8"><a href="simulation.html#cb179-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Outcome of dice roll&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="simulation.html#cb176-1"></a>sim_data <span class="op">%&gt;%</span></span>
+<span id="cb176-2"><a href="simulation.html#cb176-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">rolls =</span> <span class="kw">as.factor</span>(rolls)) <span class="op">%&gt;%</span></span>
+<span id="cb176-3"><a href="simulation.html#cb176-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> rolls, <span class="dt">y =</span> iq, <span class="dt">fill =</span> rolls)) <span class="op">+</span></span>
+<span id="cb176-4"><a href="simulation.html#cb176-4"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb176-5"><a href="simulation.html#cb176-5"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
+<span id="cb176-6"><a href="simulation.html#cb176-6"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>) <span class="op">+</span></span>
+<span id="cb176-7"><a href="simulation.html#cb176-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
+<span id="cb176-8"><a href="simulation.html#cb176-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Outcome of dice roll&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="15-simulation_files/figure-html/unnamed-chunk-9-1.png" alt="Boxplot of IQ scores grouped by what each person rolled on the die" width="100%" />
 <p class="caption">

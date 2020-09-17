@@ -4,6 +4,8 @@ In this chapter, we will cover how to use R and RStudio at the University of Gla
 
 This is a long chapter but we don't expect you to memorise all the information that is contained in it and some sections of it will  not make sense until you start writing your own code - just make sure you know what help is available!
 
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/z4QocMWQL9ExSfHYBaC8C1oISbrEDkOlz8wJwT0oT2y116hgB0yA0O9cTtVdvYWYqO-wq97Xi8_yncLv.1st2ENKayHb21h0S?autoplay=true&startTime=1600084596000) of this chapter available via Zoom.
+
 ### R and R Studio
 
 R is a programming language that you will write code in and R Studio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn't look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn't recommend it. The key thing to remember is that although you will do all of your work using R Studio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.

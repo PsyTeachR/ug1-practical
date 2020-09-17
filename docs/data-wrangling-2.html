@@ -190,12 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.1" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.4.1</b> Activity 4: Check your data</a></li>
 <li class="chapter" data-level="4.4.2" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.4.2</b> Activity 5: Join the files together</a></li>
 <li class="chapter" data-level="4.4.3" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.4.3</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-8-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 8: Visualise the data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 7: Visualise the data</a></li>
 <li class="chapter" data-level="4.4.5" data-path="loading-data.html"><a href="loading-data.html#debugging-tips-1"><i class="fa fa-check"></i><b>4.4.5</b> Debugging tips</a></li>
 <li class="chapter" data-level="4.4.6" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.4.6</b> Test yourself</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#homework-instructions"><i class="fa fa-check"></i><b>4.5</b> Homework instructions</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="loading-data.html"><a href="loading-data.html#homework-files"><i class="fa fa-check"></i><b>4.5.1</b> Homework files</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a><ul>
@@ -344,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.3.2" data-path="cloud.html"><a href="cloud.html#uploading-files"><i class="fa fa-check"></i><b>A.3.2</b> Uploading Files</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="homework-instructions-1.html"><a href="homework-instructions-1.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
+<li class="chapter" data-level="B" data-path="homework-instructions.html"><a href="homework-instructions.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -380,17 +377,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files.</li>
 </ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-wrangling-2.html#cb68-1"></a><span class="kw">library</span>(tidyverse) </span>
-<span id="cb68-2"><a href="data-wrangling-2.html#cb68-2"></a></span>
-<span id="cb68-3"><a href="data-wrangling-2.html#cb68-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb68-4"><a href="data-wrangling-2.html#cb68-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb68-5"><a href="data-wrangling-2.html#cb68-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-wrangling-2.html#cb65-1"></a><span class="kw">library</span>(tidyverse) </span>
+<span id="cb65-2"><a href="data-wrangling-2.html#cb65-2"></a></span>
+<span id="cb65-3"><a href="data-wrangling-2.html#cb65-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb65-4"><a href="data-wrangling-2.html#cb65-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb65-5"><a href="data-wrangling-2.html#cb65-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span></code></pre></div>
 <p>Now let’s start working with our <code>tidyverse</code> verb functions…</p>
 </div>
 <div id="activity-2-select" class="section level2">
 <h2><span class="header-section-number">6.2</span> Activity 2: Select</h2>
 <p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create a variable called <code>summarydata</code>.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-wrangling-2.html#cb69-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-wrangling-2.html#cb66-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>
@@ -402,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="activity-3-arrange" class="section level2">
 <h2><span class="header-section-number">6.3</span> Activity 3: Arrange</h2>
 <p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-wrangling-2.html#cb70-1"></a>ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-wrangling-2.html#cb67-1"></a>ahi_asc &lt;-<span class="st"> </span><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> ahiTotal)</span></code></pre></div>
 <hr />
 <ul>
 <li>How could you arrange this data in <strong>descending</strong> order (highest score first)?</li>
@@ -411,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-wrangling-2.html#cb71-1"></a><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> <span class="kw">desc</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-wrangling-2.html#cb68-1"></a><span class="kw">arrange</span>(summarydata, <span class="dt">by =</span> <span class="kw">desc</span>(ahiTotal))</span></code></pre></div>
 </div>
 <ul>
 <li><p>What is the smallest ahiTotal score? <input class='solveme nospaces' size='2' data-answer='["32"]'/></p></li>
@@ -422,7 +419,7 @@ Solution
 <div id="activity-4-filter" class="section level2">
 <h2><span class="header-section-number">6.4</span> Activity 4: Filter</h2>
 <p>Filter the data <code>ahi_asc</code> by taking out those who are over 65 years of age.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-wrangling-2.html#cb72-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-wrangling-2.html#cb69-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">filter</span>(ahi_asc, age <span class="op">&lt;</span><span class="st"> </span><span class="dv">65</span>)</span></code></pre></div>
 <hr />
 <ul>
 <li>What does <code>filter()</code> do?</li>
@@ -436,7 +433,7 @@ Solution
 <div id="activity-5-summarise" class="section level2">
 <h2><span class="header-section-number">6.5</span> Activity 5: Summarise</h2>
 <p>Then, use summarise to create a new variable <code>data_median</code>, which calculates the median ahiTotal score in this grouped data and assign it a table head called <code>median_score</code>.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-wrangling-2.html#cb73-1"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-wrangling-2.html#cb70-1"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
 <hr />
 <ul>
 <li><p>What is the median score? <input class='solveme nospaces' size='2' data-answer='["74"]'/></p></li>
@@ -446,7 +443,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="data-wrangling-2.html#cb74-1"></a><span class="kw">summarise</span>(age_65max, <span class="dt">mean_score =</span> <span class="kw">mean</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-wrangling-2.html#cb71-1"></a><span class="kw">summarise</span>(age_65max, <span class="dt">mean_score =</span> <span class="kw">mean</span>(ahiTotal))</span></code></pre></div>
 </div>
 <hr />
 </div>
@@ -455,10 +452,10 @@ Solution
 <p>Use mutate to create a new column called <code>Happiness_Category</code> in <code>age_65max</code> which categorises participants based on whether they score above the median <code>ahiTotal</code> score for all participants.</p>
 <p>Then, group the data stored in <code>age_65max</code> by <code>Happiness_Category</code>, and store it in an object named <code>happy_dat</code>.</p>
 <p>Finally, use summarise to calculate the median <code>cesdTotal</code> score for participants who scored above and below the median <code>ahiTotal</code> score and save it in a new object named <code>data_median_group</code>.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data-wrangling-2.html#cb75-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">mutate</span>(age_65max, <span class="dt">Happiness_Category =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">74</span>))</span>
-<span id="cb75-2"><a href="data-wrangling-2.html#cb75-2"></a>happy_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, Happiness_Category)</span>
-<span id="cb75-3"><a href="data-wrangling-2.html#cb75-3"></a></span>
-<span id="cb75-4"><a href="data-wrangling-2.html#cb75-4"></a>data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span>(happy_dat, <span class="dt">median_score =</span> <span class="kw">median</span>(cesdTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-wrangling-2.html#cb72-1"></a>age_65max &lt;-<span class="st"> </span><span class="kw">mutate</span>(age_65max, <span class="dt">Happiness_Category =</span> (ahiTotal <span class="op">&gt;</span><span class="st"> </span><span class="dv">74</span>))</span>
+<span id="cb72-2"><a href="data-wrangling-2.html#cb72-2"></a>happy_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, Happiness_Category)</span>
+<span id="cb72-3"><a href="data-wrangling-2.html#cb72-3"></a></span>
+<span id="cb72-4"><a href="data-wrangling-2.html#cb72-4"></a>data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span>(happy_dat, <span class="dt">median_score =</span> <span class="kw">median</span>(cesdTotal))</span></code></pre></div>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>
@@ -472,19 +469,19 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="data-wrangling-2.html#cb76-1"></a><span class="kw">group_by</span>(age_65max, educ)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-wrangling-2.html#cb73-1"></a><span class="kw">group_by</span>(age_65max, educ)</span></code></pre></div>
 </div>
 <hr />
 </div>
 <div id="activity-7-data-visualisation" class="section level2">
 <h2><span class="header-section-number">6.7</span> Activity 7: Data visualisation</h2>
 <p>Copy, paste and run the below code into a new code chunk to create a plot of depression scores grouped by income level using the <code>age_65max</code> data.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="data-wrangling-2.html#cb77-1"></a><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.factor</span>(income), <span class="dt">y =</span> cesdTotal, <span class="dt">fill =</span> <span class="kw">as.factor</span>(income))) <span class="op">+</span></span>
-<span id="cb77-2"><a href="data-wrangling-2.html#cb77-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span></span>
-<span id="cb77-3"><a href="data-wrangling-2.html#cb77-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
-<span id="cb77-4"><a href="data-wrangling-2.html#cb77-4"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;D&quot;</span>) <span class="op">+</span></span>
-<span id="cb77-5"><a href="data-wrangling-2.html#cb77-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income Level&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
-<span id="cb77-6"><a href="data-wrangling-2.html#cb77-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="data-wrangling-2.html#cb74-1"></a><span class="kw">ggplot</span>(age_65max, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.factor</span>(income), <span class="dt">y =</span> cesdTotal, <span class="dt">fill =</span> <span class="kw">as.factor</span>(income))) <span class="op">+</span></span>
+<span id="cb74-2"><a href="data-wrangling-2.html#cb74-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>) <span class="op">+</span></span>
+<span id="cb74-3"><a href="data-wrangling-2.html#cb74-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.5</span>) <span class="op">+</span></span>
+<span id="cb74-4"><a href="data-wrangling-2.html#cb74-4"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;D&quot;</span>) <span class="op">+</span></span>
+<span id="cb74-5"><a href="data-wrangling-2.html#cb74-5"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income Level&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
+<span id="cb74-6"><a href="data-wrangling-2.html#cb74-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Depression Score&quot;</span>)</span></code></pre></div>
 <ul>
 <li><p>Which income group has the highest median depression scores? <select class='solveme' data-answer='["Below Average"]'> <option></option> <option>Below Average</option> <option>Average</option> <option>Above Average</option></select></p></li>
 <li><p>Which group has the highest density of scores at any one point? <select class='solveme' data-answer='["Above Average"]'> <option></option> <option>Below Average</option> <option>Average</option> <option>Above Average</option></select></p></li>

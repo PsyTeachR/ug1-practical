@@ -190,12 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.1" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.4.1</b> Activity 4: Check your data</a></li>
 <li class="chapter" data-level="4.4.2" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.4.2</b> Activity 5: Join the files together</a></li>
 <li class="chapter" data-level="4.4.3" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.4.3</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-8-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 8: Visualise the data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 7: Visualise the data</a></li>
 <li class="chapter" data-level="4.4.5" data-path="loading-data.html"><a href="loading-data.html#debugging-tips-1"><i class="fa fa-check"></i><b>4.4.5</b> Debugging tips</a></li>
 <li class="chapter" data-level="4.4.6" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.4.6</b> Test yourself</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#homework-instructions"><i class="fa fa-check"></i><b>4.5</b> Homework instructions</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="loading-data.html"><a href="loading-data.html#homework-files"><i class="fa fa-check"></i><b>4.5.1</b> Homework files</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a><ul>
@@ -344,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.3.2" data-path="cloud.html"><a href="cloud.html#uploading-files"><i class="fa fa-check"></i><b>A.3.2</b> Uploading Files</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="homework-instructions-1.html"><a href="homework-instructions-1.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
+<li class="chapter" data-level="B" data-path="homework-instructions.html"><a href="homework-instructions.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -381,13 +378,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="stub-files" class="section level3">
 <h3><span class="header-section-number">4.0.2</span> Stub files</h3>
-<p>When you downloading the data in week 1, you will have noticed that there were five Rmd files that all started with <code>stub-</code>. These stub files are set-up with code chunks for each activity of the chapter to help make your life a a bit easier as you are first learning to code. We will take these away in Psych 1B but for this semester, you don’t need to set up your own file, just open the relevant stub file for each chapter.</p>
+<p>When you downloaded the data in Getting to know the data, you will have noticed that there were five Rmd files that all started with <code>stub-</code>. These stub files are set-up with code chunks for each activity of the chapter to help make your life a bit easier as you are first learning to code. We will take these away in Psych 1B but for this semester, you don’t need to set up your own file, just open the relevant stub file for each chapter.</p>
 </div>
 <div id="activity-1-set-up" class="section level2">
 <h2><span class="header-section-number">4.1</span> Activity 1: Set-up</h2>
 <p>Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter <a href="ref1.html#ref1">3</a>:</p>
 <ul>
-<li>You should have already download the data files and uploaded them to the R server as part of <a href="https://psyteachr.github.io/ug1-practical/ref1.html">Intro to R</a>, if you haven’t done this, go back and work through that chapter now.</li>
+<li>You should have already downloaded the data files and uploaded them to the R server as part of <a href="https://psyteachr.github.io/ug1-practical/ref1.html">Intro to R</a>, if you haven’t done this, go back and work through that chapter now.</li>
 <li>Open R and ensure the environment is clear.</li>
 <li>Set the working directory to your Data Skills folder.<br />
 </li>
@@ -530,8 +527,8 @@ There is also a function called <code>read.csv()</code>. Be very careful NOT to 
 </tbody>
 </table>
 </div>
-<div id="activity-8-visualise-the-data" class="section level3">
-<h3><span class="header-section-number">4.4.4</span> Activity 8: Visualise the data</h3>
+<div id="activity-7-visualise-the-data" class="section level3">
+<h3><span class="header-section-number">4.4.4</span> Activity 7: Visualise the data</h3>
 <p>As you’re going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead.</p>
 <p>We’re going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but do not worry about understanding the code. Just copy and paste it.</p>
 <p>Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset.</p>
@@ -600,34 +597,6 @@ Explain this answer
 <select class='solveme' data-answer='["Keeps only the variables you specify"]'> <option></option> <option>Keeps only the observations you specify</option> <option>Keeps only the variables you specify</option> <option>Keeps only the objects you specify</option></select></li>
 </ol>
 <hr />
-</div>
-</div>
-<div id="homework-instructions" class="section level2">
-<h2><span class="header-section-number">4.5</span> Homework instructions</h2>
-<p>Just like you did in Intro to R, we’re going to use R Markdown for the homework sheets. If you haven’t done Intro to R, please work through it before attempting the homework.</p>
-<p><strong>There are just a couple of important rules we need you to follow to make sure this all runs smoothly.</strong></p>
-<ol style="list-style-type: decimal">
-<li>These worksheets need to you fill in your answers and not change any other information. For example, if we ask you to replace NULL with your answer, only write in the code you are giving as your answer and nothing else. To illustrate -</li>
-</ol>
-<p><strong>Task 1 read in your data</strong></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="loading-data.html#cb28-1"></a>data &lt;-<span class="st"> </span><span class="ot">NULL</span></span></code></pre></div>
-<p>The task above is to read in the data file we are using for this task - the correct answer is <code>data &lt;- read_csv(data.csv)</code>. You would replace the NULL with:</p>
-<p><strong>Solution to Task 1</strong></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="loading-data.html#cb29-1"></a>data &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span></code></pre></div>
-<p>This means that we can look for your code and if it is in the format we expect to see it in, we can give you the marks! If you decide to get all creative on us then we can’t give you the marks as ‘my_lab_work_lol.csv’ isn’t the filename we have given to you to use. So don’t change the file, variable or data frame names as we need these to be consistent.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>We will look for your answers within the boxes which start and end with ``` and have {r task name} in them e.g. </li>
-</ol>
-<div class="verbatim">
-<p><code>```{r tidyverse, messages=FALSE}</code></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="loading-data.html#cb30-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
-<code>```</code>
-</div>
-<p>These are called code chunks and are the part of the worksheet that we can read and pick out your answers. If you change these in any way we can’t read your answer and therefore we can’t give you marks. You can see in the example above that the code chunk (the grey zone), starts and ends with these back ticks (usually found on top left corner of the keyboard). This code chunk has the ticks and text which makes it the part of the worksheet that will contain code. The {r tidyverse} part tells us which task it is (e.g., loading in tidyverse) and therefore what we should be looking for and what we can give marks for - loading in the package called tidyverse in the example above. If this changes then it won’t be read properly, so will impact on your grade.</p>
-<p>The easiest way to use our worksheets is to think of them as fill-in-the-blanks and keep the file names and names used in the worksheet the same. If you are unsure about anything then use the Data Skills channel on Teams to ask any questions and come along to the GTA support sessions.</p>
-<div id="homework-files" class="section level3">
-<h3><span class="header-section-number">4.5.1</span> Homework files</h3>
-<p>You can download all the R homework files and Assessment Information you need from the Data Skills homework section of Moodle.</p>
 
 </div>
 </div>

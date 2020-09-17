@@ -3,6 +3,8 @@
 
 This semester we will use the same dataset each week to develop your skills and knowledge. The dataset is from Woodworth et al. (2018)  and you can find an explanation of the data here [Web-based Positive Psychology Interventions: A Reexamination of Effectiveness](https://openpsychologydata.metajnl.com/articles/10.5334/jopd.35/).
 
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/fcN0wGI55eLei1anshzY7jf7ikF9thRAr3e5b02ZyzwpZJ8zR5sWdqoTDYkSVzOMaij-w8rV2uHOrzW0.kWhJbJmNF5ZRhh3g?autoplay=true&startTime=1600084023000) of this chapter available via Zoom.
+
 ## Activity 1
 
 Read through the study to familiarise yourself with the data you will be using over the coming weeks and answer the below questions.

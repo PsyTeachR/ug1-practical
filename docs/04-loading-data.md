@@ -14,13 +14,13 @@ In this chapter you will learn how to load the packages required to work with ou
 
 ### Stub files
 
-When you downloading the data in week 1, you will have noticed that there were five Rmd files that all started with `stub-`. These stub files are set-up with code chunks for each activity of the chapter to help make your life a a bit easier as you are first learning to code. We will take these away in Psych 1B but for this semester, you don't need to set up your own file, just open the relevant stub file for each chapter.
+When you downloaded the data in Getting to know the data, you will have noticed that there were five Rmd files that all started with `stub-`. These stub files are set-up with code chunks for each activity of the chapter to help make your life a bit easier as you are first learning to code. We will take these away in Psych 1B but for this semester, you don't need to set up your own file, just open the relevant stub file for each chapter.
 
 ## Activity 1: Set-up
 
 Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter \@ref(ref1): 
 
-* You should have already download the data files and uploaded them to the R server as part of [Intro to R](https://psyteachr.github.io/ug1-practical/ref1.html), if you haven't done this, go back and work through that chapter now.
+* You should have already downloaded the data files and uploaded them to the R server as part of [Intro to R](https://psyteachr.github.io/ug1-practical/ref1.html), if you haven't done this, go back and work through that chapter now.
 * Open R and ensure the environment is clear.
 * Set the working directory to your Data Skills folder.  
 * Open the `stub-loading-data` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
@@ -114,7 +114,7 @@ summarydata <- select(.data = all_dat, # name of the object to take data from
     36          36         1     40      5        2          5           202.10    
     37          35         1     49      4        1          0            0.00     
 
-### Activity 8: Visualise the data
+### Activity 7: Visualise the data
 
 As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead. 
 
@@ -198,48 +198,4 @@ Remember, in this course we use `read_csv()` and it is important for the homewor
 <select class='solveme' data-answer='["Keeps only the variables you specify"]'> <option></option> <option>Keeps only the observations you specify</option> <option>Keeps only the variables you specify</option> <option>Keeps only the objects you specify</option></select>
 
 *****
-
-## Homework instructions
-
-Just like you did in Intro to R, we're going to use R Markdown for the homework sheets. If you haven't done Intro to R, please work through it before attempting the homework.
-
-**There are just a couple of important rules we need you to follow to make sure this all runs smoothly.**
-
-1. These worksheets need to you fill in your answers and not change any other information. For example, if we ask you to replace NULL with your answer, only write in the code you are giving as your answer and nothing else. To illustrate -
-
-**Task 1 read in your data**
-
-
-```r
-data <- NULL
-```
-
-The task above is to read in the data file we are using for this task - the correct answer is ```data <- read_csv(data.csv)```. You would replace the NULL with:
-
-**Solution to Task 1**  
-
-
-```r
-data <- read_csv("data.csv")
-```
-
-This means that we can look for your code and if it is in the format we expect to see it in, we can give you the marks! If you decide to get all creative on us then we can't give you the marks as 'my_lab_work_lol.csv' isn't the filename we have given to you to use. So don't change the file, variable or data frame names as we need these to be consistent. 
-
-2. We will look for your answers within the boxes which start and end with ``` and have {r task name} in them e.g. 
-
-<div class='verbatim'><code>&#96;&#96;&#96;{r tidyverse, messages=FALSE}</code>
-
-```r
-library(tidyverse)
-```
-
-<code>&#96;&#96;&#96;</code></div>
-
-These are called code chunks and are the part of the worksheet that we can read and pick out your answers. If you change these in any way we can't read your answer and therefore we can't give you marks. You can see in the example above that the code chunk (the grey zone), starts and ends with these back ticks (usually found on top left corner of the keyboard). This code chunk has the ticks and text which makes it the part of the worksheet that will contain code. The {r tidyverse} part tells us which task it is (e.g., loading in tidyverse) and therefore what we should be looking for and what we can give marks for - loading in the package called tidyverse in the example above. If this changes then it won't be read properly, so will impact on your grade.
-
-The easiest way to use our worksheets is to think of them as fill-in-the-blanks and keep the file names and names used in the worksheet the same. If you are unsure about anything then use the Data Skills channel on Teams to ask any questions and come along to the GTA support sessions. 
-
-### Homework files
-
-You can download all the R homework files and Assessment Information you need from the Data Skills homework section of Moodle.
 

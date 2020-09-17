@@ -190,12 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.1" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.4.1</b> Activity 4: Check your data</a></li>
 <li class="chapter" data-level="4.4.2" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.4.2</b> Activity 5: Join the files together</a></li>
 <li class="chapter" data-level="4.4.3" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.4.3</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-8-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 8: Visualise the data</a></li>
+<li class="chapter" data-level="4.4.4" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.4.4</b> Activity 7: Visualise the data</a></li>
 <li class="chapter" data-level="4.4.5" data-path="loading-data.html"><a href="loading-data.html#debugging-tips-1"><i class="fa fa-check"></i><b>4.4.5</b> Debugging tips</a></li>
 <li class="chapter" data-level="4.4.6" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.4.6</b> Test yourself</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#homework-instructions"><i class="fa fa-check"></i><b>4.5</b> Homework instructions</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="loading-data.html"><a href="loading-data.html#homework-files"><i class="fa fa-check"></i><b>4.5.1</b> Homework files</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a><ul>
@@ -344,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.3.2" data-path="cloud.html"><a href="cloud.html#uploading-files"><i class="fa fa-check"></i><b>A.3.2</b> Uploading Files</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="homework-instructions-1.html"><a href="homework-instructions-1.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
+<li class="chapter" data-level="B" data-path="homework-instructions.html"><a href="homework-instructions.html"><i class="fa fa-check"></i><b>B</b> Homework instructions</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -415,8 +412,8 @@ In this chapter, we’ll be moving on to becoming familiar with the Wickham Six 
 <li>If you are working on your own computer, install the package <code>babynames</code>. If you are working on the server or a university computer, this package will already be installed.</li>
 <li>Type and run the code that loads the packages <code>tidyverse</code> and <code>babynames</code> using <code>library()</code> in the Activity 1 code chunk.</li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-wrangling-1.html#cb31-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb31-2"><a href="data-wrangling-1.html#cb31-2"></a><span class="kw">library</span>(babynames)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-wrangling-1.html#cb28-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb28-2"><a href="data-wrangling-1.html#cb28-2"></a><span class="kw">library</span>(babynames)</span></code></pre></div>
 </div>
 <div id="activity-2-look-at-the-data" class="section level2">
 <h2><span class="header-section-number">5.4</span> Activity 2: Look at the data</h2>
@@ -424,7 +421,7 @@ In this chapter, we’ll be moving on to becoming familiar with the Wickham Six 
 <ul>
 <li>View a preview of this dataset by typing <code>babynames</code> in to the console. You should see the following output:</li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-wrangling-1.html#cb32-1"></a>babynames</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-wrangling-1.html#cb29-1"></a>babynames</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 5
 ##     year sex   name          n   prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
@@ -485,11 +482,11 @@ In this chapter, we’ll be moving on to becoming familiar with the Wickham Six 
 <li>Type the code below into a new code chunk and run it.</li>
 </ul>
 <p>We’re going to cover how to write visualisation code in the next chapter so still don’t worry about not understanding the plot code yet. The point is show you how much you can accomplish with very little code. The code creates a graph showing the popularity of four girl baby names - Alexandra, Beverly, Emily, and Kathleen - from 1880 to 2014. You should see Figure <a href="data-wrangling-1.html#fig:babynames-plot">5.1</a> appear, which shows the proportion of each name across different years.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-wrangling-1.html#cb34-1"></a>dat &lt;-<span class="st"> </span>babynames <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb34-2"><a href="data-wrangling-1.html#cb34-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>)</span>
-<span id="cb34-3"><a href="data-wrangling-1.html#cb34-3"></a></span>
-<span id="cb34-4"><a href="data-wrangling-1.html#cb34-4"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> dat,<span class="kw">aes</span>(<span class="dt">x =</span> year,<span class="dt">y =</span> prop, <span class="dt">colour=</span>name))<span class="op">+</span></span>
-<span id="cb34-5"><a href="data-wrangling-1.html#cb34-5"></a><span class="st">  </span><span class="kw">geom_line</span>()  </span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-wrangling-1.html#cb31-1"></a>dat &lt;-<span class="st"> </span>babynames <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb31-2"><a href="data-wrangling-1.html#cb31-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>)</span>
+<span id="cb31-3"><a href="data-wrangling-1.html#cb31-3"></a></span>
+<span id="cb31-4"><a href="data-wrangling-1.html#cb31-4"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> dat,<span class="kw">aes</span>(<span class="dt">x =</span> year,<span class="dt">y =</span> prop, <span class="dt">colour=</span>name))<span class="op">+</span></span>
+<span id="cb31-5"><a href="data-wrangling-1.html#cb31-5"></a><span class="st">  </span><span class="kw">geom_line</span>()  </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:babynames-plot"></span>
 <img src="05-wrangling-1_files/figure-html/babynames-plot-1.png" alt="Proportion of four baby names from 1880 to 2014" width="100%" />
 <p class="caption">
@@ -505,8 +502,8 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 <h2><span class="header-section-number">5.6</span> Activity 4: Selecting variables of interest</h2>
 <p>There are two numeric measurements of name popularity, <code>prop</code> (the proportion of all babies with each name) is probably more useful than <code>n</code> (total number of babies with that name), because it takes into account that different numbers of babies are born in different years.</p>
 <p>Just like in Loading Data, if we wanted to create a dataset that only includes certain variables, we can use the <code>select()</code> function from the <code>dplyr</code> package. Run the below code to only select the columns <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="data-wrangling-1.html#cb35-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="co"># the object you want to select variables from</span></span>
-<span id="cb35-2"><a href="data-wrangling-1.html#cb35-2"></a>       year, sex, name, prop) <span class="co"># the variables you want to select</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-wrangling-1.html#cb32-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="co"># the object you want to select variables from</span></span>
+<span id="cb32-2"><a href="data-wrangling-1.html#cb32-2"></a>       year, sex, name, prop) <span class="co"># the variables you want to select</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 4
 ##     year sex   name        prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -522,7 +519,7 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  1880 F     Sarah     0.0132
 ## # ... with 1,924,655 more rows</code></pre>
 <p>Alternatively, you can also tell R which variables you don’t want, in this case, rather than telling R to select <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>, we can simply tell it to drop the column <code>n</code> using the minus sign <code>-</code> before the variable name.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-wrangling-1.html#cb37-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-wrangling-1.html#cb34-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 4
 ##     year sex   name        prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -538,13 +535,13 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  1880 F     Sarah     0.0132
 ## # ... with 1,924,655 more rows</code></pre>
 <p>Note that <code>select()</code> does not change the original tibble, but makes a new tibble with the specified columns. If you don’t save this new tibble to an object, it won’t be saved. If you want to keep this new dataset, create a new object. When you run this code, you will see your new tibble appear in the environment pane.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-wrangling-1.html#cb39-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="data-wrangling-1.html#cb36-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
 </div>
 <div id="activity-5-arranging-the-data" class="section level2">
 <h2><span class="header-section-number">5.7</span> Activity 5: Arranging the data</h2>
 <p>The function <code>arrange()</code> will sort the rows in the table according to the columns you supply. Try running the following code:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-wrangling-1.html#cb40-1"></a><span class="kw">arrange</span>(<span class="dt">.data =</span> babynames, <span class="co"># the data you want to sort</span></span>
-<span id="cb40-2"><a href="data-wrangling-1.html#cb40-2"></a>        name) <span class="co"># the variable you want to sort by</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-wrangling-1.html#cb37-1"></a><span class="kw">arrange</span>(<span class="dt">.data =</span> babynames, <span class="co"># the data you want to sort</span></span>
+<span id="cb37-2"><a href="data-wrangling-1.html#cb37-2"></a>        name) <span class="co"># the variable you want to sort by</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 5
 ##     year sex   name      n       prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;
@@ -560,7 +557,7 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  2017 M     Aaban    11 0.0000056 
 ## # ... with 1,924,655 more rows</code></pre>
 <p>The data are now sorted in ascending alphabetical order by name. The default is to sort in ascending order. If you want it descending, wrap the name of the variable in the <code>desc()</code> function. For instance, to sort by year in descending order, run the following code:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-wrangling-1.html#cb42-1"></a><span class="kw">arrange</span>(babynames,<span class="kw">desc</span>(year)) </span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-wrangling-1.html#cb39-1"></a><span class="kw">arrange</span>(babynames,<span class="kw">desc</span>(year)) </span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 5
 ##     year sex   name          n    prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;
@@ -576,17 +573,17 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  2017 F     Abigail   10551 0.00563
 ## # ... with 1,924,655 more rows</code></pre>
 <p>You can also sort by more than one column. What do you think the following code will do?</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-wrangling-1.html#cb44-1"></a><span class="kw">arrange</span>(babynames, <span class="kw">desc</span>(year), <span class="kw">desc</span>(sex), <span class="kw">desc</span>(prop)) </span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-wrangling-1.html#cb41-1"></a><span class="kw">arrange</span>(babynames, <span class="kw">desc</span>(year), <span class="kw">desc</span>(sex), <span class="kw">desc</span>(prop)) </span></code></pre></div>
 </div>
 <div id="activity-6-using-filter-to-select-observations" class="section level2">
 <h2><span class="header-section-number">5.8</span> Activity 6: Using filter to select observations</h2>
 <p>We have previously used <code>select()</code> to select certain variables or columns, however, frequently you will also want to select only certain observations or rows, for example, only babies born after 1999, or only babies named “Mary”. You do this using the verb <code>filter()</code>. The <code>filter()</code> function is a bit more involved than the other verbs, and requires more detailed explanation, but this is because it is also extremely powerful.</p>
 <p>Here is an example of filter, can you guess what it will do?</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-wrangling-1.html#cb45-1"></a> <span class="kw">filter</span>(<span class="dt">.data =</span> babynames, year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-wrangling-1.html#cb42-1"></a> <span class="kw">filter</span>(<span class="dt">.data =</span> babynames, year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>)</span></code></pre></div>
 <p>The first part of the code tells the function to use the object <code>babynames</code>. The second argument, <code>year &gt; 2000</code>, is what is known as a <strong>Boolean expression</strong>: an expression whose evaluation results in a value of TRUE or FALSE. What <code>filter()</code> does is include any observations (rows) for which the expression evaluates to TRUE, and exclude any for which it evaluates to FALSE. So in effect, behind the scenes, <code>filter()</code> goes through the entire set of 1.8 million observations, row by row, checking the value of year for each row, keeping it if the value is greater than 2000, and rejecting it if it is less than 2000. To see how a boolean expression works, consider the code below:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-wrangling-1.html#cb46-1"></a>years &lt;-<span class="st"> </span><span class="dv">1996</span><span class="op">:</span><span class="dv">2005</span></span>
-<span id="cb46-2"><a href="data-wrangling-1.html#cb46-2"></a>years</span>
-<span id="cb46-3"><a href="data-wrangling-1.html#cb46-3"></a>years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-wrangling-1.html#cb43-1"></a>years &lt;-<span class="st"> </span><span class="dv">1996</span><span class="op">:</span><span class="dv">2005</span></span>
+<span id="cb43-2"><a href="data-wrangling-1.html#cb43-2"></a>years</span>
+<span id="cb43-3"><a href="data-wrangling-1.html#cb43-3"></a>years <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span></span></code></pre></div>
 <pre><code>##  [1] 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005
 ##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
 <p>You can see that the expression <code>years &gt; 2000</code> returns a <strong>logical vector</strong> (a vector of TRUE and FALSE values), where each element represents whether the expression is true or false for that element. For the first five elements (1996 to 2000) it is false, and for the last five elements (2001 to 2005) it is true.</p>
@@ -638,7 +635,7 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 </tbody>
 </table>
 <p>If you want only those observations for a specific name (e.g., Mary), you use the equivalence operator <code>==</code>. Note that you use double equal signs, not a single equal sign.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-wrangling-1.html#cb48-1"></a><span class="kw">filter</span>(babynames, name <span class="op">==</span><span class="st"> &quot;Mary&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-wrangling-1.html#cb45-1"></a><span class="kw">filter</span>(babynames, name <span class="op">==</span><span class="st"> &quot;Mary&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 268 x 5
 ##     year sex   name      n     prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;    &lt;dbl&gt;
@@ -654,7 +651,7 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  1884 M     Mary     36 0.000293
 ## # ... with 258 more rows</code></pre>
 <p>If you wanted all the names except Mary, you use the ‘not equals’ operator:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-wrangling-1.html#cb50-1"></a><span class="kw">filter</span>(babynames, name<span class="op">!=</span><span class="st">&quot;Mary&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-wrangling-1.html#cb47-1"></a><span class="kw">filter</span>(babynames, name<span class="op">!=</span><span class="st">&quot;Mary&quot;</span>) </span></code></pre></div>
 <pre><code>## # A tibble: 1,924,397 x 5
 ##     year sex   name          n   prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
@@ -670,7 +667,7 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  1880 F     Annie      1258 0.0129
 ## # ... with 1,924,387 more rows</code></pre>
 <p>And if you wanted names from a defined set - e.g., names of British queens - you can use <code>%in%</code>:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-wrangling-1.html#cb52-1"></a><span class="kw">filter</span>(babynames, name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-wrangling-1.html#cb49-1"></a><span class="kw">filter</span>(babynames, name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 772 x 5
 ##     year sex   name          n      prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;     &lt;dbl&gt;
@@ -686,7 +683,7 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 10  1882 F     Mary       8148 0.0704   
 ## # ... with 762 more rows</code></pre>
 <p>This gives you data for the names in the vector on the right hand side of <code>%in%</code>. You can always invert an expression to get its opposite. So, for instance, if you instead wanted to get rid of all Marys, Elizabeths, and Victorias you would use the following:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-wrangling-1.html#cb54-1"></a><span class="kw">filter</span>(babynames, <span class="op">!</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-wrangling-1.html#cb51-1"></a><span class="kw">filter</span>(babynames, <span class="op">!</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Mary&quot;</span>,<span class="st">&quot;Elizabeth&quot;</span>,<span class="st">&quot;Victoria&quot;</span>)))</span></code></pre></div>
 <pre><code>## # A tibble: 1,923,893 x 5
 ##     year sex   name         n   prop
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;  &lt;dbl&gt;
@@ -707,9 +704,9 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 <div id="activity-7-creating-new-variables" class="section level2">
 <h2><span class="header-section-number">5.9</span> Activity 7: Creating new variables</h2>
 <p>Sometimes we need to create a new variable that doesn’t exist in our dataset. For instance, we might want to figure out what decade a particular year belongs to. To create new variables, we use the function <code>mutate()</code>. Note that if you want to save this new column, you need to save it to an object. Here, you are mutating a new column and attaching it to the <code>new_dat</code> object you created in Activity 4.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-wrangling-1.html#cb56-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">.data =</span> babynames, <span class="co"># the tibble you want to add a column to</span></span>
-<span id="cb56-2"><a href="data-wrangling-1.html#cb56-2"></a>                  <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="co"># new column name = what you want it to contain</span></span>
-<span id="cb56-3"><a href="data-wrangling-1.html#cb56-3"></a>new_dat</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-wrangling-1.html#cb53-1"></a>new_dat &lt;-<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">.data =</span> babynames, <span class="co"># the tibble you want to add a column to</span></span>
+<span id="cb53-2"><a href="data-wrangling-1.html#cb53-2"></a>                  <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="co"># new column name = what you want it to contain</span></span>
+<span id="cb53-3"><a href="data-wrangling-1.html#cb53-3"></a>new_dat</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 6
 ##     year sex   name          n   prop decade
 ##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -731,19 +728,19 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 <p>Most quantitative analyses will require you to summarise your data somehow, for example, by calculating the mean, median or a sum total of your data. You can perform all of these operations using the function <code>summarise()</code>.</p>
 <p>First, let’s use the object <code>dat</code> that just has the data for the four girls names, Alexandra, Beverly, Emily, and Kathleen. To start off, we’re simply going to calculate the total number of babies across all years that were given one of these four names.</p>
 <p>It’s useful to get in the habit of translating your code into full sentences to make it easier to figure out what’s happening. You can read the below code as “run the function summarise using the data in the object <code>dat</code> to create a new variable named <code>total</code> that is the result of adding up all the numbers in the column <code>n</code>”.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-wrangling-1.html#cb58-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to use</span></span>
-<span id="cb58-2"><a href="data-wrangling-1.html#cb58-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) <span class="co"># result = operation</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-wrangling-1.html#cb55-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to use</span></span>
+<span id="cb55-2"><a href="data-wrangling-1.html#cb55-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) <span class="co"># result = operation</span></span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##     total
 ##     &lt;int&gt;
 ## 1 2161374</code></pre>
 <p><code>summarise()</code> becomes even more powerful when combined with the final <code>dplyr</code> function, <code>group_by()</code>. Quite often, you will want to produce your summary statistics broken down by groups, for examples, the scores of participants in different conditions, or the reading time for native and non-native speakers.</p>
 <p>There are two ways you can use <code>group_by()</code>. First, you can create a new, grouped object.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-wrangling-1.html#cb60-1"></a>group_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to group</span></span>
-<span id="cb60-2"><a href="data-wrangling-1.html#cb60-2"></a>                      name) <span class="co"># the variable you want to group by</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-wrangling-1.html#cb57-1"></a>group_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(<span class="dt">.data =</span> dat, <span class="co"># the data you want to group</span></span>
+<span id="cb57-2"><a href="data-wrangling-1.html#cb57-2"></a>                      name) <span class="co"># the variable you want to group by</span></span></code></pre></div>
 <p>If you look at this object in the viewer, it won’t look any different to the original <code>dat</code>, however, the underlying structure has changed. Let’s run the above summarise code again, but now using the grouped data.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-wrangling-1.html#cb61-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> group_dat, </span>
-<span id="cb61-2"><a href="data-wrangling-1.html#cb61-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) </span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-wrangling-1.html#cb58-1"></a><span class="kw">summarise</span>(<span class="dt">.data =</span> group_dat, </span>
+<span id="cb58-2"><a href="data-wrangling-1.html#cb58-2"></a>          <span class="dt">total =</span> <span class="kw">sum</span>(n)) </span></code></pre></div>
 <pre><code>## # A tibble: 4 x 2
 ##   name       total
 ##   &lt;chr&gt;      &lt;int&gt;
@@ -753,9 +750,9 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 4 Kathleen  711605</code></pre>
 <p><code>summarise()</code> has performed exactly the same operation as before - adding up the total number in the column <code>n</code> - but this time it has done is separately for each group, which in this case was the variable <code>name</code>.</p>
 <p>You can request multiple summary calculations to be performed in the same function. For example, the following code calculates the mean and median number of babies given each name every year.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-wrangling-1.html#cb63-1"></a><span class="kw">summarise</span>(group_dat,</span>
-<span id="cb63-2"><a href="data-wrangling-1.html#cb63-2"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
-<span id="cb63-3"><a href="data-wrangling-1.html#cb63-3"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-wrangling-1.html#cb60-1"></a><span class="kw">summarise</span>(group_dat,</span>
+<span id="cb60-2"><a href="data-wrangling-1.html#cb60-2"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
+<span id="cb60-3"><a href="data-wrangling-1.html#cb60-3"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   name      mean_year median_year
 ##   &lt;chr&gt;         &lt;dbl&gt;       &lt;dbl&gt;
@@ -764,10 +761,10 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ## 3 Emily         6098.       1392.
 ## 4 Kathleen      5157.       3098</code></pre>
 <p>You can also add multiple grouping variables. For example, the following code groups <code>new_dat</code> by <code>sex</code> and <code>decade</code> and then calculates the summary statistics to give us the mean and median number of male and female babies in each decade.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-wrangling-1.html#cb65-1"></a>group_new_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(new_dat, sex, decade)</span>
-<span id="cb65-2"><a href="data-wrangling-1.html#cb65-2"></a><span class="kw">summarise</span>(group_new_dat,</span>
-<span id="cb65-3"><a href="data-wrangling-1.html#cb65-3"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
-<span id="cb65-4"><a href="data-wrangling-1.html#cb65-4"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-wrangling-1.html#cb62-1"></a>group_new_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(new_dat, sex, decade)</span>
+<span id="cb62-2"><a href="data-wrangling-1.html#cb62-2"></a><span class="kw">summarise</span>(group_new_dat,</span>
+<span id="cb62-3"><a href="data-wrangling-1.html#cb62-3"></a>          <span class="dt">mean_year =</span> <span class="kw">mean</span>(n),</span>
+<span id="cb62-4"><a href="data-wrangling-1.html#cb62-4"></a>          <span class="dt">median_year =</span> <span class="kw">median</span>(n))</span></code></pre></div>
 <pre><code>## # A tibble: 28 x 4
 ## # Groups:   sex [2]
 ##    sex   decade mean_year median_year
@@ -789,10 +786,10 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 <p>The final activity for this chapter essentially repeats what we’ve already covered but in a slightly different way. In the previous activities, you created new objects with new variables or groupings and then you called <code>summarise()</code> on those new objects in separate lines of code. As a result, you had multiple objects in your environment pane and you need to make sure that you keep track of the different names.</p>
 <p>Instead, you can use <strong>pipes</strong>. Pipes are written as <code>%&gt;%</code>and they should be read as “and then”. Pipes allow you to string together ‘sentences’ of code into ‘paragraphs’ so that you don’t need to create intermediary objects. Again, it is easier to show than tell.</p>
 <p>The below code does <strong>exactly</strong> the same as all the code we wrote above but it only creates one object.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-wrangling-1.html#cb67-1"></a>pipe_summary &lt;-<span class="st"> </span><span class="kw">mutate</span>(babynames, <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
-<span id="cb67-2"><a href="data-wrangling-1.html#cb67-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb67-3"><a href="data-wrangling-1.html#cb67-3"></a><span class="st">  </span><span class="kw">group_by</span>(name, decade) <span class="op">%&gt;%</span></span>
-<span id="cb67-4"><a href="data-wrangling-1.html#cb67-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_decade =</span> <span class="kw">mean</span>(n))</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-wrangling-1.html#cb64-1"></a>pipe_summary &lt;-<span class="st"> </span><span class="kw">mutate</span>(babynames, <span class="dt">decade =</span> <span class="kw">floor</span>(year<span class="op">/</span><span class="dv">10</span>) <span class="op">*</span><span class="dv">10</span>) <span class="op">%&gt;%</span></span>
+<span id="cb64-2"><a href="data-wrangling-1.html#cb64-2"></a><span class="st">  </span><span class="kw">filter</span>(name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Emily&quot;</span>,<span class="st">&quot;Kathleen&quot;</span>,<span class="st">&quot;Alexandra&quot;</span>,<span class="st">&quot;Beverly&quot;</span>), sex<span class="op">==</span><span class="st">&quot;F&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb64-3"><a href="data-wrangling-1.html#cb64-3"></a><span class="st">  </span><span class="kw">group_by</span>(name, decade) <span class="op">%&gt;%</span></span>
+<span id="cb64-4"><a href="data-wrangling-1.html#cb64-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_decade =</span> <span class="kw">mean</span>(n))</span></code></pre></div>
 <p>The reason that this function is called a pipe is because it ‘pipes’ the data through to the next function. When you wrote the code previously, the first argument of each function was the dataset you wanted to work on. When you use pipes it will automatically take the data from the previous line of code so you don’t need to specify it again.</p>
 <div class="try">
 <p>

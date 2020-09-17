@@ -2,11 +2,13 @@
 
 There are eight activities in total for this chapter, but don't worry, they are broken down into very small steps!
 
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/uJ_2RvnP_UhUF7jM7hQZzOD6KjqjUm1UmPupTfFHBAftxrpMScYWRxkeuzGG0g0RqeE2UBCSmAO5riBo.6AKR_E01noBaq4-b?autoplay=true&startTime=1600178959000) of this chapter available via Zoom.
+
 ### Activity 1: Upload data files to the server
 
 The main disadvantage to using the R server is that you will need to upload and download any files you are working on to and from the server (if you are using a local installation on your laptop you can skip this step).
 
-In [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) you downloaded the data files we will be using for this semester and you created a folder structure on your computer. In order to use these files, we need to copy them to the R server.
+In [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) you downloaded the data files we will be using for this semester and you created a folder structure on your computer. In order to use these files, we need to copy them to the R server. Whilst we're not going to use the data in this chapter, it's a useful step to get ready for next week.
 
 * Log on to the [R server](https://rstudio.psy.gla.ac.uk/)
 * In the Files pane, click `New folder` and call it Psych 1A.
@@ -122,7 +124,7 @@ Nearly finished! As our final step we are going to "knit" our file. This simply 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 35 years old. It is 299 days until my birthday.**
+**My name is Emily and I am 35 years old. It is 297 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers! R Markdown is an incredibly powerful and flexible format - this book was written using it! If you want to push yourself with R, additional functions and features of R Markdown would be a good place to start.
 
