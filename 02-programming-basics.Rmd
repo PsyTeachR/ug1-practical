@@ -20,7 +20,7 @@ With the exception of how they save files, both versions are identical and we wi
 
 ### R server
 
-To access the R server, [click here](https://rstudio.psy.gla.ac.uk/). Please note that the R server is only for use by students and staff in the School of Psychology and Institute for Neuroscience and Psychology. Sign in to the R server with your usual GUID and password.
+To access the R server, [click here](https://moodle.gla.ac.uk/mod/url/view.php?id=1878821). Please note that the R server is only for use by students and staff in the School of Psychology and Institute for Neuroscience and Psychology. Sign in to the R server with your usual GUID and password.
 
 ### Installing R on your computer
 
