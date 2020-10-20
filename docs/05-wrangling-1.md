@@ -45,6 +45,7 @@ Do the following. If you need help, consult Programming Basics and Intro to R.
 
 * Open R Studio and ensure the environment is clear.  
 * Open the `stub-wrangling-1.Rmd` file and ensure that the working directory is set to your Data Skills folder.    
+* If you're on the server, avoid a number of issues by restarting the session - click `Session` - `Restart R`  
 * If you are working on your own computer, install the package `babynames`. If you are working on the server or a university computer, this package will already be installed.
 * Type and run the code that loads the packages `tidyverse` and `babynames` using `library()` in the Activity 1 code chunk.  
 
@@ -150,6 +151,10 @@ select(.data = babynames, # the object you want to select variables from
 ## 10  1880 F     Sarah     0.0132
 ## # ... with 1,924,655 more rows
 ```
+
+<div class="danger">
+<p>If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems</p>
+</div>
 
 Alternatively, you can also tell R which variables you don't want, in this case, rather than telling R to select `year`, `sex`, `name` and `prop`, we can simply tell it to drop the column `n` using the minus sign `-` before the variable name.
 

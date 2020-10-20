@@ -22,6 +22,7 @@ Before we begin working with the data we need to do some set-up. If you need hel
 
 * You should have already downloaded the data files and uploaded them to the R server as part of [Intro to R](https://psyteachr.github.io/ug1-practical/ref1.html), if you haven't done this, go back and work through that chapter now.
 * Open R and ensure the environment is clear.
+* If you're on the server, avoid a number of issues by restarting the session - click `Session` - `Restart R`  
 * Set the working directory to your Data Skills folder.  
 * Open the `stub-loading-data` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).    
 
@@ -100,6 +101,11 @@ To do this we use the `select()` function to create a new object named `summaryd
 summarydata <- select(.data = all_dat, # name of the object to take data from
                       ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) # all the columns you want to keep
 ```
+
+```{block, type="danger"}
+If you get an error message when using select that says `unused argument` it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session  -restart R) and then run all your code above again from the start, or replace `select` with `dplyr::select` which tells R exactly which version of the select function to use. We'd recommend restarting the session because this will get you in the habit and it's a useful thing to try for a range of problems
+```
+
 
 * Run the above code and then run `head(summarydata)`. If everything has gone to plan it should look something like this:
 
