@@ -386,6 +386,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>You should have already downloaded the data files and uploaded them to the R server as part of <a href="https://psyteachr.github.io/ug1-practical/ref1.html">Intro to R</a>, if you haven’t done this, go back and work through that chapter now.</li>
 <li>Open R and ensure the environment is clear.</li>
+<li>If you’re on the server, avoid a number of issues by restarting the session - click <code>Session</code> - <code>Restart R</code><br />
+</li>
 <li>Set the working directory to your Data Skills folder.<br />
 </li>
 <li>Open the <code>stub-loading-data</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files are in your working directory (you should see them in the file pane).</li>
@@ -447,6 +449,11 @@ There is also a function called <code>read.csv()</code>. Be very careful NOT to 
 <p>To do this we use the <code>select()</code> function to create a new object named <code>summarydata</code>.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="loading-data.html#cb25-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, <span class="co"># name of the object to take data from</span></span>
 <span id="cb25-2"><a href="loading-data.html#cb25-2"></a>                      ahiTotal, cesdTotal, sex, age, educ, income, occasion,elapsed.days) <span class="co"># all the columns you want to keep</span></span></code></pre></div>
+<div class="danger">
+<p>
+If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems
+</p>
+</div>
 <ul>
 <li>Run the above code and then run <code>head(summarydata)</code>. If everything has gone to plan it should look something like this:</li>
 </ul>

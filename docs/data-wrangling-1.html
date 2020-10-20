@@ -409,6 +409,8 @@ In this chapter, we’ll be moving on to becoming familiar with the Wickham Six 
 </li>
 <li>Open the <code>stub-wrangling-1.Rmd</code> file and ensure that the working directory is set to your Data Skills folder.<br />
 </li>
+<li>If you’re on the server, avoid a number of issues by restarting the session - click <code>Session</code> - <code>Restart R</code><br />
+</li>
 <li>If you are working on your own computer, install the package <code>babynames</code>. If you are working on the server or a university computer, this package will already be installed.</li>
 <li>Type and run the code that loads the packages <code>tidyverse</code> and <code>babynames</code> using <code>library()</code> in the Activity 1 code chunk.</li>
 </ul>
@@ -518,6 +520,11 @@ Figure 5.1: Proportion of four baby names from 1880 to 2014
 ##  9  1880 F     Bertha    0.0135
 ## 10  1880 F     Sarah     0.0132
 ## # ... with 1,924,655 more rows</code></pre>
+<div class="danger">
+<p>
+If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems
+</p>
+</div>
 <p>Alternatively, you can also tell R which variables you don’t want, in this case, rather than telling R to select <code>year</code>, <code>sex</code>, <code>name</code> and <code>prop</code>, we can simply tell it to drop the column <code>n</code> using the minus sign <code>-</code> before the variable name.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-wrangling-1.html#cb34-1"></a><span class="kw">select</span>(<span class="dt">.data =</span> babynames, <span class="op">-</span>n)</span></code></pre></div>
 <pre><code>## # A tibble: 1,924,665 x 4

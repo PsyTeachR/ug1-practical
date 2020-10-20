@@ -375,6 +375,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>Open the <code>stub-wrangling-2.Rmd</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (<code>participant-info.csv</code> and <code>ahi-cesd.csv</code>) are in your working directory (you should see them in the file pane).<br />
 </li>
+<li>If you’re on the server, avoid a number of issues by restarting the session - click <code>Session</code> - <code>Restart R</code><br />
+</li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files.</li>
 </ul>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-wrangling-2.html#cb65-1"></a><span class="kw">library</span>(tidyverse) </span>
@@ -388,6 +390,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.2</span> Activity 2: Select</h2>
 <p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create a variable called <code>summarydata</code>.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-wrangling-2.html#cb66-1"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
+<div class="danger">
+<p>
+If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems
+</p>
+</div>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>

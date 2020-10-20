@@ -4,6 +4,7 @@
 
 * Open R Studio and ensure the environment is clear.  
 * Open the `stub-wrangling-2.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (`participant-info.csv` and `ahi-cesd.csv`) are in your working directory (you should see them in the file pane).   
+* If you're on the server, avoid a number of issues by restarting the session - click `Session` - `Restart R`  
 * Type and run the below code to load the `tidyverse` package and to load in the data files. 
 
 
@@ -28,6 +29,10 @@ Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasio
 ```r
 summarydata <- select(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)
 ```
+
+<div class="danger">
+<p>If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems</p>
+</div>
 
 ******
 
