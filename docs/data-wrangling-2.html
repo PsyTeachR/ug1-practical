@@ -463,6 +463,11 @@ Solution
 <span id="cb72-2"><a href="data-wrangling-2.html#cb72-2"></a>happy_dat &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, Happiness_Category)</span>
 <span id="cb72-3"><a href="data-wrangling-2.html#cb72-3"></a></span>
 <span id="cb72-4"><a href="data-wrangling-2.html#cb72-4"></a>data_median_group &lt;-<span class="st"> </span><span class="kw">summarise</span>(happy_dat, <span class="dt">median_score =</span> <span class="kw">median</span>(cesdTotal))</span></code></pre></div>
+<div class="info">
+<p>
+If you get what looks like an error that says <code>summarise() ungrouping output (override with .groups argument)</code>don’t worry, this isn’t an error it’s just R telling you what it’s done. This message was included in a very recent update to the <code>tidyverse</code> which is why it doesn’t appear on some of the walkthrough vidoes.
+</p>
+</div>
 <hr />
 <p><strong>Pause here and interpret the above code and output</strong></p>
 <ul>

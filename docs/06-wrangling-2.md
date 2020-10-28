@@ -133,6 +133,10 @@ happy_dat <- group_by(age_65max, Happiness_Category)
 data_median_group <- summarise(happy_dat, median_score = median(cesdTotal))
 ```
 
+<div class="info">
+<p>If you get what looks like an error that says <code>summarise() ungrouping output (override with .groups argument)</code>don’t worry, this isn’t an error it’s just R telling you what it’s done. This message was included in a very recent update to the <code>tidyverse</code> which is why it doesn’t appear on some of the walkthrough vidoes.</p>
+</div>
+
 ******
 
 **Pause here and interpret the above code and output**
