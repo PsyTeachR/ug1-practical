@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B Installing R on your computer | Level 1 Data Skills</title>
+  <title>A Exporting files from the server | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B Installing R on your computer | Level 1 Data Skills" />
+  <meta property="og:title" content="A Exporting files from the server | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B Installing R on your computer | Level 1 Data Skills" />
+  <meta name="twitter:title" content="A Exporting files from the server | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exporting-files-from-the-server.html"/>
-
+<link rel="prev" href="project-analysis.html"/>
+<link rel="next" href="installing-r-on-your-computer-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -364,42 +364,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="installing-r-on-your-computer-1" class="section level1">
-<h1><span class="header-section-number">B</span> Installing R on your computer</h1>
-<div id="why-should-i-install-r-on-my-computer" class="section level2">
-<h2><span class="header-section-number">B.1</span> Why should I install R on my computer?</h2>
-<p>The R Server is cuts down on a lot of installation problems and it means that you have all the packages and functions you need already installed. However, it requires an internet connection to use and additional when it comes time to submit your R assessments, if you don’t have R on your computer it means that you won’t be able to open the files you download from the server to check they’re ok before you submit them.</p>
-<p>It is not necessary to install R on your computer, however, now that we’re over the initial anxiety spike of using R for the first time, you may find it helpful.</p>
-</div>
-<div id="windows" class="section level2">
-<h2><span class="header-section-number">B.2</span> Windows</h2>
-<p>If you are using Windows, you should download and install the following:
-* <a href="https://cran.r-project.org/bin/windows/base/">R</a>
-* <a href="https://rstudio.com/products/rstudio/download/#download">R Studio</a>
-* <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></p>
-<p>Once you’ve installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="installing-r-on-your-computer-1.html#cb183-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<p>This will install the <code>tidyverse</code> package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.</p>
-<p>If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.</p>
-</div>
-<div id="mac" class="section level2">
-<h2><span class="header-section-number">B.3</span> Mac</h2>
-<p>If you are using a Mac, you should download and install the following:
-* <a href="https://www.stats.bris.ac.uk/R/">R</a>
-* <a href="https://rstudio.com/products/rstudio/download/#download">R Studio</a>
-* <a href="https://www.xquartz.org/">XQuartz</a></p>
-<p>There have been a number of issues installing R on Macs. We recommend you watch this <a href="https://www.youtube.com/watch?v=90IdULVGmYY">walkthrough video</a>.</p>
-<p>If you are using a Mac with the Catalina OS, we also recommend you read this <a href="https://psyteachr.github.io/FAQ/installing-r-and-rstudio.html#i-am-using-macos-10.15-catalina">troubleshooting guide</a></p>
-<p>Once you’ve installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="installing-r-on-your-computer-1.html#cb184-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<p>This will install the <code>tidyverse</code> package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.</p>
-<p>If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.</p>
-</div>
-<div id="chromebooks" class="section level2">
-<h2><span class="header-section-number">B.4</span> Chromebooks</h2>
-<p>Please note that you cannot currently install R on a Chromebook, please continue to use the R Server.</p>
-
-</div>
+<div id="exporting-files-from-the-server" class="section level1">
+<h1><span class="header-section-number">A</span> Exporting files from the server</h1>
+<p>If you are using the R server, you may need to export files to share them with other people or submit them for your assignments.</p>
+<ul>
+<li>First, make sure you have saved any changes you have made to the file. Do this by clicking “File - Save”, Ctrl + S, or clicking the save icon. If all your changes have been saved, the save icon will be greyed out. If there are new unsaved changes, you will be able to click the icon.</li>
+<li>Select the file you and to download in the files pane (bottom right) by ticking the box next to it, then click “More - Export” and save the file to your computer.</li>
+<li>If you do not have R installed, DO NOT try to open it on your computer. If you do, it will open in Word, Endnote or similar, and it may corrupt your code. Only open the file if you have R and R Studio installed.</li>
+<li>If you want to double check that this file is definitely the right one to submit for an assignment, you can re-upload it to the server and open it again to make sure it has the answers in it.</li>
+</ul>
 </div>
 <div class="psyteachr_footer">
   
@@ -491,8 +464,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="exporting-files-from-the-server.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="project-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="installing-r-on-your-computer-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
