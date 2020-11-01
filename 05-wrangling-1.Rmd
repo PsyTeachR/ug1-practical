@@ -291,6 +291,12 @@ summarise(group_new_dat,
           median_year = median(n))
 ```
 
+```{block, type = "info"}
+If you get what looks like an error that says `summarise() ungrouping output (override with .groups argument)`don't worry, this isn't an error it's just R telling you what it's done. This message was included in a very recent update to the `tidyverse` which is why it doesn't appear on some of the walkthrough vidoes.
+```
+
+
+
 ## Activity 9: Pipes
 
 The final activity for this chapter essentially repeats what we've already covered but in a slightly different way. In the previous activities, you created new objects with new variables or groupings and then you called `summarise()` on those new objects in separate lines of code. As a result, you had multiple objects in your environment pane and you need to make sure that you keep track of the different names. 
