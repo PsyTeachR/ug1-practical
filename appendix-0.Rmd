@@ -1,5 +1,14 @@
 # (APPENDIX) Appendices {-} 
 
+# Exporting files from the server
+
+If you are using the R server, you may need to export files to share them with other people or submit them for your assignments.
+
+* First, make sure you have saved any changes you have made to the file. Do this by clicking "File - Save", Ctrl + S, or clicking the save icon. If all your changes have been saved, the save icon will be greyed out. If there are new unsaved changes, you will be able to click the icon.
+* Select the file you and to download in the files pane (bottom right) by ticking the box next to it, then click "More - Export" and save the file to your computer.
+* If you do not have R installed, DO NOT try to open it on your computer. If you do, it will open in Word, Endnote or similar, and it may corrupt your code. Only open the file if you have R and R Studio installed.
+* If you want to double check that this file is definitely the right one to submit for an assignment, you can re-upload it to the server and open it again to make sure it has the answers in it.
+
 # Installing R on your computer
 
 ## Why should I install R on my computer?
@@ -35,6 +44,16 @@ If you are using a Mac, you should download and install the following:
 There have been a number of issues installing R on Macs. We recommend you watch this [walkthrough video](https://www.youtube.com/watch?v=90IdULVGmYY).
 
 If you are using a Mac with the Catalina OS, we also recommend you read this [troubleshooting guide](https://psyteachr.github.io/FAQ/installing-r-and-rstudio.html#i-am-using-macos-10.15-catalina)
+
+Once you've installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:
+
+```{r eval = FALSE}
+install.packages("tidyverse")
+```
+
+This will install the `tidyverse` package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.
+
+If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.
 
 ## Chromebooks
 
