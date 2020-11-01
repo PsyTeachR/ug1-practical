@@ -514,6 +514,12 @@ summarise(group_new_dat,
 ## # ... with 18 more rows
 ```
 
+<div class="info">
+<p>If you get what looks like an error that says <code>summarise() ungrouping output (override with .groups argument)</code>don’t worry, this isn’t an error it’s just R telling you what it’s done. This message was included in a very recent update to the <code>tidyverse</code> which is why it doesn’t appear on some of the walkthrough vidoes.</p>
+</div>
+
+
+
 ## Activity 9: Pipes
 
 The final activity for this chapter essentially repeats what we've already covered but in a slightly different way. In the previous activities, you created new objects with new variables or groupings and then you called `summarise()` on those new objects in separate lines of code. As a result, you had multiple objects in your environment pane and you need to make sure that you keep track of the different names. 
