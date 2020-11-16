@@ -151,9 +151,9 @@ age_65max <- filter(ahi_asc, age <= 65)
 
 
 ```r
-overall_median <- summarise(age_65max, median = median(ahiTotal))
+overall_median <- summarise(age_65max, median_score = median(ahiTotal))
 data_sex <- group_by(age_65max, sex)
-data_median <- summarise(data_sex, median_score = median(ahiTotal))
+median_score <- summarise(data_sex, sex_median = median(ahiTotal))
 ```
 
 

@@ -481,9 +481,9 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="scatterplots.html#cb93-1"></a>overall_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median =</span> <span class="kw">median</span>(ahiTotal))</span>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="scatterplots.html#cb93-1"></a>overall_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(age_65max, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span>
 <span id="cb93-2"><a href="scatterplots.html#cb93-2"></a>data_sex &lt;-<span class="st"> </span><span class="kw">group_by</span>(age_65max, sex)</span>
-<span id="cb93-3"><a href="scatterplots.html#cb93-3"></a>data_median &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">median_score =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
+<span id="cb93-3"><a href="scatterplots.html#cb93-3"></a>median_score &lt;-<span class="st"> </span><span class="kw">summarise</span>(data_sex, <span class="dt">sex_median =</span> <span class="kw">median</span>(ahiTotal))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-6" class="section level4">
