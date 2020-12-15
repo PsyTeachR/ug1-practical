@@ -15,6 +15,7 @@ In the below example we want to perform some common wrangling steps:
 
 So far, when you've done these steps you've created a new object for each part of the process. The code below should look familiar - once you've loaded in the data to `demographic` and `raw_data`, you then create a new object named `sel_data` that stores the output of the `select()` operation, then you create a new object named `joined_data` that uses `sel_data` as its input and then finally you create another object called `final_data` that uses `joined_data` as its input.
 
+Note that the below code is just an example, we don't have any data called `my_data` so don't try and run this code, it's just for reading.
 
 <div class = 'left-float'>
 
@@ -101,9 +102,9 @@ final_data <- raw_data %>%
 </ol>
 </div>
 
-Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option>%>%</option> <option><-</option> <option>%<%</option></select>
+Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option><-</option> <option>%<%</option> <option>%>%</option></select>
 
-Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the third argument of the 18th function.</option> <option>To the first argument of the next function.</option> <option>To the last argument of the next function.</option></select>
+Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the third argument of the 18th function.</option> <option>To the last argument of the next function.</option> <option>To the first argument of the next function.</option></select>
 
 ### Activity 2: Set-up
 
@@ -166,7 +167,13 @@ You can also pipe into `ggplot()`. The below example calculates the total score 
 ```r
 data_group <- group_by(scores, Question)
 question_scores <- summarise(data_group, item_scores = sum(Score))
+```
 
+```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```r
 ggplot(question_scores, aes(x = Question, y = item_scores)) +
   geom_col() +
   theme_minimal()

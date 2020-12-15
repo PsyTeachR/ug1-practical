@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Reshaping data | Level 1 Data Skills</title>
+  <title>B Installing R on your computer | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Reshaping data | Level 1 Data Skills" />
+  <meta property="og:title" content="B Installing R on your computer | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Reshaping data | Level 1 Data Skills" />
+  <meta name="twitter:title" content="B Installing R on your computer | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="aq-data-and-recap.html"/>
-<link rel="next" href="pipes.html"/>
+<link rel="prev" href="exporting-files-from-the-server.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -367,168 +367,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reshaping-data" class="section level1">
-<h1><span class="header-section-number">10</span> Reshaping data</h1>
-<p>Let’s continue what we started in AQ Data and Recap by hand but now using R to calculate a score for each participant.</p>
-<div id="activity-1-load-in-the-data" class="section level3">
-<h3><span class="header-section-number">10.0.1</span> Activity 1: Load in the data</h3>
+<div id="installing-r-on-your-computer" class="section level1">
+<h1><span class="header-section-number">B</span> Installing R on your computer</h1>
+<div id="why-should-i-install-r-on-my-computer" class="section level2">
+<h2><span class="header-section-number">B.1</span> Why should I install R on my computer?</h2>
+<p>The R Server is cuts down on a lot of installation problems and it means that you have all the packages and functions you need already installed. However, it requires an internet connection to use and additional when it comes time to submit your R assessments, if you don’t have R on your computer it means that you won’t be able to open the files you download from the server to check they’re ok before you submit them.</p>
+<p>It is not necessary to install R on your computer, however, now that we’re over the initial anxiety spike of using R for the first time, you may find it helpful.</p>
+</div>
+<div id="windows" class="section level2">
+<h2><span class="header-section-number">B.2</span> Windows</h2>
+<p>If you are using Windows, you should download and install the following:</p>
 <ul>
-<li>Open a new R markdown document, name it “Reshaping Data” and save it in your Data Skills folder.</li>
-<li>Set the working directory to your Data Skills folder.</li>
-<li>Type and run the code that loads the <code>tidyverse</code> package.</li>
-<li>Use <code>read_csv()</code> to load in the data. you should create three objects <code>responses</code>, <code>scoring</code> and <code>qformats</code> that contain the respective data.</li>
+<li><a href="https://cran.r-project.org/bin/windows/base/">R</a></li>
+<li><a href="https://rstudio.com/products/rstudio/download/#download">R Studio</a></li>
+<li><a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></li>
 </ul>
+<p>Once you’ve installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="installing-r-on-your-computer.html#cb194-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>This will install the <code>tidyverse</code> package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.</p>
+<p>If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.</p>
 </div>
-<div id="activity-2-pivot_longer" class="section level3">
-<h3><span class="header-section-number">10.0.2</span> Activity 2: <code>pivot_longer()</code></h3>
-<p>The first step is to transform the data from wide format to long format. To do this, we will use the function <code>pivot_longer()</code>. <code>pivot_longer()</code> takes multiple columns and collapses them so that each unique variable has it’s own column and has four main arguments:</p>
-<ul>
-<li><code>data</code> is the name of the object you want to transform</li>
-<li><code>names_to</code> is the name of the new column that you will create that will contain the names of the original wide format columns</li>
-<li><code>values_to</code> is the name of the column that will contain the existing values.</li>
-<li><code>cols</code> are the original columns you want to collapse.</li>
-</ul>
-<p>These functions can seem a bit abstract and it is better to show than tell. Run the below code in a new code chunk and then compare how <code>rlong</code> looks compared to <code>responses</code> and see if you can figure out what effect each argument had.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="reshaping-data.html#cb103-1"></a>rlong &lt;-<span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">data =</span> responses, </span>
-<span id="cb103-2"><a href="reshaping-data.html#cb103-2"></a>                      <span class="dt">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
-<span id="cb103-3"><a href="reshaping-data.html#cb103-3"></a>                      <span class="dt">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
-<span id="cb103-4"><a href="reshaping-data.html#cb103-4"></a>                      <span class="dt">cols =</span> Q1<span class="op">:</span>Q10)</span></code></pre></div>
-<p>You have now created a tibble with 660 observations and 3 variables; 10 observations per 66 participants and 3 variables. Let’s recreate the example from the AQ Data and Recap and only use <strong>one participant</strong>. We can do that by using <code>filter()</code> (which you used last semester) to create a new object called <code>rlong_16.</code></p>
+<div id="mac" class="section level2">
+<h2><span class="header-section-number">B.3</span> Mac</h2>
+<p>If you are using a Mac, you should download and install the following:
+* <a href="https://www.stats.bris.ac.uk/R/">R</a>
+* <a href="https://rstudio.com/products/rstudio/download/#download">R Studio</a>
+* <a href="https://www.xquartz.org/">XQuartz</a></p>
+<p>There have been a number of issues installing R on Macs. We recommend you watch this <a href="https://www.youtube.com/watch?v=90IdULVGmYY">walkthrough video</a>.</p>
+<p>If you are using a Mac with the Catalina OS, we also recommend you read this <a href="https://psyteachr.github.io/FAQ/installing-r-and-rstudio.html#i-am-using-macos-10.15-catalina">troubleshooting guide</a></p>
+<p>Once you’ve installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="installing-r-on-your-computer.html#cb195-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>This will install the <code>tidyverse</code> package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.</p>
+<p>If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.</p>
 </div>
-<div id="activity-3-filter" class="section level3">
-<h3><span class="header-section-number">10.0.3</span> Activity 3: <code>filter()</code></h3>
-<hr />
-<p><strong>Pause here and test your knowledge</strong></p>
-<ul>
-<li>What does <code>filter()</code> do?</li>
-</ul>
-<p><select class='solveme' data-answer='["Retains or removes observations"]'> <option></option> <option>Retains or removes variables</option> <option>Retains or removes observations</option></select></p>
-<hr />
-<ul>
-<li>Create a new object called <code>rlong_16</code> that uses <code>filter()</code> to keep only the data from participant Id 16.</li>
-</ul>
-<div class="danger">
-<p>
-Every year, the biggest problem with these exercises is typos caused by not paying attention to the exact spelling and capitalisation. Remember, <code>Question</code> is not the same as <code>question</code>, <code>Response</code> is not the same as <code>response</code>, and <code>Id</code> is not the same as <code>ID.</code>
-</p>
-</div>
-</div>
-<div id="activity-4-inner_join" class="section level3">
-<h3><span class="header-section-number">10.0.4</span> Activity 4: <code>inner_join()</code></h3>
-<p>The next step is to match each question with its format (F or R) that is stored in <strong>qformats</strong>. That is, we need to join together the two objects using <code>inner_join()</code> like we did in Psych 1A.</p>
-<ul>
-<li>Create a new object called <code>rlong_16_join</code> that uses <code>inner_join()</code> to join together <code>rlong_16</code> and <code>qformats</code>by their common column.</li>
-<li>If you get the error <code>Error: by can't contain join column XXXX which is missing from LHS</code> it means that you have made a typo. Check the exact spelling and capitalisation of the variable names.</li>
-</ul>
-<hr />
-<p><code>inner_join()</code> matches up rows in the two tables where both tables have the same value for the variable named in the third argument, “Question”. It then combines the columns from the two tables, copying rows where necessary.</p>
-<p>To state it more simply, what it does is the following: For each row in <code>rlong</code>, it checks the value of the column <code>Question</code>, and looks for rows with the same value in <code>qformats</code>, and then essentially combines all of the other columns in the two tables for these matching rows. If there are values that don’t match, the rows get dropped. The <code>inner_join()</code> function is one of the most useful and time-saving operations in data wrangling so keep practising as it will keep reappearing time after time.</p>
-</div>
-<div id="activity-5-another-inner_join" class="section level3">
-<h3><span class="header-section-number">10.0.5</span> Activity 5: Another <code>inner_join()</code></h3>
-<p>Now that we have matched up each question with its corresponding format, we can now “look up” the corresponding scores in the scoring table based on the format and the response. This means we have to use <code>inner_join()</code> once again to join <code>rlong_16_join</code> with <code>scoring</code>**</p>
-<ul>
-<li>Create a new object named <code>scores_16</code> that joins together <code>rlong_16_join</code> with <code>scoring</code>.</li>
-<li>Be careful to tell R <strong>all</strong> the columns the two objects have in common. Remember that when you need to specify multiple variables you will need to use the syntax <code>by = c("var1", "var2)</code>.</li>
-<li>The reason we have to do two separate <code>inner_joins()</code> is because they can only join two tables at once and we have three, so it requires two steps.</li>
-</ul>
-</div>
-<div id="activity-6-calculating-the-aq-score" class="section level3">
-<h3><span class="header-section-number">10.0.6</span> Activity 6: Calculating the AQ score</h3>
-<p>Now you need to calculate the total AQ score for participant 16.</p>
-<ul>
-<li>Create a new object called <code>AQ_16</code>. Use <code>summarise()</code> and <code>sum()</code>to add up the numbers in the column <code>Score</code> from <code>scores_16</code> and call the result of this calculation <code>AQ_score</code>.</li>
-<li>This is a difficult task to do from memory but try it anyway - if you get anywhere near the right solution you’re doing extremely well!</li>
-</ul>
-</div>
-<div id="activity-7-calculating-all-scores" class="section level3">
-<h3><span class="header-section-number">10.0.7</span> Activity 7: Calculating all scores</h3>
-<p>Next we’re going to do the same thing but for <strong>all</strong> participants. The first two steps are the same but we just use the full data <code>rlong</code> rather than the filtered dataset.</p>
-<ul>
-<li>Run the below code in a new code chunk.</li>
-</ul>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="reshaping-data.html#cb104-1"></a>rlong_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong, qformats, <span class="st">&quot;Question&quot;</span>)</span>
-<span id="cb104-2"><a href="reshaping-data.html#cb104-2"></a>scores &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span></code></pre></div>
-<p>The final part of calculating the scores requires an extra step because now we don’t just want to calculate one score, we want to calculate a score <strong>for each participant</strong> which means that we need to use <code>group_by()</code> to group by <code>Id</code>. We’re not going to use it in this chapter but we also want our object to show us the participant’s gender so we will also add <code>gender</code> to the grouping. If you want to refresh your memory about how <code>group_by()</code> works, revise Data Wrangling 1.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="reshaping-data.html#cb105-1"></a>scores_grouped &lt;-<span class="st"> </span><span class="kw">group_by</span>(scores, Id, gender)</span>
-<span id="cb105-2"><a href="reshaping-data.html#cb105-2"></a>AQ_all &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_grouped, <span class="dt">total_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
-</div>
-<div id="activity-8-visualisation" class="section level3">
-<h3><span class="header-section-number">10.0.8</span> Activity 8: Visualisation</h3>
-<p>Finally, use <code>ggplot()</code> and <code>geom_histogram()</code> to make a histogram of all the total AQ scores. Try and make it look pretty by changing the axis labels and the theme. You can check the solution code to see how the below example was made, but you can make yours look different.</p>
-<ul>
-<li>Hint 1: <code>ggplot(data, aes(x)) + geom_histogram()</code></li>
-<li>Hint 2: Add <code>binwidth = 1</code> to <code>geom_histogram()</code> to change the width of the bars.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="10-reshaping-data_files/figure-html/unnamed-chunk-5-1.png" alt="Histogram of total AQ scores" width="100%" />
-<p class="caption">
-Figure 7.5: Histogram of total AQ scores
-</p>
-</div>
-</div>
-<div id="activity-solutions" class="section level3">
-<h3><span class="header-section-number">10.0.9</span> Activity solutions</h3>
-<div id="activity-1" class="section level4">
-<h4><span class="header-section-number">10.0.9.1</span> Activity 1</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="reshaping-data.html#cb106-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb106-2"><a href="reshaping-data.html#cb106-2"></a>scoring &lt;-<span class="st"> </span><span class="kw">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
-<span id="cb106-3"><a href="reshaping-data.html#cb106-3"></a>responses &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
-<span id="cb106-4"><a href="reshaping-data.html#cb106-4"></a>qformats &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-3" class="section level4">
-<h4><span class="header-section-number">10.0.9.2</span> Activity 3</h4>
-<div class='solution'>
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="reshaping-data.html#cb107-1"></a>rlong_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">filter</span>(rlong, Id <span class="op">==</span><span class="st"> </span><span class="dv">16</span>)</span></code></pre></div>
-</div>
-<div id="activity-4" class="section level4">
-<h4><span class="header-section-number">10.0.9.3</span> Activity 4</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="reshaping-data.html#cb108-1"></a>rlong_<span class="dv">16</span>_join &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_<span class="dv">16</span>, qformats, <span class="st">&quot;Question&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-5" class="section level4">
-<h4><span class="header-section-number">10.0.9.4</span> Activity 5</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="reshaping-data.html#cb109-1"></a>scores_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">inner_join</span>(rlong_<span class="dv">16</span>_join, scoring, <span class="kw">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-6" class="section level4">
-<h4><span class="header-section-number">10.0.9.5</span> Activity 6</h4>
-<div class='solution'>
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="reshaping-data.html#cb110-1"></a>AQ_<span class="dv">16</span> &lt;-<span class="st"> </span><span class="kw">summarise</span>(scores_<span class="dv">16</span>, <span class="dt">AQ_score =</span> <span class="kw">sum</span>(Score))</span></code></pre></div>
-</div>
-<div id="activity-8" class="section level4">
-<h4><span class="header-section-number">10.0.9.6</span> Activity 8</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="reshaping-data.html#cb111-1"></a><span class="kw">ggplot</span>(AQ_all, <span class="kw">aes</span>(<span class="dt">x =</span> total_score)) <span class="op">+</span></span>
-<span id="cb111-2"><a href="reshaping-data.html#cb111-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span></span>
-<span id="cb111-3"><a href="reshaping-data.html#cb111-3"></a><span class="st">  </span><span class="kw">theme_minimal</span>()<span class="op">+</span></span>
-<span id="cb111-4"><a href="reshaping-data.html#cb111-4"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="op">+</span></span>
-<span id="cb111-5"><a href="reshaping-data.html#cb111-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
-</div>
+<div id="chromebooks" class="section level2">
+<h2><span class="header-section-number">B.4</span> Chromebooks</h2>
+<p>Please note that you cannot currently install R on a Chromebook, please continue to use the R Server.</p>
 
-</div>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -621,8 +496,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="aq-data-and-recap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="pipes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exporting-files-from-the-server.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

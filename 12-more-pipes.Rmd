@@ -82,7 +82,7 @@ In the research methods lectures for Psych 1A, we talked about the importance of
 ```{r fig.cap = "Bad bar chart of means"}
 AQ_all %>%
   ggplot(aes(x = gender, y = total_score)) +
-  stat_summary(geom = "bar", fun.y = "mean") +
+  stat_summary(geom = "bar", fun = "mean") +
   stat_summary(geom = "errorbar", fun.data = "mean_se", width = .2) +
   theme_minimal()
 ```
@@ -109,7 +109,7 @@ ggplot(AQ_all, aes(x = total_score, fill = gender)) +
   scale_y_continuous(name = "Density")
 ```
 
-The y-axis displays density, i.e., what proportion of the data points fall at eaach point on the x-axis.
+The y-axis displays density, i.e., what proportion of the data points fall at each point on the x-axis.
 
 * Approximately what percent of female participants had a total AQ of 2? `r mcq(c(".3%", "3%", answer = "30%"))`
 

@@ -111,14 +111,14 @@ summarydata <- select(.data = all_dat, # name of the object to take data from
 * Run the above code and then run `head(summarydata)`. If everything has gone to plan it should look something like this:
 
 
- ahiTotal    cesdTotal    sex    age    educ    income    occasion    elapsed.days 
-----------  -----------  -----  -----  ------  --------  ----------  --------------
-    32          50         1     46      4        3          5           182.03    
-    34          49         1     37      3        2          2           14.19     
-    34          47         1     37      3        2          3           33.03     
-    35          41         1     19      2        1          0            0.00     
-    36          36         1     40      5        2          5           202.10    
-    37          35         1     49      4        1          0            0.00     
+| ahiTotal | cesdTotal | sex | age | educ | income | occasion | elapsed.days |
+|:--------:|:---------:|:---:|:---:|:----:|:------:|:--------:|:------------:|
+|    32    |    50     |  1  | 46  |  4   |   3    |    5     |    182.03    |
+|    34    |    49     |  1  | 37  |  3   |   2    |    2     |    14.19     |
+|    34    |    47     |  1  | 37  |  3   |   2    |    3     |    33.03     |
+|    35    |    41     |  1  | 19  |  2   |   1    |    0     |     0.00     |
+|    36    |    36     |  1  | 40  |  5   |   2    |    5     |    202.10    |
+|    37    |    35     |  1  | 49  |  4   |   1    |    0     |     0.00     |
 
 ### Activity 7: Visualise the data
 

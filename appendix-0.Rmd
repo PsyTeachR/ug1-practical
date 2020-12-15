@@ -20,6 +20,7 @@ It is not necessary to install R on your computer, however, now that we're over 
 ## Windows
 
 If you are using Windows, you should download and install the following:
+
 * [R](https://cran.r-project.org/bin/windows/base/)
 * [R Studio](https://rstudio.com/products/rstudio/download/#download)
 * [RTools](https://cran.r-project.org/bin/windows/Rtools/)
