@@ -1,6 +1,6 @@
 # Probability continued
 
-First, we're going to calculate probabilities based on the binomial distribution. In this chapter, for the first time we don't need to load the tidyverse. All the functions we need are contained in Base R. If you want a refresher on the difference between Base R and packages, see [Psych 1A lab 1](https://psyteachr.github.io/ug1-practical/programming-basics.html#packages).
+First, we're going to calculate probabilities based on the binomial distribution. In this chapter, for the first time we don't need to load the tidyverse. All the functions we need are contained in Base R. If you want a refresher on the difference between Base R and packages, see [Programming Basics 1](https://psyteachr.github.io/ug1-practical/programming-basics.html#packages).
 
 * Open a new R Markdown document, call it "Probability" and save it in your Data Skills folder.
 
