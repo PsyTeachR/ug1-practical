@@ -15,6 +15,7 @@ In the below example we want to perform some common wrangling steps:
 
 So far, when you've done these steps you've created a new object for each part of the process. The code below should look familiar - once you've loaded in the data to `demographic` and `raw_data`, you then create a new object named `sel_data` that stores the output of the `select()` operation, then you create a new object named `joined_data` that uses `sel_data` as its input and then finally you create another object called `final_data` that uses `joined_data` as its input.
 
+Note that the below code is just an example, we don't have any data called `my_data` so don't try and run this code, it's just for reading.
 
 ```{r, eval=FALSE, class='left-float'}
 demographic <- read_csv("demographic.csv")

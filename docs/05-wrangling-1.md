@@ -456,6 +456,10 @@ summarise(.data = group_dat,
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## # A tibble: 4 x 2
 ##   name       total
 ##   <chr>      <int>
@@ -477,6 +481,10 @@ summarise(group_dat,
 ```
 
 ```
+## `summarise()` ungrouping output (override with `.groups` argument)
+```
+
+```
 ## # A tibble: 4 x 3
 ##   name      mean_year median_year
 ##   <chr>         <dbl>       <dbl>
@@ -494,6 +502,10 @@ group_new_dat <- group_by(new_dat, sex, decade)
 summarise(group_new_dat,
           mean_year = mean(n),
           median_year = median(n))
+```
+
+```
+## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
 ```
 
 ```

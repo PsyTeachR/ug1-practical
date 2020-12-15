@@ -4,8 +4,10 @@
 Welcome back to Psych 1B! This semester we're going to build on the data skills you developed in the first semester by adding in a couple of new data wrangling functions, running probability simulations in preparation for statistics in level 2, and analysing your own data for the group project.
 
 ```{block, type="info"}
-It would be nice to always get data formatted in the way that you want it, but one of the challenges as a scientist is dealing with Other People’s Data. People often structure data in ways that is convenient for data entry, but not very convenient for data analysis, and so, much effort must be expended ’wrangling’ data into shape before you can do more interesting things with it. Additionally, performing analyses often requires pulling together data obtained from different sources: you have done this in semester 1 by combining the participant information with the depression and happiness data. In this semester, we are going to give you some tips on how to structure data, and introduce strategies for transforming and combining data from different sources.
+If you haven't yet installed R on your own machine, we strongly encourage you to do so as it means that a) you're not reliant on the server b) you don't need to be connected to the internet to use R and c) it makes it much easier to check your homework files before you submit them. There is more info in the [Appendix](https://psyteachr.github.io/ug1-practical/installing-r-on-your-computer-1.html) and you can also attend a GTA support session if you need help.
 ```
+
+It would be nice to always get data formatted in the way that you want it, but one of the challenges as a scientist is dealing with Other People’s Data. People often structure data in ways that is convenient for data entry, but not very convenient for data analysis, and so, much effort must be expended ’wrangling’ data into shape before you can do more interesting things with it. Additionally, performing analyses often requires pulling together data obtained from different sources: you have done this in semester 1 by combining the participant information with the depression and happiness data. In this semester, we are going to give you some tips on how to structure data, and introduce strategies for transforming and combining data from different sources.
 
 ### Autism-quotient data
 
@@ -45,14 +47,15 @@ The AQ score for each participant is the total score (i.e., the sum) of all 10 q
 
 ### Activity 1: Download the data
 
-* Create a new folder for your Psych 1B data skills work. Remember, do not call the folder "R" as this can cause R to have an existential crisis that it's saving into itself.
-* Download the <a href="files/Psych 1B.zip" download>`Psych 1B`</a> zip file, extract the files, and then move the three csv files to your Data Skills folder.  
+* Download the <a href="files/Psych 1B.zip" download>`Psych 1B`</a> zip file.
+* If you're working on your computer, extract the files, and make sure it is saved somewhere sensible. If you're one of those people who has 20 versions of the same file, stop being that person and tidy up your files.
+* If you're working on the server, upload the zip file to the server. It will automatically unzip it for you. As above, tidy up your server files if necessary.
 
 ### Activity 2: Open a new Markdown document
 
 In Psych 1A, we provided the Markdown documents for you in the form of stub files. From this point on, you're going to create and save your own.
 
-* Open R Studio and set the working directory to your Data Skills folder. If this has worked, you should see the csv files you just downloaded in the file pane in the bottom right of R Studio.  
+* Open R Studio and set the working directory to your Psych 1B folder. If this has worked, you should see the csv files you just downloaded in the file pane in the bottom right of R Studio.  
 * To open a new R Markdown document click the 'new item' icon and then click 'R Markdown'. You will be prompted to give it a title, call it "AQ data and recap". Also, change the author name to your GUID as this will be good practice for the homework. Keep the output format as HTML.
 * Once you've opened a new document be sure to save it by clicking `File` -> `Save as`. Name this file "AQ data and recap". If you've set the working directory correctly, you should now see this file appear in your file viewer pane.  
 
@@ -76,7 +79,7 @@ knitr::include_graphics("images/markdown-code_chunks.gif")
 
 ```
 
-You should create a new code chunk **for each activity** or each analysis step (like there was in the stub files from 1A) and make sure there is a description of what the code is doing. This will make it easier to read your Markdown and find where any errors in the code are. Do not put all of your code in one big chunk.
+You should create a new code chunk **for each activity** or each analysis step (like there was in the stub files from 1A) and make sure there is a description of what the code is doing. This will make it easier to read your Markdown and find where any errors in the code are. **Do not put all of your code in one big chunk.**
 
 ### Activity 4: Load in the data
 

@@ -4,8 +4,10 @@
 Welcome back to Psych 1B! This semester we're going to build on the data skills you developed in the first semester by adding in a couple of new data wrangling functions, running probability simulations in preparation for statistics in level 2, and analysing your own data for the group project.
 
 <div class="info">
-<p>It would be nice to always get data formatted in the way that you want it, but one of the challenges as a scientist is dealing with Other People’s Data. People often structure data in ways that is convenient for data entry, but not very convenient for data analysis, and so, much effort must be expended ’wrangling’ data into shape before you can do more interesting things with it. Additionally, performing analyses often requires pulling together data obtained from different sources: you have done this in semester 1 by combining the participant information with the depression and happiness data. In this semester, we are going to give you some tips on how to structure data, and introduce strategies for transforming and combining data from different sources.</p>
+<p>If you haven’t yet installed R on your own machine, we strongly encourage you to do so as it means that a) you’re not reliant on the server b) you don’t need to be connected to the internet to use R and c) it makes it much easier to check your homework files before you submit them. There is more info in the <a href="https://psyteachr.github.io/ug1-practical/installing-r-on-your-computer-1.html">Appendix</a> and you can also attend a GTA support session if you need help.</p>
 </div>
+
+It would be nice to always get data formatted in the way that you want it, but one of the challenges as a scientist is dealing with Other People’s Data. People often structure data in ways that is convenient for data entry, but not very convenient for data analysis, and so, much effort must be expended ’wrangling’ data into shape before you can do more interesting things with it. Additionally, performing analyses often requires pulling together data obtained from different sources: you have done this in semester 1 by combining the participant information with the depression and happiness data. In this semester, we are going to give you some tips on how to structure data, and introduce strategies for transforming and combining data from different sources.
 
 ### Autism-quotient data
 
@@ -14,18 +16,18 @@ For Psych 1B we're going to use a different dataset for our exercises based upon
 Table 1: The ten items on the AQ-10.
 
 
-Q_No   Question                                                                                      
------  ----------------------------------------------------------------------------------------------
-Q 1    I often notice small sounds when others do not.                                               
-Q 2    I usually concentrate more on the whole picture, rather than small details.                   
-Q 3    I find it easy to do more than one thing at once.                                             
-Q 4    If there is an interruption, I can switch back to what I was doing very quickly.              
-Q 5    I find it easy to read between the lines when someone is talking to me.                       
-Q 6    I know how to tell if someone listening to me is getting bored.                               
-Q 7    When I’m reading a story, I find it difficult to work out the characters’ intentions.         
-Q 8    I like to collect information about categories of things.                                     
-Q 9    I find it easy to work out what someone is thinking or feeling just by looking at their face. 
-Q 10   I find it difficult to work out people’s intentions.                                          
+|Q_No |Question                                                                                      |
+|:----|:---------------------------------------------------------------------------------------------|
+|Q 1  |I often notice small sounds when others do not.                                               |
+|Q 2  |I usually concentrate more on the whole picture, rather than small details.                   |
+|Q 3  |I find it easy to do more than one thing at once.                                             |
+|Q 4  |If there is an interruption, I can switch back to what I was doing very quickly.              |
+|Q 5  |I find it easy to read between the lines when someone is talking to me.                       |
+|Q 6  |I know how to tell if someone listening to me is getting bored.                               |
+|Q 7  |When I’m reading a story, I find it difficult to work out the characters’ intentions.         |
+|Q 8  |I like to collect information about categories of things.                                     |
+|Q 9  |I find it easy to work out what someone is thinking or feeling just by looking at their face. |
+|Q 10 |I find it difficult to work out people’s intentions.                                          |
 
 Responses to each item were measured on a four-point scale: Definitely Disagree, Slightly Disagree, Slightly Agree, Definitely Agree. One of the issues with conducting research using surveys is that if we don't design them carefully, our data may be affected by response bias. One type of response bias is **acquiescence bias**, which is the finding that people have a tendancy to agree with all statements. To try and minimise the impact of this, many questionnaires will **reverse-code** some of the questions so that a positive response means agreeing with one question but disagreeing with another.
 
@@ -39,14 +41,15 @@ The AQ score for each participant is the total score (i.e., the sum) of all 10 q
 
 ### Activity 1: Download the data
 
-* Create a new folder for your Psych 1B data skills work. Remember, do not call the folder "R" as this can cause R to have an existential crisis that it's saving into itself.
-* Download the <a href="files/Psych 1B.zip" download>`Psych 1B`</a> zip file, extract the files, and then move the three csv files to your Data Skills folder.  
+* Download the <a href="files/Psych 1B.zip" download>`Psych 1B`</a> zip file.
+* If you're working on your computer, extract the files, and make sure it is saved somewhere sensible. If you're one of those people who has 20 versions of the same file, stop being that person and tidy up your files.
+* If you're working on the server, upload the zip file to the server. It will automatically unzip it for you. As above, tidy up your server files if necessary.
 
 ### Activity 2: Open a new Markdown document
 
 In Psych 1A, we provided the Markdown documents for you in the form of stub files. From this point on, you're going to create and save your own.
 
-* Open R Studio and set the working directory to your Data Skills folder. If this has worked, you should see the csv files you just downloaded in the file pane in the bottom right of R Studio.  
+* Open R Studio and set the working directory to your Psych 1B folder. If this has worked, you should see the csv files you just downloaded in the file pane in the bottom right of R Studio.  
 * To open a new R Markdown document click the 'new item' icon and then click 'R Markdown'. You will be prompted to give it a title, call it "AQ data and recap". Also, change the author name to your GUID as this will be good practice for the homework. Keep the output format as HTML.
 * Once you've opened a new document be sure to save it by clicking `File` -> `Save as`. Name this file "AQ data and recap". If you've set the working directory correctly, you should now see this file appear in your file viewer pane.  
 
@@ -68,7 +71,7 @@ Let's recap how to use Markdown. When you first open a new R Markdown document y
 <p class="caption">(\#fig:img-new-chunkb)New R chunk</p>
 </div>
 
-You should create a new code chunk **for each activity** or each analysis step (like there was in the stub files from 1A) and make sure there is a description of what the code is doing. This will make it easier to read your Markdown and find where any errors in the code are. Do not put all of your code in one big chunk.
+You should create a new code chunk **for each activity** or each analysis step (like there was in the stub files from 1A) and make sure there is a description of what the code is doing. This will make it easier to read your Markdown and find where any errors in the code are. **Do not put all of your code in one big chunk.**
 
 ### Activity 4: Load in the data
 
@@ -106,48 +109,48 @@ Let’s imagine we are doing the task by hand so that we understand the logic. O
 Let’s take stock of what we know. First, we know that there are two question formats, and that questions Q1, Q7, Q8, and Q10 are scored according to format F and questions Q2, Q3, Q4, Q5, Q6, and Q9 are scored according to format R. This is the information that is currently stored in `qformats`:
 
 
-Question   QFormat 
----------  --------
-Q 1        F       
-Q 2        R       
-Q 3        R       
-Q 4        R       
-Q 5        R       
-Q 6        R       
-Q 7        F       
-Q 8        F       
-Q 9        R       
-Q 10       F       
+|Question |QFormat |
+|:--------|:-------|
+|Q 1      |F       |
+|Q 2      |R       |
+|Q 3      |R       |
+|Q 4      |R       |
+|Q 5      |R       |
+|Q 6      |R       |
+|Q 7      |F       |
+|Q 8      |F       |
+|Q 9      |R       |
+|Q 10     |F       |
 
 We also know that for format **F**, we award a point for **agree**, zero for **disagree**. For format **R**, a point for **disagree**, zero for **agree**. This is the information that is currently stored in `scoring`:
 
 
-QFormat   Response               Score
---------  --------------------  ------
-F         Definitely Agree           1
-F         Slightly Agree             1
-F         Slightly Disagree          0
-F         Definitely Disagree        0
-R         Definitely Agree           0
-R         Slightly Agree             0
-R         Slightly Disagree          1
-R         Definitely Disagree        1
+|QFormat |Response            | Score|
+|:-------|:-------------------|-----:|
+|F       |Definitely Agree    |     1|
+|F       |Slightly Agree      |     1|
+|F       |Slightly Disagree   |     0|
+|F       |Definitely Disagree |     0|
+|R       |Definitely Agree    |     0|
+|R       |Slightly Agree      |     0|
+|R       |Slightly Disagree   |     1|
+|R       |Definitely Disagree |     1|
 
 Finally, we would need to look at the responses from each participant and then give them the correct score for the format of the question. Let’s walk through the example with the first participant. For this participant (Id = 16), we have the following responses:
   
 
-Question   Participant 16 Response 
----------  ------------------------
-Q 1        Slightly Disagree       
-Q 2        Definitely Agree        
-Q 3        Slightly Disagree       
-Q 4        Definitely Disagree     
-Q 5        Slightly Agree          
-Q 6        Slightly Agree          
-Q 7        Slightly Agree          
-Q 8        Definitely Disagree     
-Q 9        Slightly Agree          
-Q 10       Slightly Agree          
+|Question |Participant 16 Response |
+|:--------|:-----------------------|
+|Q 1      |Slightly Disagree       |
+|Q 2      |Definitely Agree        |
+|Q 3      |Slightly Disagree       |
+|Q 4      |Definitely Disagree     |
+|Q 5      |Slightly Agree          |
+|Q 6      |Slightly Agree          |
+|Q 7      |Slightly Agree          |
+|Q 8      |Definitely Disagree     |
+|Q 9      |Slightly Agree          |
+|Q 10     |Slightly Agree          |
 
 Note that we have re-formatted the responses so that each response is in a separate row, rather than having all of the responses in a single row, as they are in `responses`. We have reshaped the data from its original **wide format** to **long format**. This format is called long because instead of having just one row for each participant, we now have one row for each data point and so 10 rows for each participant.
 
@@ -156,34 +159,34 @@ While this format makes it less easy to read the whole dataset in with a single 
 Let’s now look up the format for each question:
 
 
-Question   Participant 16 Response   QFormat 
----------  ------------------------  --------
-Q 1        Slightly Disagree         F       
-Q 2        Definitely Agree          R       
-Q 3        Slightly Disagree         R       
-Q 4        Definitely Disagree       R       
-Q 5        Slightly Agree            R       
-Q 6        Slightly Agree            R       
-Q 7        Slightly Agree            F       
-Q 8        Definitely Disagree       F       
-Q 9        Slightly Agree            R       
-Q 10       Slightly Agree            F       
+|Question |Participant 16 Response |QFormat |
+|:--------|:-----------------------|:-------|
+|Q 1      |Slightly Disagree       |F       |
+|Q 2      |Definitely Agree        |R       |
+|Q 3      |Slightly Disagree       |R       |
+|Q 4      |Definitely Disagree     |R       |
+|Q 5      |Slightly Agree          |R       |
+|Q 6      |Slightly Agree          |R       |
+|Q 7      |Slightly Agree          |F       |
+|Q 8      |Definitely Disagree     |F       |
+|Q 9      |Slightly Agree          |R       |
+|Q 10     |Slightly Agree          |F       |
 
 And now that we have the format and the response, we can look up the scores:
 
 
-Question   Participant 16 Response   QFormat    Score
----------  ------------------------  --------  ------
-Q 1        Slightly Disagree         F              0
-Q 2        Definitely Agree          R              0
-Q 3        Slightly Disagree         R              1
-Q 4        Definitely Disagree       R              1
-Q 5        Slightly Agree            R              0
-Q 6        Slightly Agree            R              0
-Q 7        Slightly Agree            F              1
-Q 8        Definitely Disagree       F              0
-Q 9        Slightly Agree            R              0
-Q 10       Slightly Agree            F              1
+|Question |Participant 16 Response |QFormat | Score|
+|:--------|:-----------------------|:-------|-----:|
+|Q 1      |Slightly Disagree       |F       |     0|
+|Q 2      |Definitely Agree        |R       |     0|
+|Q 3      |Slightly Disagree       |R       |     1|
+|Q 4      |Definitely Disagree     |R       |     1|
+|Q 5      |Slightly Agree          |R       |     0|
+|Q 6      |Slightly Agree          |R       |     0|
+|Q 7      |Slightly Agree          |F       |     1|
+|Q 8      |Definitely Disagree     |F       |     0|
+|Q 9      |Slightly Agree          |R       |     0|
+|Q 10     |Slightly Agree          |F       |     1|
 
 Then we just add up the scores, which yields an AQ score of 4 for participant 16. We would then repeat this logic for the remaining 65 participants. Anyone fancy doing this for a big data set?!
 

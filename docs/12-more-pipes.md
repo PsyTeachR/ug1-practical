@@ -74,13 +74,9 @@ In the research methods lectures for Psych 1A, we talked about the importance of
 ```r
 AQ_all %>%
   ggplot(aes(x = gender, y = total_score)) +
-  stat_summary(geom = "bar", fun.y = "mean") +
+  stat_summary(geom = "bar", fun = "mean") +
   stat_summary(geom = "errorbar", fun.data = "mean_se", width = .2) +
   theme_minimal()
-```
-
-```
-## Warning: `fun.y` is deprecated. Use `fun` instead.
 ```
 
 <div class="figure" style="text-align: center">
@@ -116,7 +112,7 @@ ggplot(AQ_all, aes(x = total_score, fill = gender)) +
 <p class="caption">(\#fig:unnamed-chunk-4)Grouped density plot</p>
 </div>
 
-The y-axis displays density, i.e., what proportion of the data points fall at eaach point on the x-axis.
+The y-axis displays density, i.e., what proportion of the data points fall at each point on the x-axis.
 
 * Approximately what percent of female participants had a total AQ of 2? <select class='solveme' data-answer='["30%"]'> <option></option> <option>.3%</option> <option>3%</option> <option>30%</option></select>
 

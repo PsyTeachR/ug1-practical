@@ -43,7 +43,7 @@ rlong <- pivot_longer(data = responses,
                       cols = Q1:Q10)
 ```
 
-You have now created a tibble with 660 observations and 3 variables; 10 observations per 66 participants and 3 variables. Let's recreate the example from the AQ Data and Recap and only use **one participant**. We can do that by using `filter()` which you used last semester to create a new object called `rlong_16.` 
+You have now created a tibble with 660 observations and 3 variables; 10 observations per 66 participants and 3 variables. Let's recreate the example from the AQ Data and Recap and only use **one participant**. We can do that by using `filter()` (which you used last semester) to create a new object called `rlong_16.` 
 
 ### Activity 3: `filter()`
 
@@ -83,8 +83,9 @@ To state it more simply, what it does is the following: For each row in `rlong`,
 
 Now that we have matched up each question with its corresponding format, we can now “look up” the corresponding scores in the scoring table based on the format and the response. This means we have to use `inner_join()` once again to join `rlong_16_join` with `scoring`**
 
-* Create a new object named `scores_16` than joins together `rlong_16_join` with `scoring`.
+* Create a new object named `scores_16` that joins together `rlong_16_join` with `scoring`.
 * Be careful to tell R **all** the columns the two objects have in common. Remember that when you need to specify multiple variables you will need to use the syntax `by = c("var1", "var2)`.
+* The reason we have to do two separate `inner_joins()` is because they can only join two tables at once and we have three, so it requires two steps.
 
 
 ### Activity 6: Calculating the AQ score 
