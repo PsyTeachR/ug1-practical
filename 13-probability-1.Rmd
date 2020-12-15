@@ -120,7 +120,7 @@ The final probability distribution you need to know about is the normal distribu
 As the normal distribution models the probability of a continuous variable, we plot the probability using a density plot. A normal distribution looks like this:
 
 ```{r, echo=FALSE, fig.cap="Normal Distribution of height. $\\mu$ = the mean (average), $\\sigma$ = standard deviation", out.width="100%", out.height="100%"}
-knitr::include_graphics(path="./images/norm_dist_height.png")
+knitr::include_graphics(path="./images/norm_dist_height.PNG")
 ```
 
 Normal distributions are symmetrical, meaning there is an equal probability of observations occurring above and below the mean. This means that, if the mean in figure 1 is 170, we could expect the number of people who have a height of 160 to equal the number of people who have a height of 180. This also means that the mean, median, and mode are all expected to be equal in a normal distribution.
