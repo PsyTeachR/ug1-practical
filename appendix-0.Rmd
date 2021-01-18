@@ -9,7 +9,7 @@ If you are using the R server, you may need to export files to share them with o
 * If you do not have R installed, DO NOT try to open it on your computer. If you do, it will open in Word, Endnote or similar, and it may corrupt your code. Only open the file if you have R and R Studio installed.
 * If you want to double check that this file is definitely the right one to submit for an assignment, you can re-upload it to the server and open it again to make sure it has the answers in it.
 
-# Installing R on your computer
+# Installing R
 
 ## Why should I install R on my computer?
 

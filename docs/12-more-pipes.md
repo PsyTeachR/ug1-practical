@@ -169,7 +169,7 @@ AQ_histogram <- AQ_all %>%
 ggsave("AQ_histogram.png", plot = AQ_histogram)
 ```
 
-### Activity solutions
+### Activity solutions - Mega pipe
 
 
 #### Activity 1

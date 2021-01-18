@@ -82,7 +82,7 @@ How would you describe the relationship between the two variables? <select class
 
 Great job! As you may have noticed, this chapter tried to push you and test what you've learned - we hope you can see just how far you've come in the space of just a couple of months, it's genuinely amazing what you have achieved and you should feel proud. In Psych 1B we will continue using these wrangling skills on new data and also data that you collect yourself.
 
-### Activity solutions
+### Activity solutions - Scatterplots
 
 #### Activity 1
 
