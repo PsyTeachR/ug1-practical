@@ -201,7 +201,7 @@ Finally, let's refresh your memory of some of the important tidyverse functions 
 * What function would you use to add up the total score for participant 16? <select class='solveme' data-answer='["summarise"]'> <option></option> <option>filter</option> <option>inner_join</option> <option>summarise</option> <option>score</option></select>
 * What function would you use to join together `qformats` and `scoring`? <select class='solveme' data-answer='["inner_join"]'> <option></option> <option>inner_join</option> <option>join</option> <option>join_inner</option> <option>object_join</option></select>
 
-### Activity solutions
+### Activity solutions - AQ data and recap
 
 #### Activity 4
 

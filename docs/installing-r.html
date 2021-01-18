@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Intro to Data Viz | Level 1 Data Skills</title>
+  <title>B Installing R | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Intro to Data Viz | Level 1 Data Skills" />
+  <meta property="og:title" content="B Installing R | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Intro to Data Viz | Level 1 Data Skills" />
+  <meta name="twitter:title" content="B Installing R | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-wrangling-2.html"/>
-<link rel="next" href="scatterplots.html"/>
+<link rel="prev" href="exporting-files-from-the-server.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -367,243 +367,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro-to-data-viz" class="section level1">
-<h1><span class="header-section-number">7</span> Intro to Data Viz</h1>
-<div id="activity-1-dplyr-recap" class="section level2">
-<h2><span class="header-section-number">7.1</span> Activity 1: dplyr recap</h2>
-<p>In Data Wrangling 1 and 2 we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
+<div id="installing-r" class="section level1">
+<h1><span class="header-section-number">B</span> Installing R</h1>
+<div id="why-should-i-install-r-on-my-computer" class="section level2">
+<h2><span class="header-section-number">B.1</span> Why should I install R on my computer?</h2>
+<p>The R Server is cuts down on a lot of installation problems and it means that you have all the packages and functions you need already installed. However, it requires an internet connection to use and additional when it comes time to submit your R assessments, if you don’t have R on your computer it means that you won’t be able to open the files you download from the server to check they’re ok before you submit them.</p>
+<p>It is not necessary to install R on your computer, however, now that we’re over the initial anxiety spike of using R for the first time, you may find it helpful.</p>
+</div>
+<div id="windows" class="section level2">
+<h2><span class="header-section-number">B.2</span> Windows</h2>
+<p>If you are using Windows, you should download and install the following:</p>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>mutate()</option> <option>arrange()</option> <option>filter()</option> <option>group_by()</option> <option>summarise()</option> <option>select()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>summarise()</option> <option>arrange()</option> <option>filter()</option> <option>mutate()</option> <option>select()</option> <option>group_by()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>select()</option> <option>summarise()</option> <option>group_by()</option> <option>mutate()</option> <option>arrange()</option> <option>filter()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and summarise()</option> <option>filter() and select()</option> <option>arrange() and mutate()</option> <option>group_by() and arrange()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["arrange() and select()","mutate() and filter()"]'> <option></option> <option>group_by() and mutate()</option> <option>arrange() and select()</option> <option>select() and summarise()</option> <option>mutate() and filter()</option></select> functions.</p></li>
+<li><a href="https://cran.r-project.org/bin/windows/base/">R</a></li>
+<li><a href="https://rstudio.com/products/rstudio/download/#download">R Studio</a></li>
+<li><a href="https://cran.r-project.org/bin/windows/Rtools/">RTools</a></li>
 </ul>
-<div id="data-visualisation" class="section level3">
-<h3><span class="header-section-number">7.1.1</span> Data visualisation</h3>
-<p>As Grolemund and Wickham tell us:</p>
-<blockquote>
-<p>Visualisation is a fundamentally human activity. A good visualisation will show you things that you did not expect, or raise new questions about the data. A good visualisation might also hint that you’re asking the wrong question, or you need to collect different data. Visualisations can surprise you, but don’t scale particularly well because they require a human to interpret them.</p>
-</blockquote>
-<p>(<a href="http://r4ds.had.co.nz/introduction.html" class="uri">http://r4ds.had.co.nz/introduction.html</a>)</p>
-<p>Being able to visualise our variables, and relationships between our variables, is a very useful skill. Before we do any statistical analyses or present any summary statistics, we should visualise our data as it is:</p>
-<ol style="list-style-type: decimal">
-<li><p>A quick and easy way to check our data make sense, and to identify any unusual trends.</p></li>
-<li><p>A way to honestly present the features of our data to anyone who reads our research.</p></li>
-</ol>
-<p><code>ggplot()</code> builds plots by combining layers (see Figure <a href="intro-to-data-viz.html#fig:img-layers">7.1</a>)). If you’re used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures (<a href="https://www.data-to-viz.com/">this website</a> gives you a good sense of what’s possible).</p>
-<div class="figure" style="text-align: center"><span id="fig:img-layers"></span>
-<img src="images/layers.png" alt="ggplot2 layers from Field et al. (2012)" width="100%" />
-<p class="caption">
-Figure 7.1: ggplot2 layers from Field et al. (2012)
-</p>
+<p>Once you’ve installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="installing-r.html#cb194-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>This will install the <code>tidyverse</code> package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.</p>
+<p>If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.</p>
 </div>
+<div id="mac" class="section level2">
+<h2><span class="header-section-number">B.3</span> Mac</h2>
+<p>If you are using a Mac, you should download and install the following:
+* <a href="https://www.stats.bris.ac.uk/R/">R</a>
+* <a href="https://rstudio.com/products/rstudio/download/#download">R Studio</a>
+* <a href="https://www.xquartz.org/">XQuartz</a></p>
+<p>There have been a number of issues installing R on Macs. We recommend you watch this <a href="https://www.youtube.com/watch?v=90IdULVGmYY">walkthrough video</a>.</p>
+<p>If you are using a Mac with the Catalina OS, we also recommend you read this <a href="https://psyteachr.github.io/FAQ/installing-r-and-rstudio.html#i-am-using-macos-10.15-catalina">troubleshooting guide</a></p>
+<p>Once you’ve installed all three programs, restart your computer. Then, open RStudio (not R) and run the below code:</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="installing-r.html#cb195-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>This will install the <code>tidyverse</code> package on your computer. You can still use the server to do all your work, but having R on your computer will make it easier to view the files.</p>
+<p>If you have any problems installing R, please book into a GTA session as they should be able to help you with any installation problems.</p>
 </div>
-<div id="activity-2-set-up" class="section level3">
-<h3><span class="header-section-number">7.1.2</span> Activity 2: Set-up</h3>
-<ul>
-<li>Open R Studio and ensure the environment is clear.<br />
-</li>
-<li>Open the <code>stub-data-viz.Rmd</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (<code>participant-info.csv</code> and <code>ahi-cesd.csv</code>) are in your working directory (you should see them in the file pane).<br />
-</li>
-<li>If you’re on the server, avoid a number of issues by restarting the session - click <code>Session</code> - <code>Restart R</code><br />
-</li>
-<li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Activity 2 code chunk.</li>
-</ul>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="intro-to-data-viz.html#cb79-1"></a><span class="kw">library</span>(tidyverse) </span>
-<span id="cb79-2"><a href="intro-to-data-viz.html#cb79-2"></a></span>
-<span id="cb79-3"><a href="intro-to-data-viz.html#cb79-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb79-4"><a href="intro-to-data-viz.html#cb79-4"></a>pinfo &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb79-5"><a href="intro-to-data-viz.html#cb79-5"></a>all_dat &lt;-<span class="st"> </span><span class="kw">inner_join</span>(dat, pinfo, <span class="dt">by=</span> <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span>
-<span id="cb79-6"><a href="intro-to-data-viz.html#cb79-6"></a>summarydata &lt;-<span class="st"> </span><span class="kw">select</span>(<span class="dt">.data =</span> all_dat, </span>
-<span id="cb79-7"><a href="intro-to-data-viz.html#cb79-7"></a>                      ahiTotal, cesdTotal, sex, age, </span>
-<span id="cb79-8"><a href="intro-to-data-viz.html#cb79-8"></a>                      educ, income, occasion, elapsed.days) </span></code></pre></div>
-<div class="danger">
-<p>
-If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems
-</p>
-</div>
-</div>
-<div id="activity-3-factors" class="section level3">
-<h3><span class="header-section-number">7.1.3</span> Activity 3: Factors</h3>
-<p>Before we go any further we need to perform an additional step of data processing that we have glossed over up until this point. First, run the below code to look at the structure of the dataset:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="intro-to-data-viz.html#cb80-1"></a><span class="kw">str</span>(summarydata)</span></code></pre></div>
-<pre><code>## tibble [992 x 8] (S3: tbl_df/tbl/data.frame)
-##  $ ahiTotal    : num [1:992] 32 34 34 35 36 37 38 38 38 38 ...
-##  $ cesdTotal   : num [1:992] 50 49 47 41 36 35 50 55 47 39 ...
-##  $ sex         : num [1:992] 1 1 1 1 1 1 2 1 2 2 ...
-##  $ age         : num [1:992] 46 37 37 19 40 49 42 57 41 41 ...
-##  $ educ        : num [1:992] 4 3 3 2 5 4 4 4 4 4 ...
-##  $ income      : num [1:992] 3 2 2 1 2 1 1 2 1 1 ...
-##  $ occasion    : num [1:992] 5 2 3 0 5 0 2 2 2 4 ...
-##  $ elapsed.days: num [1:992] 182 14.2 33 0 202.1 ...</code></pre>
-<p>R assumes that all the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
-<p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="intro-to-data-viz.html#cb82-1"></a>summarydata &lt;-<span class="st"> </span>summarydata <span class="op">%&gt;%</span></span>
-<span id="cb82-2"><a href="intro-to-data-viz.html#cb82-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">sex =</span> <span class="kw">as.factor</span>(sex),</span>
-<span id="cb82-3"><a href="intro-to-data-viz.html#cb82-3"></a>         <span class="dt">educ =</span> <span class="kw">as.factor</span>(educ),</span>
-<span id="cb82-4"><a href="intro-to-data-viz.html#cb82-4"></a>         <span class="dt">income =</span> <span class="kw">as.factor</span>(income))</span></code></pre></div>
-<p>You can read this code as “overwrite the data that is in the column sex with sex as a factor”.</p>
-<p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
-</div>
-<div id="activity-4-bar-plot" class="section level3">
-<h3><span class="header-section-number">7.1.4</span> Activity 4: Bar plot</h3>
-<p>For our first example we will recreate the bar plot showing the number of male and female participants from Loading Data by showing you how the layers of code build up (next semester we have data that includes non-binary participants).</p>
-<ul>
-<li>The first line (or layer) sets up the base of the graph: the data to use and the aesthetics (what will go on the x and y axis, how the plot will be grouped).<br />
-</li>
-<li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
-</ul>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="intro-to-data-viz.html#cb83-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:layer1"></span>
-<img src="07-data-viz_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
-<p class="caption">
-Figure 7.2: First ggplot layer sets the axes
-</p>
-</div>
-<ul>
-<li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
-</ul>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="intro-to-data-viz.html#cb84-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex)) <span class="op">+</span></span>
-<span id="cb84-2"><a href="intro-to-data-viz.html#cb84-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
-<p class="caption">
-Figure 7.3: Basic barplot
-</p>
-</div>
-<ul>
-<li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
-</ul>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="intro-to-data-viz.html#cb85-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb85-2"><a href="intro-to-data-viz.html#cb85-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
-<p class="caption">
-Figure 7.4: Barplot with colour
-</p>
-</div>
-<ul>
-<li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
-</ul>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="intro-to-data-viz.html#cb86-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb86-2"><a href="intro-to-data-viz.html#cb86-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
-<p class="caption">
-Figure 7.5: Barplot without legend
-</p>
-</div>
-<p>We might want to tidy up our plot to make it look a bit nicer. First we can edit the axis labels to be more informative. The most common functions you will use are:</p>
-<ul>
-<li><code>scale_x_continuous()</code> for adjusting the x-axis for a continuous variable</li>
-<li><code>scale_y_continuous()</code> for adjusting the y-axis for a continuous variable</li>
-<li><code>scale_x_discrete()</code> for adjusting the x-axis for a discrete/categorical variable</li>
-<li><code>scale_y_discrete()</code> for adjusting the y-axis for a discrete/categorical variable</li>
-</ul>
-<p>And in those functions the two most common arguments you will use are:</p>
-<ul>
-<li><code>name</code> which controls the name of each axis</li>
-<li><code>labels</code> which controls the names of the break points on the axis</li>
-</ul>
-<p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="intro-to-data-viz.html#cb87-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb87-2"><a href="intro-to-data-viz.html#cb87-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb87-3"><a href="intro-to-data-viz.html#cb87-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb87-4"><a href="intro-to-data-viz.html#cb87-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb87-5"><a href="intro-to-data-viz.html#cb87-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
-<p class="caption">
-Figure 7.6: Barplot with axis labels
-</p>
-</div>
-<p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="intro-to-data-viz.html#cb88-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb88-2"><a href="intro-to-data-viz.html#cb88-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb88-3"><a href="intro-to-data-viz.html#cb88-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb88-4"><a href="intro-to-data-viz.html#cb88-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb88-5"><a href="intro-to-data-viz.html#cb88-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb88-6"><a href="intro-to-data-viz.html#cb88-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
-<p class="caption">
-Figure 7.7: Barplot with minimal theme
-</p>
-</div>
-<p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="intro-to-data-viz.html#cb89-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb89-2"><a href="intro-to-data-viz.html#cb89-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span></span>
-<span id="cb89-3"><a href="intro-to-data-viz.html#cb89-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb89-4"><a href="intro-to-data-viz.html#cb89-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb89-5"><a href="intro-to-data-viz.html#cb89-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb89-6"><a href="intro-to-data-viz.html#cb89-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb89-7"><a href="intro-to-data-viz.html#cb89-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
-<p class="caption">
-Figure 7.8: Barplot with colour-blind friendly colour scheme
-</p>
-</div>
-<p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="intro-to-data-viz.html#cb90-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> sex, <span class="dt">fill =</span> sex)) <span class="op">+</span></span>
-<span id="cb90-2"><a href="intro-to-data-viz.html#cb90-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.8</span>) <span class="op">+</span></span>
-<span id="cb90-3"><a href="intro-to-data-viz.html#cb90-3"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb90-4"><a href="intro-to-data-viz.html#cb90-4"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="op">+</span></span>
-<span id="cb90-5"><a href="intro-to-data-viz.html#cb90-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="op">+</span></span>
-<span id="cb90-6"><a href="intro-to-data-viz.html#cb90-6"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb90-7"><a href="intro-to-data-viz.html#cb90-7"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>(<span class="dt">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
-<p class="caption">
-Figure 7.9: Barplot with adjusted alpha
-</p>
-</div>
-<div class="warning">
-<p>
-In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn’t included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.
-</p>
-</div>
-</div>
-<div id="activity-5-violin-boxplot" class="section level3">
-<h3><span class="header-section-number">7.1.5</span> Activity 5: Violin-boxplot</h3>
-<p>As our final activity we will also explain the code used to create the violin-boxplot from Loading Data, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:</p>
-<ol style="list-style-type: decimal">
-<li>We have added a <code>y</code> argument to the first layer because we wanted to represent two variables, not just a count.</li>
-<li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
-<li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
-</ol>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="intro-to-data-viz.html#cb91-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal, <span class="dt">fill =</span> income)) <span class="op">+</span></span>
-<span id="cb91-2"><a href="intro-to-data-viz.html#cb91-2"></a><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">trim =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.4</span>) <span class="op">+</span></span>
-<span id="cb91-3"><a href="intro-to-data-viz.html#cb91-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>, <span class="dt">alpha =</span> <span class="fl">.7</span>)<span class="op">+</span></span>
-<span id="cb91-4"><a href="intro-to-data-viz.html#cb91-4"></a><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Income&quot;</span>,</span>
-<span id="cb91-5"><a href="intro-to-data-viz.html#cb91-5"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="op">+</span></span>
-<span id="cb91-6"><a href="intro-to-data-viz.html#cb91-6"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="op">+</span></span>
-<span id="cb91-7"><a href="intro-to-data-viz.html#cb91-7"></a><span class="st">  </span><span class="kw">theme_minimal</span>() <span class="op">+</span></span>
-<span id="cb91-8"><a href="intro-to-data-viz.html#cb91-8"></a><span class="st">  </span><span class="kw">scale_fill_viridis_d</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="07-data-viz_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
-<p class="caption">
-Figure 7.10: Violin-boxplot
-</p>
-</div>
-</div>
-<div id="activity-6-layers-part-2" class="section level3">
-<h3><span class="header-section-number">7.1.6</span> Activity 6: Layers part 2</h3>
-<p>The key thing to note about <code>ggplot</code> is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="intro-to-data-viz.html#cb92-1"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
-<span id="cb92-2"><a href="intro-to-data-viz.html#cb92-2"></a><span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span></span>
-<span id="cb92-3"><a href="intro-to-data-viz.html#cb92-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>()</span>
-<span id="cb92-4"><a href="intro-to-data-viz.html#cb92-4"></a></span>
-<span id="cb92-5"><a href="intro-to-data-viz.html#cb92-5"></a><span class="kw">ggplot</span>(summarydata, <span class="kw">aes</span>(<span class="dt">x =</span> income, <span class="dt">y =</span> ahiTotal)) <span class="op">+</span></span>
-<span id="cb92-6"><a href="intro-to-data-viz.html#cb92-6"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
-<span id="cb92-7"><a href="intro-to-data-viz.html#cb92-7"></a><span class="st">  </span><span class="kw">geom_violin</span>()</span></code></pre></div>
-<div id="finished" class="section level4">
-<h4><span class="header-section-number">7.1.6.1</span> Finished!</h4>
-<p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>
+<div id="chromebooks" class="section level2">
+<h2><span class="header-section-number">B.4</span> Chromebooks</h2>
+<p>Please note that you cannot currently install R on a Chromebook, please continue to use the R Server.</p>
 
-</div>
-</div>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -696,8 +496,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="data-wrangling-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="scatterplots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exporting-files-from-the-server.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

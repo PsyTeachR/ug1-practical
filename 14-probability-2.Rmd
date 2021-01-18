@@ -1,6 +1,6 @@
 # Probability continued
 
-First, we're going to calculate probabilities based on the binomial distribution. In this chapter, for the first time we don't need to load the tidyverse. All the functions we need are contained in Base R. If you want a refresher on the difference between Base R and packages, see [Programming Basics 1](https://psyteachr.github.io/ug1-practical/programming-basics.html#packages).
+First, we're going to calculate probabilities based on the binomial distribution. In this chapter, for the first time we don't need to load the tidyverse. All the functions we need are contained in Base R. If you want a refresher on the difference between Base R and packages, see [Programming Basics](https://psyteachr.github.io/ug1-practical/programming-basics.html#packages).
 
 * Open a new R Markdown document, call it "Probability" and save it in your Data Skills folder.
 
@@ -245,7 +245,7 @@ Have a go at playing around with different distributions in our `dnorm()` and `p
 
 And that's it! The key concepts to take away from this chapter are that different types of data tend to follow known distributions, and that we can use these distributions to calculate the probability of particular outcomes. This is the foundation of many of the statistical tests that you will learn about in level 2. For example, if you want to compare whether the scores from two groups are different, that is, whether they come from different distributions, you can calculate the probability that the scores from group 2 would be in the same distribution as group 1. If this probability is less than 5% (p = .05), you might conclude that the scores were significantly different. That's an oversimplification obviously, but if you can develop a good understanding of probability distributions it will stand you in good stead for level 2. 
 
-### Activity solutions
+### Activity solutions - Probability
 
 #### Activity 2
 

@@ -102,9 +102,9 @@ final_data <- raw_data %>%
 </ol>
 </div>
 
-Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option><-</option> <option>%<%</option> <option>%>%</option></select>
+Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option>%>%</option> <option>%<%</option> <option><-</option></select>
 
-Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the last argument of the next function.</option> <option>To the third argument of the 18th function.</option> <option>To the first argument of the next function.</option></select>
+Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the first argument of the next function.</option> <option>To the last argument of the next function.</option> <option>To the third argument of the 18th function.</option></select>
 
 ### Activity 2: Set-up
 
@@ -184,7 +184,7 @@ ggplot(question_scores, aes(x = Question, y = item_scores)) +
 <p class="caption">(\#fig:unnamed-chunk-10)Total scores for each AQ question</p>
 </div>
 
-### Activity solutions
+### Activity solutions - Pipes
 
 #### Activity 3
 

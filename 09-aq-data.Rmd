@@ -225,7 +225,7 @@ Finally, let's refresh your memory of some of the important tidyverse functions 
 * What function would you use to add up the total score for participant 16? `r mcq(c("filter", "inner_join", answer = "summarise", "score"))`
 * What function would you use to join together `qformats` and `scoring`? `r mcq(c(answer = "inner_join","join", "join_inner", "object_join"))`
 
-### Activity solutions
+### Activity solutions - AQ data and recap
 
 #### Activity 4
 
