@@ -69,7 +69,7 @@ Look at the graph and answer the following questions:
 
 * Which group has the lowest median total AQ score? `r mcq(c(answer = "female", "male", "nonbinary"))`
 * Which group has an outlier? `r mcq(c("female", answer = "male", "nonbinary"))`
-* Which of the following do you think would be an accurate conclusion to draw from the plot? `r mcq(c("Women had higher AQ scores than men or nonbinary people", "Men had higher AQ scores than nonbinary people who had higher scores than women", answer = "Men and nonbinary people's scores did not differ much and both had higher AQ scores than women"))`
+* Which of the following do you think would be an accurate conclusion to draw from the plot? `r mcq(c("Women had higher AQ scores than men or nonbinary people", answer = "Men and nonbinary people's scores did not differ much and both had higher AQ scores than wome", "Men had higher AQ scores than nonbinary people who had higher scores than women"))`
 
 ### Activity 5: Bad bar plots
 
