@@ -60,7 +60,7 @@ Look at the graph and answer the following questions:
 
 * Which group has the lowest median total AQ score? <select class='solveme' data-answer='["female"]'> <option></option> <option>female</option> <option>male</option> <option>nonbinary</option></select>
 * Which group has an outlier? <select class='solveme' data-answer='["male"]'> <option></option> <option>female</option> <option>male</option> <option>nonbinary</option></select>
-* Which of the following do you think would be an accurate conclusion to draw from the plot? <select class='solveme' data-answer='["Men and nonbinary people&apos;s scores did not differ much and both had higher AQ scores than women"]'> <option></option> <option>Women had higher AQ scores than men or nonbinary people</option> <option>Men had higher AQ scores than nonbinary people who had higher scores than women</option> <option>Men and nonbinary people's scores did not differ much and both had higher AQ scores than women</option></select>
+* Which of the following do you think would be an accurate conclusion to draw from the plot? <select class='solveme' data-answer='["Men and nonbinary people&apos;s scores did not differ much and both had higher AQ scores than wome"]'> <option></option> <option>Women had higher AQ scores than men or nonbinary people</option> <option>Men and nonbinary people's scores did not differ much and both had higher AQ scores than wome</option> <option>Men had higher AQ scores than nonbinary people who had higher scores than women</option></select>
 
 ### Activity 5: Bad bar plots
 
