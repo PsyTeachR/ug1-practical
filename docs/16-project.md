@@ -8,7 +8,7 @@ We suggest that you problems-solve the code as a group, however, make sure that 
 
 ### Step 1: Load in packages and data
 
-The data files are on Moodle. Remember, don't share them in Messenger etc. because of data protection laws.
+The data files are on Moodle.
 
 Don't change ANY of the code from step 1 and 2. Just copy and paste it into R EXACTLY as it is below. 
 
@@ -57,7 +57,7 @@ mslq_final <- mslq %>%
   pivot_wider(names_from = q_name, values_from = dv)
 ```
 
-Right. Your turn. Remember, coding isn't about memorising code, it's about knowing where to look for examples that you can modify with your new variables. You may find it helpful to use the search function in this book.
+Right. Your turn. You may find it helpful to use the search function in this book to find examples of the code you need.
 
 <div class="figure" style="text-align: center">
 <img src="./images/searching.gif" alt="Searching for functions" width="75%" height="75%" />
@@ -67,7 +67,7 @@ Right. Your turn. Remember, coding isn't about memorising code, it's about knowi
 
 ### Step 3: Join 
 
-Join together the data files by their common columns. The resulting dataset is going to have 91 columns which means that R won't show you them all if you just click on the object, you'll need to run `summary()`. **Hint:** You can only join two objects at once, so you'll need to do multiple joins (in a pipeline if you're feeling snazzy).
+Join together the data files by all their common columns. The resulting dataset is going to have 91 columns which means that R won't show you them all if you just click on the object, you'll need to run `summary()`. **Hint:** You can only join two objects at once, so you'll need to do multiple joins (in a pipeline if you're feeling snazzy).
 
 ### Step 4. Select your variables
 
@@ -162,9 +162,7 @@ Use summarise and group_by to calculate the mean, median, and standard deviation
 
 ### Step 11: visualisation
 
-You now need to create a bar chart with error bars, a violin-boxplot and a grouped density plot for both the full dataset and your team dataset. You've done all of these before, just find a previous example code and change the variables and axis labels.
-
-It's up to you how your present these in presentation. You might want to put all of the team graphs on one slide and then all of the overall dataset graphs on another. Or you might decide that it is better to put the same type of graphs on the same slide, to help comparisons. We want you to think about what will communicate the data best, so it's up to you. 
+You now need to create a bar chart with error bars and a violin-boxplot for both the full dataset and your team dataset. You've done all of these before, just find a previous example code and change the variables and axis labels.
 
 `
 

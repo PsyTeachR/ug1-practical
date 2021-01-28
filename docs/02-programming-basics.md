@@ -246,7 +246,7 @@ mean(data)
 
 ```
 ## [1] 45
-## Time difference of -21 days
+## Time difference of -27 days
 ## [1] 17.66644
 ```
 
