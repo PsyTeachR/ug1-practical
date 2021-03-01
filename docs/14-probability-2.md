@@ -56,8 +56,8 @@ Copy, paste and run the below code in a new code chunk:
 pbinom(q = 2, size = 10, prob = 0.5)
 ```
 
-* What is the probability of getting a maximum of 2 heads on 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.06",".06"]'/>  
-* What is this probability expressed in percent? <select class='solveme' data-answer='["6%"]'> <option></option> <option>0.06%</option> <option>0.6%</option> <option>6%</option></select>
+* What is the probability of getting a maximum of 2 heads on 10 coin flips to 2 decimal places? <input class='solveme nospaces' size='4' data-answer='["0.05",".05"]'/>  
+* What is this probability expressed in percent? <select class='solveme' data-answer='["5%"]'> <option></option> <option>0.05%</option> <option>0.5%</option> <option>5%</option></select>
 
 ### Activity 4: `pbinom()` 2
 
@@ -311,7 +311,7 @@ pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 
 
 ```r
-pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
+pnorm(q = 163.8, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 
 </div>
