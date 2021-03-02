@@ -291,6 +291,7 @@ And that's it! The key concepts to take away from this chapter are that differen
 </div>
 
 
+
 #### Activity 5
 
 
@@ -298,7 +299,9 @@ And that's it! The key concepts to take away from this chapter are that differen
 
 
 ```r
-pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
+42
+474
+4918
 ```
 
 </div>
@@ -311,7 +314,7 @@ pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 
 
 ```r
-pnorm(q = 163.8, mean = 176.2, sd = 6.748, lower.tail = FALSE)
+pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 ```
 
 </div>
@@ -324,13 +327,26 @@ pnorm(q = 163.8, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 
 
 ```r
-pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
+pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 
 </div>
 
 
 #### Activity 8
+
+
+<div class='solution'><button>Solution</button>
+
+
+```r
+pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
+```
+
+</div>
+
+
+#### Activity 9
 
 
 <div class='solution'><button>Solution</button>
