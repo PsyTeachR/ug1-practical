@@ -17,6 +17,8 @@ The R Server is cuts down on a lot of installation problems and it means that yo
 
 It is not necessary to install R on your computer, however, now that we're over the initial anxiety spike of using R for the first time, you may find it helpful.
 
+There are some great detailed walkthrough videos by [Danielle Narvarro on YouTube](https://www.youtube.com/playlist?list=PLRPB0ZzEYegOZivdelOuEn-R-XUN-DOjd) re: how to install R on various operating systems.
+
 ## Windows
 
 If you are using Windows, you should download and install the following:

@@ -271,11 +271,14 @@ And that's it! The key concepts to take away from this chapter are that differen
 ```
 `r webex::unhide()`
 
+
 #### Activity 5
 
 `r webex::hide()`
 ```{r eval = FALSE}
-pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
+42
+474
+4918
 ```
 `r webex::unhide()`
 
@@ -283,7 +286,7 @@ pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 
 `r webex::hide()`
 ```{r eval = FALSE}
-pnorm(q = 163.8, mean = 176.2, sd = 6.748, lower.tail = FALSE)
+pnorm(q = 176.2, mean = 163.8, sd = 6.931, lower.tail = FALSE)
 ```
 `r webex::unhide()`
 
@@ -291,11 +294,19 @@ pnorm(q = 163.8, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 
 `r webex::hide()`
 ```{r eval = FALSE}
-pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
+pnorm(q = 181.12, mean = 176.2, sd = 6.748, lower.tail = FALSE)
 ```
 `r webex::unhide()`
 
 #### Activity 8
+
+`r webex::hide()`
+```{r eval = FALSE}
+pnorm(q = 181.12, mean = 163.8, sd = 6.931, lower.tail = TRUE)
+```
+`r webex::unhide()`
+
+#### Activity 9
 
 `r webex::hide()`
 ```{r eval = FALSE}
