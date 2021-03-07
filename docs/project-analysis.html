@@ -324,15 +324,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="16" data-path="project-analysis.html"><a href="project-analysis.html"><i class="fa fa-check"></i><b>16</b> Project analysis</a><ul>
 <li class="chapter" data-level="16.0.1" data-path="project-analysis.html"><a href="project-analysis.html#step-1-load-in-packages-and-data"><i class="fa fa-check"></i><b>16.0.1</b> Step 1: Load in packages and data</a></li>
-<li class="chapter" data-level="16.0.2" data-path="project-analysis.html"><a href="project-analysis.html#step-3-look-at-the-data"><i class="fa fa-check"></i><b>16.0.2</b> Step 3: Look at the data</a></li>
-<li class="chapter" data-level="16.0.3" data-path="project-analysis.html"><a href="project-analysis.html#step-4.-select-your-variables"><i class="fa fa-check"></i><b>16.0.3</b> Step 4. Select your variables</a></li>
-<li class="chapter" data-level="16.0.4" data-path="project-analysis.html"><a href="project-analysis.html#step-5-factors"><i class="fa fa-check"></i><b>16.0.4</b> Step 5: Factors</a></li>
-<li class="chapter" data-level="16.0.5" data-path="project-analysis.html"><a href="project-analysis.html#step-6-filter"><i class="fa fa-check"></i><b>16.0.5</b> Step 6: Filter</a></li>
-<li class="chapter" data-level="16.0.6" data-path="project-analysis.html"><a href="project-analysis.html#step-7-sub-scale-scores"><i class="fa fa-check"></i><b>16.0.6</b> Step 7: Sub-scale scores</a></li>
-<li class="chapter" data-level="16.0.7" data-path="project-analysis.html"><a href="project-analysis.html#step-8-split-the-dataset"><i class="fa fa-check"></i><b>16.0.7</b> Step 8: Split the dataset</a></li>
-<li class="chapter" data-level="16.0.8" data-path="project-analysis.html"><a href="project-analysis.html#step-9-demoraphic-information"><i class="fa fa-check"></i><b>16.0.8</b> Step 9: Demoraphic information</a></li>
-<li class="chapter" data-level="16.0.9" data-path="project-analysis.html"><a href="project-analysis.html#step-10-descriptive-statistics"><i class="fa fa-check"></i><b>16.0.9</b> Step 10: Descriptive statistics</a></li>
-<li class="chapter" data-level="16.0.10" data-path="project-analysis.html"><a href="project-analysis.html#step-11-visualisation"><i class="fa fa-check"></i><b>16.0.10</b> Step 11: visualisation</a></li>
+<li class="chapter" data-level="16.0.2" data-path="project-analysis.html"><a href="project-analysis.html#step-2-look-at-the-data"><i class="fa fa-check"></i><b>16.0.2</b> Step 2: Look at the data</a></li>
+<li class="chapter" data-level="16.0.3" data-path="project-analysis.html"><a href="project-analysis.html#step-3.-select-your-variables"><i class="fa fa-check"></i><b>16.0.3</b> Step 3. Select your variables</a></li>
+<li class="chapter" data-level="16.0.4" data-path="project-analysis.html"><a href="project-analysis.html#step-4-factors"><i class="fa fa-check"></i><b>16.0.4</b> Step 4: Factors</a></li>
+<li class="chapter" data-level="16.0.5" data-path="project-analysis.html"><a href="project-analysis.html#step-5-filter"><i class="fa fa-check"></i><b>16.0.5</b> Step 5: Filter</a></li>
+<li class="chapter" data-level="16.0.6" data-path="project-analysis.html"><a href="project-analysis.html#step-6-sub-scale-scores"><i class="fa fa-check"></i><b>16.0.6</b> Step 6: Sub-scale scores</a></li>
+<li class="chapter" data-level="16.0.7" data-path="project-analysis.html"><a href="project-analysis.html#step-7-split-the-dataset"><i class="fa fa-check"></i><b>16.0.7</b> Step 7: Split the dataset</a></li>
+<li class="chapter" data-level="16.0.8" data-path="project-analysis.html"><a href="project-analysis.html#step-8-demographic-information"><i class="fa fa-check"></i><b>16.0.8</b> Step 8: Demographic information</a></li>
+<li class="chapter" data-level="16.0.9" data-path="project-analysis.html"><a href="project-analysis.html#step-9-descriptive-statistics"><i class="fa fa-check"></i><b>16.0.9</b> Step 9: Descriptive statistics</a></li>
+<li class="chapter" data-level="16.0.10" data-path="project-analysis.html"><a href="project-analysis.html#step-10-visualisation"><i class="fa fa-check"></i><b>16.0.10</b> Step 10: visualisation</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="exporting-files-from-the-server.html"><a href="exporting-files-from-the-server.html"><i class="fa fa-check"></i><b>A</b> Exporting files from the server</a></li>
@@ -374,33 +374,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="step-1-load-in-packages-and-data" class="section level3">
 <h3><span class="header-section-number">16.0.1</span> Step 1: Load in packages and data</h3>
 <p>The data file <code>final_data.csv</code> is on Moodle in the Group Poster section.</p>
-<p>Don’t change ANY of the code from step 1 and 2. Just copy and paste it into R EXACTLY as it is below.</p>
-<p>This code will clean up the Experimentum data a little bit to help you on your way. You will get a message saying <code>NAs introduced by coercion</code>. Ignore this message, it’s a result of converting the employment hours to a numeric variable. You may also get a message that</p>
+<p>Don’t change ANY of the code from step 1. Just copy and paste it into R EXACTLY as it is below.</p>
+<p>This code will clean up the Experimentum data a little bit to help you on your way. You will get a message saying <code>NAs introduced by coercion</code>. Ignore this message, it’s a result of converting the employment hours to a numeric variable.</p>
 <p>It’s also worth noting that this is a MUCH larger dataset than any you’ve worked with so far and you might find that R takes a little longer to complete each task - this is perfectly normal.</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="project-analysis.html#cb189-1"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb189-2"><a href="project-analysis.html#cb189-2"></a></span>
-<span id="cb189-3"><a href="project-analysis.html#cb189-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;final_data.csv&quot;</span>, <span class="dt">col_types =</span> <span class="kw">cols</span>(<span class="dt">team =</span> <span class="kw">col_factor</span>()))</span>
-<span id="cb189-4"><a href="project-analysis.html#cb189-4"></a></span>
-<span id="cb189-5"><a href="project-analysis.html#cb189-5"></a>demo &lt;-<span class="st">  </span>dat <span class="op">%&gt;%</span></span>
-<span id="cb189-6"><a href="project-analysis.html#cb189-6"></a><span class="st">  </span><span class="kw">filter</span>(quest_name <span class="op">==</span><span class="st"> &quot;demographics&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-7"><a href="project-analysis.html#cb189-7"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, q_name, dv, covid) <span class="op">%&gt;%</span></span>
-<span id="cb189-8"><a href="project-analysis.html#cb189-8"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;q_name&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;dv&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-9"><a href="project-analysis.html#cb189-9"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st">&quot;NA&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-10"><a href="project-analysis.html#cb189-10"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">employment =</span> <span class="kw">as.numeric</span>(employment))</span>
-<span id="cb189-11"><a href="project-analysis.html#cb189-11"></a></span>
-<span id="cb189-12"><a href="project-analysis.html#cb189-12"></a>teams &lt;-<span class="st">  </span>dat <span class="op">%&gt;%</span></span>
-<span id="cb189-13"><a href="project-analysis.html#cb189-13"></a><span class="st">  </span><span class="kw">filter</span>(quest_name <span class="op">==</span><span class="st"> &quot;team_name&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-14"><a href="project-analysis.html#cb189-14"></a><span class="st">  </span><span class="kw">select</span>(user_id, team)</span>
-<span id="cb189-15"><a href="project-analysis.html#cb189-15"></a></span>
-<span id="cb189-16"><a href="project-analysis.html#cb189-16"></a>mslq &lt;-<span class="st">  </span>dat <span class="op">%&gt;%</span></span>
-<span id="cb189-17"><a href="project-analysis.html#cb189-17"></a><span class="st">  </span><span class="kw">filter</span>(quest_name <span class="op">==</span><span class="st"> &quot;Full MSLQ&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb189-18"><a href="project-analysis.html#cb189-18"></a><span class="st">  </span><span class="kw">select</span>(user_id, q_name, dv) <span class="op">%&gt;%</span></span>
-<span id="cb189-19"><a href="project-analysis.html#cb189-19"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dv =</span> <span class="kw">as.numeric</span>(dv)) <span class="op">%&gt;%</span></span>
-<span id="cb189-20"><a href="project-analysis.html#cb189-20"></a><span class="st">  </span><span class="kw">arrange</span>(q_name) <span class="op">%&gt;%</span></span>
-<span id="cb189-21"><a href="project-analysis.html#cb189-21"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;q_name&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;dv&quot;</span>)</span>
-<span id="cb189-22"><a href="project-analysis.html#cb189-22"></a></span>
-<span id="cb189-23"><a href="project-analysis.html#cb189-23"></a>final_dat &lt;-<span class="st"> </span><span class="kw">left_join</span>(demo, teams) <span class="op">%&gt;%</span></span>
-<span id="cb189-24"><a href="project-analysis.html#cb189-24"></a><span class="st">  </span><span class="kw">left_join</span>(mslq)</span></code></pre></div>
+<span id="cb189-3"><a href="project-analysis.html#cb189-3"></a>dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;final_data.csv&quot;</span>, </span>
+<span id="cb189-4"><a href="project-analysis.html#cb189-4"></a>                <span class="dt">col_types =</span> <span class="kw">cols</span>(<span class="dt">team =</span> <span class="kw">col_factor</span>(), </span>
+<span id="cb189-5"><a href="project-analysis.html#cb189-5"></a>                                 <span class="dt">dv =</span> <span class="kw">col_character</span>()))</span>
+<span id="cb189-6"><a href="project-analysis.html#cb189-6"></a></span>
+<span id="cb189-7"><a href="project-analysis.html#cb189-7"></a>demo &lt;-<span class="st">  </span>dat <span class="op">%&gt;%</span></span>
+<span id="cb189-8"><a href="project-analysis.html#cb189-8"></a><span class="st">  </span><span class="kw">filter</span>(quest_id <span class="op">==</span><span class="st"> &quot;1448&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb189-9"><a href="project-analysis.html#cb189-9"></a><span class="st">  </span><span class="kw">select</span>(user_id, user_sex, user_age, q_name, dv, covid) <span class="op">%&gt;%</span></span>
+<span id="cb189-10"><a href="project-analysis.html#cb189-10"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;q_name&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;dv&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb189-11"><a href="project-analysis.html#cb189-11"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st">&quot;NA&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb189-12"><a href="project-analysis.html#cb189-12"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">employment =</span> <span class="kw">as.numeric</span>(employment))</span>
+<span id="cb189-13"><a href="project-analysis.html#cb189-13"></a></span>
+<span id="cb189-14"><a href="project-analysis.html#cb189-14"></a>teams &lt;-<span class="st">  </span>dat <span class="op">%&gt;%</span></span>
+<span id="cb189-15"><a href="project-analysis.html#cb189-15"></a><span class="st">  </span><span class="kw">filter</span>(q_name <span class="op">==</span><span class="st"> &quot;team_name&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb189-16"><a href="project-analysis.html#cb189-16"></a><span class="st">  </span><span class="kw">select</span>(user_id, team)</span>
+<span id="cb189-17"><a href="project-analysis.html#cb189-17"></a></span>
+<span id="cb189-18"><a href="project-analysis.html#cb189-18"></a>mslq &lt;-<span class="st">  </span>dat <span class="op">%&gt;%</span></span>
+<span id="cb189-19"><a href="project-analysis.html#cb189-19"></a><span class="st">  </span><span class="kw">filter</span>(quest_id <span class="op">==</span><span class="st"> &quot;1449&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb189-20"><a href="project-analysis.html#cb189-20"></a><span class="st">  </span><span class="kw">select</span>(user_id, q_name, dv) <span class="op">%&gt;%</span></span>
+<span id="cb189-21"><a href="project-analysis.html#cb189-21"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">dv =</span> <span class="kw">as.numeric</span>(dv)) <span class="op">%&gt;%</span></span>
+<span id="cb189-22"><a href="project-analysis.html#cb189-22"></a><span class="st">  </span><span class="kw">arrange</span>(q_name) <span class="op">%&gt;%</span></span>
+<span id="cb189-23"><a href="project-analysis.html#cb189-23"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;q_name&quot;</span>, <span class="dt">values_from =</span> <span class="st">&quot;dv&quot;</span>)</span>
+<span id="cb189-24"><a href="project-analysis.html#cb189-24"></a></span>
+<span id="cb189-25"><a href="project-analysis.html#cb189-25"></a>final_dat &lt;-<span class="st"> </span><span class="kw">left_join</span>(demo, teams) <span class="op">%&gt;%</span></span>
+<span id="cb189-26"><a href="project-analysis.html#cb189-26"></a><span class="st">  </span><span class="kw">inner_join</span>(mslq)</span></code></pre></div>
 <p>Right. Your turn. You may find it helpful to use the search function in this book to find examples of the code you need.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/searching.gif" alt="Searching for functions" width="75%" height="75%" />
@@ -409,21 +411,21 @@ Figure 12.1: Searching for functions
 </p>
 </div>
 </div>
-<div id="step-3-look-at-the-data" class="section level3">
-<h3><span class="header-section-number">16.0.2</span> Step 3: Look at the data</h3>
+<div id="step-2-look-at-the-data" class="section level3">
+<h3><span class="header-section-number">16.0.2</span> Step 2: Look at the data</h3>
 <p><code>final_dat</code> should have 91 columns which means that R won’t show you them all if you just click on the object, you’ll need to run <code>summary()</code>. Have a look at what all the variables are, you will find it helpful to refer to the Survey Variables Overview document.</p>
 </div>
-<div id="step-4.-select-your-variables" class="section level3">
-<h3><span class="header-section-number">16.0.3</span> Step 4. Select your variables</h3>
-<p>Use <code>select()</code> to retain only the variables you need for your chosen research design and analysis, i.e. the responses to the sub-scale you’re interested in as well as the user id, sex, age, team number, and any variables you’re going to use as criteria for inclusion. You might find it helpful to consult the MSLQ overview document to get the variable names.</p>
+<div id="step-3.-select-your-variables" class="section level3">
+<h3><span class="header-section-number">16.0.3</span> Step 3. Select your variables</h3>
+<p>Use <code>select()</code> to retain only the variables you need for your chosen research design and analysis, i.e. the responses to the sub-scale you’re interested in as well as the user id, sex, age, team number, and any variables you’re going to use as criteria for inclusion. Again, you might find it helpful to consult the survey variables overview document to get the variable names.</p>
 </div>
-<div id="step-5-factors" class="section level3">
-<h3><span class="header-section-number">16.0.4</span> Step 5: Factors</h3>
-<p>Using <code>summary()</code> again if you need it, check what type of variable each column is. Recode any variables that you want to use as categorical variables as factors and then run summary again to see how many you have in each group. You will find the code book you downloaded with the data files from Moodle helpful for this task. You may find the Data Visualisation activity about factors helpful for this.</p>
+<div id="step-4-factors" class="section level3">
+<h3><span class="header-section-number">16.0.4</span> Step 4: Factors</h3>
+<p>Using <code>summary()</code> again if you need it, check what type of variable each column is. Recode any variables that you want to use as categorical variables as factors and then run summary again to see how many you have in each group. You will find the code book you downloaded with the data files from Moodle helpful for this task. You may find the <a href="https://psyteachr.github.io/ug1-practical/intro-to-data-viz.html#activity-3-factors">Data Visualisation activity about factors</a> helpful for this.</p>
 </div>
-<div id="step-6-filter" class="section level3">
-<h3><span class="header-section-number">16.0.5</span> Step 6: Filter</h3>
-<p>If necessary, use <code>filter()</code> to retain only the observations you need, for example, you want need to delete participants above a certain age, or only use mature students or undergraduate students (and make sure you kept all these columns in step 4). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
+<div id="step-5-filter" class="section level3">
+<h3><span class="header-section-number">16.0.5</span> Step 5: Filter</h3>
+<p>If necessary, use <code>filter()</code> to retain only the observations you need, for example, you want need to delete participants above a certain age, or only use mature students or undergraduate students (and make sure you kept all these columns in step 3). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
 <p>If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (&gt; 0 hours worked per week) and not employed (0 hours per week) categories.</p>
 <p>An additional bit of syntax you might find useful for this is the <code>%in%</code> notation which allows you to filter by multiple values. For example, the following code will retain all rows where <code>user_sex</code> equals male OR female and nothing else (i.e., it would get rid of non-binary participants, prefer not to says, and missing values).</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="project-analysis.html#cb190-1"></a>dat <span class="op">%&gt;%</span></span>
@@ -431,10 +433,10 @@ Figure 12.1: Searching for functions
 <p>You can also do it by exclusion with <code>!</code>. The below code would retain everything where <code>user_sex</code> DOESN’T equal male or female.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="project-analysis.html#cb191-1"></a>dat <span class="op">%&gt;%</span></span>
 <span id="cb191-2"><a href="project-analysis.html#cb191-2"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>user_sex <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span></code></pre></div>
-<p>If you were feeling really fancy you could do steps 3 - 6 in a single pipeline of code.</p>
+<p>If you were feeling really fancy you could do steps 2 - 5 in a single pipeline of code.</p>
 </div>
-<div id="step-7-sub-scale-scores" class="section level3">
-<h3><span class="header-section-number">16.0.6</span> Step 7: Sub-scale scores</h3>
+<div id="step-6-sub-scale-scores" class="section level3">
+<h3><span class="header-section-number">16.0.6</span> Step 6: Sub-scale scores</h3>
 <p>Calculate the mean score for each participant for your chosen sub-scale. There are a few ways you can do this but helpfully the <a href="https://gla-my.sharepoint.com/:w:/g/personal/2087153l_student_gla_ac_uk/EfFPtssPMV9HkrZALfdln8wBBJKClQ0eAXzrrHxa0nOo7g?e=SNIhSt">Experimentum documentation</a> provides example code to make this easier, you just need to adapt it for the variables you need. You may also want to change the <code>na.rm = TRUE</code> for the calculation of means depending on whether you want to only include participants who completed all questions.</p>
 <ul>
 <li>Change <code>data</code> to the name of the object you created in step 6</li>
@@ -453,12 +455,12 @@ Figure 12.1: Searching for functions
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="project-analysis.html#cb193-1"></a>dat_means_complete &lt;-<span class="st"> </span>dat_means <span class="op">%&gt;%</span></span>
 <span id="cb193-2"><a href="project-analysis.html#cb193-2"></a><span class="st">  </span><span class="kw">drop_na</span>(scale_mean)</span></code></pre></div>
 </div>
-<div id="step-8-split-the-dataset" class="section level3">
-<h3><span class="header-section-number">16.0.7</span> Step 8: Split the dataset</h3>
+<div id="step-7-split-the-dataset" class="section level3">
+<h3><span class="header-section-number">16.0.7</span> Step 7: Split the dataset</h3>
 <p>Use the codebook to find which <code>team</code> number corresponds to your team. Next, use <code>filter()</code> to create a new dataset that only contains the data from participants who contributed to your team and call it <code>dat_means_team</code>. Once this is complete, you will have a final large dataset that contains the sub-scale scores for all participants, and a smaller dataset that just has data from the participants you recruited for your team.</p>
 </div>
-<div id="step-9-demoraphic-information" class="section level3">
-<h3><span class="header-section-number">16.0.8</span> Step 9: Demoraphic information</h3>
+<div id="step-8-demographic-information" class="section level3">
+<h3><span class="header-section-number">16.0.8</span> Step 8: Demographic information</h3>
 <p>That should be the really hard bit done, now you’ve got the data in the right format for analysis.</p>
 <p>First, calculate the demographic information you need: number of participants, gender split, grouping variable split (if you’re using a variable that’s not gender), mean age and SD.</p>
 <p>You can calculate mean age and SD using <code>summarise()</code> like you’ve done before. There’s several different ways that you can count the number of participants in each group, we haven’t explicitly shown you how to do this yet so we’ll give you example code for this below. The code is fairly simple, you just need to plug in the variables you need.</p>
@@ -485,12 +487,12 @@ Figure 12.1: Searching for functions
 <p>Once you’ve done this you might realise that you have participants in the dataset that shouldn’t be there. For example, you might have people who have answered “Not applicable” to the mature student question, or you might have some NAs (missing data from when people didn’t respond).</p>
 <p>You need to think about whether you need to get rid of any observations from your dataset. For example, if you’re looking at gender differences, then you can’t have people who are missing gender information. You may have said in your pre-reg that you would only include non-binary people if they made up a certain proportion of the data. If you’re looking at mature student status, you can’t have people who didn’t answer the question or who said not applicable (i.e., postgrad students). You need to decide whether any of this is a problem, and potentially go back and add in an extra filter to step 6.</p>
 </div>
-<div id="step-10-descriptive-statistics" class="section level3">
-<h3><span class="header-section-number">16.0.9</span> Step 10: Descriptive statistics</h3>
+<div id="step-9-descriptive-statistics" class="section level3">
+<h3><span class="header-section-number">16.0.9</span> Step 9: Descriptive statistics</h3>
 <p>Use <code>summarise()</code> and <code>group_by()</code> to calculate the mean, median, and standard deviation of the sub-scale scores for each group. Do this separately for the full dataset and your team dataset.</p>
 </div>
-<div id="step-11-visualisation" class="section level3">
-<h3><span class="header-section-number">16.0.10</span> Step 11: visualisation</h3>
+<div id="step-10-visualisation" class="section level3">
+<h3><span class="header-section-number">16.0.10</span> Step 10: visualisation</h3>
 <p>You now need to create a bar chart with error bars and a violin-boxplot for both the full dataset and your team dataset. You’ve done all of these before, just find a previous example code and change the variables and axis labels. If you are comparing pre and post-covid, then you team plot will only have data from the post-covid group, this is ok, you can still compare it to the larger sample.</p>
 
 </div>
