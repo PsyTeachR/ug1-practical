@@ -20,28 +20,30 @@ It's also worth noting that this is a MUCH larger dataset than any you've worked
 ```r
 library(tidyverse)
 
-dat <- read_csv("final_data.csv", col_types = cols(team = col_factor()))
+dat <- read_csv("final_data.csv", 
+                col_types = cols(team = col_factor(), 
+                                 dv = col_character()))
 
 demo <-  dat %>%
-  filter(quest_name == "demographics") %>%
+  filter(quest_id == "1448") %>%
   select(user_id, user_sex, user_age, q_name, dv, covid) %>%
   pivot_wider(names_from = "q_name", values_from = "dv") %>%
   select(-"NA") %>%
   mutate(employment = as.numeric(employment))
 
 teams <-  dat %>%
-  filter(quest_name == "team_name") %>%
+  filter(q_name == "team_name") %>%
   select(user_id, team)
 
 mslq <-  dat %>%
-  filter(quest_name == "Full MSLQ") %>%
+  filter(quest_id == "1449") %>%
   select(user_id, q_name, dv) %>%
   mutate(dv = as.numeric(dv)) %>%
   arrange(q_name) %>%
   pivot_wider(names_from = "q_name", values_from = "dv")
 
 final_dat <- left_join(demo, teams) %>%
-  left_join(mslq)
+  inner_join(mslq)
 ```
 
 Right. Your turn. You may find it helpful to use the search function in this book to find examples of the code you need.
