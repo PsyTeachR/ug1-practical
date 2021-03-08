@@ -68,7 +68,7 @@ Using `summary()` again if you need it, check what type of variable each column 
 
 ### Step 5: Filter
 
-If necessary, use `filter()` to retain only the observations you need, for example, you want need to delete participants above a certain age, or only use mature students or undergraduate students (and make sure you kept all these columns in step 3). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.
+If necessary, use `filter()` to retain only the observations you need, for example, you might need to delete participants above a certain age, or only use mature students or undergraduate students (and make sure you kept all these columns in step 3). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.
 
 If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (> 0 hours worked per week) and not employed (0 hours per week) categories.
 
@@ -97,7 +97,7 @@ Calculate the mean score for each participant for your chosen sub-scale. There a
 * Change `data` to the name of the object you created in step 6
 * Change `question_1:question_5` to the relevant variables for your subscale e.g., `help_1:help_4`
 * Change `scale_mean` to the name of your sub-scale e.g., `anxiety_mean`
-* If you want to calculate the mean scores for participants who have missing data, e.g., if they only completed three out of four questions for your sub-scale, then `na.rm = TRUE`. If you only want to calculate scores for participants who answered all questions for your sub-scale, then `na.rm = TRUE`.
+* If you want to calculate the mean scores for participants who have missing data, e.g., if they only completed three out of four questions for your sub-scale, then `na.rm = TRUE`. If you only want to calculate scores for participants who answered all questions for your sub-scale, then `na.rm = FALSE`.
 * Change NOTHING else
 
 You may get the message `summarise() regrouping output by....` this is fine.
