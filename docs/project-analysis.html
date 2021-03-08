@@ -425,7 +425,7 @@ Figure 12.1: Searching for functions
 </div>
 <div id="step-5-filter" class="section level3">
 <h3><span class="header-section-number">16.0.5</span> Step 5: Filter</h3>
-<p>If necessary, use <code>filter()</code> to retain only the observations you need, for example, you want need to delete participants above a certain age, or only use mature students or undergraduate students (and make sure you kept all these columns in step 3). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
+<p>If necessary, use <code>filter()</code> to retain only the observations you need, for example, you might need to delete participants above a certain age, or only use mature students or undergraduate students (and make sure you kept all these columns in step 3). Do not filter the data for your team yet. You will find the code book you downloaded with the data files from Moodle helpful for this task.</p>
 <p>If your grouping variable is whether students undertake paid employment, you will need to create a new variable using mutate that categorises participants into employed (&gt; 0 hours worked per week) and not employed (0 hours per week) categories.</p>
 <p>An additional bit of syntax you might find useful for this is the <code>%in%</code> notation which allows you to filter by multiple values. For example, the following code will retain all rows where <code>user_sex</code> equals male OR female and nothing else (i.e., it would get rid of non-binary participants, prefer not to says, and missing values).</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="project-analysis.html#cb190-1"></a>dat <span class="op">%&gt;%</span></span>
@@ -442,7 +442,7 @@ Figure 12.1: Searching for functions
 <li>Change <code>data</code> to the name of the object you created in step 6</li>
 <li>Change <code>question_1:question_5</code> to the relevant variables for your subscale e.g., <code>help_1:help_4</code></li>
 <li>Change <code>scale_mean</code> to the name of your sub-scale e.g., <code>anxiety_mean</code></li>
-<li>If you want to calculate the mean scores for participants who have missing data, e.g., if they only completed three out of four questions for your sub-scale, then <code>na.rm = TRUE</code>. If you only want to calculate scores for participants who answered all questions for your sub-scale, then <code>na.rm = TRUE</code>.</li>
+<li>If you want to calculate the mean scores for participants who have missing data, e.g., if they only completed three out of four questions for your sub-scale, then <code>na.rm = TRUE</code>. If you only want to calculate scores for participants who answered all questions for your sub-scale, then <code>na.rm = FALSE</code>.</li>
 <li>Change NOTHING else</li>
 </ul>
 <p>You may get the message <code>summarise() regrouping output by....</code> this is fine.</p>
