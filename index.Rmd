@@ -25,7 +25,7 @@ knitr::write_bib(c(
 
 Hello and welcome to Level 1 Psychology at the University of Glasgow! This is the data skills course book for Psych 1A and Psych 1B and will contain almost everything you need for the data skills element of the course. We say almost because there's some stuff that we need to host on Moodle for admin reasons, for example, resources related to the assignments, however, you should keep this book very close. In fact, it would be a very good idea to save a bookmark for this page to your phone and computer!
 
-# How to use this book and the walkthrough videos
+## How to use this book and the walkthrough videos
 
 For most chapters of this book there is an associated walkthrough video. These videos are there to support you as you get comfortable using R, however, it's important that you use them wisely. You should always try to work through each chapter of this book (or if you prefer each activity) on your own and only then watch the video if you get stuck, or for extra information. 
 
