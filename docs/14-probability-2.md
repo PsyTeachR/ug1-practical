@@ -76,11 +76,6 @@ pbinom(q = 7, size = 10, prob = .5)
 
 This tells us that the probability is .95 or 95% - that doesn't seem right does it? The default behaviour for `pbinom()` is to calculate cumulative probability for the lower tail of the curve, i.e., if you specify `q = 2` it calculates the probability of all outcomes below 2. We specified `q = 7` which means that it's calculated the probability of getting an outcome of 0, 1, 2, 3, 4, 5, 6, and 7, the blue area in the below figure - which is obviously very high.
 
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
 <div class="figure" style="text-align: center">
 <img src="14-probability-2_files/figure-html/unnamed-chunk-1-1.png" alt="Lower and upper tails" width="100%" />
 <p class="caption">(\#fig:unnamed-chunk-1)Lower and upper tails</p>

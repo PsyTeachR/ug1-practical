@@ -39,9 +39,6 @@ Filter the data ```ahi_asc``` by only keeping those who are 65 years old or youn
 *(Hint: if you're stuck, see [this dplyr documentation](https://dplyr.tidyverse.org/reference/group_by.html)).*
 
 
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
 
 ### Activity 6: Mutate
 
@@ -157,10 +154,6 @@ age_65max <- filter(ahi_asc, age <= 65)
 overall_median <- summarise(age_65max, median_score = median(ahiTotal))
 data_sex <- group_by(age_65max, sex)
 median_score <- summarise(data_sex, sex_median = median(ahiTotal))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 

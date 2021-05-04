@@ -47,10 +47,10 @@ How you tackle probability depends on the type of data/variables you are working
 
 What types of data are the below measurements?
 
-* Time taken to run a marathon (in seconds): <select class='solveme' data-answer='["ratio"]'> <option></option> <option>categorical</option> <option>interval</option> <option>ordinal</option> <option>ratio</option></select>
-* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>categorical</option> <option>interval</option> <option>ratio</option> <option>ordinal</option></select>
-* Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>ordinal</option> <option>ratio</option> <option>categorical</option> <option>interval</option></select>
-* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>ratio</option> <option>ordinal</option> <option>categorical</option> <option>interval</option></select>
+* Time taken to run a marathon (in seconds): <select class='solveme' data-answer='["ratio"]'> <option></option> <option>ordinal</option> <option>interval</option> <option>categorical</option> <option>ratio</option></select>
+* Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>ordinal</option> <option>interval</option> <option>ratio</option> <option>categorical</option></select>
+* Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>interval</option> <option>ordinal</option> <option>categorical</option> <option>ratio</option></select>
+* Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>ordinal</option> <option>categorical</option> <option>interval</option> <option>ratio</option></select>
 
 ### Probability distributions
 
@@ -74,11 +74,6 @@ The binomial (bi = two, nominal = categories) distribution is a frequency distri
 Describing the probability of single events, such as a single coin flip or rolling a six is easy, but more often than not we are interested in the probability of a collection of events, such as the number of heads out of 10 coin flips. To work this out, we can use the binomial distribution and functions in R.
 
 Let’s say we flip a coin 10 times. Assuming the coin is fair (probability of heads = .5), how many heads should we expect to get? The below figure shows the results of a simulation for 10,000 coin flips (if you'd like to do this simulation yourself in R, you can see the code by clicking "Solution"). What this means is that we can use what we know about our data and the binomial distribution to work out the probability of different outcomes (e.g., what's the probability of getting at least 3 heads if you flip a coin 10 times?) and this is what we'll do in the next chapter
-
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
 
 <div class="figure" style="text-align: center">
 <img src="13-probability-1_files/figure-html/unnamed-chunk-2-1.png" alt="Probability of no. of heads from 10 coin tosses" width="100%" />
@@ -136,8 +131,8 @@ As with any probabilities, real-world data will come close to the normal distrib
 
 Complete the sentences so that they are correct.
 
-* In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>sum to zero</option> <option>are all equal</option> <option>are always different</option></select>.
-* In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the higher its probability of occuring</option> <option>the lower its probability of occuring</option></select>.
+* In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>are all equal</option> <option>are always different</option> <option>sum to zero</option></select>.
+* In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the lower its probability of occuring</option> <option>the higher its probability of occuring</option></select>.
 * Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='solveme' data-answer='["is a continuous variable"]'> <option></option> <option>is a categorical variable</option> <option>has three possible values</option> <option>is a continuous variable</option></select>.
 
 ### Activity 4: Distribution test

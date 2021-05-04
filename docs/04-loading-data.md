@@ -12,6 +12,12 @@ As part of your skill development, it is important that you work with data so th
 
 In this chapter you will learn how to load the packages required to work with our data. You'll then load the data into R Studio before getting it organised into a sensible format that relates to our research question. If you can't remember what packages are, go back and revise \@ref(packages). 
 
+### Walkthrough video
+
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/teIkYYMpGx6UZyRmnp6oFP9a0oR1pkAdyKDtrOS19PMrPzWFD6UM8kf1JPOA8BUCvdTjDD1TL0BY7fst.UJ5avFdQMYGeSE-b?startTime=1600350969000&_x_zm_rtaid=tV6tnLfOQS6SzFo0htAAPg.1600855466001.bb934ef09570772957442af0f1cfb9b5&_x_zm_rhtaid=682) of this chapter available via Zoom.
+
+* Video notes: this video was recorded in September 2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
+
 ### Stub files
 
 When you downloaded the data in Getting to know the data, you will have noticed that there were five Rmd files that all started with `stub-`. These stub files are set-up with code chunks for each activity of the chapter to help make your life a bit easier as you are first learning to code. We will take these away in Psych 1B but for this semester, you don't need to set up your own file, just open the relevant stub file for each chapter.
@@ -20,7 +26,7 @@ When you downloaded the data in Getting to know the data, you will have noticed 
 
 Before we begin working with the data we need to do some set-up. If you need help with any of these steps, you should refer to Chapter \@ref(ref1): 
 
-* You should have already downloaded the data files and uploaded them to the R server as part of [Intro to R](https://psyteachr.github.io/ug1-practical/ref1.html), if you haven't done this, go back and work through that chapter now.
+* You should have already downloaded the data files and, if you are using the server, uploaded them to the R server as part of [Intro to R](https://psyteachr.github.io/ug1-practical/ref1.html), if you haven't done this, go back and work through that chapter now.
 * Open R and ensure the environment is clear.
 * If you're on the server, avoid a number of issues by restarting the session - click `Session` - `Restart R`  
 * Set the working directory to your Data Skills folder.  
@@ -62,7 +68,7 @@ pinfo <- read_csv("participant-info.csv")
 <p>There is also a function called <code>read.csv()</code>. Be very careful NOT to use this function instead of <code>read_csv()</code> as they have different ways of naming columns. For the homework, unless your results match ours <strong>exactly</strong> you will not get the marks which means you need to be careful to use the right functions.</p>
 </div>
 
-### Activity 4: Check your data
+## Activity 4: Check your data
 
 You should now see that the objects `dat` and `pinfo` have appeared in the environment pane. Whenever you read data into R you should always do an initial check to see that your data looks like you expected. There are several ways you can do this, try them all out to see how the results differ.
 
@@ -72,13 +78,13 @@ You should now see that the objects `dat` and `pinfo` have appeared in the envir
 * Use `head(pinfo)`
 * Just type the name of the object you want to view, e.g., `dat`.
 
-### Activity 5: Join the files together
+## Activity 5: Join the files together
 
 We have two files, `dat` and `info` but what we really want is a single file that has both the data and the demographic information about the participants. R makes this very easy by using the function `inner_join()`.
 
 Remember to use the help function `?inner_join` if you want more information about how to use a function and to use tab auto-complete to help you write your code.
 
-The below code will create a new object `all_dat` that has the data from both `dat` and `pinfo` and it will use the columns `id` and `intervention` to match the participants' data. 
+The below code will create a new object `all_dat` that has the data from both `dat` and `pinfo` and it will use the columns `id` and `intervention` to match the participants' data. If you want to join tables that have multiple columns in common, you need to use `c()` to list them all (I think of it as c for combine, or collection).
 
 * Run this code and then view the new dataset using one of the methods from Activity 4.
 
@@ -111,14 +117,6 @@ summarydata <- select(.data = all_dat, # name of the object to take data from
 * Run the above code and then run `head(summarydata)`. If everything has gone to plan it should look something like this:
 
 
-| ahiTotal | cesdTotal | sex | age | educ | income | occasion | elapsed.days |
-|:--------:|:---------:|:---:|:---:|:----:|:------:|:--------:|:------------:|
-|    32    |    50     |  1  | 46  |  4   |   3    |    5     |    182.03    |
-|    34    |    49     |  1  | 37  |  3   |   2    |    2     |    14.19     |
-|    34    |    47     |  1  | 37  |  3   |   2    |    3     |    33.03     |
-|    35    |    41     |  1  | 19  |  2   |   1    |    0     |     0.00     |
-|    36    |    36     |  1  | 40  |  5   |   2    |    5     |    202.10    |
-|    37    |    35     |  1  | 49  |  4   |   1    |    0     |     0.00     |
 
 ### Activity 7: Visualise the data
 
@@ -178,6 +176,200 @@ Finally, if you're working from the R server, we'd recommend that you download a
 * Have you used the **exact** same object names as we did in each activity? Remember, `name` is different to `Name`. In order to make sure you can follow along with this book, pay special attention to ensuring you use the same object names as we do.  
 * Have you used quotation marks where needed?  
 * Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?
+
+### Debugging exercises
+
+These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
+
+1. Restart the R session (`Session - Restart R`). This should unload any packages you had loaded and also clear the environment. Make sure that the working directory is set to the right folder and then run the below code:
+
+
+```r
+dat <- read_csv ("ahi-cesd.csv")
+```
+
+This will produce the error `could not find function "read_csv"`. Once you figure out how to fix this error, make a note of it.
+
+
+<div class='solution'><button>Solution</button>
+
+When you restarted the session, you unloaded all the packages you previously had loaded. The function `read_csv()` is part of the `tidyverse` package which means that in order for the code to run, you need to run `library(tidyverse)` to reload the package so that you can use the function.
+
+</div>
+ 
+
+2. Make sure that the working directory is set to the right folder and then run the below code:
+
+
+```r
+library(tidyverse)
+dat <- read_csv("ahi-cesd")
+```
+
+This will produce the error `Error: 'ahi-cesd' does not exist in current working directory`. Once you figure out how to fix this error, make a note of it.
+
+
+<div class='solution'><button>Solution</button>
+
+When loading data, you need to provide the full file name, including the file extension. In this case, the error was caused by writing `ahi-cesd` instead of `ahi-cesd.csv`. As far as R is concerned, these are two completely different files and only one of them exists in the working directory.
+
+</div>
+ 
+
+3. Make sure that the working directory is set to the right folder and then run the below code:
+
+
+```r
+library(tidyverse)
+dat <- read_csv ("ahi-cesd.csv")
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   .default = col_double()
+## )
+## i Use `spec()` for the full column specifications.
+```
+
+```r
+pinfo <- read_csv("participant-info.csv")
+```
+
+```
+## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   id = col_double(),
+##   intervention = col_double(),
+##   sex = col_double(),
+##   age = col_double(),
+##   educ = col_double(),
+##   income = col_double()
+## )
+```
+
+```r
+all_dat <- inner_join(x = dat, 
+                      y = pinfo, 
+                      by = "id", "intervention") 
+summary(all_dat)
+```
+
+```
+##        id            occasion     elapsed.days    intervention.x 
+##  Min.   :  1.00   Min.   :0.00   Min.   :  0.00   Min.   :1.000  
+##  1st Qu.: 74.75   1st Qu.:0.00   1st Qu.:  0.00   1st Qu.:2.000  
+##  Median :147.00   Median :2.00   Median : 14.79   Median :2.000  
+##  Mean   :147.36   Mean   :2.03   Mean   : 44.31   Mean   :2.504  
+##  3rd Qu.:218.25   3rd Qu.:4.00   3rd Qu.: 90.96   3rd Qu.:4.000  
+##  Max.   :295.00   Max.   :5.00   Max.   :223.82   Max.   :4.000  
+##      ahi01           ahi02           ahi03           ahi04      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
+##  Median :3.000   Median :3.000   Median :3.000   Median :4.000  
+##  Mean   :2.771   Mean   :2.809   Mean   :2.723   Mean   :3.488  
+##  3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:4.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##      ahi05           ahi06           ahi07           ahi08      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
+##  Mean   :2.995   Mean   :3.119   Mean   :3.358   Mean   :2.824  
+##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:3.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##      ahi09           ahi10           ahi11           ahi12      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:3.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
+##  Median :3.500   Median :3.000   Median :3.000   Median :3.000  
+##  Mean   :3.395   Mean   :2.762   Mean   :2.866   Mean   :3.089  
+##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##      ahi13           ahi14           ahi15           ahi16      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:3.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000  
+##  Median :4.000   Median :3.000   Median :3.000   Median :3.000  
+##  Mean   :3.462   Mean   :2.883   Mean   :3.092   Mean   :3.173  
+##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##      ahi17           ahi18           ahi19           ahi20      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000  
+##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
+##  Mean   :2.977   Mean   :2.714   Mean   :3.191   Mean   :3.052  
+##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##      ahi21           ahi22           ahi23           ahi24      
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
+##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
+##  Mean   :2.947   Mean   :3.072   Mean   :2.771   Mean   :3.257  
+##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
+##      cesd01          cesd02          cesd03          cesd04     
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000  
+##  Median :1.000   Median :1.000   Median :1.000   Median :3.000  
+##  Mean   :1.682   Mean   :1.363   Mean   :1.541   Mean   :3.098  
+##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:4.000  
+##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
+##      cesd05          cesd06          cesd07         cesd08          cesd09    
+##  Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.00  
+##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:2.000   1st Qu.:1.00  
+##  Median :2.000   Median :1.000   Median :1.00   Median :3.000   Median :1.00  
+##  Mean   :1.876   Mean   :1.624   Mean   :1.71   Mean   :3.006   Mean   :1.28  
+##  3rd Qu.:2.250   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:4.000   3rd Qu.:1.00  
+##  Max.   :4.000   Max.   :4.000   Max.   :4.00   Max.   :4.000   Max.   :4.00  
+##      cesd10          cesd11          cesd12          cesd13     
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:1.000  
+##  Median :1.000   Median :2.000   Median :3.000   Median :1.000  
+##  Mean   :1.481   Mean   :2.117   Mean   :3.024   Mean   :1.676  
+##  3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:2.000  
+##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
+##      cesd14          cesd15          cesd16          cesd17     
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:1.000  
+##  Median :1.000   Median :1.000   Median :3.000   Median :1.000  
+##  Mean   :1.662   Mean   :1.252   Mean   :3.088   Mean   :1.306  
+##  3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:4.000   3rd Qu.:1.000  
+##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
+##      cesd18          cesd19          cesd20         ahiTotal     
+##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 32.00  
+##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 63.00  
+##  Median :1.000   Median :1.000   Median :1.000   Median : 74.00  
+##  Mean   :1.666   Mean   :1.367   Mean   :1.749   Mean   : 72.79  
+##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.: 83.00  
+##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :114.00  
+##    cesdTotal     intervention.y       sex            age             educ      
+##  Min.   : 0.00   Min.   :1.000   Min.   :1.00   Min.   :18.00   Min.   :1.000  
+##  1st Qu.: 4.00   1st Qu.:2.000   1st Qu.:1.00   1st Qu.:35.00   1st Qu.:3.000  
+##  Median :10.00   Median :2.000   Median :1.00   Median :46.00   Median :4.000  
+##  Mean   :13.14   Mean   :2.504   Mean   :1.15   Mean   :45.04   Mean   :3.968  
+##  3rd Qu.:19.00   3rd Qu.:4.000   3rd Qu.:1.00   3rd Qu.:54.00   3rd Qu.:5.000  
+##  Max.   :55.00   Max.   :4.000   Max.   :2.00   Max.   :83.00   Max.   :5.000  
+##      income     
+##  Min.   :1.000  
+##  1st Qu.:2.000  
+##  Median :2.000  
+##  Mean   :2.053  
+##  3rd Qu.:3.000  
+##  Max.   :3.000
+```
+
+
+Look at the summary for `all_dat`. You will see that R has duplicated the `intervention` variable, so that there is now an `intervention.x` and an `intervention.y` that contain the same data. Once you figure out how to fix this error, make a note of it.
+
+
+
+<div class='solution'><button>Solution</button>
+
+If you want to join two tables that have mulitple columns in common, you need to use the `c()` command to list all of the variables. The code above hasn't done this, it's just listed `id` and `intervention` without enclosing them with `c()`.
+
+</div>
+ 
+
 
 ### Test yourself
 

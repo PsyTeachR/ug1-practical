@@ -102,9 +102,9 @@ final_data <- raw_data %>%
 </ol>
 </div>
 
-Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option><-</option> <option>%<%</option> <option>%>%</option></select>
+Which of the following is a pipe? <select class='solveme' data-answer='["%>%"]'> <option></option> <option>%>%</option> <option><-</option> <option>%<%</option></select>
 
-Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the last argument of the next function.</option> <option>To the first argument of the next function.</option> <option>To the third argument of the 18th function.</option></select>
+Where do pipes send the result of the function that precedes the pipe? <select class='solveme' data-answer='["To the first argument of the next function."]'> <option></option> <option>To the first argument of the next function.</option> <option>To the third argument of the 18th function.</option> <option>To the last argument of the next function.</option></select>
 
 ### Activity 2: Set-up
 
@@ -167,13 +167,7 @@ You can also pipe into `ggplot()`. The below example calculates the total score 
 ```r
 data_group <- group_by(scores, Question)
 question_scores <- summarise(data_group, item_scores = sum(Score))
-```
 
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```r
 ggplot(question_scores, aes(x = Question, y = item_scores)) +
   geom_col() +
   theme_minimal()

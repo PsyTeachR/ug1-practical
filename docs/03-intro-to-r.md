@@ -4,17 +4,21 @@ There are eight activities in total for this chapter, but don't worry, they are 
 
 There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/uJ_2RvnP_UhUF7jM7hQZzOD6KjqjUm1UmPupTfFHBAftxrpMScYWRxkeuzGG0g0RqeE2UBCSmAO5riBo.6AKR_E01noBaq4-b?autoplay=true&startTime=1600178959000) of this chapter available via Zoom.
 
+* Video notes: this video was recorded in September 2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
+
 ### Activity 1: Upload data files to the server
 
-The main disadvantage to using the R server is that you will need to upload and download any files you are working on to and from the server (if you are using a local installation on your laptop you can skip this step).
+The main disadvantage to using the R server is that you need to upload and download any files you are working on to and from the server (if you are using a local installation on your laptop you can skip this step).
 
-In [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) you downloaded the data files we will be using for this semester and you created a folder structure on your computer. In order to use these files, we need to copy them to the R server. Whilst we're not going to use the data in this chapter, it's a useful step to get ready for next week.
+In [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) you downloaded the data files we will be using for this semester. In order to use these files, we need to copy them to the R server. Whilst we're not going to use the data in this chapter, it's a useful step to get ready for next week.
 
 * Log on to the [R server](https://rstudio.psy.gla.ac.uk/)
 * In the Files pane, click `New folder` and call it Psych 1A.
 * Click `Upload` then `Browse`and choose the Psych 1A folder that you just created.
 * Click `Choose file` and go and find the **zip folder** that you downloaded in [Getting to know the data](https://psyteachr.github.io/ug1-practical/getting-to-know-the-data.html#activity-2) (if you deleted it you can download it again). Using the zip folder means you can upload multiple files at once rather than one at a time.
 * Once you have uploaded the zip file, the server will automatically unzip the files and you should be able to see all the files you have on your computer.
+
+Please be aware that **there is no link between your computer and the R server**. If you change files on the server, they won't magically appear on your computer and you need to be very careful when you submit your homework files that you're submitting the right thing (last year we had lots of student submit blank files). This is the main reason we recommend installing R on your computer if you can.
 
 ### Activity 2: Set the working directory
 
@@ -65,7 +69,6 @@ What you have created is a **code chunk**. In R Markdown, anything written in th
 <div class="warning">
 <p>When you create a new code chunk you should notice that the grey box starts and ends with three back ticks ```. One common mistake is to accidentally delete these back ticks. Remember, code chunks are grey and text entry is white - if the colour of certain parts of your Markdown doesn’t look right, check that you haven’t deleted the back ticks.</p>
 </div>
-
 
 ### Activity 5: Write some code
 
@@ -124,7 +127,7 @@ Nearly finished! As our final step we are going to "knit" our file. This simply 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 35 years old. It is 125 days until my birthday.**
+**My name is Emily and I am 35 years old. It is 68 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers! R Markdown is an incredibly powerful and flexible format - this book was written using it! If you want to push yourself with R, additional functions and features of R Markdown would be a good place to start.
 

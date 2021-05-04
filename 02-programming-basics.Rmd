@@ -2,29 +2,31 @@
 
 In this chapter, we will cover how to use R and RStudio at the University of Glasgow as well as some basic programming concepts and terminology, common pitfalls, helpful hints, and where to get help. Those of you who have no programming experience should find this chapter particularly helpful, however, even if you've used R before there may be some helpful hints and tips so please make sure you read through this chapter before the moving on.
 
-This is a long chapter but we don't expect you to memorise all the information that is contained in it and some sections of it will  not make sense until you start writing your own code - just make sure you know what help is available!
+This is a long chapter but we don't expect you to memorise all the information that is contained in it and some sections of it will not make sense until you start writing your own code - just make sure you know what help is available!
 
 There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/z4QocMWQL9ExSfHYBaC8C1oISbrEDkOlz8wJwT0oT2y116hgB0yA0O9cTtVdvYWYqO-wq97Xi8_yncLv.1st2ENKayHb21h0S?autoplay=true&startTime=1600084596000) of this chapter available via Zoom.
 
-### R and R Studio
+### R and RStudio
 
-R is a programming language that you will write code in and R Studio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn't look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn't recommend it. The key thing to remember is that although you will do all of your work using R Studio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
+R is a programming language that you will write code in and RStudio is an Integrated Development Environment (IDE) which makes working with R easier. Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it wouldn't look as good and it would be much harder without things like spell-checking and formatting. In a similar way, you can use R without R Studio but we wouldn't recommend it. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software which means that from time-to-time, both of them may have separate updates.
 
-### How to use R and R Studio
+There are two ways you can use R for psychology. First, you can use a online version of R and R through your web browser and we will refer to this as the **R server**. Second, you can download and install R and RStudio for free on your laptop or desktop computer.
 
-There are two ways you can use R for psychology. First, you can use a online version of R through your web browser and we will refer to this as the **R server**. Second, you can download and install R and R Studio for free on your laptop or desktop computer.
+**Which version of R should you use?**
 
-The advantage of using the R server is that you do not need to install anything on your machine and all of the extra packages and functions you need will already be installed so you will have fewer potential technical issues. The advantage to installing R on your laptop is that you do not need to be connected to the internet to use it, and it is easier to save and manage your files. Unless you do not have reliable access to the internet **we strongly recommend that you use the R server**.
+The advantage of using the R server is that you do not need to install anything on your machine, you simply access it through your web browser. All  the extra packages and functions you need for this course will already be installed. We recommend using the server if you have a computer that you cannot install R on (e.g., a Chromebook), or if you have serious problems with installing R on your computer. 
 
-With the exception of how they save files, both versions are identical and we will show you how to use both in this book.
+The advantage to installing R on your computer is that you do not need to be connected to the internet to use it, it is easier to save and manage your files, and there are no problems caused if the server crashes (which is rare, but does and has happened). 
 
-### R server
+With the exception of how they save files, both versions are largely identical in how they work, however, after a year over working remotely, we have concluded that **if you can install R on your computer, you should**. If your computer cannot install R, or if you have technical problems during the installation you cannot resolve, then you should use the server. However, the need to be connected to the internet and the inability to open e.g., assessment files directly on your computer if you use the server mean that it is worth trying to install it if you can.    
 
-To access the R server, [click here](https://moodle.gla.ac.uk/mod/url/view.php?id=1878821). Please note that the R server is only for use by students and staff in the School of Psychology and Institute for Neuroscience and Psychology. Sign in to the R server with your usual GUID and password.
+#### R server
 
-### Installing R on your computer
+You will find the link to the R server on Moodle. Please note that the R server is only for use by students and staff in the School of Psychology and Institute for Neuroscience and Psychology. Sign in to the R server with your usual GUID and password. 
 
-To use R on your computer you need to install two piece for software. First, you need to [download and install R](https://cloud.r-project.org/) and second, you need to [download and install R Studio](https://rstudio.com/products/rstudio/download/#download). If you have any problems with the installation you can ask for help on Teams or attend one of the GTA support sessions, however, to reiterate, we strongly recommend that unless you need to install a local copy that you use the server.
+#### Installing R on your computer
+
+To use R on your computer, please see [Installing R](https://psyteachr.github.io/ug1-practical/installing-r.html) which has more detailed instructions and links to the files you need to download, as well as a links to a series of walkthroughs for installing R on different types of computers. 
 
 ### Getting to know R Studio
 
@@ -278,15 +280,45 @@ knitr::include_graphics("images/global_options.jpg")
 
 ### R sessions
 
-When you open up R and start writing code, loading packages, and creating objects, you're doing so in a new **session**. In addition to clearing the workspace, it can sometimes be useful to start a new session. This will happen automatically each time you start R, however, if you find your code isn't working and you can't figure out why, it might be worth starting a new session. This will clear the environment and detach all loaded packages - think of it like restarting your phone.
+When you open up R and start writing code, loading packages, and creating objects, you're doing so in a new **session**. In addition to clearing the workspace, it can sometimes be useful to start a new session. This will happen automatically each time you start R on your computer, although sessions can persist on the server. If you find that your code isn't working and you can't figure out why, it might be worth starting a new session. This will clear the environment and detach all loaded packages - think of it like restarting your phone.
 
-To do this, click 'Session - Restart R'. Remember that you will then need to load the packages you need and your data again. 
+### Activity 6
+
+Click 'Session - Restart R'. 
 
 ```{r img-session, echo=FALSE, fig.cap="The truth about programming"}
 
 knitr::include_graphics("images/new_session.png")
 
 ```
+
+### How to cite R and RStudio
+
+You may be some way off writing a scientific report where you have to cite and reference R, however, when the time comes it is important to do so to the people who built it (most of them for free!) credit. You should provide separate citations for R, RStudio, and the packages you use.
+
+To get the citation for the version of R you are using, simply run the `citation()` function which will always provide you with he most recent citation.
+
+```{r citation}
+citation()
+```
+
+To generate the citation for any packages you are using, you can also use the `citation()` function with the name of the package you wish to cite.
+
+```{r cite-tidy}
+citation("tidyverse")
+```
+
+To generate the citation for the version of RStudio you are using, you can use the `RStudio.Vesion()` function:
+
+```{r eval = FALSE}
+RStudio.Version()
+```
+
+Finally, here's an example of how that might look in the write-up of your method section:
+
+> Analysis was conducted using R (R Core Team, 2020), RStudio (Rstudio Team, 2020), and the tidyverse package (Wickham, 2017).
+
+As noted, you may not have to do this for a while, but come back to this when you do as it's important to give the open-source community credit for their work.
 
 ### Help and additional resources
 
