@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Scatterplots | Level 1 Data Skills</title>
+  <title>1 How to use this book and the walkthrough videos | Level 1 Data Skills</title>
   <meta name="description" content="ug1-practical-materials" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Scatterplots | Level 1 Data Skills" />
+  <meta property="og:title" content="1 How to use this book and the walkthrough videos | Level 1 Data Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Scatterplots | Level 1 Data Skills" />
+  <meta name="twitter:title" content="1 How to use this book and the walkthrough videos | Level 1 Data Skills" />
   
   <meta name="twitter:description" content="ug1-practical-materials" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intro-to-data-viz.html"/>
-<link rel="next" href="aq-data-and-recap.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="getting-to-know-the-data.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -392,152 +392,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="scatterplots" class="section level1" number="9">
-<h1><span class="header-section-number">9</span> Scatterplots</h1>
-<p>In this chapter we will work with our data to generate a plot of two variables from the Woodworth et al. dataset. Before we get to generate our plot, we still need to work through the steps to get the data in the shape we need it to be in for our particular question. In particular we need to generate the object <code>summarydata</code> that just has the variable we need.You have done these steps before so go back to the relevant Lab and use that to guide you through.</p>
-<div id="activity-1-set-up" class="section level3" number="9.0.1">
-<h3><span class="header-section-number">9.0.1</span> Activity 1: Set-up</h3>
-<ul>
-<li>Open R Studio and ensure the environment is clear.<br />
-</li>
-<li>Open the <code>stub-scatterplot.Rmd</code> file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (<code>participant-info.csv</code> and <code>ahi-cesd.csv</code>) are in your working directory (you should see them in the file pane).<br />
-</li>
-<li>Look through your previous work to find the code that loads the <code>tidyverse</code>, reads in the data files and creates an object called <code>all_dat</code> that joins the two objects <code>dat</code> and <code>pinfo</code>.</li>
-</ul>
-</div>
-<div id="activity-2-select" class="section level3" number="9.0.2">
-<h3><span class="header-section-number">9.0.2</span> Activity 2: Select</h3>
-<p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create an object named variable <code>summarydata</code>.</p>
-</div>
-<div id="activity-3-arrange" class="section level3" number="9.0.3">
-<h3><span class="header-section-number">9.0.3</span> Activity 3: Arrange</h3>
-<p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first and save it in an object named <code>ahi_asc</code>.</p>
-</div>
-<div id="activity-4filter" class="section level3" number="9.0.4">
-<h3><span class="header-section-number">9.0.4</span> Activity 4:Filter</h3>
-<p>Filter the data <code>ahi_asc</code> by only keeping those who are 65 years old or younger and save it in an object named <code>age_65max</code>.</p>
-</div>
-<div id="activity-5-group-and-summarise" class="section level3" number="9.0.5">
-<h3><span class="header-section-number">9.0.5</span> Activity 5: Group and summarise</h3>
-<ul>
-<li>First, calculate the overall median <code>ahiTotal</code> score for all participants (hint: use <code>summarise()</code>) and save it in an object called <code>overall_median</code>.<br />
-</li>
-<li>Then, group the data stored in the variable <code>age_65max</code> by sex, and store it in <code>data_sex</code>.<br />
-</li>
-<li>Then, use summarise to create a new variable <code>sex_median</code>, which calculates the median ahiTotal score for each sex in this grouped data and save it in an object called <code>median_score</code>.</li>
-</ul>
-<p><em>(Hint: if you’re stuck, see <a href="https://dplyr.tidyverse.org/reference/group_by.html">this dplyr documentation</a>).</em></p>
-</div>
-<div id="activity-6-mutate" class="section level3" number="9.0.6">
-<h3><span class="header-section-number">9.0.6</span> Activity 6: Mutate</h3>
-<p>Use <code>mutate()</code> to create a new column in <code>data_sex</code> called Happiness which categorises participants based on whether they score above or below the overall median ahiTotal score (i.e., the median score for all participants, not grouped by sex).</p>
-<div class="solution">
-<button>
-Hint
-</button>
-<p>mutate(data, new_variable = old_variable &gt; median score</p>
-</div>
-</div>
-<div id="activity-7-scatterplots" class="section level3" number="9.0.7">
-<h3><span class="header-section-number">9.0.7</span> Activity 7: Scatterplots</h3>
-<p>In order to visualise two continuous variables, we can use a <strong>scatterplot</strong>. Using the <code>ggplot</code> code you learned about in Intro to Data Viz, try and recreate the below plot.</p>
-<p>A few hints:</p>
-<ul>
-<li>Use the <code>age_65max</code> data.</li>
-<li>Put <code>ahiTotal</code> on the x-axis and <code>cesdTotal</code> on the y-axis.</li>
-<li>Rather than using <code>geom_bar()</code>, <code>geom_violin()</code>, or <code>geom_boxplot()</code>, for a scatterplot you need to use <code>geom_point()</code>.</li>
-<li>Rather than using <code>scale_fill_viridis_d()</code> to change the colour, add the argument <code>colour = "red"</code> to <code>geom_point</code> (except replace “red” with whatever colour you’d prefer).</li>
-<li>Remember to edit the axis names.</li>
-</ul>
-<div class="figure" style="text-align: center"><span id="fig:createplot"></span>
-<img src="08-scatterplots_files/figure-html/createplot-1.png" alt="Scatterplot of happiness and depression scores" width="100%" />
-<p class="caption">
-Figure 9.1: Scatterplot of happiness and depression scores
-</p>
-</div>
-<p><br></p>
-<p>How would you describe the relationship between the two variables? <select class='solveme' data-answer='["As happiness score increase, depression scores decrease"]'> <option></option> <option>As happiness scores increase, depression scores increase</option> <option>As happiness score increase, depression scores decrease</option> <option>As happiness scores decrease, depression scores decrease</option></select></p>
-<div id="finished" class="section level4" number="9.0.7.1">
-<h4><span class="header-section-number">9.0.7.1</span> Finished!</h4>
-<p>Great job! As you may have noticed, this chapter tried to push you and test what you’ve learned - we hope you can see just how far you’ve come in the space of just a couple of months, it’s genuinely amazing what you have achieved and you should feel proud. In Psych 1B we will continue using these wrangling skills on new data and also data that you collect yourself.</p>
-</div>
-</div>
-<div id="activity-solutions---scatterplots" class="section level3" number="9.0.8">
-<h3><span class="header-section-number">9.0.8</span> Activity solutions - Scatterplots</h3>
-<div id="activity-1" class="section level4" number="9.0.8.1">
-<h4><span class="header-section-number">9.0.8.1</span> Activity 1</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="scatterplots.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb103-2"><a href="scatterplots.html#cb103-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb103-3"><a href="scatterplots.html#cb103-3" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb103-4"><a href="scatterplots.html#cb103-4" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-2" class="section level4" number="9.0.8.2">
-<h4><span class="header-section-number">9.0.8.2</span> Activity 2</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="scatterplots.html#cb104-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-3" class="section level4" number="9.0.8.3">
-<h4><span class="header-section-number">9.0.8.3</span> Activity 3</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="scatterplots.html#cb105-1" aria-hidden="true" tabindex="-1"></a>ahi_asc <span class="ot">&lt;-</span> <span class="fu">arrange</span>(summarydata, <span class="at">by =</span> ahiTotal)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-4" class="section level4" number="9.0.8.4">
-<h4><span class="header-section-number">9.0.8.4</span> Activity 4</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="scatterplots.html#cb106-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">filter</span>(ahi_asc, age <span class="sc">&lt;=</span> <span class="dv">65</span>)</span></code></pre></div>
-</div>
-</div>
-<div id="activity-5" class="section level4" number="9.0.8.5">
-<h4><span class="header-section-number">9.0.8.5</span> Activity 5</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="scatterplots.html#cb107-1" aria-hidden="true" tabindex="-1"></a>overall_median <span class="ot">&lt;-</span> <span class="fu">summarise</span>(age_65max, <span class="at">median_score =</span> <span class="fu">median</span>(ahiTotal))</span>
-<span id="cb107-2"><a href="scatterplots.html#cb107-2" aria-hidden="true" tabindex="-1"></a>data_sex <span class="ot">&lt;-</span> <span class="fu">group_by</span>(age_65max, sex)</span>
-<span id="cb107-3"><a href="scatterplots.html#cb107-3" aria-hidden="true" tabindex="-1"></a>median_score <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data_sex, <span class="at">sex_median =</span> <span class="fu">median</span>(ahiTotal))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-6" class="section level4" number="9.0.8.6">
-<h4><span class="header-section-number">9.0.8.6</span> Activity 6</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="scatterplots.html#cb108-1" aria-hidden="true" tabindex="-1"></a>happy <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data_sex, <span class="at">Happiness =</span> (ahiTotal <span class="sc">&gt;</span> <span class="dv">73</span>))</span></code></pre></div>
-</div>
-</div>
-<div id="activity-7" class="section level4" number="9.0.8.7">
-<h4><span class="header-section-number">9.0.8.7</span> Activity 7</h4>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="scatterplots.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_65max, <span class="fu">aes</span>(<span class="at">x =</span> ahiTotal , <span class="at">y =</span> cesdTotal)) <span class="sc">+</span> </span>
-<span id="cb109-2"><a href="scatterplots.html#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb109-3"><a href="scatterplots.html#cb109-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb109-4"><a href="scatterplots.html#cb109-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb109-5"><a href="scatterplots.html#cb109-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-</div>
+<div id="how-to-use-this-book-and-the-walkthrough-videos" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> How to use this book and the walkthrough videos</h1>
+<p>For most chapters of this book there is an associated walkthrough video. These videos are there to support you as you get comfortable using R, however, it’s important that you use them wisely. You should always try to work through each chapter of this book (or if you prefer each activity) on your own and only then watch the video if you get stuck, or for extra information.</p>
+<p>For many of the initial chapters, we will provide the code you need to use. You can copy and paste from the book, however, we strongly encourage you to type out the code by yourself. This will seem much slower and you will make errors, but you will learn much more quickly this way.</p>
+<p>Additionally, we also provide the solutions to many of the activities. No-one is going to check whether you tried to figure it out yourself rather than going straight to the solution but remember this: if you copy and paste without thinking, you will learn nothing.</p>
+<p>Finally, on occasion we will make updates to the book such as fixing typos and including additional detail or activities and as such this book should be considered a living document. When substantial changes are made, new walkthrough videos will be recorded, however, it would be impossible to record a new video every time we made a minor change, therefore, sometimes there may be slight differences between the walkthrough videos and the content of this book. Where there are differences between the book and the video, the book should always be considered the definitive version.</p>
 
-</div>
-</div>
 </div>
 <div class="psyteachr_footer">
   
@@ -629,8 +490,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="intro-to-data-viz.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="aq-data-and-recap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="getting-to-know-the-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

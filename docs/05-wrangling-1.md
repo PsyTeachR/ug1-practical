@@ -456,10 +456,6 @@ summarise(.data = group_dat,
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 4 x 2
 ##   name       total
 ##   <chr>      <int>
@@ -478,10 +474,6 @@ You can request multiple summary calculations to be performed in the same functi
 summarise(group_dat,
           mean_year = mean(n),
           median_year = median(n))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -505,7 +497,7 @@ summarise(group_new_dat,
 ```
 
 ```
-## `summarise()` regrouping output by 'sex' (override with `.groups` argument)
+## `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
 ```
 
 ```
