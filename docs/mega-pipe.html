@@ -413,18 +413,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Joins together the three objects by their common columns</li>
 <li>Calculates a total AQ score for each participant</li>
 </ul>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="mega-pipe.html#cb132-1" aria-hidden="true" tabindex="-1"></a>rlong <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(<span class="at">data =</span> responses, </span>
-<span id="cb132-2"><a href="mega-pipe.html#cb132-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
-<span id="cb132-3"><a href="mega-pipe.html#cb132-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
-<span id="cb132-4"><a href="mega-pipe.html#cb132-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cols =</span> Q1<span class="sc">:</span>Q10)</span>
-<span id="cb132-5"><a href="mega-pipe.html#cb132-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-6"><a href="mega-pipe.html#cb132-6" aria-hidden="true" tabindex="-1"></a>rlong_join <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rlong, qformats, <span class="at">by =</span> <span class="st">&quot;Question&quot;</span>)</span>
-<span id="cb132-7"><a href="mega-pipe.html#cb132-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-8"><a href="mega-pipe.html#cb132-8" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rlong_join, scoring, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span>
-<span id="cb132-9"><a href="mega-pipe.html#cb132-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-10"><a href="mega-pipe.html#cb132-10" aria-hidden="true" tabindex="-1"></a>scores_grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scores, Id, gender)</span>
-<span id="cb132-11"><a href="mega-pipe.html#cb132-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-12"><a href="mega-pipe.html#cb132-12" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="ot">&lt;-</span> <span class="fu">summarise</span>(scores_grouped, <span class="at">total_score =</span> <span class="fu">sum</span>(Score))</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="mega-pipe.html#cb134-1" aria-hidden="true" tabindex="-1"></a>rlong <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(<span class="at">data =</span> responses, </span>
+<span id="cb134-2"><a href="mega-pipe.html#cb134-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb134-3"><a href="mega-pipe.html#cb134-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb134-4"><a href="mega-pipe.html#cb134-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cols =</span> Q1<span class="sc">:</span>Q10)</span>
+<span id="cb134-5"><a href="mega-pipe.html#cb134-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-6"><a href="mega-pipe.html#cb134-6" aria-hidden="true" tabindex="-1"></a>rlong_join <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rlong, qformats, <span class="at">by =</span> <span class="st">&quot;Question&quot;</span>)</span>
+<span id="cb134-7"><a href="mega-pipe.html#cb134-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-8"><a href="mega-pipe.html#cb134-8" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rlong_join, scoring, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>))</span>
+<span id="cb134-9"><a href="mega-pipe.html#cb134-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-10"><a href="mega-pipe.html#cb134-10" aria-hidden="true" tabindex="-1"></a>scores_grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(scores, Id, gender)</span>
+<span id="cb134-11"><a href="mega-pipe.html#cb134-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-12"><a href="mega-pipe.html#cb134-12" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="ot">&lt;-</span> <span class="fu">summarise</span>(scores_grouped, <span class="at">total_score =</span> <span class="fu">sum</span>(Score))</span></code></pre></div>
 <ul>
 <li>Rewrite the above code using pipes <code>%&gt;%</code>. Make sure you have completed Pipes before you attempt this.</li>
 </ul>
@@ -466,11 +466,11 @@ Figure 12.1: Histogram of scores for female participants
 <li>Making a bar chart works a little differently to the other graphs you have made so far. Previously, <code>ggplot()</code> has just visualised the raw data, however, for a bar chart you actually want to visualise a <strong>summary</strong> of the data, e.g., the mean.</li>
 <li>You can read the <code>stat_summary</code> code as “draw a summary of the data, use a bar chart to do so and the function to display on the y-axis should be the mean. Then, draw another summary but this time use an errorbar and the function to apply to the data is standard error of the mean.”</li>
 </ul>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="mega-pipe.html#cb133-1" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="sc">%&gt;%</span></span>
-<span id="cb133-2"><a href="mega-pipe.html#cb133-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> total_score)) <span class="sc">+</span></span>
-<span id="cb133-3"><a href="mega-pipe.html#cb133-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>) <span class="sc">+</span></span>
-<span id="cb133-4"><a href="mega-pipe.html#cb133-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="at">fun.data =</span> <span class="st">&quot;mean_se&quot;</span>, <span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb133-5"><a href="mega-pipe.html#cb133-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="mega-pipe.html#cb135-1" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="sc">%&gt;%</span></span>
+<span id="cb135-2"><a href="mega-pipe.html#cb135-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> total_score)) <span class="sc">+</span></span>
+<span id="cb135-3"><a href="mega-pipe.html#cb135-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>) <span class="sc">+</span></span>
+<span id="cb135-4"><a href="mega-pipe.html#cb135-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="at">fun.data =</span> <span class="st">&quot;mean_se&quot;</span>, <span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb135-5"><a href="mega-pipe.html#cb135-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="12-more-pipes_files/figure-html/unnamed-chunk-3-1.png" alt="Bad bar chart of means" width="100%" />
 <p class="caption">
@@ -489,16 +489,16 @@ Figure 7.3: Bad bar chart of means
 <li>Adding <code>fill = gender</code> tells <code>ggplot</code> to produce different coloured geoms for each level of <code>gender</code>. Try removing <code>fill = gender</code> and see what happens to the plot.</li>
 <li><code>geom_density()</code> is our new geom and tells R to draw the density curve. The argument <code>alpha</code> controls the transparency of the colours, try adjusting this value.</li>
 </ul>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="mega-pipe.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(AQ_all, <span class="fu">aes</span>(<span class="at">x =</span> total_score, <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
-<span id="cb134-2"><a href="mega-pipe.html#cb134-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb134-3"><a href="mega-pipe.html#cb134-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb134-4"><a href="mega-pipe.html#cb134-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;D&quot;</span>) <span class="sc">+</span></span>
-<span id="cb134-5"><a href="mega-pipe.html#cb134-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb134-6"><a href="mega-pipe.html#cb134-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="mega-pipe.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(AQ_all, <span class="fu">aes</span>(<span class="at">x =</span> total_score, <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
+<span id="cb136-2"><a href="mega-pipe.html#cb136-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb136-3"><a href="mega-pipe.html#cb136-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb136-4"><a href="mega-pipe.html#cb136-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;D&quot;</span>) <span class="sc">+</span></span>
+<span id="cb136-5"><a href="mega-pipe.html#cb136-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Total AQ Score&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb136-6"><a href="mega-pipe.html#cb136-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="12-more-pipes_files/figure-html/unnamed-chunk-4-1.png" alt="Grouped density plot" width="100%" />
 <p class="caption">
-Figure 7.4: Grouped density plot
+Figure 5.2: Grouped density plot
 </p>
 </div>
 <p>The y-axis displays density, i.e., what proportion of the data points fall at each point on the x-axis.</p>
@@ -521,26 +521,26 @@ Solution
 <li>Copy, paste and run the below code into a new code chunk.</li>
 <li>Check your Data Skills folder, you should now see the saved image file.</li>
 </ul>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="mega-pipe.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;density.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="mega-pipe.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;density.png&quot;</span>)</span></code></pre></div>
 <p>The default size for an image is 7 x 7, you can change this manually if you think that the dimensions of the plot are not correct or if you need a particular size.</p>
 <ul>
 <li>Copy paste and run the below code to overwrite the image file with new dimensions.</li>
 </ul>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="mega-pipe.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;density.png&quot;</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="mega-pipe.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;density.png&quot;</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">8</span>)</span></code></pre></div>
 <p>The second way of using <code>ggsave()</code> is to save your plot as an object and then tell it which object to write to a file. The below code saves the pipe plot from Activity 3 into an object named <code>AQ_histogram</code> and then saves it to an image file “AQ_histogram.png.”</p>
 <p>Note that when you save a plot to an object, it won’t display in R Studio. To get it to display you need to type the object name in the console (i.e., <code>AQ_histogram</code>). The benefit of doing it this way is that if you are making lots of plots, you can’t accidentally save the wrong one because you are explicitly specifying which plot to save rather than just saving the last one.</p>
 <ul>
 <li>Copy, paste and run the below code and then check your Data Skills folder for the image file. Resize the plot if you think it needs it.</li>
 </ul>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="mega-pipe.html#cb137-1" aria-hidden="true" tabindex="-1"></a>AQ_histogram <span class="ot">&lt;-</span> AQ_all <span class="sc">%&gt;%</span></span>
-<span id="cb137-2"><a href="mega-pipe.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;female&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb137-3"><a href="mega-pipe.html#cb137-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_score)) <span class="sc">+</span></span>
-<span id="cb137-4"><a href="mega-pipe.html#cb137-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
-<span id="cb137-5"><a href="mega-pipe.html#cb137-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb137-6"><a href="mega-pipe.html#cb137-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb137-7"><a href="mega-pipe.html#cb137-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Count&quot;</span>)</span>
-<span id="cb137-8"><a href="mega-pipe.html#cb137-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-9"><a href="mega-pipe.html#cb137-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;AQ_histogram.png&quot;</span>, <span class="at">plot =</span> AQ_histogram)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="mega-pipe.html#cb139-1" aria-hidden="true" tabindex="-1"></a>AQ_histogram <span class="ot">&lt;-</span> AQ_all <span class="sc">%&gt;%</span></span>
+<span id="cb139-2"><a href="mega-pipe.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;female&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb139-3"><a href="mega-pipe.html#cb139-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_score)) <span class="sc">+</span></span>
+<span id="cb139-4"><a href="mega-pipe.html#cb139-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb139-5"><a href="mega-pipe.html#cb139-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb139-6"><a href="mega-pipe.html#cb139-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb139-7"><a href="mega-pipe.html#cb139-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Count&quot;</span>)</span>
+<span id="cb139-8"><a href="mega-pipe.html#cb139-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-9"><a href="mega-pipe.html#cb139-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;AQ_histogram.png&quot;</span>, <span class="at">plot =</span> AQ_histogram)</span></code></pre></div>
 </div>
 <div id="activity-solutions---mega-pipe" class="section level3" number="12.0.8">
 <h3><span class="header-section-number">12.0.8</span> Activity solutions - Mega pipe</h3>
@@ -550,10 +550,10 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="mega-pipe.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb138-2"><a href="mega-pipe.html#cb138-2" aria-hidden="true" tabindex="-1"></a>scoring <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
-<span id="cb138-3"><a href="mega-pipe.html#cb138-3" aria-hidden="true" tabindex="-1"></a>responses <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
-<span id="cb138-4"><a href="mega-pipe.html#cb138-4" aria-hidden="true" tabindex="-1"></a>qformats <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="mega-pipe.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb140-2"><a href="mega-pipe.html#cb140-2" aria-hidden="true" tabindex="-1"></a>scoring <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&quot;scoring.csv&quot;</span>)</span>
+<span id="cb140-3"><a href="mega-pipe.html#cb140-3" aria-hidden="true" tabindex="-1"></a>responses <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;responses.csv&quot;</span>)</span>
+<span id="cb140-4"><a href="mega-pipe.html#cb140-4" aria-hidden="true" tabindex="-1"></a>qformats <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;qformats.csv&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-2" class="section level4" number="12.0.8.2">
@@ -562,14 +562,14 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="mega-pipe.html#cb139-1" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(<span class="at">data =</span> responses, </span>
-<span id="cb139-2"><a href="mega-pipe.html#cb139-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
-<span id="cb139-3"><a href="mega-pipe.html#cb139-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
-<span id="cb139-4"><a href="mega-pipe.html#cb139-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cols =</span> Q1<span class="sc">:</span>Q10) <span class="sc">%&gt;%</span></span>
-<span id="cb139-5"><a href="mega-pipe.html#cb139-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(qformats, <span class="at">by =</span> <span class="st">&quot;Question&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb139-6"><a href="mega-pipe.html#cb139-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(scoring, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb139-7"><a href="mega-pipe.html#cb139-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Id, gender) <span class="sc">%&gt;%</span> </span>
-<span id="cb139-8"><a href="mega-pipe.html#cb139-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_score =</span> <span class="fu">sum</span>(Score))</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="mega-pipe.html#cb141-1" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(<span class="at">data =</span> responses, </span>
+<span id="cb141-2"><a href="mega-pipe.html#cb141-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">&quot;Question&quot;</span>,  </span>
+<span id="cb141-3"><a href="mega-pipe.html#cb141-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values_to =</span> <span class="st">&quot;Response&quot;</span>,</span>
+<span id="cb141-4"><a href="mega-pipe.html#cb141-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cols =</span> Q1<span class="sc">:</span>Q10) <span class="sc">%&gt;%</span></span>
+<span id="cb141-5"><a href="mega-pipe.html#cb141-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(qformats, <span class="at">by =</span> <span class="st">&quot;Question&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb141-6"><a href="mega-pipe.html#cb141-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(scoring, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;QFormat&quot;</span>, <span class="st">&quot;Response&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb141-7"><a href="mega-pipe.html#cb141-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Id, gender) <span class="sc">%&gt;%</span> </span>
+<span id="cb141-8"><a href="mega-pipe.html#cb141-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_score =</span> <span class="fu">sum</span>(Score))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-3" class="section level4" number="12.0.8.3">
@@ -578,13 +578,13 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="mega-pipe.html#cb140-1" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="sc">%&gt;%</span></span>
-<span id="cb140-2"><a href="mega-pipe.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;female&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb140-3"><a href="mega-pipe.html#cb140-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_score)) <span class="sc">+</span></span>
-<span id="cb140-4"><a href="mega-pipe.html#cb140-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
-<span id="cb140-5"><a href="mega-pipe.html#cb140-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb140-6"><a href="mega-pipe.html#cb140-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb140-7"><a href="mega-pipe.html#cb140-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="mega-pipe.html#cb142-1" aria-hidden="true" tabindex="-1"></a>AQ_all <span class="sc">%&gt;%</span></span>
+<span id="cb142-2"><a href="mega-pipe.html#cb142-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;female&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb142-3"><a href="mega-pipe.html#cb142-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_score)) <span class="sc">+</span></span>
+<span id="cb142-4"><a href="mega-pipe.html#cb142-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb142-5"><a href="mega-pipe.html#cb142-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb142-6"><a href="mega-pipe.html#cb142-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Total AQ Score (female participants)&quot;</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb142-7"><a href="mega-pipe.html#cb142-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-4" class="section level4" number="12.0.8.4">
@@ -593,10 +593,10 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="mega-pipe.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(AQ_all, <span class="fu">aes</span>(gender, total_score)) <span class="sc">+</span></span>
-<span id="cb141-2"><a href="mega-pipe.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb141-3"><a href="mega-pipe.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb141-4"><a href="mega-pipe.html#cb141-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="mega-pipe.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(AQ_all, <span class="fu">aes</span>(gender, total_score)) <span class="sc">+</span></span>
+<span id="cb143-2"><a href="mega-pipe.html#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb143-3"><a href="mega-pipe.html#cb143-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb143-4"><a href="mega-pipe.html#cb143-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 </div>
 
 </div>
