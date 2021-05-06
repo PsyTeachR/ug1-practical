@@ -407,17 +407,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files.</li>
 </ul>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="data-wrangling-2.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb79-2"><a href="data-wrangling-2.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-3"><a href="data-wrangling-2.html#cb79-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb79-4"><a href="data-wrangling-2.html#cb79-4" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb79-5"><a href="data-wrangling-2.html#cb79-5" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-wrangling-2.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb81-2"><a href="data-wrangling-2.html#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="data-wrangling-2.html#cb81-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb81-4"><a href="data-wrangling-2.html#cb81-4" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb81-5"><a href="data-wrangling-2.html#cb81-5" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span></code></pre></div>
 <p>Now let’s start working with our <code>tidyverse</code> verb functions…</p>
 </div>
 <div id="activity-2-select" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Activity 2: Select</h2>
 <p>Select the columns all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days from the data and create a variable called <code>summarydata</code>.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="data-wrangling-2.html#cb80-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="data-wrangling-2.html#cb82-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
 <div class="danger">
 <p>
 If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems
@@ -434,7 +434,7 @@ If you get an error message when using select that says <code>unused argument</c
 <div id="activity-3-arrange" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Activity 3: Arrange</h2>
 <p>Arrange the data in the variable created above (<code>summarydata</code>) by ahiTotal with lowest score first.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-wrangling-2.html#cb81-1" aria-hidden="true" tabindex="-1"></a>ahi_asc <span class="ot">&lt;-</span> <span class="fu">arrange</span>(summarydata, <span class="at">by =</span> ahiTotal)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="data-wrangling-2.html#cb83-1" aria-hidden="true" tabindex="-1"></a>ahi_asc <span class="ot">&lt;-</span> <span class="fu">arrange</span>(summarydata, <span class="at">by =</span> ahiTotal)</span></code></pre></div>
 <hr />
 <ul>
 <li>How could you arrange this data in <strong>descending</strong> order (highest score first)?</li>
@@ -443,7 +443,7 @@ If you get an error message when using select that says <code>unused argument</c
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="data-wrangling-2.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(summarydata, <span class="at">by =</span> <span class="fu">desc</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="data-wrangling-2.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(summarydata, <span class="at">by =</span> <span class="fu">desc</span>(ahiTotal))</span></code></pre></div>
 </div>
 <ul>
 <li><p>What is the smallest ahiTotal score? <input class='solveme nospaces' size='2' data-answer='["32"]'/></p></li>
@@ -454,7 +454,7 @@ Solution
 <div id="activity-4-filter" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Activity 4: Filter</h2>
 <p>Filter the data <code>ahi_asc</code> by taking out those who are over 65 years of age.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="data-wrangling-2.html#cb83-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">filter</span>(ahi_asc, age <span class="sc">&lt;</span> <span class="dv">65</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-wrangling-2.html#cb85-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">filter</span>(ahi_asc, age <span class="sc">&lt;</span> <span class="dv">65</span>)</span></code></pre></div>
 <hr />
 <ul>
 <li>What does <code>filter()</code> do?</li>
@@ -468,7 +468,7 @@ Solution
 <div id="activity-5-summarise" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> Activity 5: Summarise</h2>
 <p>Then, use summarise to create a new variable <code>data_median</code>, which calculates the median ahiTotal score in this grouped data and assign it a table head called <code>median_score</code>.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="data-wrangling-2.html#cb84-1" aria-hidden="true" tabindex="-1"></a>data_median <span class="ot">&lt;-</span> <span class="fu">summarise</span>(age_65max, <span class="at">median_score =</span> <span class="fu">median</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data-wrangling-2.html#cb86-1" aria-hidden="true" tabindex="-1"></a>data_median <span class="ot">&lt;-</span> <span class="fu">summarise</span>(age_65max, <span class="at">median_score =</span> <span class="fu">median</span>(ahiTotal))</span></code></pre></div>
 <hr />
 <ul>
 <li><p>What is the median score? <input class='solveme nospaces' size='2' data-answer='["74"]'/></p></li>
@@ -478,7 +478,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-wrangling-2.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(age_65max, <span class="at">mean_score =</span> <span class="fu">mean</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="data-wrangling-2.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(age_65max, <span class="at">mean_score =</span> <span class="fu">mean</span>(ahiTotal))</span></code></pre></div>
 </div>
 <hr />
 </div>
@@ -487,10 +487,10 @@ Solution
 <p>Use mutate to create a new column called <code>Happiness_Category</code> in <code>age_65max</code> which categorises participants based on whether they score above the median <code>ahiTotal</code> score for all participants.</p>
 <p>Then, group the data stored in <code>age_65max</code> by <code>Happiness_Category</code>, and store it in an object named <code>happy_dat</code>.</p>
 <p>Finally, use summarise to calculate the median <code>cesdTotal</code> score for participants who scored above and below the median <code>ahiTotal</code> score and save it in a new object named <code>data_median_group</code>.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data-wrangling-2.html#cb86-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">mutate</span>(age_65max, <span class="at">Happiness_Category =</span> (ahiTotal <span class="sc">&gt;</span> <span class="dv">74</span>))</span>
-<span id="cb86-2"><a href="data-wrangling-2.html#cb86-2" aria-hidden="true" tabindex="-1"></a>happy_dat <span class="ot">&lt;-</span> <span class="fu">group_by</span>(age_65max, Happiness_Category)</span>
-<span id="cb86-3"><a href="data-wrangling-2.html#cb86-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-4"><a href="data-wrangling-2.html#cb86-4" aria-hidden="true" tabindex="-1"></a>data_median_group <span class="ot">&lt;-</span> <span class="fu">summarise</span>(happy_dat, <span class="at">median_score =</span> <span class="fu">median</span>(cesdTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="data-wrangling-2.html#cb88-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">mutate</span>(age_65max, <span class="at">Happiness_Category =</span> (ahiTotal <span class="sc">&gt;</span> <span class="dv">74</span>))</span>
+<span id="cb88-2"><a href="data-wrangling-2.html#cb88-2" aria-hidden="true" tabindex="-1"></a>happy_dat <span class="ot">&lt;-</span> <span class="fu">group_by</span>(age_65max, Happiness_Category)</span>
+<span id="cb88-3"><a href="data-wrangling-2.html#cb88-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-4"><a href="data-wrangling-2.html#cb88-4" aria-hidden="true" tabindex="-1"></a>data_median_group <span class="ot">&lt;-</span> <span class="fu">summarise</span>(happy_dat, <span class="at">median_score =</span> <span class="fu">median</span>(cesdTotal))</span></code></pre></div>
 <div class="info">
 <p>
 If you get what looks like an error that says <code>summarise() ungrouping output (override with .groups argument)</code>don’t worry, this isn’t an error it’s just R telling you what it’s done. This message was included in a very recent update to the <code>tidyverse</code> which is why it doesn’t appear on some of the walkthrough vidoes.
@@ -509,19 +509,19 @@ If you get what looks like an error that says <code>summarise() ungrouping outpu
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="data-wrangling-2.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(age_65max, educ)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="data-wrangling-2.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(age_65max, educ)</span></code></pre></div>
 </div>
 <hr />
 </div>
 <div id="activity-7-data-visualisation" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> Activity 7: Data visualisation</h2>
 <p>Copy, paste and run the below code into a new code chunk to create a plot of depression scores grouped by income level using the <code>age_65max</code> data.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="data-wrangling-2.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_65max, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(income), <span class="at">y =</span> cesdTotal, <span class="at">fill =</span> <span class="fu">as.factor</span>(income))) <span class="sc">+</span></span>
-<span id="cb88-2"><a href="data-wrangling-2.html#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">6</span>) <span class="sc">+</span></span>
-<span id="cb88-3"><a href="data-wrangling-2.html#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb88-4"><a href="data-wrangling-2.html#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;D&quot;</span>) <span class="sc">+</span></span>
-<span id="cb88-5"><a href="data-wrangling-2.html#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Income Level&quot;</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb88-6"><a href="data-wrangling-2.html#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Depression Score&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-wrangling-2.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_65max, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(income), <span class="at">y =</span> cesdTotal, <span class="at">fill =</span> <span class="fu">as.factor</span>(income))) <span class="sc">+</span></span>
+<span id="cb90-2"><a href="data-wrangling-2.html#cb90-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb90-3"><a href="data-wrangling-2.html#cb90-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb90-4"><a href="data-wrangling-2.html#cb90-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;D&quot;</span>) <span class="sc">+</span></span>
+<span id="cb90-5"><a href="data-wrangling-2.html#cb90-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Income Level&quot;</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb90-6"><a href="data-wrangling-2.html#cb90-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Depression Score&quot;</span>)</span></code></pre></div>
 <ul>
 <li><p>Which income group has the highest median depression scores? <select class='solveme' data-answer='["Below Average"]'> <option></option> <option>Below Average</option> <option>Average</option> <option>Above Average</option></select></p></li>
 <li><p>Which group has the highest density of scores at any one point? <select class='solveme' data-answer='["Above Average"]'> <option></option> <option>Below Average</option> <option>Average</option> <option>Above Average</option></select></p></li>
