@@ -197,14 +197,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="loading-data.html"><a href="loading-data.html#open-data"><i class="fa fa-check"></i><b>4.3</b> Open data</a></li>
 <li class="chapter" data-level="4.4" data-path="loading-data.html"><a href="loading-data.html#activity-3-read-in-data"><i class="fa fa-check"></i><b>4.4</b> Activity 3: Read in data</a></li>
 <li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.5</b> Activity 4: Check your data</a></li>
-<li class="chapter" data-level="4.6" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.6</b> Activity 5: Join the files together</a>
+<li class="chapter" data-level="4.6" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.6</b> Activity 5: Join the files together</a></li>
+<li class="chapter" data-level="4.7" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.7</b> Activity 6: Pull out variables of interest</a></li>
+<li class="chapter" data-level="4.8" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.8</b> Activity 7: Visualise the data</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.6.1</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.6.2" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.6.2</b> Activity 7: Visualise the data</a></li>
-<li class="chapter" data-level="4.6.3" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>4.6.3</b> Debugging tips</a></li>
-<li class="chapter" data-level="4.6.4" data-path="loading-data.html"><a href="loading-data.html#debugging-exercises"><i class="fa fa-check"></i><b>4.6.4</b> Debugging exercises</a></li>
-<li class="chapter" data-level="4.6.5" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.6.5</b> Test yourself</a></li>
+<li class="chapter" data-level="4.8.1" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>4.8.1</b> Finished!</a></li>
 </ul></li>
+<li class="chapter" data-level="4.9" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>4.9</b> Debugging tips</a></li>
+<li class="chapter" data-level="4.10" data-path="loading-data.html"><a href="loading-data.html#debugging-exercises"><i class="fa fa-check"></i><b>4.10</b> Debugging exercises</a></li>
+<li class="chapter" data-level="4.11" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.11</b> Test yourself</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a>
 <ul>
@@ -400,11 +401,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">7.1</span> Activity 1: dplyr recap</h2>
 <p>In Data Wrangling 1 and 2 we were introduced to the tidyverse package, <code>dplyr</code>, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?</p>
 <ul>
-<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>mutate()</option> <option>select()</option> <option>arrange()</option> <option>group_by()</option> <option>summarise()</option> <option>filter()</option></select> function.</p></li>
-<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>filter()</option> <option>mutate()</option> <option>summarise()</option> <option>arrange()</option> <option>group_by()</option> <option>select()</option></select> function.</p></li>
-<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>group_by()</option> <option>filter()</option> <option>summarise()</option> <option>select()</option> <option>arrange()</option> <option>mutate()</option></select> function.</p></li>
-<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>arrange() and mutate()</option> <option>group_by() and summarise()</option> <option>filter() and select()</option> <option>group_by() and arrange()</option></select> functions.</p></li>
-<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>mutate() and filter()</option> <option>select() and summarise()</option> <option>arrange() and select()</option> <option>group_by() and mutate()</option></select> functions.</p></li>
+<li><p>We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>group_by()</option> <option>filter()</option> <option>summarise()</option> <option>mutate()</option> <option>arrange()</option> <option>select()</option></select> function.</p></li>
+<li><p>We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>group_by()</option> <option>select()</option> <option>mutate()</option> <option>filter()</option> <option>summarise()</option> <option>arrange()</option></select> function.</p></li>
+<li><p>Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>select()</option> <option>filter()</option> <option>mutate()</option> <option>arrange()</option> <option>summarise()</option> <option>group_by()</option></select> function.</p></li>
+<li><p>We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and arrange()</option> <option>arrange() and mutate()</option> <option>group_by() and summarise()</option> <option>filter() and select()</option></select> functions.</p></li>
+<li><p>We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>mutate() and filter()</option> <option>group_by() and mutate()</option> <option>select() and summarise()</option> <option>arrange() and select()</option></select> functions.</p></li>
 </ul>
 <div id="data-visualisation" class="section level3" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Data visualisation</h3>
@@ -437,14 +438,14 @@ Figure 7.1: ggplot2 layers from Field et al. (2012)
 </li>
 <li>Type and run the below code to load the <code>tidyverse</code> package and to load in the data files in to the Activity 2 code chunk.</li>
 </ul>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="intro-to-data-viz.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb91-2"><a href="intro-to-data-viz.html#cb91-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-3"><a href="intro-to-data-viz.html#cb91-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb91-4"><a href="intro-to-data-viz.html#cb91-4" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb91-5"><a href="intro-to-data-viz.html#cb91-5" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span>
-<span id="cb91-6"><a href="intro-to-data-viz.html#cb91-6" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="at">.data =</span> all_dat, </span>
-<span id="cb91-7"><a href="intro-to-data-viz.html#cb91-7" aria-hidden="true" tabindex="-1"></a>                      ahiTotal, cesdTotal, sex, age, </span>
-<span id="cb91-8"><a href="intro-to-data-viz.html#cb91-8" aria-hidden="true" tabindex="-1"></a>                      educ, income, occasion, elapsed.days) </span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="intro-to-data-viz.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb86-2"><a href="intro-to-data-viz.html#cb86-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-3"><a href="intro-to-data-viz.html#cb86-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb86-4"><a href="intro-to-data-viz.html#cb86-4" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb86-5"><a href="intro-to-data-viz.html#cb86-5" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>))</span>
+<span id="cb86-6"><a href="intro-to-data-viz.html#cb86-6" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(<span class="at">.data =</span> all_dat, </span>
+<span id="cb86-7"><a href="intro-to-data-viz.html#cb86-7" aria-hidden="true" tabindex="-1"></a>                      ahiTotal, cesdTotal, sex, age, </span>
+<span id="cb86-8"><a href="intro-to-data-viz.html#cb86-8" aria-hidden="true" tabindex="-1"></a>                      educ, income, occasion, elapsed.days) </span></code></pre></div>
 <div class="danger">
 <p>
 If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems
@@ -454,7 +455,7 @@ If you get an error message when using select that says <code>unused argument</c
 <div id="activity-3-factors" class="section level3" number="7.1.3">
 <h3><span class="header-section-number">7.1.3</span> Activity 3: Factors</h3>
 <p>Before we go any further we need to perform an additional step of data processing that we have glossed over up until this point. First, run the below code to look at the structure of the dataset:</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="intro-to-data-viz.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(summarydata)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="intro-to-data-viz.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(summarydata)</span></code></pre></div>
 <pre><code>## tibble[,8] [992 x 8] (S3: tbl_df/tbl/data.frame)
 ##  $ ahiTotal    : num [1:992] 32 34 34 35 36 37 38 38 38 38 ...
 ##  $ cesdTotal   : num [1:992] 50 49 47 41 36 35 50 55 47 39 ...
@@ -466,10 +467,10 @@ If you get an error message when using select that says <code>unused argument</c
 ##  $ elapsed.days: num [1:992] 182 14.2 33 0 202.1 ...</code></pre>
 <p>R assumes that all the variables are numeric (represented by <code>num</code>) and this is going to be a problem because whilst <code>sex</code>, <code>educ</code>, and <code>income</code> are represented by numerical codes, they aren’t actually numbers, they’re categories, or <strong>factors</strong>.</p>
 <p>We need to tell R that these variables are factors and we can use <code>mutate()</code> to do this by overriding the original variable with the same data but classified as a factor. Type and run the below code to change the categories to factors.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="intro-to-data-viz.html#cb94-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> summarydata <span class="sc">%&gt;%</span></span>
-<span id="cb94-2"><a href="intro-to-data-viz.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.factor</span>(sex),</span>
-<span id="cb94-3"><a href="intro-to-data-viz.html#cb94-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">educ =</span> <span class="fu">as.factor</span>(educ),</span>
-<span id="cb94-4"><a href="intro-to-data-viz.html#cb94-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">income =</span> <span class="fu">as.factor</span>(income))</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="intro-to-data-viz.html#cb89-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> summarydata <span class="sc">%&gt;%</span></span>
+<span id="cb89-2"><a href="intro-to-data-viz.html#cb89-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">as.factor</span>(sex),</span>
+<span id="cb89-3"><a href="intro-to-data-viz.html#cb89-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">educ =</span> <span class="fu">as.factor</span>(educ),</span>
+<span id="cb89-4"><a href="intro-to-data-viz.html#cb89-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">income =</span> <span class="fu">as.factor</span>(income))</span></code></pre></div>
 <p>You can read this code as “overwrite the data that is in the column sex with sex as a factor.”</p>
 <p><strong>Remember this. It’s a really important step and if your graphs are looking weird this might be the reason.</strong></p>
 </div>
@@ -481,7 +482,7 @@ If you get an error message when using select that says <code>unused argument</c
 </li>
 <li><code>aes()</code> can take both an <code>x</code> and <code>y</code> argument, however, with a bar plot you are just asking R to count the number of data points in each group so you don’t need to specify this.</li>
 </ul>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="intro-to-data-viz.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex))</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="intro-to-data-viz.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex))</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:layer1"></span>
 <img src="07-data-viz_files/figure-html/layer1-1.png" alt="First ggplot layer sets the axes" width="100%" />
 <p class="caption">
@@ -491,8 +492,8 @@ Figure 7.2: First ggplot layer sets the axes
 <ul>
 <li>The next layer adds a <strong>geom</strong> or a shape, in this case we use <code>geom_bar()</code> as we want to draw a bar plot.</li>
 </ul>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="intro-to-data-viz.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex)) <span class="sc">+</span></span>
-<span id="cb96-2"><a href="intro-to-data-viz.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="intro-to-data-viz.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex)) <span class="sc">+</span></span>
+<span id="cb91-2"><a href="intro-to-data-viz.html#cb91-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-3-1.png" alt="Basic barplot" width="100%" />
 <p class="caption">
@@ -502,8 +503,8 @@ Figure 7.3: Basic barplot
 <ul>
 <li>Adding <code>fill</code> to the first layer will separate the data into each level of the grouping variable and give it a different colour. In this case, there is a different coloured bar for each level of <code>sex</code>.</li>
 </ul>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="intro-to-data-viz.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb97-2"><a href="intro-to-data-viz.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="intro-to-data-viz.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb92-2"><a href="intro-to-data-viz.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-4-1.png" alt="Barplot with colour" width="100%" />
 <p class="caption">
@@ -513,8 +514,8 @@ Figure 5.2: Barplot with colour
 <ul>
 <li><code>fill()</code> has also produced a plot legend to the right of the graph. When you have multiple grouping variables you need this to know which groups each bit of the plot is referring to, but in this case it is redundant because it doesn’t tell us anything that the axis labels don’t already. We can get rid of it by adding <code>show.legend = FALSE</code> to the <code>geom_bar()</code> code.</li>
 </ul>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="intro-to-data-viz.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb98-2"><a href="intro-to-data-viz.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="intro-to-data-viz.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb93-2"><a href="intro-to-data-viz.html#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-5-1.png" alt="Barplot without legend" width="100%" />
 <p class="caption">
@@ -534,11 +535,11 @@ Figure 5.3: Barplot without legend
 <li><code>labels</code> which controls the names of the break points on the axis</li>
 </ul>
 <p>There are lots more ways you can customise your axes but we’ll stick with these for now. Copy, paste, and run the below code to change the axis labels and change the numeric sex codes into words.</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="intro-to-data-viz.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb99-2"><a href="intro-to-data-viz.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb99-3"><a href="intro-to-data-viz.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb99-4"><a href="intro-to-data-viz.html#cb99-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb99-5"><a href="intro-to-data-viz.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="intro-to-data-viz.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb94-2"><a href="intro-to-data-viz.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb94-3"><a href="intro-to-data-viz.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb94-4"><a href="intro-to-data-viz.html#cb94-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb94-5"><a href="intro-to-data-viz.html#cb94-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-6-1.png" alt="Barplot with axis labels" width="100%" />
 <p class="caption">
@@ -546,12 +547,12 @@ Figure 7.4: Barplot with axis labels
 </p>
 </div>
 <p>Second, you might want to adjust the colours and the visual style of the plot. <code>ggplot2</code> comes with built in themes. Below, we’ll use <code>theme_minimal()</code> but try typing <code>theme_</code> into a code chunk and try all the options that come up to see which one you like best.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="intro-to-data-viz.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb100-2"><a href="intro-to-data-viz.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb100-3"><a href="intro-to-data-viz.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb100-4"><a href="intro-to-data-viz.html#cb100-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb100-5"><a href="intro-to-data-viz.html#cb100-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="sc">+</span></span>
-<span id="cb100-6"><a href="intro-to-data-viz.html#cb100-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="intro-to-data-viz.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb95-2"><a href="intro-to-data-viz.html#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb95-3"><a href="intro-to-data-viz.html#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb95-4"><a href="intro-to-data-viz.html#cb95-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb95-5"><a href="intro-to-data-viz.html#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="sc">+</span></span>
+<span id="cb95-6"><a href="intro-to-data-viz.html#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-7-1.png" alt="Barplot with minimal theme" width="100%" />
 <p class="caption">
@@ -559,13 +560,13 @@ Figure 7.5: Barplot with minimal theme
 </p>
 </div>
 <p>There are various options to adjust the colours but a good way to be inclusive is to use a colour-blind friendly palette that can also be read if printed in black-and-white. To do this, we can add on the function <code>scale_fill_viridis_d()</code>. This function has 5 colour options, A, B, C, D, and E. I prefer E but you can play around with them and choose the one you prefer.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="intro-to-data-viz.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb101-2"><a href="intro-to-data-viz.html#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb101-3"><a href="intro-to-data-viz.html#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb101-4"><a href="intro-to-data-viz.html#cb101-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb101-5"><a href="intro-to-data-viz.html#cb101-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="sc">+</span></span>
-<span id="cb101-6"><a href="intro-to-data-viz.html#cb101-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb101-7"><a href="intro-to-data-viz.html#cb101-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="intro-to-data-viz.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb96-2"><a href="intro-to-data-viz.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb96-3"><a href="intro-to-data-viz.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb96-4"><a href="intro-to-data-viz.html#cb96-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb96-5"><a href="intro-to-data-viz.html#cb96-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="sc">+</span></span>
+<span id="cb96-6"><a href="intro-to-data-viz.html#cb96-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb96-7"><a href="intro-to-data-viz.html#cb96-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-8-1.png" alt="Barplot with colour-blind friendly colour scheme" width="100%" />
 <p class="caption">
@@ -573,13 +574,13 @@ Figure 7.6: Barplot with colour-blind friendly colour scheme
 </p>
 </div>
 <p>Finally, you can also adjust the transparency of the bars by adding <code>alpha</code> to <code>geom_bar()</code>. Play around with the value and see what value you prefer.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="intro-to-data-viz.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
-<span id="cb102-2"><a href="intro-to-data-viz.html#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
-<span id="cb102-3"><a href="intro-to-data-viz.html#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
-<span id="cb102-4"><a href="intro-to-data-viz.html#cb102-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb102-5"><a href="intro-to-data-viz.html#cb102-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="sc">+</span></span>
-<span id="cb102-6"><a href="intro-to-data-viz.html#cb102-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb102-7"><a href="intro-to-data-viz.html#cb102-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="intro-to-data-viz.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb97-2"><a href="intro-to-data-viz.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb97-3"><a href="intro-to-data-viz.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Participant Sex&quot;</span>, </span>
+<span id="cb97-4"><a href="intro-to-data-viz.html#cb97-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb97-5"><a href="intro-to-data-viz.html#cb97-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Number of participants&quot;</span>) <span class="sc">+</span></span>
+<span id="cb97-6"><a href="intro-to-data-viz.html#cb97-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb97-7"><a href="intro-to-data-viz.html#cb97-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">&quot;E&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-9-1.png" alt="Barplot with adjusted alpha" width="100%" />
 <p class="caption">
@@ -600,14 +601,14 @@ In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use o
 <li><code>geom_violin()</code> has an additional argument <code>trim</code>. Try setting this to <code>TRUE</code> to see what happens.</li>
 <li><code>geom_boxpot()</code> has an additional argument <code>width</code>. Try adjusting the value of this and see what happens.</li>
 </ol>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="intro-to-data-viz.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> ahiTotal, <span class="at">fill =</span> income)) <span class="sc">+</span></span>
-<span id="cb103-2"><a href="intro-to-data-viz.html#cb103-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb103-3"><a href="intro-to-data-viz.html#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">7</span>)<span class="sc">+</span></span>
-<span id="cb103-4"><a href="intro-to-data-viz.html#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Income&quot;</span>,</span>
-<span id="cb103-5"><a href="intro-to-data-viz.html#cb103-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb103-6"><a href="intro-to-data-viz.html#cb103-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="sc">+</span></span>
-<span id="cb103-7"><a href="intro-to-data-viz.html#cb103-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb103-8"><a href="intro-to-data-viz.html#cb103-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="intro-to-data-viz.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> ahiTotal, <span class="at">fill =</span> income)) <span class="sc">+</span></span>
+<span id="cb98-2"><a href="intro-to-data-viz.html#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb98-3"><a href="intro-to-data-viz.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> .<span class="dv">7</span>)<span class="sc">+</span></span>
+<span id="cb98-4"><a href="intro-to-data-viz.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">&quot;Income&quot;</span>,</span>
+<span id="cb98-5"><a href="intro-to-data-viz.html#cb98-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Below Average&quot;</span>, <span class="st">&quot;Average&quot;</span>, <span class="st">&quot;Above Average&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb98-6"><a href="intro-to-data-viz.html#cb98-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Authentic Happiness Inventory Score&quot;</span>)<span class="sc">+</span></span>
+<span id="cb98-7"><a href="intro-to-data-viz.html#cb98-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb98-8"><a href="intro-to-data-viz.html#cb98-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="07-data-viz_files/figure-html/unnamed-chunk-11-1.png" alt="Violin-boxplot" width="100%" />
 <p class="caption">
@@ -618,13 +619,13 @@ Figure 7.8: Violin-boxplot
 <div id="activity-6-layers-part-2" class="section level3" number="7.1.6">
 <h3><span class="header-section-number">7.1.6</span> Activity 6: Layers part 2</h3>
 <p>The key thing to note about <code>ggplot</code> is the use of layers. Whilst we’ve built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="intro-to-data-viz.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> ahiTotal)) <span class="sc">+</span></span>
-<span id="cb104-2"><a href="intro-to-data-viz.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb104-3"><a href="intro-to-data-viz.html#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb104-4"><a href="intro-to-data-viz.html#cb104-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-5"><a href="intro-to-data-viz.html#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> ahiTotal)) <span class="sc">+</span></span>
-<span id="cb104-6"><a href="intro-to-data-viz.html#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb104-7"><a href="intro-to-data-viz.html#cb104-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="intro-to-data-viz.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> ahiTotal)) <span class="sc">+</span></span>
+<span id="cb99-2"><a href="intro-to-data-viz.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb99-3"><a href="intro-to-data-viz.html#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb99-4"><a href="intro-to-data-viz.html#cb99-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-5"><a href="intro-to-data-viz.html#cb99-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summarydata, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> ahiTotal)) <span class="sc">+</span></span>
+<span id="cb99-6"><a href="intro-to-data-viz.html#cb99-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb99-7"><a href="intro-to-data-viz.html#cb99-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>()</span></code></pre></div>
 <div id="finished" class="section level4" number="7.1.6.1">
 <h4><span class="header-section-number">7.1.6.1</span> Finished!</h4>
 <p>Well done! <code>ggplot</code> can be a bit difficult to get your head around at first, particularly if you’ve been used to making graphs a different way. But once it clicks, you’ll be able to make informative and professional visualisations with ease, which, amongst other things, will make your reports look FANCY.</p>

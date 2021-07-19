@@ -95,7 +95,7 @@ all_dat <- inner_join(x = dat, # the first table you want to join
                       by = c("id", "intervention")) # columns the two tables have in common
 ```
 
-### Activity 6: Pull out variables of interest
+## Activity 6: Pull out variables of interest
 
 Our final step is to pull our variables of interest. Very frequently, datasets will have more variables and data than you actually want to use and it can make life easier to create a new object with just the data you need.
 
@@ -118,7 +118,7 @@ summarydata <- select(.data = all_dat, # name of the object to take data from
 
 
 
-### Activity 7: Visualise the data
+## Activity 7: Visualise the data
 
 As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead. 
 
@@ -164,20 +164,20 @@ How many outliers does the Average income group have? <input class='solveme nosp
 
 Finally, try knitting the file to HTML. And that's it, well done! Remember to save your Markdown in your Data Skills folder and make a note of any mistakes you made and how you fixed them. 
 
-#### Finished!
+### Finished!
 
 Well done! You have started on your journey to become a confident and competent member of the open science community! To show us how competent you are you should now complete the homework for this week which follows the same instructions as this in-class activity but asks you to work with different variables. Always use the data skills materials and videos to help you complete the assessments! 
 
 Finally, if you're working from the R server, we'd recommend that you download a copy of the changes you've made to `stub-loading-data` so that you have a backup.
 
-### Debugging tips
+## Debugging tips
 
 * When you downloaded and uploaded the files did you save the file names **exactly** as they were originally? If you download the file more than once you will find your computer may automatically add a number to the end of the file name. `data.csv` is not the same as `data(1).csv`. Pay close attention to names!
 * Have you used the **exact** same object names as we did in each activity? Remember, `name` is different to `Name`. In order to make sure you can follow along with this book, pay special attention to ensuring you use the same object names as we do.  
 * Have you used quotation marks where needed?  
 * Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?
 
-### Debugging exercises
+## Debugging exercises
 
 These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
 
@@ -222,140 +222,11 @@ When loading data, you need to provide the full file name, including the file ex
 ```r
 library(tidyverse)
 dat <- read_csv ("ahi-cesd.csv")
-```
-
-```
-## 
-## -- Column specification --------------------------------------------------------
-## cols(
-##   .default = col_double()
-## )
-## i Use `spec()` for the full column specifications.
-```
-
-```r
 pinfo <- read_csv("participant-info.csv")
-```
-
-```
-## 
-## -- Column specification --------------------------------------------------------
-## cols(
-##   id = col_double(),
-##   intervention = col_double(),
-##   sex = col_double(),
-##   age = col_double(),
-##   educ = col_double(),
-##   income = col_double()
-## )
-```
-
-```r
 all_dat <- inner_join(x = dat, 
                       y = pinfo, 
                       by = "id", "intervention") 
 summary(all_dat)
-```
-
-```
-##        id            occasion     elapsed.days    intervention.x 
-##  Min.   :  1.00   Min.   :0.00   Min.   :  0.00   Min.   :1.000  
-##  1st Qu.: 74.75   1st Qu.:0.00   1st Qu.:  0.00   1st Qu.:2.000  
-##  Median :147.00   Median :2.00   Median : 14.79   Median :2.000  
-##  Mean   :147.36   Mean   :2.03   Mean   : 44.31   Mean   :2.504  
-##  3rd Qu.:218.25   3rd Qu.:4.00   3rd Qu.: 90.96   3rd Qu.:4.000  
-##  Max.   :295.00   Max.   :5.00   Max.   :223.82   Max.   :4.000  
-##      ahi01           ahi02           ahi03           ahi04      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :4.000  
-##  Mean   :2.771   Mean   :2.809   Mean   :2.723   Mean   :3.488  
-##  3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi05           ahi06           ahi07           ahi08      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000   1st Qu.:2.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :2.995   Mean   :3.119   Mean   :3.358   Mean   :2.824  
-##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:3.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi09           ahi10           ahi11           ahi12      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:3.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :3.500   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :3.395   Mean   :2.762   Mean   :2.866   Mean   :3.089  
-##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi13           ahi14           ahi15           ahi16      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:3.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000  
-##  Median :4.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :3.462   Mean   :2.883   Mean   :3.092   Mean   :3.173  
-##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi17           ahi18           ahi19           ahi20      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :2.977   Mean   :2.714   Mean   :3.191   Mean   :3.052  
-##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi21           ahi22           ahi23           ahi24      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :2.947   Mean   :3.072   Mean   :2.771   Mean   :3.257  
-##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      cesd01          cesd02          cesd03          cesd04     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000  
-##  Median :1.000   Median :1.000   Median :1.000   Median :3.000  
-##  Mean   :1.682   Mean   :1.363   Mean   :1.541   Mean   :3.098  
-##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:4.000  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
-##      cesd05          cesd06          cesd07         cesd08          cesd09    
-##  Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.00  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:2.000   1st Qu.:1.00  
-##  Median :2.000   Median :1.000   Median :1.00   Median :3.000   Median :1.00  
-##  Mean   :1.876   Mean   :1.624   Mean   :1.71   Mean   :3.006   Mean   :1.28  
-##  3rd Qu.:2.250   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:4.000   3rd Qu.:1.00  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.00   Max.   :4.000   Max.   :4.00  
-##      cesd10          cesd11          cesd12          cesd13     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:1.000  
-##  Median :1.000   Median :2.000   Median :3.000   Median :1.000  
-##  Mean   :1.481   Mean   :2.117   Mean   :3.024   Mean   :1.676  
-##  3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:2.000  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
-##      cesd14          cesd15          cesd16          cesd17     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:1.000  
-##  Median :1.000   Median :1.000   Median :3.000   Median :1.000  
-##  Mean   :1.662   Mean   :1.252   Mean   :3.088   Mean   :1.306  
-##  3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:4.000   3rd Qu.:1.000  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
-##      cesd18          cesd19          cesd20         ahiTotal     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 32.00  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 63.00  
-##  Median :1.000   Median :1.000   Median :1.000   Median : 74.00  
-##  Mean   :1.666   Mean   :1.367   Mean   :1.749   Mean   : 72.79  
-##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.: 83.00  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :114.00  
-##    cesdTotal     intervention.y       sex            age             educ      
-##  Min.   : 0.00   Min.   :1.000   Min.   :1.00   Min.   :18.00   Min.   :1.000  
-##  1st Qu.: 4.00   1st Qu.:2.000   1st Qu.:1.00   1st Qu.:35.00   1st Qu.:3.000  
-##  Median :10.00   Median :2.000   Median :1.00   Median :46.00   Median :4.000  
-##  Mean   :13.14   Mean   :2.504   Mean   :1.15   Mean   :45.04   Mean   :3.968  
-##  3rd Qu.:19.00   3rd Qu.:4.000   3rd Qu.:1.00   3rd Qu.:54.00   3rd Qu.:5.000  
-##  Max.   :55.00   Max.   :4.000   Max.   :2.00   Max.   :83.00   Max.   :5.000  
-##      income     
-##  Min.   :1.000  
-##  1st Qu.:2.000  
-##  Median :2.000  
-##  Mean   :2.053  
-##  3rd Qu.:3.000  
-##  Max.   :3.000
 ```
 
 
@@ -371,7 +242,7 @@ If you want to join two tables that have mulitple columns in common, you need to
  
 
 
-### Test yourself
+## Test yourself
 
 1. When loading in a .csv file, which function should you use? 
 
