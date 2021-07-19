@@ -197,14 +197,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="loading-data.html"><a href="loading-data.html#open-data"><i class="fa fa-check"></i><b>4.3</b> Open data</a></li>
 <li class="chapter" data-level="4.4" data-path="loading-data.html"><a href="loading-data.html#activity-3-read-in-data"><i class="fa fa-check"></i><b>4.4</b> Activity 3: Read in data</a></li>
 <li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.5</b> Activity 4: Check your data</a></li>
-<li class="chapter" data-level="4.6" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.6</b> Activity 5: Join the files together</a>
+<li class="chapter" data-level="4.6" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.6</b> Activity 5: Join the files together</a></li>
+<li class="chapter" data-level="4.7" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.7</b> Activity 6: Pull out variables of interest</a></li>
+<li class="chapter" data-level="4.8" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.8</b> Activity 7: Visualise the data</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.6.1</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.6.2" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.6.2</b> Activity 7: Visualise the data</a></li>
-<li class="chapter" data-level="4.6.3" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>4.6.3</b> Debugging tips</a></li>
-<li class="chapter" data-level="4.6.4" data-path="loading-data.html"><a href="loading-data.html#debugging-exercises"><i class="fa fa-check"></i><b>4.6.4</b> Debugging exercises</a></li>
-<li class="chapter" data-level="4.6.5" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.6.5</b> Test yourself</a></li>
+<li class="chapter" data-level="4.8.1" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>4.8.1</b> Finished!</a></li>
 </ul></li>
+<li class="chapter" data-level="4.9" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>4.9</b> Debugging tips</a></li>
+<li class="chapter" data-level="4.10" data-path="loading-data.html"><a href="loading-data.html#debugging-exercises"><i class="fa fa-check"></i><b>4.10</b> Debugging exercises</a></li>
+<li class="chapter" data-level="4.11" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.11</b> Test yourself</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a>
 <ul>
@@ -477,8 +478,9 @@ There is also a function called <code>read.csv()</code>. Be very careful NOT to 
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="loading-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(<span class="at">x =</span> dat, <span class="co"># the first table you want to join</span></span>
 <span id="cb29-2"><a href="loading-data.html#cb29-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> pinfo, <span class="co"># the second table you want to join</span></span>
 <span id="cb29-3"><a href="loading-data.html#cb29-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)) <span class="co"># columns the two tables have in common</span></span></code></pre></div>
-<div id="activity-6-pull-out-variables-of-interest" class="section level3" number="4.6.1">
-<h3><span class="header-section-number">4.6.1</span> Activity 6: Pull out variables of interest</h3>
+</div>
+<div id="activity-6-pull-out-variables-of-interest" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Activity 6: Pull out variables of interest</h2>
 <p>Our final step is to pull our variables of interest. Very frequently, datasets will have more variables and data than you actually want to use and it can make life easier to create a new object with just the data you need.</p>
 <p>In this case, the file contains the responses to each individual question on both the AHI scale and the CESD scale as well as the total score (i.e., the sum of all the individual responses). For our analysis, all we care about is the total scores, as well as the demographic information about participants.</p>
 <p>To do this we use the <code>select()</code> function to create a new object named <code>summarydata</code>.</p>
@@ -493,8 +495,8 @@ If you get an error message when using select that says <code>unused argument</c
 <li>Run the above code and then run <code>head(summarydata)</code>. If everything has gone to plan it should look something like this:</li>
 </ul>
 </div>
-<div id="activity-7-visualise-the-data" class="section level3" number="4.6.2">
-<h3><span class="header-section-number">4.6.2</span> Activity 7: Visualise the data</h3>
+<div id="activity-7-visualise-the-data" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> Activity 7: Visualise the data</h2>
 <p>As you’re going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead.</p>
 <p>We’re going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but do not worry about understanding the code. Just copy and paste it.</p>
 <p>Copy, paste and run the below code to produce a bar graph that shows the number of female and male participants in the dataset.</p>
@@ -523,14 +525,14 @@ If you get an error message when using select that says <code>unused argument</c
 <p>Which income group has the lowest median happiness score? <select class='solveme' data-answer='["Below average"]'> <option></option> <option>Below average</option> <option>Average</option></select></p>
 <p>How many outliers does the Average income group have? <input class='solveme nospaces' size='1' data-answer='["2"]'/></p>
 <p>Finally, try knitting the file to HTML. And that’s it, well done! Remember to save your Markdown in your Data Skills folder and make a note of any mistakes you made and how you fixed them.</p>
-<div id="finished" class="section level4" number="4.6.2.1">
-<h4><span class="header-section-number">4.6.2.1</span> Finished!</h4>
+<div id="finished" class="section level3" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Finished!</h3>
 <p>Well done! You have started on your journey to become a confident and competent member of the open science community! To show us how competent you are you should now complete the homework for this week which follows the same instructions as this in-class activity but asks you to work with different variables. Always use the data skills materials and videos to help you complete the assessments!</p>
 <p>Finally, if you’re working from the R server, we’d recommend that you download a copy of the changes you’ve made to <code>stub-loading-data</code> so that you have a backup.</p>
 </div>
 </div>
-<div id="debugging-tips" class="section level3" number="4.6.3">
-<h3><span class="header-section-number">4.6.3</span> Debugging tips</h3>
+<div id="debugging-tips" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Debugging tips</h2>
 <ul>
 <li>When you downloaded and uploaded the files did you save the file names <strong>exactly</strong> as they were originally? If you download the file more than once you will find your computer may automatically add a number to the end of the file name. <code>data.csv</code> is not the same as <code>data(1).csv</code>. Pay close attention to names!</li>
 <li>Have you used the <strong>exact</strong> same object names as we did in each activity? Remember, <code>name</code> is different to <code>Name</code>. In order to make sure you can follow along with this book, pay special attention to ensuring you use the same object names as we do.<br />
@@ -540,8 +542,8 @@ If you get an error message when using select that says <code>unused argument</c
 <li>Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?</li>
 </ul>
 </div>
-<div id="debugging-exercises" class="section level3" number="4.6.4">
-<h3><span class="header-section-number">4.6.4</span> Debugging exercises</h3>
+<div id="debugging-exercises" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> Debugging exercises</h2>
 <p>These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run.</p>
 <ol style="list-style-type: decimal">
 <li>Restart the R session (<code>Session - Restart R</code>). This should unload any packages you had loaded and also clear the environment. Make sure that the working directory is set to the right folder and then run the below code:</li>
@@ -570,126 +572,12 @@ Solution
 <li>Make sure that the working directory is set to the right folder and then run the below code:</li>
 </ol>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="loading-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb35-2"><a href="loading-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&quot;ahi-cesd.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## -- Column specification --------------------------------------------------------
-## cols(
-##   .default = col_double()
-## )
-## i Use `spec()` for the full column specifications.</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="loading-data.html#cb37-1" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;participant-info.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## -- Column specification --------------------------------------------------------
-## cols(
-##   id = col_double(),
-##   intervention = col_double(),
-##   sex = col_double(),
-##   age = col_double(),
-##   educ = col_double(),
-##   income = col_double()
-## )</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="loading-data.html#cb39-1" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(<span class="at">x =</span> dat, </span>
-<span id="cb39-2"><a href="loading-data.html#cb39-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> pinfo, </span>
-<span id="cb39-3"><a href="loading-data.html#cb39-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>) </span>
-<span id="cb39-4"><a href="loading-data.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(all_dat)</span></code></pre></div>
-<pre><code>##        id            occasion     elapsed.days    intervention.x 
-##  Min.   :  1.00   Min.   :0.00   Min.   :  0.00   Min.   :1.000  
-##  1st Qu.: 74.75   1st Qu.:0.00   1st Qu.:  0.00   1st Qu.:2.000  
-##  Median :147.00   Median :2.00   Median : 14.79   Median :2.000  
-##  Mean   :147.36   Mean   :2.03   Mean   : 44.31   Mean   :2.504  
-##  3rd Qu.:218.25   3rd Qu.:4.00   3rd Qu.: 90.96   3rd Qu.:4.000  
-##  Max.   :295.00   Max.   :5.00   Max.   :223.82   Max.   :4.000  
-##      ahi01           ahi02           ahi03           ahi04      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :4.000  
-##  Mean   :2.771   Mean   :2.809   Mean   :2.723   Mean   :3.488  
-##  3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi05           ahi06           ahi07           ahi08      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000   1st Qu.:2.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :2.995   Mean   :3.119   Mean   :3.358   Mean   :2.824  
-##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:3.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi09           ahi10           ahi11           ahi12      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:3.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :3.500   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :3.395   Mean   :2.762   Mean   :2.866   Mean   :3.089  
-##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:3.000   3rd Qu.:3.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi13           ahi14           ahi15           ahi16      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:3.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000  
-##  Median :4.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :3.462   Mean   :2.883   Mean   :3.092   Mean   :3.173  
-##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi17           ahi18           ahi19           ahi20      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000   1st Qu.:3.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :2.977   Mean   :2.714   Mean   :3.191   Mean   :3.052  
-##  3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      ahi21           ahi22           ahi23           ahi24      
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:2.000   1st Qu.:2.000   1st Qu.:2.000   1st Qu.:3.000  
-##  Median :3.000   Median :3.000   Median :3.000   Median :3.000  
-##  Mean   :2.947   Mean   :3.072   Mean   :2.771   Mean   :3.257  
-##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:3.000   3rd Qu.:4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :5.000  
-##      cesd01          cesd02          cesd03          cesd04     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000  
-##  Median :1.000   Median :1.000   Median :1.000   Median :3.000  
-##  Mean   :1.682   Mean   :1.363   Mean   :1.541   Mean   :3.098  
-##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:4.000  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
-##      cesd05          cesd06          cesd07         cesd08          cesd09    
-##  Min.   :1.000   Min.   :1.000   Min.   :1.00   Min.   :1.000   Min.   :1.00  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.00   1st Qu.:2.000   1st Qu.:1.00  
-##  Median :2.000   Median :1.000   Median :1.00   Median :3.000   Median :1.00  
-##  Mean   :1.876   Mean   :1.624   Mean   :1.71   Mean   :3.006   Mean   :1.28  
-##  3rd Qu.:2.250   3rd Qu.:2.000   3rd Qu.:2.00   3rd Qu.:4.000   3rd Qu.:1.00  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.00   Max.   :4.000   Max.   :4.00  
-##      cesd10          cesd11          cesd12          cesd13     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:1.000  
-##  Median :1.000   Median :2.000   Median :3.000   Median :1.000  
-##  Mean   :1.481   Mean   :2.117   Mean   :3.024   Mean   :1.676  
-##  3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:4.000   3rd Qu.:2.000  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
-##      cesd14          cesd15          cesd16          cesd17     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   :1.000  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:2.000   1st Qu.:1.000  
-##  Median :1.000   Median :1.000   Median :3.000   Median :1.000  
-##  Mean   :1.662   Mean   :1.252   Mean   :3.088   Mean   :1.306  
-##  3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.:4.000   3rd Qu.:1.000  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :4.000  
-##      cesd18          cesd19          cesd20         ahiTotal     
-##  Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 32.00  
-##  1st Qu.:1.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 63.00  
-##  Median :1.000   Median :1.000   Median :1.000   Median : 74.00  
-##  Mean   :1.666   Mean   :1.367   Mean   :1.749   Mean   : 72.79  
-##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.: 83.00  
-##  Max.   :4.000   Max.   :4.000   Max.   :4.000   Max.   :114.00  
-##    cesdTotal     intervention.y       sex            age             educ      
-##  Min.   : 0.00   Min.   :1.000   Min.   :1.00   Min.   :18.00   Min.   :1.000  
-##  1st Qu.: 4.00   1st Qu.:2.000   1st Qu.:1.00   1st Qu.:35.00   1st Qu.:3.000  
-##  Median :10.00   Median :2.000   Median :1.00   Median :46.00   Median :4.000  
-##  Mean   :13.14   Mean   :2.504   Mean   :1.15   Mean   :45.04   Mean   :3.968  
-##  3rd Qu.:19.00   3rd Qu.:4.000   3rd Qu.:1.00   3rd Qu.:54.00   3rd Qu.:5.000  
-##  Max.   :55.00   Max.   :4.000   Max.   :2.00   Max.   :83.00   Max.   :5.000  
-##      income     
-##  Min.   :1.000  
-##  1st Qu.:2.000  
-##  Median :2.000  
-##  Mean   :2.053  
-##  3rd Qu.:3.000  
-##  Max.   :3.000</code></pre>
+<span id="cb35-2"><a href="loading-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&quot;ahi-cesd.csv&quot;</span>)</span>
+<span id="cb35-3"><a href="loading-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;participant-info.csv&quot;</span>)</span>
+<span id="cb35-4"><a href="loading-data.html#cb35-4" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(<span class="at">x =</span> dat, </span>
+<span id="cb35-5"><a href="loading-data.html#cb35-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> pinfo, </span>
+<span id="cb35-6"><a href="loading-data.html#cb35-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">by =</span> <span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>) </span>
+<span id="cb35-7"><a href="loading-data.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(all_dat)</span></code></pre></div>
 <p>Look at the summary for <code>all_dat</code>. You will see that R has duplicated the <code>intervention</code> variable, so that there is now an <code>intervention.x</code> and an <code>intervention.y</code> that contain the same data. Once you figure out how to fix this error, make a note of it.</p>
 <div class="solution">
 <button>
@@ -698,8 +586,8 @@ Solution
 <p>If you want to join two tables that have mulitple columns in common, you need to use the <code>c()</code> command to list all of the variables. The code above hasn’t done this, it’s just listed <code>id</code> and <code>intervention</code> without enclosing them with <code>c()</code>.</p>
 </div>
 </div>
-<div id="test-yourself" class="section level3" number="4.6.5">
-<h3><span class="header-section-number">4.6.5</span> Test yourself</h3>
+<div id="test-yourself" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> Test yourself</h2>
 <ol style="list-style-type: decimal">
 <li>When loading in a .csv file, which function should you use?</li>
 </ol>
@@ -722,7 +610,6 @@ Explain this answer
 </ol>
 <hr />
 
-</div>
 </div>
 </div>
 <div class="psyteachr_footer">

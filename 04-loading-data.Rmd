@@ -95,7 +95,7 @@ all_dat <- inner_join(x = dat, # the first table you want to join
                       by = c("id", "intervention")) # columns the two tables have in common
 ```
 
-### Activity 6: Pull out variables of interest
+## Activity 6: Pull out variables of interest
 
 Our final step is to pull our variables of interest. Very frequently, datasets will have more variables and data than you actually want to use and it can make life easier to create a new object with just the data you need.
 
@@ -122,7 +122,7 @@ If you get an error message when using select that says `unused argument` it mea
 
 ```
 
-### Activity 7: Visualise the data
+## Activity 7: Visualise the data
 
 As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead. 
 
@@ -167,20 +167,20 @@ How many outliers does the Average income group have? `r fitb("2")`
 
 Finally, try knitting the file to HTML. And that's it, well done! Remember to save your Markdown in your Data Skills folder and make a note of any mistakes you made and how you fixed them. 
 
-#### Finished!
+### Finished!
 
 Well done! You have started on your journey to become a confident and competent member of the open science community! To show us how competent you are you should now complete the homework for this week which follows the same instructions as this in-class activity but asks you to work with different variables. Always use the data skills materials and videos to help you complete the assessments! 
 
 Finally, if you're working from the R server, we'd recommend that you download a copy of the changes you've made to `stub-loading-data` so that you have a backup.
 
-### Debugging tips
+## Debugging tips
 
 * When you downloaded and uploaded the files did you save the file names **exactly** as they were originally? If you download the file more than once you will find your computer may automatically add a number to the end of the file name. `data.csv` is not the same as `data(1).csv`. Pay close attention to names!
 * Have you used the **exact** same object names as we did in each activity? Remember, `name` is different to `Name`. In order to make sure you can follow along with this book, pay special attention to ensuring you use the same object names as we do.  
 * Have you used quotation marks where needed?  
 * Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?
 
-### Debugging exercises
+## Debugging exercises
 
 These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
 
@@ -215,7 +215,7 @@ cat("When loading data, you need to provide the full file name, including the fi
 
 3. Make sure that the working directory is set to the right folder and then run the below code:
 
-```{r}
+```{r eval=FALSE}
 library(tidyverse)
 dat <- read_csv ("ahi-cesd.csv")
 pinfo <- read_csv("participant-info.csv")
@@ -236,7 +236,7 @@ cat("If you want to join two tables that have mulitple columns in common, you ne
 `r unhide()` 
 
 
-### Test yourself
+## Test yourself
 
 1. When loading in a .csv file, which function should you use? 
 

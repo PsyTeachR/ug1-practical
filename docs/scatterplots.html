@@ -197,14 +197,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="loading-data.html"><a href="loading-data.html#open-data"><i class="fa fa-check"></i><b>4.3</b> Open data</a></li>
 <li class="chapter" data-level="4.4" data-path="loading-data.html"><a href="loading-data.html#activity-3-read-in-data"><i class="fa fa-check"></i><b>4.4</b> Activity 3: Read in data</a></li>
 <li class="chapter" data-level="4.5" data-path="loading-data.html"><a href="loading-data.html#activity-4-check-your-data"><i class="fa fa-check"></i><b>4.5</b> Activity 4: Check your data</a></li>
-<li class="chapter" data-level="4.6" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.6</b> Activity 5: Join the files together</a>
+<li class="chapter" data-level="4.6" data-path="loading-data.html"><a href="loading-data.html#activity-5-join-the-files-together"><i class="fa fa-check"></i><b>4.6</b> Activity 5: Join the files together</a></li>
+<li class="chapter" data-level="4.7" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.7</b> Activity 6: Pull out variables of interest</a></li>
+<li class="chapter" data-level="4.8" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.8</b> Activity 7: Visualise the data</a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="loading-data.html"><a href="loading-data.html#activity-6-pull-out-variables-of-interest"><i class="fa fa-check"></i><b>4.6.1</b> Activity 6: Pull out variables of interest</a></li>
-<li class="chapter" data-level="4.6.2" data-path="loading-data.html"><a href="loading-data.html#activity-7-visualise-the-data"><i class="fa fa-check"></i><b>4.6.2</b> Activity 7: Visualise the data</a></li>
-<li class="chapter" data-level="4.6.3" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>4.6.3</b> Debugging tips</a></li>
-<li class="chapter" data-level="4.6.4" data-path="loading-data.html"><a href="loading-data.html#debugging-exercises"><i class="fa fa-check"></i><b>4.6.4</b> Debugging exercises</a></li>
-<li class="chapter" data-level="4.6.5" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.6.5</b> Test yourself</a></li>
+<li class="chapter" data-level="4.8.1" data-path="ref1.html"><a href="ref1.html#finished"><i class="fa fa-check"></i><b>4.8.1</b> Finished!</a></li>
 </ul></li>
+<li class="chapter" data-level="4.9" data-path="programming-basics.html"><a href="programming-basics.html#debugging-tips"><i class="fa fa-check"></i><b>4.9</b> Debugging tips</a></li>
+<li class="chapter" data-level="4.10" data-path="loading-data.html"><a href="loading-data.html#debugging-exercises"><i class="fa fa-check"></i><b>4.10</b> Debugging exercises</a></li>
+<li class="chapter" data-level="4.11" data-path="loading-data.html"><a href="loading-data.html#test-yourself"><i class="fa fa-check"></i><b>4.11</b> Test yourself</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-wrangling-1.html"><a href="data-wrangling-1.html"><i class="fa fa-check"></i><b>5</b> Data wrangling 1</a>
 <ul>
@@ -472,10 +473,10 @@ Figure 8.1: Scatterplot of happiness and depression scores
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="scatterplots.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb105-2"><a href="scatterplots.html#cb105-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
-<span id="cb105-3"><a href="scatterplots.html#cb105-3" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
-<span id="cb105-4"><a href="scatterplots.html#cb105-4" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="scatterplots.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb100-2"><a href="scatterplots.html#cb100-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span> (<span class="st">&#39;ahi-cesd.csv&#39;</span>)</span>
+<span id="cb100-3"><a href="scatterplots.html#cb100-3" aria-hidden="true" tabindex="-1"></a>pinfo <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;participant-info.csv&#39;</span>)</span>
+<span id="cb100-4"><a href="scatterplots.html#cb100-4" aria-hidden="true" tabindex="-1"></a>all_dat <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(dat, pinfo, <span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;intervention&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-2" class="section level4" number="8.0.8.2">
@@ -484,7 +485,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="scatterplots.html#cb106-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="scatterplots.html#cb101-1" aria-hidden="true" tabindex="-1"></a>summarydata <span class="ot">&lt;-</span> <span class="fu">select</span>(all_dat, ahiTotal, cesdTotal, sex, age, educ, income, occasion, elapsed.days)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-3" class="section level4" number="8.0.8.3">
@@ -493,7 +494,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="scatterplots.html#cb107-1" aria-hidden="true" tabindex="-1"></a>ahi_asc <span class="ot">&lt;-</span> <span class="fu">arrange</span>(summarydata, <span class="at">by =</span> ahiTotal)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="scatterplots.html#cb102-1" aria-hidden="true" tabindex="-1"></a>ahi_asc <span class="ot">&lt;-</span> <span class="fu">arrange</span>(summarydata, <span class="at">by =</span> ahiTotal)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-4" class="section level4" number="8.0.8.4">
@@ -502,7 +503,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="scatterplots.html#cb108-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">filter</span>(ahi_asc, age <span class="sc">&lt;=</span> <span class="dv">65</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="scatterplots.html#cb103-1" aria-hidden="true" tabindex="-1"></a>age_65max <span class="ot">&lt;-</span> <span class="fu">filter</span>(ahi_asc, age <span class="sc">&lt;=</span> <span class="dv">65</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="activity-5" class="section level4" number="8.0.8.5">
@@ -511,9 +512,9 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="scatterplots.html#cb109-1" aria-hidden="true" tabindex="-1"></a>overall_median <span class="ot">&lt;-</span> <span class="fu">summarise</span>(age_65max, <span class="at">median_score =</span> <span class="fu">median</span>(ahiTotal))</span>
-<span id="cb109-2"><a href="scatterplots.html#cb109-2" aria-hidden="true" tabindex="-1"></a>data_sex <span class="ot">&lt;-</span> <span class="fu">group_by</span>(age_65max, sex)</span>
-<span id="cb109-3"><a href="scatterplots.html#cb109-3" aria-hidden="true" tabindex="-1"></a>median_score <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data_sex, <span class="at">sex_median =</span> <span class="fu">median</span>(ahiTotal))</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="scatterplots.html#cb104-1" aria-hidden="true" tabindex="-1"></a>overall_median <span class="ot">&lt;-</span> <span class="fu">summarise</span>(age_65max, <span class="at">median_score =</span> <span class="fu">median</span>(ahiTotal))</span>
+<span id="cb104-2"><a href="scatterplots.html#cb104-2" aria-hidden="true" tabindex="-1"></a>data_sex <span class="ot">&lt;-</span> <span class="fu">group_by</span>(age_65max, sex)</span>
+<span id="cb104-3"><a href="scatterplots.html#cb104-3" aria-hidden="true" tabindex="-1"></a>median_score <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data_sex, <span class="at">sex_median =</span> <span class="fu">median</span>(ahiTotal))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-6" class="section level4" number="8.0.8.6">
@@ -522,7 +523,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="scatterplots.html#cb110-1" aria-hidden="true" tabindex="-1"></a>happy <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data_sex, <span class="at">Happiness =</span> (ahiTotal <span class="sc">&gt;</span> <span class="dv">73</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="scatterplots.html#cb105-1" aria-hidden="true" tabindex="-1"></a>happy <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data_sex, <span class="at">Happiness =</span> (ahiTotal <span class="sc">&gt;</span> <span class="dv">73</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="activity-7" class="section level4" number="8.0.8.7">
@@ -531,11 +532,11 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="scatterplots.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_65max, <span class="fu">aes</span>(<span class="at">x =</span> ahiTotal , <span class="at">y =</span> cesdTotal)) <span class="sc">+</span> </span>
-<span id="cb111-2"><a href="scatterplots.html#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb111-3"><a href="scatterplots.html#cb111-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb111-4"><a href="scatterplots.html#cb111-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb111-5"><a href="scatterplots.html#cb111-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="scatterplots.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_65max, <span class="fu">aes</span>(<span class="at">x =</span> ahiTotal , <span class="at">y =</span> cesdTotal)) <span class="sc">+</span> </span>
+<span id="cb106-2"><a href="scatterplots.html#cb106-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb106-3"><a href="scatterplots.html#cb106-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Happiness Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb106-4"><a href="scatterplots.html#cb106-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Depression Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb106-5"><a href="scatterplots.html#cb106-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 </div>
 
 </div>
