@@ -251,11 +251,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.0.1" data-path="loading-data.html"><a href="loading-data.html#activity-1-set-up"><i class="fa fa-check"></i><b>8.0.1</b> Activity 1: Set-up</a></li>
 <li class="chapter" data-level="8.0.2" data-path="data-wrangling-2.html"><a href="data-wrangling-2.html#activity-2-select"><i class="fa fa-check"></i><b>8.0.2</b> Activity 2: Select</a></li>
-<li class="chapter" data-level="8.0.3" data-path="data-wrangling-2.html"><a href="data-wrangling-2.html#activity-3-arrange"><i class="fa fa-check"></i><b>8.0.3</b> Activity 3: Arrange</a></li>
-<li class="chapter" data-level="8.0.4" data-path="scatterplots.html"><a href="scatterplots.html#activity-4filter"><i class="fa fa-check"></i><b>8.0.4</b> Activity 4:Filter</a></li>
-<li class="chapter" data-level="8.0.5" data-path="scatterplots.html"><a href="scatterplots.html#activity-5-group-and-summarise"><i class="fa fa-check"></i><b>8.0.5</b> Activity 5: Group and summarise</a></li>
-<li class="chapter" data-level="8.0.6" data-path="scatterplots.html"><a href="scatterplots.html#activity-6-mutate"><i class="fa fa-check"></i><b>8.0.6</b> Activity 6: Mutate</a></li>
-<li class="chapter" data-level="8.0.7" data-path="scatterplots.html"><a href="scatterplots.html#activity-7-scatterplots"><i class="fa fa-check"></i><b>8.0.7</b> Activity 7: Scatterplots</a></li>
+<li class="chapter" data-level="8.0.3" data-path="scatterplots.html"><a href="scatterplots.html#activity-3-simple-scatterplots"><i class="fa fa-check"></i><b>8.0.3</b> Activity 3: Simple scatterplots</a></li>
+<li class="chapter" data-level="8.0.4" data-path="scatterplots.html"><a href="scatterplots.html#activity-4-adding-a-line-of-best-fit"><i class="fa fa-check"></i><b>8.0.4</b> Activity 4: Adding a line of best fit</a></li>
+<li class="chapter" data-level="8.0.5" data-path="scatterplots.html"><a href="scatterplots.html#activity-5-setting-the-factors"><i class="fa fa-check"></i><b>8.0.5</b> Activity 5: Setting the factors</a></li>
+<li class="chapter" data-level="8.0.6" data-path="scatterplots.html"><a href="scatterplots.html#activity-6-grouped-scatterplots"><i class="fa fa-check"></i><b>8.0.6</b> Activity 6: Grouped scatterplots</a></li>
+<li class="chapter" data-level="8.0.7" data-path="scatterplots.html"><a href="scatterplots.html#activity-7-group-by-a-new-variable"><i class="fa fa-check"></i><b>8.0.7</b> Activity 7: Group by a new variable</a></li>
 <li class="chapter" data-level="8.0.8" data-path="scatterplots.html"><a href="scatterplots.html#activity-solutions---scatterplots"><i class="fa fa-check"></i><b>8.0.8</b> Activity solutions - Scatterplots</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="aq-data-and-recap.html"><a href="aq-data-and-recap.html"><i class="fa fa-check"></i><b>9</b> AQ data and recap</a>
@@ -413,7 +413,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Probability (<em>p</em>) is the extent to which an event is likely to occur and is represented by a number between 0 and 1. For example, the probability of flipping a coin and it landing on ‘heads’ would be estimated at <em>p = .5</em>, i.e., there is a 50% chance of getting a head when you flip a coin. Calculating the probability of any discrete event occurring can be formulated as:</p>
 <p><span class="math display">\[p = \frac{number \  of  \ ways \ the \ event \ could \  arise}{number \ of \ possible \ outcomes}\]</span>
 For example, what is the probability of randomly drawing your name out of a hat of 12 names where one name is definitely yours?</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="intro-to-probability.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span></span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="intro-to-probability.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">12</span></span></code></pre></div>
 <pre><code>## [1] 0.08333333</code></pre>
 <p>The probability is .08, or to put it another way, there is an 8.3% chance that you would pull your name out of the hat.</p>
 </div>
@@ -432,9 +432,9 @@ For example, what is the probability of randomly drawing your name out of a hat 
 <p>What types of data are the below measurements?</p>
 <ul>
 <li>Time taken to run a marathon (in seconds): <select class='solveme' data-answer='["ratio"]'> <option></option> <option>ordinal</option> <option>categorical</option> <option>ratio</option> <option>interval</option></select></li>
-<li>Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>ordinal</option> <option>interval</option> <option>categorical</option> <option>ratio</option></select></li>
-<li>Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>interval</option> <option>ordinal</option> <option>ratio</option> <option>categorical</option></select></li>
-<li>Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>categorical</option> <option>ordinal</option> <option>ratio</option> <option>interval</option></select></li>
+<li>Finishing position in marathon (e.g. 1st, 2nd, 3rd): <select class='solveme' data-answer='["ordinal"]'> <option></option> <option>categorical</option> <option>interval</option> <option>ordinal</option> <option>ratio</option></select></li>
+<li>Which Sesame Street character a runner was dressed as: <select class='solveme' data-answer='["categorical"]'> <option></option> <option>ordinal</option> <option>categorical</option> <option>ratio</option> <option>interval</option></select></li>
+<li>Temperature of a runner dressed in a cookie monster outfit (in degrees Celsius): <select class='solveme' data-answer='["interval"]'> <option></option> <option>ordinal</option> <option>interval</option> <option>ratio</option> <option>categorical</option></select></li>
 </ul>
 </div>
 <div id="probability-distributions" class="section level3" number="13.0.5">
@@ -467,18 +467,18 @@ Figure 12.1: Probability of no. of heads from 10 coin tosses
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="intro-to-probability.html#cb141-1" aria-hidden="true" tabindex="-1"></a>heads10000 <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">10000</span>, <span class="at">expr =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>())</span>
-<span id="cb141-2"><a href="intro-to-probability.html#cb141-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-3"><a href="intro-to-probability.html#cb141-3" aria-hidden="true" tabindex="-1"></a>data10000 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">heads =</span> heads10000) <span class="sc">%&gt;%</span>   <span class="co"># convert to a tibble</span></span>
-<span id="cb141-4"><a href="intro-to-probability.html#cb141-4" aria-hidden="true" tabindex="-1"></a>                <span class="fu">group_by</span>(heads) <span class="sc">%&gt;%</span>     <span class="co"># group by number of possibilities </span></span>
-<span id="cb141-5"><a href="intro-to-probability.html#cb141-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># count occurances of each possibility,</span></span>
-<span id="cb141-6"><a href="intro-to-probability.html#cb141-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">p=</span>n<span class="sc">/</span><span class="dv">10000</span>) <span class="co"># &amp; calculate probability (p) of each</span></span>
-<span id="cb141-7"><a href="intro-to-probability.html#cb141-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-8"><a href="intro-to-probability.html#cb141-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data10000, <span class="fu">aes</span>(<span class="at">x =</span> heads,<span class="at">y =</span> p)) <span class="sc">+</span> </span>
-<span id="cb141-9"><a href="intro-to-probability.html#cb141-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb141-10"><a href="intro-to-probability.html#cb141-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Probability of Heads in 10 flips (p)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb141-11"><a href="intro-to-probability.html#cb141-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb141-12"><a href="intro-to-probability.html#cb141-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="intro-to-probability.html#cb162-1" aria-hidden="true" tabindex="-1"></a>heads10000 <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">10000</span>, <span class="at">expr =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="fu">sum</span>())</span>
+<span id="cb162-2"><a href="intro-to-probability.html#cb162-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-3"><a href="intro-to-probability.html#cb162-3" aria-hidden="true" tabindex="-1"></a>data10000 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">heads =</span> heads10000) <span class="sc">%&gt;%</span>   <span class="co"># convert to a tibble</span></span>
+<span id="cb162-4"><a href="intro-to-probability.html#cb162-4" aria-hidden="true" tabindex="-1"></a>                <span class="fu">group_by</span>(heads) <span class="sc">%&gt;%</span>     <span class="co"># group by number of possibilities </span></span>
+<span id="cb162-5"><a href="intro-to-probability.html#cb162-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># count occurances of each possibility,</span></span>
+<span id="cb162-6"><a href="intro-to-probability.html#cb162-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">p=</span>n<span class="sc">/</span><span class="dv">10000</span>) <span class="co"># &amp; calculate probability (p) of each</span></span>
+<span id="cb162-7"><a href="intro-to-probability.html#cb162-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-8"><a href="intro-to-probability.html#cb162-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data10000, <span class="fu">aes</span>(<span class="at">x =</span> heads,<span class="at">y =</span> p)) <span class="sc">+</span> </span>
+<span id="cb162-9"><a href="intro-to-probability.html#cb162-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb162-10"><a href="intro-to-probability.html#cb162-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Number of Heads&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Probability of Heads in 10 flips (p)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb162-11"><a href="intro-to-probability.html#cb162-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb162-12"><a href="intro-to-probability.html#cb162-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="the-normal-distribution" class="section level3" number="13.0.8">
@@ -505,9 +505,9 @@ Figure 5.3: A simulation of an experiment collecting height data from 2000 parti
 <h3><span class="header-section-number">13.0.9</span> Activity 3: Normal distribution</h3>
 <p>Complete the sentences so that they are correct.</p>
 <ul>
-<li>In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>sum to zero</option> <option>are all equal</option> <option>are always different</option></select>.</li>
-<li>In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the lower its probability of occuring</option> <option>the higher its probability of occuring</option></select>.</li>
-<li>Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='solveme' data-answer='["is a continuous variable"]'> <option></option> <option>is a categorical variable</option> <option>is a continuous variable</option> <option>has three possible values</option></select>.</li>
+<li>In a normal distribution, the mean, median, and mode <select class='solveme' data-answer='["are all equal"]'> <option></option> <option>are all equal</option> <option>sum to zero</option> <option>are always different</option></select>.</li>
+<li>In a normal distribution, the further away from the mean an observation is <select class='solveme' data-answer='["the lower its probability of occuring"]'> <option></option> <option>the higher its probability of occuring</option> <option>the lower its probability of occuring</option></select>.</li>
+<li>Whereas the binomial distribution is based on situations in which there are two possible outcomes, the normal distribution is based on situations in which the data <select class='solveme' data-answer='["is a continuous variable"]'> <option></option> <option>is a continuous variable</option> <option>is a categorical variable</option> <option>has three possible values</option></select>.</li>
 </ul>
 </div>
 <div id="activity-4-distribution-test" class="section level3" number="13.0.10">
