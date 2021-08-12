@@ -39,6 +39,12 @@ Again, we don't expect you to remember everything in this chapter - the importan
 
 To demonstrate the power of the six `dplyr` verbs, we will use them to work with the babynames data from the `babynames` package (we will return to the AHI and CES-D dataset in the next chapter!). The babynames dataset has historical information about births of babies in the U.S.
 
+## Walkthrough video
+
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/cr3jnI9QXR0stOqd3nBv51BNrQrlkkzBN0_c8-Mtq7JOGrNW2jQEkbJqRMhh5W7lJLSQEfZfFIZJTvL5.-imkxiOU0A-aTdpM?continueMode=true&_x_zm_rtaid=cW5f8v0JQcOlLI1cBpI84g.1628694791961.c3bcc75dbabdfb3f3ac44f8fd7884865&_x_zm_rhtaid=355) of this chapter available via Zoom.
+
+* Video notes: this video was recorded in 2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
+
 ## Activity 1: Set-up
 
 Do the following. If you need help, consult Programming Basics and Intro to R.

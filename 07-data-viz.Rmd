@@ -1,5 +1,11 @@
 # Intro to Data Viz
 
+## Walkthrough video
+
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/Q9BA93fhXCTrTyRF962J8cWI7YDQ1dca0u3sbPstj-ktY4e52jv_b5vtAZMgI6fAM3Cip_L0itlsym8.zF0_1My59xl1MGmG?startTime=1602848670000&_x_zm_rtaid=O3m7PQzzQaOVR8tM0-Br7w.1602858026802.e830dc177e59e2fba3d0bc04b83ddf60&_x_zm_rhtaid=842) of this chapter available via Zoom.
+
+* Video notes: this video was recorded in 2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
+
 ## Activity 1: dplyr recap
 
 In Data Wrangling 1 and 2 we were introduced to the tidyverse package, `dplyr`, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?
@@ -14,7 +20,7 @@ In Data Wrangling 1 and 2 we were introduced to the tidyverse package, `dplyr`, 
 
 * We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the `r mcq(sample(c(answer = "arrange() and select()", "group_by() and mutate()", answer="mutate() and filter()", "select() and summarise()")))` functions.
 
-### Data visualisation
+## Data visualisation
 
 As Grolemund and Wickham tell us:
 
@@ -36,7 +42,7 @@ knitr::include_graphics("images/layers.png")
 
 ```
 
-### Activity 2: Set-up
+## Activity 2: Set-up
 
 * Open R Studio and ensure the environment is clear.  
 * Open the `stub-data-viz.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (`participant-info.csv` and `ahi-cesd.csv`) are in your working directory (you should see them in the file pane).  
@@ -72,7 +78,7 @@ summarydata <- select(.data = all_dat,
 If you get an error message when using select that says `unused argument` it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session  -restart R) and then run all your code above again from the start, or replace `select` with `dplyr::select` which tells R exactly which version of the select function to use. We'd recommend restarting the session because this will get you in the habit and it's a useful thing to try for a range of problems
 ```
 
-### Activity 3: Factors
+## Activity 3: Factors
 
 Before we go any further we need to perform an additional step of data processing that we have glossed over up until this point. First, run the below code to look at the structure of the dataset:
 
@@ -95,7 +101,7 @@ You can read this code as "overwrite the data that is in the column sex with sex
 
 **Remember this. It's a really important step and if your graphs are looking weird this might be the reason.**
 
-### Activity 4: Bar plot
+## Activity 4: Bar plot
 
 For our first example we will recreate the bar plot showing the number of male and female participants from Loading Data by showing you how the layers of code build up (next semester we have data that includes non-binary participants).
 
@@ -191,7 +197,7 @@ In R terms, `ggplot2` is a fairly old package. As a result, the use of pipes was
 
 ```
 
-### Activity 5: Violin-boxplot
+## Activity 5: Violin-boxplot
 
 As our final activity we will also explain the code used to create the violin-boxplot from Loading Data, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:
 
@@ -211,7 +217,7 @@ ggplot(summarydata, aes(x = income, y = ahiTotal, fill = income)) +
 
 ```
 
-### Activity 6: Layers part 2
+## Activity 6: Layers part 2
 
 The key thing to note about `ggplot` is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.
 
