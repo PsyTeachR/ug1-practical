@@ -16,7 +16,7 @@ In this chapter you will learn how to load the packages required to work with ou
 
 There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/teIkYYMpGx6UZyRmnp6oFP9a0oR1pkAdyKDtrOS19PMrPzWFD6UM8kf1JPOA8BUCvdTjDD1TL0BY7fst.UJ5avFdQMYGeSE-b?startTime=1600350969000&_x_zm_rtaid=tV6tnLfOQS6SzFo0htAAPg.1600855466001.bb934ef09570772957442af0f1cfb9b5&_x_zm_rhtaid=682) of this chapter available via Zoom.
 
-* Video notes: this video was recorded in September 2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
+* Video notes: this video was recorded in  2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
 
 ### Stub files
 

@@ -1,20 +1,26 @@
 # Intro to Data Viz
 
+## Walkthrough video
+
+There is a [walkthrough video](https://uofglasgow.zoom.us/rec/play/Q9BA93fhXCTrTyRF962J8cWI7YDQ1dca0u3sbPstj-ktY4e52jv_b5vtAZMgI6fAM3Cip_L0itlsym8.zF0_1My59xl1MGmG?startTime=1602848670000&_x_zm_rtaid=O3m7PQzzQaOVR8tM0-Br7w.1602858026802.e830dc177e59e2fba3d0bc04b83ddf60&_x_zm_rhtaid=842) of this chapter available via Zoom.
+
+* Video notes: this video was recorded in 2020 when we recommended using the server above installing R on your computer. With more experience of the server, we now strongly encourage you to install R on your computer if you can. There are no other differences between the video and this book chapter.
+
 ## Activity 1: dplyr recap
 
 In Data Wrangling 1 and 2 we were introduced to the tidyverse package, `dplyr`, and its six important functions. As a recap, which function(s) would you use to approach each of the following problems?
 
-* We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>group_by()</option> <option>filter()</option> <option>summarise()</option> <option>mutate()</option> <option>arrange()</option> <option>select()</option></select> function.
+* We have a dataset of 400 adults, but we want to remove anyone with an age of 50 years or more. To do this, we could use the <select class='solveme' data-answer='["filter()"]'> <option></option> <option>filter()</option> <option>group_by()</option> <option>select()</option> <option>arrange()</option> <option>summarise()</option> <option>mutate()</option></select> function.
 
-* We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>group_by()</option> <option>select()</option> <option>mutate()</option> <option>filter()</option> <option>summarise()</option> <option>arrange()</option></select> function.
+* We are interested in overall summary statistics for our data, such as the overall average and total number of observations. To do this, we could use the <select class='solveme' data-answer='["summarise()"]'> <option></option> <option>mutate()</option> <option>filter()</option> <option>arrange()</option> <option>summarise()</option> <option>group_by()</option> <option>select()</option></select> function.
 
-* Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>select()</option> <option>filter()</option> <option>mutate()</option> <option>arrange()</option> <option>summarise()</option> <option>group_by()</option></select> function.
+* Our dataset has a column with the number of cats a person has, and a column with the number of dogs. We want to calculate a new column which contains the total number of pets each participant has. To do this, we could use the <select class='solveme' data-answer='["mutate()"]'> <option></option> <option>select()</option> <option>mutate()</option> <option>group_by()</option> <option>arrange()</option> <option>filter()</option> <option>summarise()</option></select> function.
 
 * We want to calculate the average for each participant in our dataset. To do this we could use the <select class='solveme' data-answer='["group_by() and summarise()"]'> <option></option> <option>group_by() and arrange()</option> <option>arrange() and mutate()</option> <option>group_by() and summarise()</option> <option>filter() and select()</option></select> functions.
 
-* We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>mutate() and filter()</option> <option>group_by() and mutate()</option> <option>select() and summarise()</option> <option>arrange() and select()</option></select> functions.
+* We want to order a dataframe of participants by the number of cats that they own, but want our new dataframe to only contain some of our columns. To do this we could use the <select class='solveme' data-answer='["mutate() and filter()","arrange() and select()"]'> <option></option> <option>mutate() and filter()</option> <option>arrange() and select()</option> <option>select() and summarise()</option> <option>group_by() and mutate()</option></select> functions.
 
-### Data visualisation
+## Data visualisation
 
 As Grolemund and Wickham tell us:
 
@@ -35,7 +41,7 @@ Being able to visualise our variables, and relationships between our variables, 
 <p class="caption">(\#fig:img-layers)ggplot2 layers from Field et al. (2012)</p>
 </div>
 
-### Activity 2: Set-up
+## Activity 2: Set-up
 
 * Open R Studio and ensure the environment is clear.  
 * Open the `stub-data-viz.Rmd` file and ensure that the working directory is set to your Data Skills folder and that the two .csv data files (`participant-info.csv` and `ahi-cesd.csv`) are in your working directory (you should see them in the file pane).  
@@ -60,7 +66,7 @@ summarydata <- select(.data = all_dat,
 <p>If you get an error message when using select that says <code>unused argument</code> it means that it is trying to use the wrong version of the select function. There are two solutions to this, first, save you work and then restart the R session (click session -restart R) and then run all your code above again from the start, or replace <code>select</code> with <code>dplyr::select</code> which tells R exactly which version of the select function to use. We’d recommend restarting the session because this will get you in the habit and it’s a useful thing to try for a range of problems</p>
 </div>
 
-### Activity 3: Factors
+## Activity 3: Factors
 
 Before we go any further we need to perform an additional step of data processing that we have glossed over up until this point. First, run the below code to look at the structure of the dataset:
 
@@ -97,7 +103,7 @@ You can read this code as "overwrite the data that is in the column sex with sex
 
 **Remember this. It's a really important step and if your graphs are looking weird this might be the reason.**
 
-### Activity 4: Bar plot
+## Activity 4: Bar plot
 
 For our first example we will recreate the bar plot showing the number of male and female participants from Loading Data by showing you how the layers of code build up (next semester we have data that includes non-binary participants).
 
@@ -239,7 +245,7 @@ ggplot(summarydata, aes(x = sex, fill = sex)) +
 <p>In R terms, <code>ggplot2</code> is a fairly old package. As a result, the use of pipes wasn’t included when it was originally written. As you can see in the code above, the layers of the code are separated by <code>+</code> rather than <code>%&gt;%</code>. In this case, <code>+</code> is doing essentially the same job as a pipe - be careful not to confuse them.</p>
 </div>
 
-### Activity 5: Violin-boxplot
+## Activity 5: Violin-boxplot
 
 As our final activity we will also explain the code used to create the violin-boxplot from Loading Data, hopefully now you will be able to see how similar it is in structure to the bar chart code. In fact, there are only three differences:
 
@@ -264,7 +270,7 @@ ggplot(summarydata, aes(x = income, y = ahiTotal, fill = income)) +
 <p class="caption">(\#fig:unnamed-chunk-11)Violin-boxplot</p>
 </div>
 
-### Activity 6: Layers part 2
+## Activity 6: Layers part 2
 
 The key thing to note about `ggplot` is the use of layers. Whilst we've built this up step-by-step, they are independent and you could remove any of them except for the first layer. Additionally, although they are independent, the order you put them in does matter. Try running the two code examples below and see what happens.
 
